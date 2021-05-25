@@ -77,7 +77,6 @@ $ bundle install
 The pages can be served locally using:
 
 ```bash
-$ bundle exec jekyll server
 $ bundle exec jekyll serve
 Configuration file: <repopath>/_config.yml
             Source: <repopath>/
