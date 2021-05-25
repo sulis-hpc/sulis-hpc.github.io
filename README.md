@@ -10,9 +10,9 @@ Please with raise an issue or fork this site and submit a pull request if you wo
 
 The web site may be built and previewed locally, enabling changes to be reviewed before they are committed. The following steps *may* work to setup an environment in which you can build and preview the web site; the steps have only been attempted on Ubuntu 20.04 so YMMV and they assume that Ruby and Bundler are already installed (see the Prerequisites of https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll).
 
-### Installing Jekyll with Bundle
+### Installing Jekyll/Github-Pages
 
-The following steps are based on https://jekyllrb.com/tutorials/using-jekyll-with-bundler/
+The following steps are based on https://jekyllrb.com/tutorials/using-jekyll-with-bundler/ and https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll.
 
 Clone the repository and change into the directory. For example:
 
@@ -33,3 +33,65 @@ Start a new bundle project by running `bundle init`.
 $ bundle init
 Writing new Gemfile to ...path...to...repo/sulis-hpc.github.io/Gemfile
 ```
+
+It is recommended to configure bundle to install the Ruby gems into the subdirectory of the project (note that the .gitignore for this project will ignore the directory).
+
+```bash
+$ bundle config set --local path 'vendor/bundle'
+```
+
+The Gemfile in the directory should be relatively empty:
+
+```ruby
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
+```
+
+To the bottom of the Gemfile add
+
+```ruby
+gem "github-pages", group: :jekyll_plugins
+```
+
+or 
+
+```ruby
+gem "github-pages", "~> GITHUB-PAGES-VERSION", group: :jekyll_plugins
+```
+
+replacing `GITHUB-PAGES-VERSION` with the version number, if you want to lock to a specific versions (see https://pages.github.com/versions/).
+
+Then install the Gems with:
+
+```bash
+$ bundle install
+```
+
+### Serving the Pages Locally
+
+The pages can be served locally using:
+
+```bash
+$ bundle exec jekyll server
+$ bundle exec jekyll serve
+Configuration file: <repopath>/_config.yml
+            Source: <repopath>/
+       Destination: <repopath>/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+      Remote Theme: Using theme pmarsceill/just-the-docs
+                    done in 3.679 seconds.
+<repopath>/vendor/bundle/ruby/2.7.0/gems/pathutil-0.16.2/lib/pathutil.rb:502: warning: Using the last argument as keyword parameters is deprecated
+ Auto-regeneration: enabled for '<repopath>'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+```
+
+Then go to http://127.0.0.1:4000/ in a browser on your local computer.
+
+Note that you do not need to commit the local build of the site to Github as the pages will be automatically rebuilt and served.
