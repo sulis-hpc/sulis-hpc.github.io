@@ -31,7 +31,7 @@ $ cd sulis-hpc.github.io.git
 Start a new bundle project by running `bundle init`.
 ```bash
 $ bundle init
-Writing new Gemfile to ...path...to...repo/sulis-hpc.github.io/Gemfile
+Writing new Gemfile to <repopath>/Gemfile
 ```
 
 It is recommended to configure bundle to install the Ruby gems into the subdirectory of the project (note that the .gitignore for this project will ignore the directory).
