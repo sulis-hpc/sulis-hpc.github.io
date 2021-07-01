@@ -1,0 +1,2 @@
+# For consistency in how the terminal prompt is presented in examples
+prompt: "[user@login01(sulis) ~]"

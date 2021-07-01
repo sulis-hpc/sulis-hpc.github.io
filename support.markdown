@@ -2,7 +2,7 @@
 layout: page
 title: Support
 permalink: /support/
-nav_order: 5
+nav_order: 8
 ---
 
 # Support Contacts

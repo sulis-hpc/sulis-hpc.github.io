@@ -18,7 +18,7 @@ gpunode_partition_maxwalltime: "48:00:00"
 
 # Fat node configuration. RAM is in Megabyes
 fatnode_cores_per_node: 128
-fatnode_threads_per_core: 1
+fatnode_threads_per_core: 1git
 fatnode_ram_per_core: 7540
 fatnode_partition_name: hmem
 fatnode_partition_maxwalltime: "48:00:00"
