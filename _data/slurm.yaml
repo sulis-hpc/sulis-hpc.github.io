@@ -1,0 +1,28 @@
+# Variables about the SLURM configuration in Sulis, to be referenced in the documentation
+# Set once here and then refererence as e.g. {{ site.data.slurm.cnode_cores_per_node }}.
+
+# Compute node configuration. RAM is in Megabytes
+cnode_cores_per_node: 128
+cnode_threads_per_core: 1
+cnode_ram_per_core: 3770
+cnode_partition_name: compute
+cnode_partition_maxwalltime: "48:00:00"
+
+# GPU node configuration. RAM is in Megabytes
+gpunode_cores_per_node: 128
+gpunode_threads_per_core: 1
+gpunode_ram_per_core: 3770
+gpunode_gpu_gres_name: ampere_a100
+gpunode_partition_name: gpu
+gpunode_partition_maxwalltime: "48:00:00"
+
+# Fat node configuration. RAM is in Megabyes
+fatnode_cores_per_node: 128
+fatnode_threads_per_core: 1
+fatnode_ram_per_core: 7540
+fatnode_partition_name: hmem
+fatnode_partition_maxwalltime: "48:00:00"
+
+
+
+

@@ -1,0 +1,11 @@
+# Variables about the network configuration for Sulis.
+
+# FQHN of the login node
+loginhost: sulis.scrtp.warwick.ac.uk
+
+# prefixes of the compute, gpu and fat nodes
+cnode_prefix: cnode
+gpunode_prefix: gpu
+fatnode_prefix: hmem
+
+
