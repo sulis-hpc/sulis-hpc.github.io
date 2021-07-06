@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Sulis HPC Documentation
+title: Sulis HPC on github.io
 email: sulis@warwick.ac.uk
 description: >- # this means to ignore newlines until "baseurl:"
   Sulis is a tier 2 HPC platform focussed on high throughput and
@@ -27,7 +27,11 @@ description: >- # this means to ignore newlines until "baseurl:"
   the service.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sulis-hpc.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-markdown: GFM
+
+# DQ - this breaks in-page TOC generation.
+#markdown: GFM 
+
+logo: "/assets/images/hpc-midplus-logo.png"
 
 # Build settings
 remote_theme: pmarsceill/just-the-docs
@@ -40,6 +44,8 @@ aux_links:
                 - "https://sulis.ac.uk"
 
 aux_links_new_tab: true
+
+heading_anchors: true
 
 back_to_top: true
 back_to_top_text: "Back to top"
