@@ -9,6 +9,7 @@ nav_order: 1
 # Environment modules
 {: .no_toc }
 
+<<<<<<< HEAD
 <details open markdown="block">
   <summary>
     Table of contents
@@ -17,6 +18,10 @@ nav_order: 1
 1. TOC
 {:toc}
 </details>
+=======
+1. TOC
+{:toc}
+>>>>>>> fa7bde51c4f11eefc8492ee32598377e8bf3e950
 
 ## About environment modules
 
@@ -24,7 +29,11 @@ Like many HPC platforms, Sulis uses an environment module system as a means for 
 
 Other tools, such as [Anaconda](https://www.anaconda.com/), allow similar customisation. However software provided via the environment module system has been specifically built and optimised for the Sulis hardware. Use of environment modules should therefore be the default choice for most users to access software. Please search the available software (see below) before requesting new software be installed.
 
+<<<<<<< HEAD
 As well as specific scientific applications, environment modules provide access to software development *toolchains*, i.e. combinations of compilers, communication libraries (i.e. MPI) and optimised numerical libraries (BLAS, LaPACK, FFTW etc) that have been tested and known to work well on the Sulis hardware.
+=======
+As well as specific scientific applications, environment modules provide access to software development *toolcains*, i.e. combinations of compilers, communication libraries (i.e. MPI) and optimised numerical libraries (BLAS, LaPACK, FFTW etc) that have been tested and known to work well on the Sulis hardware.
+>>>>>>> fa7bde51c4f11eefc8492ee32598377e8bf3e950
 
 Sulis provides a set of software available to all users via environment modules available at login. Users at specific universities/institutions may be given access to additional modules created by their local research computing support team, for example if commercial software is only licensed for use at a particular site.
 
@@ -105,7 +114,11 @@ To unload all loaded modules use:
 {{site.data.terminal.prompt}} module purge
 ```
 
+<<<<<<< HEAD
 It is strongly recommended that scripts submitted to [batch queues](../../batchq/) invoke `module purge` before loading any modules to create a software environment for the job.
+=======
+It is strongly recommended that scripts submitted to [batch queues](../../batchq/) invoke `module purge` before loading any modules to create a software environemnt for the job.
+>>>>>>> fa7bde51c4f11eefc8492ee32598377e8bf3e950
 
 
 
