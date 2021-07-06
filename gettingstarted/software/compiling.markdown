@@ -16,7 +16,7 @@ nav_order: 2
 
 Before compiling your own code on Sulis, please [search the software already available](modules/#searching-modules) via the module system.
 
-If the software you intend to build is likely to be needed by multiple users at your site or elsewhere then consider requesting a centrally installed build via your local research computing support team (HPC Midlands+ consortium members) or by raising an issue in the [sulis-hpc/support](https://github.com/sulis-hpc/support/issues) repository on GitHub (EPSRC national access users).
+If the software you intend to build is likely to be needed by multiple users at your site or elsewhere then consider requesting a centrally installed build via your local [research computing support team](../../support)(HPC Midlands+ consortium members) or by raising an issue in the [sulis-hpc/support](https://github.com/sulis-hpc/support/issues) repository on GitHub (EPSRC national access users).
 
 If creating bespoke/modified builds of commonly used software, please check the [Application Notes](../../appnotes) section. This may contain advice build settings for getting optimal performance from the Sulis hardware. If no such note is available consider working with your local Research Software Engineering (RSE) team to contribute a new application note.
 
@@ -111,7 +111,7 @@ Code written using CUDA C to take advantage of the Sulis A100 GPUs should be com
 
 1. Load compiler and CUDA modules from a toolchain. 
    ```shell
-   {{site.data.terminal.prompt}} module load {{site.data.software.defaultgcc}} {{site.data.software.defaultgcc}}
+   {{site.data.terminal.prompt}} module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
    ```
 2. Invoke the CUDA C compiler.
    ```shell
@@ -137,6 +137,23 @@ This is expected. Only the GPU nodes have access to the CUDA runtime library.
 
 ## Linking libraries
 
-## Notes on performance
+Many software build systems will correctly detect and link against libraries which have been loaded via [../modules/](environment modules). If linking against libraries manually, the `pkg-config` tool may be useful.
 
+As an example, to compile code which uses the [FFTW3](http://fftw.org/) library we would first load an appropriate module.
+```shell
+{{site.data.terminal.prompt}} module load {{site.data.software.defaultfoss}} FFTW/3.3.8
+```
+After which 
+```shell
+{{site.data.terminal.prompt}} pkg-config --cflags fftw3
+```
+will return the flags needed to instruct the compiler where to search for the fftw3.h header file (C/C++) or Fortran include files needed to use that library. Similarly
+```shell
+{{site.data.terminal.prompt}} pkg-config --libs fftw3
+```
+will return the flags needed to link your code against the library.
 
+These commands can be used with backtick substitution as (for example)
+```shell
+{{site.data.terminal.prompt}} gcc ``pkg-config --cflags fftw3`` my_code.c ``pkg-config --libs fftw3`` 
+```

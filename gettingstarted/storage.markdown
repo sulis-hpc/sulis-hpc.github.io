@@ -6,6 +6,10 @@ nav_order: 3
 ---
 
 # Files and storage 
+{: .no_toc }
+
+1. TOC
+{:toc}
 
 ## Home directory
 
