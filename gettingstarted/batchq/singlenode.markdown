@@ -429,7 +429,7 @@ Similar caveats apply if using subprocess within junctions evaluated in parallel
 Submission proceeds as per any other job script.
 
 ```shell
-{{site.data.terminal.prompt}} sbatch multiprocessing.slurm
+{{site.data.terminal.prompt}} sbatch joblib.slurm
 Submitted batch job 212680
 ```
 
