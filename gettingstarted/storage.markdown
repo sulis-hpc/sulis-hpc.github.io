@@ -37,7 +37,7 @@ Use the mmlsquota command to determine your specific quota level and usage:
 
 ## Scratch filesystem
 
-If you have experience using other HPC facilities you may be aware of the concept of a cluster-wide "scratch file system". The purpose of the scratch file system is often to provide a location where jobs can read or write their data to/from during a compute job so that the home directories are not affected by the "load" on the GPFS storage system. 
+Users with experience of other HPC facilities may be aware of the concept of a cluster-wide "scratch file system". The purpose of the scratch file system is often to provide a location where jobs can read or write their data to/from during a compute job so that the home directories are not affected by the "load" on the GPFS storage system. 
 
 Sulis has a limited amount of cluster wide scratch space on SSDs mounted as `/scratch/`. This scratch space may provide a performance boost for certain read/write intensive workloads as compared to the home disk area.
 

@@ -4,7 +4,7 @@
 loginhost: sulis.scrtp.warwick.ac.uk
 
 # prefixes of the compute, gpu and fat nodes
-cnode_prefix: cnode
+cnode_prefix: node
 gpunode_prefix: gpu
 fatnode_prefix: hmem
 

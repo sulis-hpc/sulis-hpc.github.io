@@ -22,7 +22,7 @@ fatnode_threads_per_core: 1git
 fatnode_ram_per_core: 7540
 fatnode_partition_name: hmem
 fatnode_partition_maxwalltime: "48:00:00"
-
+fatnode_partition_size: 4
 
 
 

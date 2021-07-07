@@ -71,7 +71,7 @@ Advanced users may wish to use [Python virtual environments](https://docs.python
 
 We do not recommend use of Anaconda for processor intensive scientific applications on Sulis (or on HPC platforms in general). The Anaconda system modifies your default Python environment is ways which may cause problems for optimised builds of packages provided via the module system. Software distributed via Anaconda is also built for compatibility with the largest range of hardware possible, rather than optimised for the latest hardware.
 
-If processor intensive software needed for use on Sulis is only distributed via Anaconda then please first check with your [support contact](../../suport/) who may be able to arrange for an optimised for specific hardware. In some cases the performance difference can be substantial.
+If processor intensive software needed for use on Sulis is only distributed via Anaconda then please first check with your [support contact](../../suport/) who may be able to create an optimised build for the Sulis hardware from the software's source. In some cases the performance difference can be substantial.
 
 If it is genuinely necessary to use Anaconda for a particular project then please be aware that it can be very difficult or impossible to debug compatibility problems with Anaconda-provided software. 
 
@@ -94,9 +94,9 @@ Python users new to HPC platforms may not be accustomed to running Python-based 
 
 Sulis is primarily focused on batch computation. Python-based calculations should therefore be prepared as a script which requires no user input beyond command line arguments or input read from a data file. Plots should be saved to file as there is no display connected to the servers which process your script. 
 
-Help converting interactive Python workflows into scripts suitable for batch computation is available via the [HPC for Data Science video lecture servies](https://warwick.ac.uk/hpc4ds), the creation of which was funded by the Alan Turing Institute Tools, Practices and Systems programme. 
+Help converting interactive Python workflows into scripts suitable for batch computation is available via the [HPC for Data Science video lecture series](https://warwick.ac.uk/hpc4ds), the creation of which was funded by the Alan Turing Institute Tools, Practices and Systems programme. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLHRVUtPOez8xPRtcxXlP3msx7Eo2WZ-Pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In some cases though it can be invaluable to interact directly with the Python interpreter as a debugging aid, or to test algorithms within Jupyter notebooks directly on the Sulis hardware. For such situations see the section on [interactive jobs](../batchq/interactive) and the [application notes on Jupyter](../appnotes/Jupyter).
+In some cases though it can be invaluable to interact directly with the Python interpreter as a debugging aid, or to test algorithms within Jupyter notebooks directly on the Sulis hardware. For such situations see the section on [interactive jobs](../batchq/interactive) and the [application notes on Jupyter](../appnotes/jupyter).
 

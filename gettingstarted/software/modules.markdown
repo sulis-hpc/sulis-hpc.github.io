@@ -100,11 +100,7 @@ To unload all loaded modules use:
 {{site.data.terminal.prompt}} module purge
 ```
 
-<<<<<<< HEAD
 It is strongly recommended that scripts submitted to [batch queues](../../batchq/) invoke `module purge` before loading any modules to create a software environment for the job.
-=======
-It is strongly recommended that scripts submitted to [batch queues](../../batchq/) invoke `module purge` before loading any modules to create a software environemnt for the job.
->>>>>>> fa7bde51c4f11eefc8492ee32598377e8bf3e950
 
 
 

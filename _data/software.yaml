@@ -1,6 +1,6 @@
 
 
-defaultfosscuda: "GCC/10.2.0  CUDA/11.1.1  OpenMPI/4.0.5"
+defaultfosscuda: "GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5"
 defaultfoss: "GCC/10.2.0 OpenMPI/4.0.5"
 defaultgcc: "GCC/10.2.0"
 defaultgcccore: "GCCcore/10.2.0"
