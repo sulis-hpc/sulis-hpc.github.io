@@ -294,7 +294,7 @@ Hello world from thread = 12
 Python programmers may with to use the multprocessing package to implement parallelism within a single node. SLURM treads a Python program which spawns or forks multiple sub-processes as a single task which uses a "pool" of multiple CPUs.
 
 <details markdown="block" class="detail">
-  <summary>An example Python multiprocessing script.</summary>
+  <summary>An example Python multiprocessing code.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_mp.py</p>
@@ -346,7 +346,7 @@ export N=128                  # Number of inputs
 srun python example_mp.py $p $N
 ```
 
-A note of caution on use of the [Python subprocesses](https://docs.python.org/3/library/subprocess.html) within functions invoked by a multiprocessing pool. This may be desirable if using Python to launch multiple instances of a compiled serial program to implement an ensemble computing workflow. However the additional processes may be starved of CPU resource resulting in poor performance without specifying appropriate options to `srun`. This is discussed in more detail in the [Advanced topics](../../advanced/ensemble/subprocess/) section.
+<!-- A note of caution on use of the [Python subprocesses](https://docs.python.org/3/library/subprocess.html) within functions invoked by a multiprocessing pool. This may be desirable if using Python to launch multiple instances of a compiled serial program to implement an ensemble computing workflow. However the additional processes may be starved of CPU resource resulting in poor performance without specifying appropriate options to `srun`. This is discussed in more detail in the [Advanced topics](../../advanced/ensemble/subprocess/) section. -->
 
 Submission proceeds as per any other job script.
 
@@ -365,12 +365,12 @@ Note that the list of outputs is ordered as per the list of inputs.
 
 ## Python joblib
 
-Joblib is an alternative method of evaluating functions for a list of inputs in Python, with the work distributed over multiple CPUs in a node. It is included as part of the SciPy-bundle environment module. 
+Joblib is an alternative method of evaluating functions for a list of inputs in Python with the work distributed over multiple CPUs in a node. It is included as part of the SciPy-bundle environment module. 
 
 A particular advantage of joblib over multiprocessing is that it can be easily adapted to implement parallelism over multiple nodes in a cluster by using the [Dask](https://dask.org/) backend as discussed in the [Advanced topics](../../advanced/ensemble/joblib/) section. For now we will restrict ourselves to the standard backend which is restricted to parallelism over a single node.
 
 <details markdown="block" class="detail">
-  <summary>An example Python joblib script.</summary>
+  <summary>An example Python joblib code.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_joblib.py</p>
@@ -403,7 +403,7 @@ if __name__ == '__main__':
 </details>
 
 The required job script is nearly identical to the multiprocessing example above with
-the addition of the SciPy-bundle module.
+the addition of the SciPy-bundle module. As before, the number of processes to use is passed into the python script as an argument.
 
 <p class="codeblock-label">joblib.slurm</p>
 ```bash
@@ -424,7 +424,7 @@ export N=128                  # Number of inputs
 srun python example_joblib.py $p $N
 ```
 
-Similar caveats apply if using subprocess within junctions evaluated in parallel via joblib. This is discussed in more detail in the [Advanced topics](../../advanced/ensemble/subprocess/) section.
+<!-- Similar caveats apply if using subprocess within junctions evaluated in parallel via joblib. This is discussed in more detail in the [Advanced topics](../../advanced/ensemble/subprocess/) section. -->
 
 Submission proceeds as per any other job script.
 
