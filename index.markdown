@@ -5,7 +5,7 @@ nav_order: 1
 ---
 
 <div class="sbplaceholder">
-Documentation for the Sulis service is located at [sulis-hpc.github.io](https://sulis-hpc.github.io/).
+Documentation for the Sulis service is located at <a href="https://sulis-hpc.github.io/">sulis-hpc.github.io</a>.
 
 Search and navigation links will redirect to that site.
 </div>
