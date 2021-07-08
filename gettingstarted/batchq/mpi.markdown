@@ -14,7 +14,7 @@ nav_order: 4
 
 The most common way for calculations to make use of multiple nodes in a cluster involves multiple tasks communicating via message passing using MPI. Many simulation packages are written to use MPI.
 
-Other methods for distributing calculations over multiple nodes can use MPI as a backend to benefit from the high performance interconnect in HPC clusters.
+Other methods for distributing calculations over multiple nodes may use MPI as a backend to benefit from the high performance interconnect in HPC clusters.
 
 ## Compiled MPI codes
 
