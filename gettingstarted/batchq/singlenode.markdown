@@ -26,7 +26,7 @@ Job scripts are text files typically containing the following:
 
 ## Serial jobs
 
-**IMPORTANT**: Regular submission of serial jobs is strongly discouraged. We do however welcome (and encourage) workflows which implement task-based parallel by launching many instances of a serial program as a single job. See the [Ensemble jobs](../../advanced/ensemble/) section of these pages for further information. 
+**IMPORTANT**: Regular submission of serial jobs is strongly discouraged. We do however welcome (and encourage) workflows which implement task-based parallelism by launching many instances of a serial program as a single job. See the [Ensemble jobs](../../advanced/ensemble/) section of these pages for further information. 
 
 <details markdown="block" class="detail">
   <summary>An example serial program in C.</summary>
@@ -87,7 +87,7 @@ Hello World!
 
 ### Note on serial jobs with large memory requirements
 
-In some cases it may be necessary to request more RAM for serial jobs,  e.g. for RAM-intensive post processing of data. In such cases scripts should request multiple ``cpus-per-task`` to access more memory, leaving the additional CPUs unused.
+In some cases it may be necessary to request more RAM for serial jobs,  e.g. for in-memory post processing of data. In such cases scripts should request multiple ``cpus-per-task`` to access more memory, leaving the additional CPUs unused.
 
 Sulis does contain {{site.data.slurm.fatnode_partition_size}} high memory nodes with {{site.data.slurm.fatnode_ram_per_core}} MB of RAM available per CPU. These are available for memory-intensive processing on request.
 
@@ -294,7 +294,7 @@ Hello world from thread = 12
 Python programmers may with to use the multprocessing package to implement parallelism within a single node. SLURM treads a Python program which spawns or forks multiple sub-processes as a single task which uses a "pool" of multiple CPUs.
 
 <details markdown="block" class="detail">
-  <summary>An example Python multiprocessing code.</summary>
+  <summary>An example Python multiprocessing code <code>example_mp.py</code>.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_mp.py</p>
@@ -370,7 +370,7 @@ Joblib is an alternative method of evaluating functions for a list of inputs in 
 A particular advantage of joblib over multiprocessing is that it can be easily adapted to implement parallelism over multiple nodes in a cluster by using the [Dask](https://dask.org/) backend as discussed in the [Advanced topics](../../advanced/ensemble/joblib/) section. For now we will restrict ourselves to the standard backend which is restricted to parallelism over a single node.
 
 <details markdown="block" class="detail">
-  <summary>An example Python joblib code.</summary>
+  <summary>An example Python joblib code <code>example_joblib.py</code>.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_joblib.py</p>

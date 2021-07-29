@@ -72,7 +72,7 @@ srun ./a.out
 The Python interface to MPI can be a useful way to distribute high-level tasks over multiple nodes in a cluster within user code.
 
 <details markdown="block" class="detail">
-  <summary>An example MPI program in Python.</summary>
+  <summary>An example MPI program in Python <code>mpi_hello.py</code>.</summary>
 The same trivial example from above but now in Python.
 
 <p class="codeblock-label">mpi_hello.py</p>
