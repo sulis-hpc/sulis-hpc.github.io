@@ -395,7 +395,7 @@ if __name__ == '__main__':
     
     # Associate a list of outputs with delayed calls to f
     # with p processes available to evaluate them.
-    outputs = Parallel(n_jobs=p)(delayed(f(i) for i in inputs))
+    outputs = Parallel(n_jobs=p)(delayed(f)(i) for i in inputs)
 
     # Printing the outputs will cause then to be evaluated
     print(outputs)
