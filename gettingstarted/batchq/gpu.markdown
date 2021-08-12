@@ -74,7 +74,7 @@ int main() {
 This might be compiled into the executable `a.out` via:
 ```bash
 {{site.data.terminal.prompt}} module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
-{{site.data.terminal.prompt}} nvcc --gpu-code=sm_80 cuda_hello.cu
+{{site.data.terminal.prompt}} nvcc -arch=sm_80 cuda_hello.cu
 ```
 </details>
 
@@ -115,7 +115,7 @@ Submitted batch job 212981
 Hello world from the host
 Checking for CUDA devices...
 Found 1 CUDA device(s) in this system
-Device 0 : Ampere A100
+Device 0 : A100-PCIE-40GB
 Using device 0
 ```
 Note that our program only identified a single G
@@ -161,7 +161,7 @@ This can be executed on a GPU node with the following SLURM job script.
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
-module load TensorFlow/2.4.1 
+module load TensorFlow/2.5.0 
 
 srun python tf_gpu.py
 ```
@@ -222,20 +222,120 @@ Here the 42 CPUs/cores available to the job (or some subset thereof) could be us
 
 ## Single node, multi-GPU 
 
-Some scientific packages will support use of multiple GPUs out of the box and handle assignment of GPUs to tasks or CPUs/threads automatically or via use input to the software.
+Some scientific packages will support use of multiple GPUs out of the box and handle assignment of GPUs to tasks or CPUs/threads automatically or via user input to the software.
 
-In other cases you may need to provide additional information to `srun` to indicate how the available GPUs should be shared across the elements of your calculation.
+In other cases you may need to provide additional information to `srun` to indicate how the available GPUs should be shared across the elements of your calculation. Two examples follow, which are not intended to be exhaustive. The examples use CuPy to interact with the GPU for illustrative purposes, but other methods will likely be more appropriate in many cases.
 
-For example, you may wish to use a whole GPU node to create a Python multiprocessing pool of 18 single-CPU workers which equally share the available 3 GPUs within a node.
+### Multiprocessing pool with shared GPUs
 
-srun -n 1 -G 3 -c 18 --cpus-per-gpu=6 python my_thing.py
+This example uses a whole GPU node to create a Python multiprocessing pool of 18 workers which equally share the available 3 GPUs within a node.
 
-Note that the cpus-per-task part of the resource request is still set to 128 such that the 18 workers have all the memory in the node available.
+<details markdown="block" class="detail">
+  <summary>Example <code>mp_gpu_pool.py</code>.</summary>
+This trivial example demonstrates a multiprocessing pool in which the available GPUs are shared equally across the pool. Note that the programmer must calculate which device `idev` is to be used by which member of the pool `procid` and set that device as active for the current process. The function `f(i)` returns which processor in the pool and which GPU was used.
 
-Alternatively you may have an MPI program in which each of 3 single-CPU tasks can effectively utilise an entire GPU.
+The number of processors available for the pool is set by interrogating the environment variable `SLURM_CPUS_PER_TASK`.
 
-srun -n 3 -G 3 -c 1 --gpus-per-task=1 my_mpi_thing
+<p class="codeblock-label">mp_gpu_pool.py</p>
+```python
+import sys
+import os
+import multiprocessing as mp
+import cupy as cp
 
-More advanced options give precise control over which tasks/CPUs are allocated to which GPU. See the srun section of the SLURM manual.
+def f(i):
+
+    ngpus = cp.cuda.runtime.getDeviceCount()
+    proc  = mp.current_process()
+    procid = proc._identity[0]    
+    idev   = procid%ngpus # which gpu device to use
+    cp.cuda.runtime.setDevice(idev)
+    print("proc %s processing input %d using GPU %d" % (proc.name, i, idev))
+    return (procid, idev)
+     
+if __name__ == '__main__':
+
+    p = int(os.environ['SLURM_CPUS_PER_TASK'])
+    input_list = range(100)
+    
+    # Evaluate f for all inputs using a pool of processes
+    with mp.Pool(p) as my_pool:
+        print(my_pool.map(f, input_list))
+```
+</details>
+
+In SLURM terminology this is a single task, using 18 CPUs and 3 GPUs. Note that the following script sets `cpus-per-task=42` in the resource request so that the pool of 18 processes has the entire RAM of the node available. 
+
+<p class="codeblock-label">gpu_pool.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=42
+#SBATCH --mem-per-cpu={{site.data.slurm.gpunode_ram_per_core}}
+#SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3
+#SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
+module load CuPy/8.5.0 
+
+srun -n 1 -G 3 -c 18 --cpus-per-gpu=6 python mp_gpu_pool.py
+```
+
+### MPI application with one GPU per task
+
+Alternatively you may have an MPI program in which each of 3 tasks can effectively utilise an entire GPU. 
+
+<details markdown="block" class="detail">
+  <summary>An example MPI GPU program in Python <code>mpi_gpu.py</code>.</summary>
+Here each MPI task uses the GPU with id equal its rank.
+
+<p class="codeblock-label">gpu.py</p>
+```python
+from mpi4py import MPI
+import cupy as cp
+
+comm = MPI.COMM_WORLD
+my_rank = comm.Get_rank()
+idev = my_rank
+
+cp.cuda.runtime.setDevice(idev)
+prop = cp.cuda.runtime.getDeviceProperties(idev)
+
+print("MPI rank %d using GPU : %s_%d" % (my_rank, prop['name'].decode(),idev))
+
+MPI.Finalize()
+``` 
+</details>
+
+
+<p class="codeblock-label">mpi_gpu.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=3
+#SBATCH --cpus-per-task=42
+#SBATCH --mem-per-cpu={{site.data.slurm.gpunode_ram_per_core}}
+#SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3
+#SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
+module load CuPy/8.5.0 
+
+srun -n 3 -G 3 --gpus-per-task=1 python mpi_gpu.py
+```
+Here each MPI task uses only one of the 42 CPUs allocated by task by SLURM, and one GPU. In other scenarios it might be sensible for each MPI task to use multiple CPUs via threading of spawning of subprocesses. See the [hybrid jobs](hybrid) section for more information.
+
 
 ## Multi-node GPU jobs
+
+Jobs using more than three GPUs are possible by making a SLURM resource request for multiple nodes in the `{{site.data.slurm.gpunode_partition_name}}` partition. Users should be aware of the following.
+
+- Use of multiple GPU nodes may be desirable to increase concurrency when processing a large batch of smaller calculations which collectively constitute a single job/workflow. This might be accomplished in a number of ways, e.g. a loosely coupled MPI application or a Python script which uses Dask to distribute independent calculations over a pool of GPU-enabled resource. See the [Ensemble Computing](../../advanced/ensemble) section of this documentation for examples.
+
+- The GPU hardware configuration in Sulis is not optimised nor intended for workloads which require very high bandwidth communication between multiple  GPUs. Other tier 2 services, in particular [JADE II](https://www.jade.ac.uk/), [Baskerville](https://www.baskerville.ac.uk/) or [Bede](https://n8cir.org.uk/supporting-research/facilities/nice/) are much more likely to be appropriate for such workflows.
+

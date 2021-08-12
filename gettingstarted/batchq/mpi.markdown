@@ -84,6 +84,8 @@ my_rank = comm.Get_rank()
 p = comm.Get_size()
 
 print("Hello from task %s of %s" % (my_rank, p) )
+
+MPI.Finalize()
 ``` 
 </details>
 
@@ -98,7 +100,7 @@ The MPI4Py Python package is included in the SciPy-bundle module. A suitable job
 #SBATCH --time=08:00:00
 
 module purge
-module load {{site.data.software.defaultgcccore}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
 module load {{site.data.software.defaultscipy}}
 
 srun python mpi_hello.py
