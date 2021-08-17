@@ -20,10 +20,10 @@ Creation of SLURM submission scripts requires some understanding of the terminol
 
 - **Node**: SLURM refers to a single server within the cluster as a *node*. Sulis consists of 167 compute nodes plus 30 nodes equipped with Nvidia A100 GPUs.
 
-- **Partition**: A group of nodes to which job can be submitted, sometimes referred to as a queue for legacy reasons.  The default partition on Sulis is the {{site.data.slurm.cnode_partition_name}} partition which consists of the compute nodes. The GPU-equipped nodes form the {{site.data.slurm.gpu_partition_name}} partition.
+- **Partition**: A group of nodes to which job can be submitted, sometimes referred to as a queue for legacy reasons.  The default partition on Sulis is the {{site.data.slurm.cnode_partition_name}} partition which consists of the compute nodes. The GPU-equipped nodes form the {{site.data.slurm.gpunode_partition_name}} partition.
 <!-- DQ: I know this isn't strictly true. Will we have a devel partition? -->
 
-- **Socket**: SLURM refers to the compute processors (which contain multiple processing cores) by the *socket* they are plugged into. The Sulis nodes each contain two AMD EPYC processors.
+- **Socket**: SLURM refers to the compute processors (which contain multiple processing cores) by the *socket* they are plugged into. The Sulis nodes each contain two AMD EPYC processors, one per socket.
 
 - **CPU**: Sulis is configured such that SLURM refers to each processor core as a *CPU*. Each EPYC processor contains 64 processor cores, and hence there are 128 CPUs total per node.
 

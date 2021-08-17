@@ -69,7 +69,7 @@ Advanced users may wish to use [Python virtual environments](https://docs.python
 
 ## Anaconda
 
-We do not recommend use of Anaconda for processor intensive scientific applications on Sulis (or on HPC platforms in general). The Anaconda system modifies your default Python environment is ways which may cause problems for optimised builds of packages provided via the module system. Software distributed via Anaconda is also built for compatibility with the largest range of hardware possible, rather than optimised for the latest hardware.
+We do not recommend use of Anaconda for processor intensive scientific applications on Sulis (or on HPC platforms in general). The Anaconda system modifies your default Python environment in ways which may cause problems for optimised builds of packages provided via the module system. Software distributed via Anaconda is also built for compatibility with the largest range of hardware possible, rather than optimised for the latest hardware.
 
 If processor intensive software needed for use on Sulis is only distributed via Anaconda then please first check with your [support contact](../../suport/) who may be able to create an optimised build for the Sulis hardware from the software's source. In some cases the performance difference can be substantial.
 
