@@ -6,7 +6,7 @@ grand_parent: Getting Started
 nav_order: 5
 ---
 
-# MPI jobs
+# Hybrid jobs
 {: .no_toc }
 
 1. TOC
