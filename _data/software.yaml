@@ -12,3 +12,5 @@ defaultpyver: "3.8.6"
 defaultscipy: "SciPy-bundle/2020.11"
 
 ommver: "7.5.0"
+
+parallel: "parallel/20210322"
