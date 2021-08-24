@@ -303,7 +303,7 @@ import sys
 from multiprocessing import Pool
 
 if len(sys.argv) != 3:
-    print("Usage ", argv[0]," <p> <N>")
+    print("Usage ", sys.argv[0]," <p> <N>")
     sys.exit()
 else:
     p = int(sys.argv[1])
@@ -363,6 +363,73 @@ Submitted batch job 212679
 Note that the list of outputs is ordered as per the list of inputs.
 </details>
 
+## Python concurrent.futures
+
+Similar to multiprocessing, the [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html) module introduced in Python 3.2 provides a means to distribute work over a pool of either threads or processes. 
+
+Use of threads for parallelism in Python has a number of pitfalls due to the global interpreter lock or GIL. This prevents multiple threads from executing code at the same time, limiting their utility for parallelism. Launching threads generally incurs less overhead than launching processes, so if the work to be executed by the worker pool releases the GIL this _can_ be a more efficient option. Here we focus on the use of processes. 
+
+A particular advantage of using [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html) is that the resulting code requires only minimal modification to take advantage of a worker pool distributed over many nodes via [mpi4py.futures](https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html). See the [MPI section](mpi) section of this documentation for more information.
+
+<details markdown="block" class="detail">
+  <summary>An example Python code using concurrant.futures<code>example_mp.py</code>.</summary>
+This squares the first `N` integers, distributing the work over a pool of `p` processes. 
+
+<p class="codeblock-label">example_futures.py</p>
+```python
+import sys
+import concurrent.futures
+
+if len(sys.argv) != 3:
+    print("Usage ", sys.argv[0]," <p> <N>")
+    sys.exit()
+else:
+    p = int(sys.argv[1])
+    N = int(sys.argv[2])
+    
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+
+    # Create a list of inputs to the function f
+    inputs = range(N)
+    
+    # Evaluate f for all inputs using a pool of processes
+    with concurrent.futures.ProcessPoolExecutor(max_workers=p) as executor:
+        results = executor.map(f, inputs)
+
+
+    print([result for result in results])
+```
+</details>
+
+The SLURM job script for a Python script which uses concurrent.futures is very similar to that for multiprocessing. The script uses `srun` to launch a single task which uses multiple CPUs to establish the worker pool.
+
+<p class="codeblock-label">multiprocessing.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=128
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcccore}} {{site.data.software.defaultpython}}
+
+export p=$SLURM_CPUS_PER_TASK # Size of multiprocessing pool
+export N=128                  # Number of inputs
+
+# example_mp.py sets pool size from the first argument
+srun python example_futures.py $p $N
+```
+
+This should match the output of the above multiprocessing example exactly.
+
+As with multiprocessing the number of inputs to process can be larger than the size of the worker pool. Assuming each input takes a similar length of time to process, optimal utilisation will involve a number of inputs equal to an integer multiple of the worker pool size.
+
+
 ## Python joblib
 
 Joblib is an alternative method of evaluating functions for a list of inputs in Python with the work distributed over multiple CPUs in a node. It is included as part of the SciPy-bundle environment module. 
@@ -379,7 +446,7 @@ import sys
 from joblib import Parallel, delayed
 
 if len(sys.argv) != 3:
-    print("Usage ", argv[0]," <p> <N>")
+    print("Usage ", sys.argv[0]," <p> <N>")
     sys.exit()
 else:
     p = int(sys.argv[1])
