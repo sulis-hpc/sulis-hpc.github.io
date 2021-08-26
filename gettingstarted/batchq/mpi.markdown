@@ -105,7 +105,63 @@ module load {{site.data.software.defaultscipy}}
 
 srun python mpi_hello.py
 ```
+## mpi4py.futures
 
+For Python code which uses a pool of processes via [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html) (see the [Single Node](singlenode) section), MPI4Py provides a convenient means to extend this over multiple nodes.
+
+<details markdown="block" class="detail">
+  <summary>Python program using mpi4py.futures <code>example_mpifuture.py</code>.</summary>
+This Python script uses mpi4py.futures to evaluate the function `f(x)` for `N` input values concurrently. N is passed as an argument to the program.
+<p class="codeblock-label">example_mpifuture.py</p>
+```python
+import sys
+from mpi4py.futures import MPIPoolExecutor
+    
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+
+    # This code will be executed on only 1 task
+
+    if len(sys.argv) != 2:
+        print("Usage ", sys.argv[0]," <N>")
+        sys.exit()
+    else:
+        N = int(sys.argv[1])
+    
+    # Create a list of inputs to the function f
+    inputs = range(N)
+    
+    # Evaluate f for all inputs using the pool of processes
+    with MPIPoolExecutor() as executor:
+        results = executor.map(f, inputs)
+
+
+    print([result for result in results])
+``` 
+</details>
+
+The necessary submission script launches multiple tasks on each node. One task is used to run the master Python script and the remaining tasks make up the worker pool. In this case we run the above example to evaluate 255 inputs on 255 workers.
+
+<p class="codeblock-label">mpi4py.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node={{site.data.slurm.cnode_cores_per_node}}
+#SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.defaultscipy}}
+
+srun python -m mpi4py.futures example_mpifuture.py 255
+```
+
+In the above example each worker uses a single CPU, but it may be appropriate to use multiple CPUs per task if the code to be evaluated by the workers can use multiple threads and releases the Global Interpreter Lock (GIL).
+
+The number of inputs to evaluate needn't match the number of workers, but should be close to an integer multiple of the number of workers if the expected computation time for each evaluation of the function is similar.
 
 ## Under-populating nodes
 
