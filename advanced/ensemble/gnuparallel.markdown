@@ -14,7 +14,7 @@ nav_order: 2
 
 GNU parallel is a general purpose command-line tool for launching many concurrent instances of a program to work through a given list of inputs. The number of inputs can be greater than the number of instances.
 
-In the context of a SLURM-managed HPC cluster, parallel can be used to launch multiple concurrent instances of `srun` within a _single_ job. Each instance uses a subset of the resources allocated to the job by SLURM to launch a program (which could itself be either a serial or parallel program). 
+In the context of a SLURM-managed HPC cluster, parallel can be used to launch multiple concurrent instances of `srun` within a _single_ job. Each instance uses a subset of the resources allocated to the job by SLURM to launch a program (which could itself be either a serial or parallel program). Those resources can span multiple nodes, making parallel valuable for establishing large pools of workers to process many inputs to a program concurrently. 
 
 <details markdown="block" class="detail">
   <summary>Understanding GNU parallel.</summary>
@@ -88,8 +88,7 @@ This can be compiled to an executable `a.out` via:
 ```
 </details>
 
-We request 128 tasks per node and a single node. Each instance of the serial program will constitute 1 task. When launching the serial program with `srun` we specify that only 1 task should be launched on one node. Parallel is then used with the option `-j $SLURM_NTASKS` such that it launches 128 concurrent instances of `srun` with each 
-
+We request 128 tasks per node and a single node. Each instance of the serial program will constitute 1 task.  Parallel is used with the option `-j $SLURM_NTASKS` such that it launches 128 concurrent instances of `srun`. We specify arguments to `srun` itself such that each instance launches a single task using the resources allocated by SLURM. These resources may span multiple nodes - this method can be used to launch batches of serial calculations across hundreds or even thousands of CPUs.
 
 <p class="codeblock-label">parallel.slurm</p>
 ```bash
@@ -165,7 +164,7 @@ module purge
 module load {{site.data.software.defaultgcc}} 
 module load {{site.data.software.parallel}}
 
-# Parallel should launch one instances of srun per SLURM task
+# Parallel should launch one instance of srun per SLURM task
 MY_PARALLEL_OPTS="-N 1 --delay .2 -j $SLURM_NTASKS --joblog parallel-${SLURM_JOBID}.log"
 
 # srun itself should launch 1 instance of our program and not oversubscribe resources
@@ -211,7 +210,7 @@ module purge
 module load {{site.data.software.defaultgcc}} 
 module load {{site.data.software.parallel}}
 
-# Parallel should launch one instances of srun per SLURM task with *3* arguments each
+# Parallel should launch one instance of srun per SLURM task with *3* arguments each
 MY_PARALLEL_OPTS="-N 3 --delay .2 -j $SLURM_NTASKS --joblog parallel-${SLURM_JOBID}.log"
 
 # srun itself should launch 1 instance of our program and not oversubscribe resources
@@ -227,4 +226,96 @@ parallel $MY_PARALLEL_OPTS srun $MY_SRUN_OPTS ./a.out ::: `cat arglist.txt`
 
 One particular advantage of GNU parallel is that the command launched needn't be an executable. It can be a bash function. This function might be used to (for example) create a new directory in which to run each instance of the program and/or delete any temporary/unneeded files it creates.
 
+As an example, consider a program `my_prog` which reads the name of an input file as its only command line argument. The program generates various temporary files in its working directory, but we are only interesting in keeping the main output file. The input files we wish to process are kept in the directory `inputs` and we wish to copy the output file to `outputs`.
+
+The following SLURM job script uses parallel to launch a Bash function which accomplishes this.
+
+<p class="codeblock-label">bash_function.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} 
+module load {{site.data.software.parallel}}
+
+############################################
+# Function to execute for every input file #
+############################################
+function run_calc()
+{
+    inpfile=$1 # input file to process
+
+    # Make a temporary directory and change into it
+    tmpdir=`mktemp -d -p ./`
+    cd $tmpdir
+
+    # Run the program with this input file. Launch
+    # using srun to use 1 of the SLURM allocated tasks.
+    srun -N 1 -n 1 --exclusive my_prog $inpfile
+
+    # Copy output file to outputs
+    cd ../
+    cp ${tmpdir}/*output outputs/
+
+    # Delete the temporary directory
+    rm -rf $tmpdir
+
+}
+
+export -f run_calc
+
+# Parallel should launch one instance of srun per SLURM task
+MY_PARALLEL_OPTS="-N 1 --delay .2 -j $SLURM_NTASKS --joblog parallel-${SLURM_JOBID}.log"
+
+# Use parallel to launch srun with these options
+parallel $MY_PARALLEL_OPTS run_calc ::: `ls -1 inputs/*input`
+```
+
+This mechanism can be used to implement a range of pre- or post-processing of data around
+execution of a program.  
+
+
 ## Using parallel to launch parallel programs
+
+Use of parallel is not restricted to serial jobs. It may be desirable to implement a workflow in which a large number of nodes is used to run many concurrent instances of an MPI or otherwise parallel program. In these cases the resource request should reflect the total number of tasks to be launched, so an MPI program which uses 8 tasks and 2 CPUs per task should request 64 tasks per node as in the following example.
+
+<p class="codeblock-label">parallel.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=64
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} 
+module load {{site.data.software.parallel}}
+
+# Set number of MPI tasks to use per instance of my_mpi_prog
+export TASKS_PER_PROG=8
+
+# Set OMP_NUM_THREADS
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+# Calculate how many concurrent MPI instances to use
+NJOBS=$((${SLURM_NTASKS}/${TASKS_PER_PROG}))
+
+# Parallel should launch one instances of srun per instance of my_mpi_prog
+MY_PARALLEL_OPTS="-N 1 --delay .2 -j ${NJOBS} --joblog parallel-${SLURM_JOBID}.log"
+
+# Each invocation of srun should launch $TASKS_PER_PROG tasks
+MY_SRUN_OPTS="-N 1 -n ${TASKS_PER_PROG} -c ${SLURM_CPUS_PER_TASK} --exclusive"
+
+# Use parallel to launch srun with these options
+parallel $MY_PARALLEL_OPTS srun $MY_SRUN_OPTS my_mpi_prog ::: {0..1023}
+```
+This would launch 256 concurrent instances of `my_mpi_prog` as an 8-task MPI program with each task using 2 CPUs per task. The instances would work through the 1024 inputs 256 at a time.
+
+Here we've been careful to ensure that none of these 256 instances will be split across multiple nodes. This would normally be optimal in terms of performance.
+

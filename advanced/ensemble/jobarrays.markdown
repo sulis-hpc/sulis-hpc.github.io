@@ -20,7 +20,7 @@ input passed to the program launched with `srun`. A single job script is prepare
 Use of job arrays can be demonstrated with a simple program which reports its command line argument. An equivalent Python script using `sys.argv` could substitute.
 
 <details markdown="block" class="detail">
-  <summary>C program which takes prints its command line arguments <code>c_arg.c</code>.</summary>
+  <summary>C program which prints its command line arguments <code>c_arg.c</code>.</summary>
 Trivial C program to demonstrate use of job arrays in SLURM.
 
 <p class="codeblock-label">c_arg.c</p>
@@ -118,7 +118,7 @@ The individual elements of the array will appear in the queue as separate jobs, 
          207566_31   compute jobarray   phseal  R       0:14      1 node046
 ```
 
-Similarly the output of each element will be written to `slurm-xxxxxx_yy.out` where xxxxxx is the SLURM job numbers and yy is in the index of the instance writing output to that file. In this case our simple program will write the arguments it was given and quit.
+Similarly the output of each element will be written to `slurm-xxxxxx_yy.out` where xxxxxx is the SLURM job number and yy is in the index of the instance writing output to that file. In this case our simple program will write the arguments it was given and quit.
 
 ```shell
 {{site.data.terminal.prompt}} cat slurm-207566_*.out
@@ -245,7 +245,7 @@ of entries in arglist.txt.
 ## Parallelism within array elements
 
 Each element of a job array can launch a parallel program, using multiple tasks, CPUs or a
-hybrid combination of two two. Jobs scripts should be prepared such that the resource request
+hybrid combination of the two. Jobs scripts should be prepared such that the resource request
 is a appropriate to a single parallel instance of the program. 
 
 To illustrate, the example above could be modified to launch an MPI program with each of 8 tasks using 2 threads each.
