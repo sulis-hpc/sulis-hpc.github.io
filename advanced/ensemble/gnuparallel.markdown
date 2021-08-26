@@ -298,7 +298,7 @@ module load {{site.data.software.defaultgcc}}
 module load {{site.data.software.parallel}}
 
 # Set number of MPI tasks to use per instance of my_mpi_prog
-export TASKS_PER_PROG=8
+TASKS_PER_PROG=8
 
 # Set OMP_NUM_THREADS
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -306,7 +306,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 # Calculate how many concurrent MPI instances to use
 NJOBS=$((${SLURM_NTASKS}/${TASKS_PER_PROG}))
 
-# Parallel should launch one instances of srun per instance of my_mpi_prog
+# Parallel should launch NJOBS instances of srun at any one time
 MY_PARALLEL_OPTS="-N 1 --delay .2 -j ${NJOBS} --joblog parallel-${SLURM_JOBID}.log"
 
 # Each invocation of srun should launch $TASKS_PER_PROG tasks
@@ -317,5 +317,5 @@ parallel $MY_PARALLEL_OPTS srun $MY_SRUN_OPTS my_mpi_prog ::: {0..1023}
 ```
 This would launch 256 concurrent instances of `my_mpi_prog` as an 8-task MPI program with each task using 2 CPUs per task. The instances would work through the 1024 inputs 256 at a time.
 
-Here we've been careful to ensure that none of these 256 instances will be split across multiple nodes. This would normally be optimal in terms of performance.
+Here we've been careful to ensure that none of these 256 instances will be split across multiple nodes as 128 is divisible by 16. This would normally be optimal in terms of performance.
 
