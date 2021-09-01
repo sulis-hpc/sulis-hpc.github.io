@@ -22,8 +22,11 @@ Please consult with the local research computing support team at your home unive
 The path to your home directory on each cluster is: 
 
 ```
-/home/group/username
+/gpfs/home/<letter>/<username>
 ```
+
+Where `<username>` is the name of your machine account on Sulis and `<letter>` is the first letter of that name.
+
 
 ## Quota
 
