@@ -274,7 +274,7 @@ This would result in 8 elements of the job array, each using 16 CPUs.
 
 Job arrays have some disadvantages over other methods of orchestrating ensembles of small calculations on a HPC system.
 
-1. Each element in job array processes only a single input when used as above. SLURM allocates resource which might only be used for a short time, incurring overhead. It is preferable for SLURM to allocate resources which are then used to process multiple inputs as per other methods.
+1. Each element in the job array processes only a single input when used as above. SLURM allocates resource which might only be used for a short time, incurring overhead. It is preferable for SLURM to allocate resources which are then used to process multiple inputs as per other methods.
 
 2. Although SLURM attempts to pack the elements of the array onto as few nodes as possible, job arrays can still fragment the resource available to workloads which require whole nodes, reducing overall utilisation of the cluster.
 
