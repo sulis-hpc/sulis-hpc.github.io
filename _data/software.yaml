@@ -11,6 +11,8 @@ defaultpython: "Python/3.8.6"
 defaultpyver: "3.8.6"
 defaultscipy: "SciPy-bundle/2020.11"
 
+defaultdask: "dask/2021.2.0"
+
 ommver: "7.5.0"
 
 parallel: "parallel/20210322"
