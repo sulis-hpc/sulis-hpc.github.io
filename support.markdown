@@ -15,7 +15,7 @@ University | Support Contact / E-mail / Web site
 ---------- | -----------------------------------
 Aston University | [Support Email](mailto:hpc_support@aston.ac.uk)
 University of Birmingham | [IT Service Desk](http://www.itservicedesk.bham.ac.uk/)
-Coventry University | *Link to be added*
+Coventry University | [HPC Support](mailto:aa3025@coventry.ac.uk)
 University of Leicester | [RC Support](mailto:rcs.support@le.ac.uk), [IT Service Desk](http://www2.le.ac.uk/offices/itservices)
 Loughborough University | [Research Computing Support](mailto:research-computing@lboro.ac.uk)
 University of Nottingham | [IT Service Desk](https://www.nottingham.ac.uk/it-services/research/uon-compute-service/midlands-plus.aspx)
