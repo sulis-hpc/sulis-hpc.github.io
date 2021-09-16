@@ -16,3 +16,6 @@ defaultdask: "dask/2021.2.0"
 ommver: "7.5.0"
 
 parallel: "parallel/20210322"
+
+defaultipython: "IPython/7.18.1"
+
