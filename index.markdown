@@ -11,21 +11,33 @@ Searching above or using the links below will redirect to that site.
 
 <h3>Contents</h3>
 
-- [Getting Started](gettingstarted)
-- [Advanced Topics](advanced)
-- [Application Notes](appnotes)
-- [Technical Specifications](techspecs)
-- [Status](status)
-- [Policies](policies)
-- [Support](support) 
+<ul>
+
+<li><a href="https://sulis-hpc.github.io/gettingstarted/">Getting Started</a>
+<ul>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/getaccount/">Creating an account</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/connecting/">Connecting to Sulis</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/storage/">Storage</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/software/">Software</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/batchq/">Job submission</a></li>
+</ul>
+</li>
+<li><a href="https://sulis-hpc.github.io/advanced/">Advanced Topics</a></li>
+<li><a href="https://sulis-hpc.github.io/appnotes/">Application Notes</a></li>
+<li><a href="https://sulis-hpc.github.io/techspecs/">Technical Specifications</a></li>
+<li><a href="https://sulis-hpc.github.io/status/">Status</a></li>
+<li><a href="https://sulis-hpc.github.io/policies/">Policies</a></li>
+<li><a href="https://sulis-hpc.github.io/support/">Support</a></li>
+
+</ul>
 
 </div>
 
 <div class="sbhidden">
-This site contains the user documentation for the Sulis HPC facility. 
+<p>This site contains the user documentation for the Sulis HPC facility. </p>
 
-Please see https://sulis.ac.uk/ for general information on Sulis.
+<p>Please see <a href="https://sulis.ac.uk/">sulis.ac.uk</a> for general information on Sulis.</p>
 
 
-*This site is currently in draft form.*
+<p>*This site is currently in draft form.*</p>
 </div>
