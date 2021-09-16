@@ -31,7 +31,7 @@ Paths to OpenBLAS and FFTW3 if not detected automatically can be interrogated vi
 
 ## Enhanced Performance with MKL 19
 
-A significant performance uplift if available by using Intel MKL 19.5 in place of OpenBLAS. This requires replacing the `MATHLIBS` variable above with `mkl` and specifying the path to Intel MKL as:
+A significant performance uplift is available by using Intel MKL 19.5 in place of OpenBLAS. This requires setting the `MATHLIBS` variable above to `mkl` rather than `openblas` and specifying the path to Intel MKL as:
 
 ```terminal
 /sulis/easybuild/software/imkl/2019.5.281-iimpi-2019b/compilers_and_libraries_2019.5.281/linux/mkl/lib/intel64_lin/
@@ -44,7 +44,7 @@ export MKL_DEBUG_CPU_TYPE=5
 export MKL_CBWR=COMPATIBLE
 ```
 
-In testing, use of MKL over OpenBLAS resulted in a 5-10% uplift in performance. Newer versions of MKL do not support this override. 
+In testing, use of MKL over OpenBLAS resulted in a 5-10% uplift in performance over OpenBLAS when running CASTEP benchmarks. Newer versions of MKL do not support this override. 
 
 We intend to make the EasyBuild `gomkl` toolchain available in future to make this process simpler.
 
