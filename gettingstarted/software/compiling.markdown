@@ -155,5 +155,5 @@ will return the flags needed to link your code against the library.
 
 These commands can be used with backtick substitution as (for example)
 ```shell
-{{site.data.terminal.prompt}} gcc ``pkg-config --cflags fftw3`` my_code.c ``pkg-config --libs fftw3`` 
+{{site.data.terminal.prompt}} gcc `pkg-config --cflags fftw3` my_code.c `pkg-config --libs fftw3` 
 ```
