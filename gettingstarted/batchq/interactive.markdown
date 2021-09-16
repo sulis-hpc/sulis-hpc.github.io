@@ -113,3 +113,8 @@ Use `exit` to relinquish the allocation when no longer needed.
 exit
 salloc: Relinquishing job allocation 223826
 ```
+
+## Development partitions
+
+If the machine is busy you may wish to submit interactive jobs to the `devel` partition (or `gpu-devel` for GPU jobs) which has higher queue priority but a maximum walltime of one hour. 
+
