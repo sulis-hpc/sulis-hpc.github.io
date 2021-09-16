@@ -23,3 +23,7 @@ Queen Mary, University of London | [ITS Research Support](mailto:its-research-su
 University of Warwick | [SCRTP Service Desk](https://bugzilla.csc.warwick.ac.uk/bugzilla)
 
 If they are unable to answer or resolve your query, your local support team will escalate the issue to the team at the University of Warwick who are managing Sulis.
+
+## Other users
+
+Other users with allocations of time on Sulis will be provided with a means to request support when their allocation becomes active.
