@@ -7,14 +7,25 @@ nav_order: 1
 <div class="sbplaceholder">
 Documentation for the Sulis service is located at <a href="https://sulis-hpc.github.io/">sulis-hpc.github.io</a>.
 
-Searching above will redirect to that site.
+Searching above or using the links below will redirect to that site.
+
+<h3>Contents</h3>
+
+- [Getting Started](gettingstarted)
+- [Advanced Topics](advanced)
+- [Application Notes](appnotes)
+- [Technical Specifications](techspecs)
+- [Status](status)
+- [Policies](policies)
+- [Support](support) 
+
 </div>
 
-Sulis is a Tier 2 HPC service focussed on high throughput and ensemble computing. It is managed by the HPC Midlands+ consortium of universities. The Sulis hardware was funded by a £3M grant from the Engineering and Physical Sciences Research Council ([EPSRC](https://epsrc.ukri.org/)).  
+<div class="sbhidden">
+This site contains the user documentation for the Sulis HPC facility. 
 
-This site contains the documentation for the Sulis HPC facility. 
-
-Please see https://sulis.ac.uk/ for more information regarding the Sulis HPC facility.
+Please see https://sulis.ac.uk/ for general information on Sulis.
 
 
 *This site is currently in draft form.*
+</div>
