@@ -15,9 +15,9 @@ Searching above or using the links below will redirect to that site.
 
 <li><a href="https://sulis-hpc.github.io/gettingstarted/">Getting Started</a>
 <ul>
-<li><a href="https://sulis-hpc.github.io/gettingstarted/getaccount/">Creating an account</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/getaccount.html">Creating an account</a></li>
 <li><a href="https://sulis-hpc.github.io/gettingstarted/connecting/">Connecting to Sulis</a></li>
-<li><a href="https://sulis-hpc.github.io/gettingstarted/storage/">Storage</a></li>
+<li><a href="https://sulis-hpc.github.io/gettingstarted/storage.html">Storage</a></li>
 <li><a href="https://sulis-hpc.github.io/gettingstarted/software/">Software</a></li>
 <li><a href="https://sulis-hpc.github.io/gettingstarted/batchq/">Job submission</a></li>
 </ul>
