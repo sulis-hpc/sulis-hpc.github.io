@@ -15,9 +15,6 @@ nav_order: 3
 
 [Dask](https://dask.org) is a framework for parallelism in Python driven workflows. Here we focus on the distributed scheduling functionality in Dask. This can be a powerful way to extend single-node calculations using [concurrent.futures](../../gettingstarted/batchq/singlenode#python-concurrentfutures) or [Joblib](../../gettingstarted/batchq/singlenode#python-joblib) such that the pool of processors spans multiple compute nodes of a HPC system like Sulis. 
 
-Here we 
-
-
 ## Creating a Dask cluster
 
 Dask operates by creating a "cluster". In this context the term "cluster" refers to a collection of processes (tasks in SLURM) which communicate with each other rather than the physical hardware of the HPC system. A Dask cluster consists of:
@@ -177,9 +174,10 @@ srun  dask-worker --local-directory='/tmp' --no-nanny --nthreads=${SLURM_CPUS_PE
 python dask_file_init.py 
 
 ```
-
-## dask.delayed
-
 ## concurrent.futures and Dask
 
+Example to follow
+
 ## Joblib backend
+
+Example to follow
