@@ -399,7 +399,6 @@ if __name__ == '__main__':
     with concurrent.futures.ProcessPoolExecutor(max_workers=p) as executor:
         results = executor.map(f, inputs)
 
-
     print([result for result in results])
 ```
 </details>

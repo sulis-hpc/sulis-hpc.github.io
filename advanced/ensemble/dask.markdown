@@ -176,8 +176,165 @@ python dask_file_init.py
 ```
 ## concurrent.futures and Dask
 
-Example to follow
+Having initialised a Dask cluster, we can extend our earlier example using [Python concurrent.futures](../../gettingstarted/batchq/singlenode#python-concurrentfutures) to use multiple nodes
+of Sulis. This is done by using the `map` function of the Dask client in place of the `map` function
+provided by a concurrent.futures executor.
+
+<details markdown="block" class="detail">
+  <summary>Example code using Dask client.map <code>dask_futures.py</code>.</summary>
+Revisits our earlier example now using `client.map`.
+
+<p class="codeblock-label">dask_futures.py</p>
+```python
+import os
+import sys
+from dask_mpi import initialize
+from dask.distributed import Client
+
+if len(sys.argv) != 2:
+    print("Usage ", sys.argv[0]," <N>")
+    sys.exit()
+else:
+    N = int(sys.argv[1])
+    
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+
+    # Query SLURM environment per worker task
+    p = int(os.getenv('SLURM_CPUS_PER_TASK'))
+    mem = os.getenv('SLURM_MEM_PER_CPU')
+    mem = str(int(mem)*p)+'MB'
+
+    # Initialise Dask cluster and client interface
+    initialize(interface = 'ib0', nthreads=p, local_directory='/tmp', memory_limit=mem)
+    client = Client()
+
+    # We expect SLURM_NTASKS-2 workers
+    N = int(os.getenv('SLURM_NTASKS'))-2 
+
+    # Wait for these workers and report
+    client.wait_for_workers(n_workers=N)
+
+    num_workers = len(client.scheduler_info()['workers'])
+    print("%d workers available and ready"%num_workers)
+
+    # Create a list of inputs to the function f
+    inputs = range(N)
+    
+    # Evaluate f for all inputs using a pool of processes
+    outputs = client.map(f, inputs)
+
+    print([output.result() for output in outputs])
+
+    client.shutdown()
+
+``` 
+</details>
+
+This particular code requires us to pass the number of inputs to evaluate as an argument to the master Python script. A suitable SLURM job script would therefore be the following. This would use the above python script `dask_futures.py` to concurrently evaluate 254 inputs to the function `f(x)` across two nodes of Sulis.
+
+<p class="codeblock-label">dask_futures.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.defaultscipy}}
+module load {{site.data.software.defaultdask}}
+
+srun python dask_futures.py 254
+
+```
+
+The number of inputs to process needn't match the number of Dask workers available. A common usage would be to work through a number of inputs much greater than the number of workers, i.e. each worker processes multiple inputs. It is desirable to choose a number of workers such that each will process an equal amount of work. This minimises idle workers when the remaining number of inputs to process is less than the number of workers, and hence avoids wasting compute resource.
 
 ## Joblib backend
 
-Example to follow
+Another simple way to make use of a Dask cluster is to use the backend to Joblib it provides. We can extend our previous [Joblib example](../../gettingstarted/batchq/singlenode#python-joblib) to use the pool of Dask workers to execute calls to a function concurrently.
+
+<details markdown="block" class="detail">
+  <summary>Using the Dask backend to Joblib <code>dask_joblib.py</code>.</summary>
+Revisits our earlier example now using multiple nodes.
+
+<p class="codeblock-label">dask_joblib.py</p>
+```python
+import os
+import sys
+from dask_mpi import initialize
+from dask.distributed import Client
+
+import joblib
+
+if len(sys.argv) != 2:
+    print("Usage ", sys.argv[0]," <N>")
+    sys.exit()
+else:
+    N = int(sys.argv[1])
+    
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+
+    # Query SLURM environment per worker task
+    p = int(os.getenv('SLURM_CPUS_PER_TASK'))
+    mem = os.getenv('SLURM_MEM_PER_CPU')
+    mem = str(int(mem)*p)+'MB'
+
+    # Initialise Dask cluster and client interface
+    initialize(interface = 'ib0', nthreads=p, local_directory='/tmp', memory_limit=mem)
+    client = Client()
+
+    # We expect SLURM_NTASKS-2 workers
+    N = int(os.getenv('SLURM_NTASKS'))-2 
+
+    # Wait for these workers and report
+    client.wait_for_workers(n_workers=N)
+
+    num_workers = len(client.scheduler_info()['workers'])
+    print("%d workers available and ready"%num_workers)
+
+    # Create a list of inputs to the function f
+    inputs = range(N)
+    
+    # Associate a list of outputs with delayed calls to f
+    # with p processes available to evaluate them.
+    with joblib.parallel_backend('dask'):
+        output_list = joblib.Parallel(n_jobs=N)(joblib.delayed(f)(i) for i in inputs)
+
+    # Printing the outputs will cause then to be evaluated
+    for output in output_list:
+        print(output)
+
+    client.shutdown()
+
+``` 
+</details>
+
+As in the previous section, this particular code requires us to pass the number of inputs to evaluate as an argument to the master Python script. A suitable SLURM job script would therefore be the following. This would use the above python script `dask_futures.py` to concurrently evaluate 254 inputs to the function `f(x)` across two nodes of Sulis.
+
+<p class="codeblock-label">dask_joblib.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=128
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=08:00:00
+
+module purge
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.defaultscipy}}
+module load {{site.data.software.defaultdask}}
+
+srun python dask_joblib.py 254
+```
+
+Again the number of inputs to process needn't match the number of Dask workers available but it is desirable to make the total amount of work performed by each worker approximately equal to avoid leaving workers idle toward the end of the job.
