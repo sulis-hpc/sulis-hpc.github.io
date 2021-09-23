@@ -25,7 +25,7 @@ We do however recognise that for some purposes (debugging, post processing etc) 
 The follow example requests an interactive session on a Sulis GPU node, reserving all three GPUs and all 128 cores within the node for two hours.
 
 ```shell
-{{site.data.terminal.prompt}} srun --account=xxxx --interactive -p gpu  -N 1 -n 128  --gres=gpu:ampere_a100:3 --mem-per-cpu=3850 --time=2:00:00 --pty bash
+{{site.data.terminal.prompt}} salloc --account=xxxx -p gpu  -N 1 -n 128  --gres=gpu:ampere_a100:3 --mem-per-cpu=3850 --time=2:00:00
 ```
 Here `xxxx` should be replaced by the account budget to which the job should be charged.
 
