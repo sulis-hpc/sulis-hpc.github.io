@@ -44,7 +44,7 @@ Your project code will being with the characters "su" and will have been given t
 
 ![Select project](/assets/images/03_Select_Project.png "Select project")
 
-You should select "Request machine account" as the access route and then click "Apply" to proceed to the next step.
+You should select "Request machine account" as the access route and then click "Next" to proceed to the next step.
 
 ## Username and public key upload
 
@@ -54,7 +54,7 @@ for use on the Sulis service.
 Your local research computing support team will be able to provide guidance on generating an SSH key pair, but please note the following.
 
 - Your private key *must* be encrypted with a strong password.
-- Do not use the same key pair for Sulis that you use for other services. 
+- Do not use the same key pair for Sulis that you use for any other services. 
 
 Use this form to specify your preferred username on Sulis, and to upload your public key. Note that on Linux/Mac systems the default location for newly generated keys is in the hidden folder `.ssh` located at the top level of your home directory, and so you may need to enable "show hidden files" or equivalent when browsing for the public key file.
 
