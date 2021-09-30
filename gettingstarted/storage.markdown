@@ -30,13 +30,20 @@ Where `<username>` is the name of your machine account on Sulis and `<letter>` i
 
 ## Quota
 
-Your GPFS home directory is subject to a quota of several TB and several million files/directories (inodes) with seven days of grace time. 
+Your GPFS home directory is subject to a default quota of two TB and two million files/directories (inodes) with seven days of grace time. 
 
 Use the mmlsquota command to determine your specific quota level and usage: 
 
 ```
 {{site.data.terminal.prompt}} mmlsquota --block-size auto
 ```
+
+Quota increases are possible on request if justified. We ask that users make efforts to:
+
+1. Minimise the amount of data that needs to be stored for live projects.
+2. Avoid having large numbers of files within their home directory.
+
+Where possible, large numbers of files should be archived into a single large file (using tar or similar) when not in use. See also the section on [database IO](../../advanced/dbio).
 
 ## Scratch filesystem
 
