@@ -98,6 +98,7 @@ We request 128 tasks per node and a single node. Each instance of the serial pro
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} 
@@ -159,6 +160,7 @@ The list of input files is created using the `ls` command as above using backtic
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} 
@@ -205,6 +207,7 @@ We now need to tell parallel that each instance of the program expects 3 argumen
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} 
@@ -238,6 +241,7 @@ The following SLURM job script uses parallel to launch a Bash function which acc
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} 
@@ -292,6 +296,7 @@ Use of parallel is not restricted to serial jobs. It may be desirable to impleme
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} 

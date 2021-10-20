@@ -57,6 +57,7 @@ A job script suitable for an entirely serial calculation should request one node
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}}
@@ -133,6 +134,7 @@ A job script suitable for a pure OpenMP program should request a single node, sp
 #SBATCH --cpus-per-task={{site.data.slurm.cnode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}}
@@ -330,11 +332,13 @@ Note that the number of function inputs (specified by the second argument) does 
 <p class="codeblock-label">multiprocessing.slurm</p>
 ```bash
 #!/bin/bash
+#SBATCH --account=suxxx-somebudget
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task={{site.data.slurm.cnode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcccore}} {{site.data.software.defaultpython}}
@@ -413,6 +417,7 @@ The SLURM job script for a Python script which uses concurrent.futures is very s
 #SBATCH --cpus-per-task=128
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcccore}} {{site.data.software.defaultpython}}
@@ -479,6 +484,7 @@ the addition of the SciPy-bundle module. As before, the number of processes to u
 #SBATCH --cpus-per-task={{site.data.slurm.cnode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultfoss}} {{site.data.software.defaultscipy}}

@@ -90,6 +90,7 @@ When making a resource request for a hybrid job, the product of `ntasks-per-node
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -150,6 +151,7 @@ The following script would be used to run an MPI4Py python script on a single no
 #SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}

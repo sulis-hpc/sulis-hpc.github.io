@@ -87,6 +87,7 @@ A SLURM job script which allocates resources for the Dask cluster would be very 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -151,6 +152,7 @@ The following SLURM job script makes a resource request for 21 worker tasks each
 #SBATCH --cpus-per-task=6
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -243,6 +245,7 @@ This particular code requires us to pass the number of inputs to evaluate as an 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -328,6 +331,7 @@ As in the previous section, this particular code requires us to pass the number 
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}

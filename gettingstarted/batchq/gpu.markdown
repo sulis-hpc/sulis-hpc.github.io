@@ -90,6 +90,7 @@ The following example job script requests a single GPU via the {{site.data.slurm
 #SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1
 #SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
@@ -158,6 +159,7 @@ This can be executed on a GPU node with the following SLURM job script.
 #SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1
 #SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
@@ -210,6 +212,7 @@ The following SLURM job script is suitable for a Python code written to use a si
 #SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1
 #SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
@@ -276,6 +279,7 @@ In SLURM terminology this is a single task, using 18 CPUs and 3 GPUs. Note that 
 #SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3
 #SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
@@ -321,6 +325,7 @@ MPI.Finalize()
 #SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3
 #SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}

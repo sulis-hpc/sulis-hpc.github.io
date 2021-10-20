@@ -64,6 +64,7 @@ The additional request `#SBATCH --array=0-31` indicates that we require 32 insta
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 #SBATCH --array=0-31
 
 module purge
@@ -188,6 +189,7 @@ of input files.
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 #SBATCH --array=0-7
 
 module purge
@@ -228,6 +230,7 @@ The following is a job array script which passes one of the lines in this file a
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 #SBATCH --array=0-7
 
 module purge
@@ -257,6 +260,7 @@ To illustrate, the example above could be modified to launch an MPI program with
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu=3850
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 #SBATCH --array=0-7
 
 module purge

@@ -60,6 +60,7 @@ srun will launch as many tasks as specified in the job script resource request.
 #SBATCH --ntasks-per-node={{site.data.slurm.gpunode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultfoss}}
@@ -98,6 +99,7 @@ The MPI4Py Python package is included in the SciPy-bundle module. A suitable job
 #SBATCH --ntasks-per-node={{site.data.slurm.cnode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -151,6 +153,7 @@ The necessary submission script launches multiple tasks on each node. One task i
 #SBATCH --ntasks-per-node={{site.data.slurm.cnode_cores_per_node}}
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
@@ -175,6 +178,7 @@ Some codes can have very intensive memory requirements and require more than {{s
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
 ````
 2. leave the resource request unchanged but launch the MPI program with:
 ```bash

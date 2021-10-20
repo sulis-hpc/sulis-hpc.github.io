@@ -25,7 +25,7 @@ We do however recognise that for some purposes (debugging, post processing etc) 
 The follow example requests an interactive session on a Sulis GPU node, reserving all three GPUs and all 128 cores within the node for two hours.
 
 ```shell
-{{site.data.terminal.prompt}} salloc -p gpu  -N 1 -n 128  --gres=gpu:ampere_a100:3 --mem-per-cpu=3850 --time=2:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu  -N 1 -n 128  --gres=gpu:ampere_a100:3 --mem-per-cpu=3850 --time=2:00:00
 ```
 
 If a GPU node is available then SLURM should drop you into an interactive session on that node within a few seconds. Otherwise, if the machine is busy you may wish to submit to the `devel` partition (or `gpu-devel` for GPU jobs) which has higher priority but a maximum walltime of one hour. 
