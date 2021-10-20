@@ -19,7 +19,7 @@ Users shall:
 1. seek permission from their PI or Project Manager before consuming any significant quantity of computing or data storage resource, or permitting students/researchers under their supervision to do so;
 1. abide by the restrictions placed on the types of computation suitable for each system, as described in these pages;
 1. take all reasonable measures to ensure the security of Sulis, as directed from time to time by Sulis support staff;
-1. keep abreast of information provided SAFE/Sulis mailing list and these pages about maintenance, downtime and changes to Sulis;
+1. keep abreast of information provided the SAFE-Sulis mailing list and these pages about maintenance, downtime and changes to Sulis;
 1. absolve the Sulis support staff from any liability arising from loss or inaccessibility of data held on our systems.
 
 ## Acceptable Use Policy
