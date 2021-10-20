@@ -53,4 +53,4 @@ after the resource request. Here replace `suxxx-somebudget` with the budget code
 
 ## GPU nodes
 
-Use of the GPU nodes requires access to appropriate GPU resource budget (measured in GPU-hours rather than CPU hours) _and_ a budget of CPU resource. When resource is allocated to projects which need GPU resource, 128 core-hours of CPU budget should be allocated along with every 3 GPU-hours of GPU budget. This ensures GPU jobs are not rejected due to lack of resource to run the CPU (host) code which benefits from the GPU acceleration.
+Use of the GPU nodes requires access to appropriate GPU resource budget (measured in GPU-hours rather than CPU hours) _and_ at least 1 CPU hour; this CPU hour will not be consumed by jobs run in the gpu or gpu-devel partitions.
