@@ -18,11 +18,26 @@ All SLURM jobs on Sulis are charged against an account budget of CPU and GPU res
 
 - Projects outside of the HPC Midlands+ consortium will receive a dedicated SAFE project. Resource within the project can be allocated to budgets by the designated project manager.
 
-## Default budgets
+## Querying available budget
 
-Every user has a default budget to which all SLURM jobs will be charged. For most users this will be the only budget they ever use and there is no need to specify which budget should be used for a particular job. 
+The account-balance command can be run on the login node to see the current budget names you have access to and their available CPU and GPU resource:
 
-The default budget for each user is that to which the associated SAFE account has most recently been associated. Users needing to specify a different budget for a particular job can do so via the sbatch command line
+```bash
+{{site.data.terminal.prompt}} account-balance
+
+------------------------------------------------------------
+|  SAFE Budget/Account |       CPU hours |       GPU hours |
+------------------------------------------------------------
+|                suxxx |         531,538 |               0 |
+|            suxxx-gpu |               1 |           8,917 |
+------------------------------------------------------------
+```
+
+The account balance is updated every 30 minutes. Negative balances are not shown here and must be viewed on the [SAFE](https://safe.epcc.ed.ac.uk/) website.
+
+## Specifying the budget when submitting jobs
+
+The budget must be specified for all jobs submitted to Sulis; the first column from the account-balance command contains the budget/account name that should be used when submitting jobs to Sulis. This can be done via the sbatch command line
 
 ```bash
 {{site.data.terminal.prompt}} sbatch --account=suxxx-somebudget myjob.slurm
@@ -38,8 +53,4 @@ after the resource request. Here replace `suxxx-somebudget` with the budget code
 
 ## GPU nodes
 
-Use of the GPU nodes requires access to appropriate GPU resource budget (measured in GPU-hours rather than CPU hours) _and_ a budget of CPU resource. When resource is allocated to projects which need GPU resource, 128 core-hours of CPU budget should be allocated along with every 3 GPU-hours of GPU budget. This ensures GPU jobs are not rejected due to lack of resource to run the CPU (host) code which benefits from the GPU acceleration. 
-
-## Querying available budget
-
-Information on querying budgets from the command line will appear here.
+Use of the GPU nodes requires access to appropriate GPU resource budget (measured in GPU-hours rather than CPU hours) _and_ a budget of CPU resource. When resource is allocated to projects which need GPU resource, 128 core-hours of CPU budget should be allocated along with every 3 GPU-hours of GPU budget. This ensures GPU jobs are not rejected due to lack of resource to run the CPU (host) code which benefits from the GPU acceleration.

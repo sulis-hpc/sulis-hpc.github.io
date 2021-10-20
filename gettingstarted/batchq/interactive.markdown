@@ -27,7 +27,7 @@ Should you have difficulty obtaining an interactive session at a useful time the
 From the login node, issue the following `salloc` command to request an interactive session on a compute node. This assumes that any task parallel (e.g. MPI) operations launched within the session will use a single CPU per task, so we request {{site.data.slurm.cnode_cores_per_node}} "slots" available for processes in the session. This is the appropriate configuration for debugging a pure MPI code.
 
 ```bash
-{{site.data.terminal.prompt}} salloc  -N 1 -n 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --time=8:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -N 1 -n 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --time=8:00:00
 ```
 
 You will see the message `salloc: job xxxxxx queued and waiting for resources` until a compute node becomes available.
@@ -54,7 +54,7 @@ It is possible to use `salloc` to request resource across multiple nodes, and th
 For example, the following requests an allocation of two nodes, 
 
 ```bash
-{{site.data.terminal.prompt}} salloc --ntasks-per-node=1 --cpus-per-task=128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --nodes=2 --time=00:15:00 
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget --ntasks-per-node=1 --cpus-per-task=128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --nodes=2 --time=00:15:00 
 ```
 
 Once the allocation has been granted, and interactive shell will be started on the first allocated node. Using `srun` will (in this case) execute 1 instance of the command specified on each of the two nodes allocated. For example:
@@ -78,7 +78,7 @@ salloc: Relinquishing job allocation 223826
 From the login node
 
 ```bash
-{{site.data.terminal.prompt}} salloc  -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --time=8:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --time=8:00:00
 ```
 
 will (as above) display `salloc: job xxxxxx queued and waiting for resources` until a compute node becomes available. Once given a terminal prompt on the allocated node, `srun` can be used to launch a single process which has access to all {{site.data.slurm.cnode_cores_per_node}}. This is the appropriate configuration for debugging a threaded code or Python script that uses multiprocessing. For example the following will launch a Python script which can use all 128 CPUs in the node.
@@ -94,7 +94,7 @@ See also the application notes on [Jupyter](../../appnotes/jupyter).
 To request an interactive session on a GPU-equipped node, specify the `gpu` partition and include a resource request for the A100 GPUs in that node.
 
 ```bash
-{{site.data.terminal.prompt}} salloc -p gpu -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:ampere_a100:3 --time=8:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:ampere_a100:3 --time=8:00:00
 ```
 
 In this case SLURM will allocate one "slot" for a process launched via `srun`  which will have access to all 128 CPUs and the 3 GPUs in the node. Once the resources are allocated an available then a new command prompt will appear. 
