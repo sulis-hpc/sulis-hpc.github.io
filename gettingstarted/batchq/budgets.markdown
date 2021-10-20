@@ -20,7 +20,7 @@ All SLURM jobs on Sulis are charged against an account budget of CPU and GPU res
 
 ## Querying available budget
 
-The account-balance command can be run on the login node to see the current budget names you have access to and their available CPU and GPU resource:
+The `account-balance` command can be run on the login node to see the current budget names you have access to and their available CPU and GPU resource:
 
 ```bash
 {{site.data.terminal.prompt}} account-balance
