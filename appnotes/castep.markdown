@@ -40,5 +40,8 @@ To build CASTEP from source:
 {{site.data.terminal.prompt}} make
 ```
 
+Job script which use CASTEP built in this way should load the gomkl and FFTW modules before invoking the `castep.mpi` executable.
+
+
 
 
