@@ -34,6 +34,6 @@ Some of the resource limits we have in place (such as the walltime and job size 
 | max cores per user | 7680 | 256 | 1024 | 128 | 384 |
 | max gpus per job | N/A | N/A | 24 | 3 | N/A |
 | max gpus per user | N/A | N/A | 24 | 3 | N/A |
-| max running jobs (per user) | 500 | 2 | 24 | 2 | 100 |
-| max jobs in queue (per user) | 1000 | 4 | 200 | 4 | 200 |
+| max running jobs (per user) | 200 | 2 | 24 | 2 | 100 |
+| max jobs in queue (per user) | 500 | 4 | 200 | 4 | 200 |
 
