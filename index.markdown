@@ -34,10 +34,8 @@ Searching above or using the links below will redirect to that site.
 </div>
 
 <div class="sbhidden">
-<p>This site contains the user documentation for the Sulis HPC facility. </p>
+<p>Sulis is a tier 2 HPC platform focussed on high throughput and ensemble computing. It entered production in November 2021. Please see <a href="https://sulis.ac.uk/">sulis.ac.uk</a> for general information.</p>
 
-<p>Please see <a href="https://sulis.ac.uk/">sulis.ac.uk</a> for general information on Sulis.</p>
+<p>This site contains the user documentation for Sulis.</p>
 
-
-<p>*This site is currently in draft form.*</p>
 </div>

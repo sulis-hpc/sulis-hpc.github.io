@@ -7,7 +7,7 @@ nav_order: 7
 
 # Current Status
 
-We expect Sulis to enter service during mid-2021.
+Sulis entered service in November 2021.
 
 # Standing Maintenance
 
