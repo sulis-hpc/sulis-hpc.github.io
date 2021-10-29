@@ -46,7 +46,7 @@ Job scripts which use CASTEP built in this way should load the gomkl and FFTW mo
 
 CASTEP benefits from pinning of MPI tasks to CPU cores by rank. We recommend launching CASTEP as per the following example job script.
 
-p class="codeblock-label">castep.slurm</p>
+<p class="codeblock-label">castep.slurm</p>
 ```bash
 #!/bin/bash
 #SBATCH --nodes=1
@@ -59,12 +59,5 @@ module purge
 module load gomkl/2019b FFTW/3.3.8
 
 srun --cpu-bind=rank castep.mpi
+```
 
-}
-
-
-
-
-
-
-Bind rank
