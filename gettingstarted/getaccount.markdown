@@ -62,6 +62,8 @@ Use this form to specify your preferred username on Sulis, and to upload your pu
 
 Once you have uploaded the key, hit "Request". The appropriate project manager  will then need to approve this request. This will either be the person within your institution who manages access to Sulis (HPC Midlands+ users) or the designated project manager for your EPSRC project.
 
+Once your account has been created, additional SSH public keys may be added or deleted from your account via [SAFE]({% link gettingstarted/connecting/managingsshkeys.markdown %}).
+
 ## Account generation
 
 Once your request has been approved and the account has been created you will receive an email from "SAFE Administration". This process is not instantaneous as it requires manual approval. In some cases we may need additional information to confirm your identity.

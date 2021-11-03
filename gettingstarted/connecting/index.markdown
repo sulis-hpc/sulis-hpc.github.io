@@ -10,7 +10,7 @@ Interactive access to Sulis can be achieved via a [Secure Shell (or SSH)](https:
 
 Two-factor authentication is enabled on Sulis meaning that two forms of identication are required to authenticate your access. These two forms of identification are:
 
-* An SSH keypair protected by a passphrase.
-* A [Time-based One-Time Password (or TOTP)](./TOTP.html).
+* An [SSH keypair protected by a passphrase]({% link gettingstarted/getaccount.markdown %}#username-and-public-key-upload).
+* A [Time-based One-Time Password (or TOTP)]({% link gettingstarted/connecting/TOTP.markdown %}).
 
-Before attempting to connect to Sulis, please make sure you read the page on connecting for the [First Time](./firsttime.html).
+Before attempting to connect to Sulis, please make sure you read the page on connecting for the [First Time]({% link gettingstarted/connecting/firsttime.markdown %}).

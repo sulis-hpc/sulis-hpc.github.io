@@ -1,20 +1,20 @@
 ---
 layout: page
-title: TOTP
+title: Time-based One-Time Passwords
 parent: Connecting to Sulis
 grand_parent: Getting Started
 nav_order: 3
 ---
 
-# TOTP
+# Time-based One-Time Passwords
 {: .no_toc }
 
 1. TOC
 {:toc}
 
-## What is TOTP
+## What are Time-based One-Time Passwords
 
-TOTP or Time-based One-Time Passwords is an algorithm utilising the current time to generate a one time password. [TOTP](https://en.wikipedia.org/wiki/Time-based_One-Time_Password) is a common method for adding a second factor of authentication to user accounts.
+Time-based One-Time Passwords or TOTP is an algorithm utilising the current time to generate a one time password. [TOTP](https://en.wikipedia.org/wiki/Time-based_One-Time_Password) is a common method for adding a second factor of authentication to user accounts.
 
 ## TOTP Clients
 
