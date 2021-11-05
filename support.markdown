@@ -18,7 +18,7 @@ University of Birmingham | [IT Service Desk](http://www.itservicedesk.bham.ac.uk
 Coventry University | [HPC Support](mailto:aa3025@coventry.ac.uk)
 University of Leicester | [RC Support](mailto:rcs.support@le.ac.uk), [IT Service Desk](http://www2.le.ac.uk/offices/itservices)
 Loughborough University | [Research Computing Support](mailto:research-computing@lboro.ac.uk)
-University of Nottingham | [IT Service Desk](https://www.nottingham.ac.uk/it-services/research/uon-compute-service/midlands-plus.aspx)
+University of Nottingham | [IT Service Desk](https://www.nottingham.ac.uk/dts/help/self-service-portal/self-service-portal.aspx)
 Queen Mary, University of London | [ITS Research Support](mailto:its-research-support@qmul.ac.uk)
 University of Warwick | [SCRTP Service Desk](https://bugzilla.csc.warwick.ac.uk/bugzilla)
 
