@@ -38,7 +38,7 @@ Once the interactive session starts the command prompt will change to indicate w
 
 Make a note of which GPU node you have been allocated.
 
-You can then load appropriate environment modules for your interactive session. Jupyter itself is provisions via the `IPython` module and you may wish to load additional modules to extend your
+You can then load appropriate environment modules for your interactive session. Jupyter itself is provisioned via the `IPython` module and you may wish to load additional modules to extend your
  Python environment before launching the notebook server, e.g. Matplotlib, Bokeh etc.
 
 ```shell
