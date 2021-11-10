@@ -19,7 +19,7 @@ Like many HPC platforms, Sulis uses an environment module system as a means for 
 
 Other tools, such as [Anaconda](https://www.anaconda.com/), allow similar customisation. However software provided via the environment module system has been specifically built and optimised for the Sulis hardware. Use of environment modules should therefore be the default choice for most users to access software. Please search the available software (see below) before requesting new software be installed.
 
-As well as specific scientific applications, environment modules provide access to software development *toolchains*, i.e. combinations of compilers, communication libraries (i.e. MPI) and optimised numerical libraries (BLAS, LaPACK, FFTW etc) that have been tested and known to work well on the Sulis hardware.
+As well as specific scientific applications, environment modules provide access to software development *toolchains*, i.e. combinations of compilers, communication libraries (i.e. MPI) and optimised numerical libraries (BLAS, LaPACK, FFTW etc) that have been tested and known to work well on the Sulis hardware. See the section on [compiling](compiling) for more information.
 
 Sulis provides a set of software available to all users via environment modules available at login. Users at specific universities/institutions may be given access to additional modules created by their local research computing support team, for example if commercial software is only licensed for use at a particular site.
 
@@ -43,7 +43,7 @@ which will load the *default* version of the GNU GCC compiler. To load a specifi
 ```
 As a rule we do recommend you specify the module version anytime you load a module since (on rare occasions) we may find it necessary to change the default version of a module. 
 
-Typing module av with the GCC module loaded will yield additional modules such as OpenMPI (OpenMPI) and loading OpenMPI will in turn make the Scalable LAPACK (ScaLAPACK) available. 
+Typing module av with the GCC module loaded will yield additional modules that could now be loaded, such as OpenMPI (OpenMPI). In turn, loading OpenMPI will make the Scalable LAPACK (ScaLAPACK) module available for loading. 
 
 ## Searching modules
 
