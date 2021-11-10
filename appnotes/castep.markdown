@@ -11,7 +11,8 @@ nav_order: 3
 1. TOC
 {:toc}
 
-These notes are a work in progress and do not represent a final position on how to get best performance from CASTEP on Sulis.
+These notes are a work in progress and do not represent a final position on how to get best performance from CASTEP on Sulis. We anticipate that most use of CASTEP on Sulis will be via workflows that involve many calculations using a single node (or less). We have not studied
+multi-node performance in any detail.
 
 ## Compilation 
 
