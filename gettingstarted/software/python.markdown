@@ -100,3 +100,14 @@ Help converting interactive Python workflows into scripts suitable for batch com
 
 In some cases though it can be invaluable to interact directly with the Python interpreter as a debugging aid, or to test algorithms within Jupyter notebooks directly on the Sulis hardware. For such situations see the section on [interactive jobs](../batchq/interactive) and the [application notes on Jupyter](../appnotes/jupyter).
 
+## Parallelism in Python
+
+Python is an evolving ecosystem with many options for parallel computation. The [job submission](../batchq) section contains a non-exhaustive list of examples, including:
+
+- [multiprocessing](../batchq/singlenode.markdown#python-multiprocessing)
+- [concurrent.futures](../batchq/singlenode.markdown#python-concurrentfutures)
+- [joblib](../batchq/singlenode.markdown#python-joblib)
+- [mpi4py](../batchq/mpi.markdown#mpi4py)
+- [mpi4py.futures](../batchq/mpi.markdown/#mpi4pyfutures)
+
+Of these only the mpi4py and mpi4py.futures can be used for parallel processing across multiple nodes.However joblib can use used in combination with [Dask](../../advanced/ensemble/dask) to create a worker pool across many nodes in the cluster.
