@@ -57,7 +57,7 @@ PyTorch can hence be added to your environment for GPU computation by loading th
 
 Loading a PyTorch/1.9.0 module in this way also adds additional prerequisites to your terminal
 and Python environment. For example in this case the Python 3.8.6 module is loaded, along with a SciPy-bundle module that provides NumPy 1.19.4, SciPy 1.5.4 and Pandas 1.14. There is no need
-to install these via pip. All dependencies of TensorFlow itself are provided.
+to install these via pip. All dependencies of PyTorch itself are provided.
 
 NOTE : Attempting to use PyTorch loaded in this way will fail unless running on an GPU-enabled
 node in an interactive session or SLURM job script. 
