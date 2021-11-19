@@ -21,6 +21,10 @@ This topic explains how to use the Singularity container system on Sulis.
 
 Singularity is capable of running many [Docker](https://www.docker.com) containers by automatically converting them to the stand-alone singularity file format.
 
+### Is it better to build my software or use a provided container?
+
+We generally recommend that you build your software (or [request software to be built for you]({% link support.markdown %})) from source code rather than using a provided container. Software that is built for and on Sulis will often perform better than software built elsewhere since, for example, we have made steps to optimise the builds for the AMD Zen 2 architecture. However some software/toolchains can be very difficult to build from scratch and in these circumstances it may be better to use a provided container.
+
 ### Additional resources
 
 * [Singularity Documentation](https://singularity.hpcng.org/user-docs/master/index.html) - make sure you are viewing documentation that matches the version being used.
@@ -308,10 +312,6 @@ Once your job has run, you should have a slurm output file containing something 
 ### What is my user name within the container?
 
 Once you are "inside" the container, you are the same user as you are on the host system.
-
-### Is it better to build my software or use a provided container?
-
-We generally recommend that you build your software (or [request software to be built for you]({% link support.markdown %})) from source code rather than using a provided container. Software that is built for the HPC cluster it is run on will often perform better than software built elsewhere. However some software/toolchains can be very difficult to build from scratch and in these circumstances it may be better to use a provided container.
 
 ## Troubleshooting
 
