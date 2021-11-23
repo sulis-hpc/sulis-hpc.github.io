@@ -51,6 +51,23 @@ from Sulis
 ```
 
 Is is not apparent from the output, but now parallel has invoked two instances of `echo` _at the same time_ (because we specified `-j 2`) and passed the first two words from the list following `:::` as the arguments to the first instance, and the second two words as the arguments to the second instance.
+
+We can make this more obvious by defining a function `echopause` which performs the same task as echo but sleeps for 1 second after printing its argument.
+
+```shell
+{{site.data.terminal.prompt}} function echopause() { echo $@; sleep 1; }
+{{site.data.terminal.prompt}} export -f echopause
+```
+
+Now compare the result of
+```shell
+{{site.data.terminal.prompt}} parallel -j 1 -N 1 echopause ::: Hello world from Sulis
+```
+to
+```shell
+{{site.data.terminal.prompt}} parallel -j 4 -N 1 echopause ::: Hello world from Sulis
+```
+and note that in the second case all four invocations of `echopause` sleep over the same second and so the four outputs are printed sooner. We have parallelised over the arguments.
 </details>
 
 ## Submission script example
