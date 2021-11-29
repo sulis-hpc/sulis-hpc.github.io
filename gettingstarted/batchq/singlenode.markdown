@@ -332,7 +332,6 @@ Note that the number of function inputs (specified by the second argument) does 
 <p class="codeblock-label">multiprocessing.slurm</p>
 ```bash
 #!/bin/bash
-#SBATCH --account=suxxx-somebudget
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task={{site.data.slurm.cnode_cores_per_node}}
