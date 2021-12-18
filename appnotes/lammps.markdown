@@ -11,7 +11,7 @@ nav_order: 3
 1. TOC
 {:toc}
 
-LAMMPS contains a number of packages for tuning the performance and allowing for a different functionality. We have compiled the LAMMPS with the most important ones and performed some tests, which showed that `foss-2021b` toolchain gives the best performance in many cases, especially when running a CUDA-augmented build on a single GPU. Therefore, this one was used to build the LAMMPS on Sulis. Whether additional packages required, users are welcome to compile LAMMPS at the home directory using an example below.
+LAMMPS contains many packages for tuning the performance and allowing for different functionality. We have compiled the LAMMPS with the most important ones and performed some tests, which showed that `foss-2021b` toolchain gives the best performance in many cases, especially when running a CUDA-augmented build on a single GPU. Therefore, this one was used to build the LAMMPS on Sulis. Whether additional packages are required, users are welcome to compile LAMMPS at the home directory using the examples below.
 
 ## Accessing LAMMPS
 
@@ -27,7 +27,7 @@ Choosing a specific alias from the list e.g.,
 {{site.data.terminal.prompt}} module spider LAMMPS/29Sep2021-kokkos-omp
 ```
 
-will printout the required modules to be loaded prior to the LAMMPS' one, which are `GCC/11.2.0`, `OpenMPI/4.1.1` for the `foss-2021b` toolchain. More options are available if the code is built with multiple compiler toolchains. See the correspondence between compiler toolchain names and versions of included libraries at [this page](https://docs.easybuild.io/en/latest/Common-toolchains.html).
+will print out the required modules to be loaded before the LAMMPS' one, which are `GCC/11.2.0`, `OpenMPI/4.1.1` for the `foss-2021b` toolchain. More options are available if the code is built with multiple compiler toolchains. See the correspondence between compiler toolchain names and versions of included libraries at [this page](https://docs.easybuild.io/en/latest/Common-toolchains.html).
 
 Finally, loading the `LAMMPS/29Sep2021-kokkos-omp` into the command line environment is invoked by
 
@@ -43,7 +43,7 @@ LAMMPS modules available so far (Dec 2021):
 | `LAMMPS/29Sep2021-CUDA-11.4.1-kokkos-omp`	| GPU-accelerated (via `Kokkos` package) build 	|
 
 ## Running on CPUs
-There are many ways of running LAMMPS for which one may refer to the corresponding [documentation section](https://docs.lammps.org/Run_head.html) and which are not covered here. We list only a few examples of using several acceleration packages the LAMMPS installed with on the cluster.  
+There are many ways of running LAMMPS for which one may refer to the corresponding [documentation section](https://docs.lammps.org/Run_head.html) and which are not covered here. The next sections demonstrate the usage of available acceleration packages in LAMMPS.
 
 ### Bare LAMMPS
 The header of the submission script is similar for all CPU jobs.
@@ -69,7 +69,7 @@ module load GCC/11.2.0 OpenMPI/4.1.1 LAMMPS/29Sep2021-kokkos-omp
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
 
 # executed command
-srun `which lmp` -in in.lammps
+srun lmp -in in.lammps
 ```
 
 Note, that `OMP_NUM_THREADS` is not used by the bare LAMMPS execution, which is not OpenMP-parallel, but it will be used below.
@@ -80,7 +80,7 @@ Shows good performance. Adding the `opt` suffix to the last line in the script a
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
 ...
-srun `which lmp` -sf opt -in in.lammps
+srun lmp -sf opt -in in.lammps
 ```
 
 ### OMP package
@@ -92,25 +92,32 @@ The [OMP package](https://docs.lammps.org/Speed_omp.html) for the OpenMP-paralle
 #SBATCH --ntasks-per-node=32
 #SBATCH --cpus-per-task=4
 ...
-srun `which lmp` --sf omp -in in.lammps
+srun lmp --sf omp -in in.lammps
+```
+
+We have noticed that some of jobs with 8 threads were unreasonably slow at partial occupancy of a node. This was caused, most likely, by multiple OpenMP threads running on the same core. The issue was solved by using CPU bindings:
+<p class="codeblock-label">lammps.slurm</p>
+```bash
+...
+srun --cpu-bind=cores lmp --sf omp -in in.lammps
 ```
 
 ### Kokkos package
-[Kokkos package](https://docs.lammps.org/Speed_kokkos.html) is built with `OpenMP` backed, and execution is controlled in the same fasion as of for the OMP package, with a slightly different `srun` command
+[Kokkos package](https://docs.lammps.org/Speed_kokkos.html) is built with `OpenMP` backed, and execution is controlled in the same fashion as of for the OMP package with a slightly different `srun` command
 
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
 ...
-srun `which lmp` -k on t ${OMP_NUM_THREADS} -sf kk -in in.lammps
+srun lmp -k on t ${OMP_NUM_THREADS} -sf kk -in in.lammps
 ```
 
 The Kokkos may throw warnings stating that OMP_PROC_BIND and OMP_PLACES variables have to be set to "spread" and "threads" correspondingly (in addition to the OMP_NUM_THREADS above). One could play with that, although we did not notice a substantial effect on the performance.
 
 ## Running on GPUs
-The [Kokkos](https://docs.lammps.org/Speed_kokkos.html) and [GPU](https://docs.lammps.org/Speed_gpu.html) packages allow for GPU-intensive calculations with LAMMPS. We see that the `Kokkos` is significantly faster on a single GPU. The `Kokkos` performance on two GPU cards is about the same the one for `GPU` package performance, and is significantly slower on three GPUs, This, however, may depend on a system of study and must be tested.
+The [Kokkos](https://docs.lammps.org/Speed_kokkos.html) and [GPU](https://docs.lammps.org/Speed_gpu.html) packages allow for GPU-intensive calculations with LAMMPS. We see that the `Kokkos` is significantly faster on a single GPU. The `Kokkos` performance on two GPU cards is about the same as for `GPU` package performance and is significantly slower on three GPUs. It, however, may depend on a system of study and must be tested.
 
 ### Kokkos package
-Available via `LAMMPS/29Sep2021-CUDA-11.4.1-kokkos-omp` module. Performs quite well as a single-tasks, single-GPU calculation with the following submission script
+Available via `LAMMPS/29Sep2021-CUDA-11.4.1-kokkos-omp` module. Performs quite well as a single-task, single-GPU calculation with the following submission script
 
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
@@ -135,7 +142,7 @@ module load GCC/11.2.0 OpenMPI/4.1.1 LAMMPS/29Sep2021-CUDA-11.4.1-kokkos-omp
 export OMP_NUM_THREADS=1
 
 # executed command
-srun `which lmp` -k on g 1 -sf kk -in in.lammps
+srun lmp -k on g 1 -sf kk -in in.lammps
 ```
 
 It is important to note that `g 1` in the srun command line requests for a single GPU, which should be equal to the number of GPUs requested via `--gres` string (the number after last `:`).  The `--cpus-per-task=42` is used here dominantly for adjusting the memory request, since the `OMP_NUM_THREADS` is set to one. Note also that the number of requested GPUs must be equal to the number of MPI tasks. Last two conditions (`OMP_NUM_THREADS=1` and `SLURM_NTASKS_PER_NODE` equal to the number of GPU's per node) is chosen for the best performance, although users are encouraged to make their own tests in application to a particular situation.
@@ -166,37 +173,44 @@ module load GCC/11.2.0 OpenMPI/4.1.1 LAMMPS/29Sep2021-CUDA-11.4.1-gpu
 export OMP_NUM_THREADS=1
 
 # executed command
-srun `which lmp` -sf gpu -pk gpu 2 -in in.lammps
+srun lmp -sf gpu -pk gpu 2 -in in.lammps
 ```
 
 ## Performance
-We have tested foss-2020b, foss-2021b, iomkl-2019b and foss-2020a (for LAMMPS-3Mar2020 version) toolchains for CPU tasks, and derivatives (i.e., augmented with the cuda libraries) of foss-2020b (which is fosscuda-2020b) and foss-2021b for GPU runs. The testes system is an array of 55296 particles in the fcc geometry interacting via Lennard-Jones fields. All calculations are done on a single node, check [this page](https://github.com/arkdavy/LAMMPS) for more details. Tables below show time in seconds.
+We have tested foss-2020b, foss-2021b, iomkl-2019b and foss-2020a (for LAMMPS-3Mar2020 version) toolchains for CPU tasks, and derivatives (i.e., augmented with the cuda libraries) of foss-2020b (which is fosscuda-2020b) and foss-2021b for GPU runs. The tested system is an array of 55296 particles in the fcc geometry interacting via Lennard-Jones (LJ) fields. All calculations are done on a single node, check [this page](https://github.com/arkdavy/LAMMPS) for more details. The tables below show time in seconds.
+
+The timings are obtained using all 128 CPUs of Sulis nodes, giving minimal interference between various calculations running on the cluster at the same time and making the tests results less biased. One should note, however, that the parallel efficiency (`T(1)/[N T(N)]` with `T(N)` being calculation time when using `N` processors) in this configuration is around ~50% for the chosen test case, which is quite low (see the plots [here](https://github.com/arkdavy/LAMMPS)). This may change when considering a different system, running other types of calculations or using more complicated forces. Our advise, however, is to use less cores in this situation (64 or less), targeting to the parallel efficiency of 75% or higher. We also encourage to estimate the parallel efficiency prior to full-scale runs and to find an optimal configuration in particular situation.
+
+The best CPU performance was obtained with `OMP` package using two threads per MPI task. The `OPT` and `OMP` packages perform similarly well as single-threaded applications with 1 CPU per MPI task. Kokkos appears to be slightly slower, which is consistent with the [documentation](https://docs.lammps.org/Speed_kokkos.html).
+
+The `foss-2021b` toolchain provides the quickest runs on a single GPU via the Kokkos package. As was mentioned earlier, one MPI rank on one CPU must be allocated per GPU. The `GPU` package gives a better scaling with GPUs count and may be considered as well.
 
 ### CPU runs (MPI)
 
 | toolchain | `foss-2020b` | `foss-2021b` | `iomkl-2019b` | `foss-2020a*` |
 |:---:|:---:|:---:|:---:|:---:|
-| bare LAMMPS | 99 | 98 | 108 | 102 |
-| `OPT` package | 91 | 93 | 98 | 93 |
+| bare LAMMPS | 100 | 99 | 109 | 103 |
+| OPT package | 89 | 90 | 97 | 93 |
 
 
 ### CPU runs (MPI + OpenMP)
 
 | toolchain |  number of threads  |
 |:---:|:---:|:---:|:---:|:---:|
-|           | 1 | 4 | 8 | 16 |
-| `OMP` package |
+|           | 1 | 2 | 4 | 8 |
+| OMP package |
 |:---:|:---:|:---:|:---:|:---:|
-| `foss-2020b` | 92 | 82 | 112 | 162 |
-| `foss-2021b` | 92 | 84 | 113 | 163 |
-| `iomkl-2019b` | 100 | 89 | 119 | 164 |
-| `foss-2020a*` | 92 | 86 | 114 | 162 |
-| `Kokkos` package |
+| `foss-2020b` | 91 | 79 | 95 | 132 |
+| `foss-2021b` | 93 | 79 | 107 | 115 |
+| `iomkl-2019b` | 98 | 87 | 89 | 119 |
+| `foss-2020a` | 94 | 81 | 83 | 124 |
+| Kokkos package |
 |:---:|:---:|:---:|:---:|:---:|
-| `foss-2020b` | 122 | 99 | 136 | 190 |
-| `foss-2021b` | 100 | 92 | 129 | 176 |
-| `iomkl-2019b` | 113 | 110 | 145 | 189 |
-| `foss-2020a*` | 105 | 102 | 140 | 177 |
+| `foss-2020b` | 101 | 101 | 100 | 137 |
+| `foss-2021b` | 100 | 89 | 92 | 126 |
+| `iomkl-2019b` | 115 | 106 | 109 | 145 |
+| `foss-2020a` | 105 | 102 | 102 | 140 |
+
 
 `*` LAMMPS version 3Mar2020
 
@@ -217,38 +231,73 @@ We have tested foss-2020b, foss-2021b, iomkl-2019b and foss-2020a (for LAMMPS-3M
 
 
 ## Building LAMMPS
-The following example illustrates the compilation of LAMMPS with the `GPU` package. Since the setup involves the GPU hardware detection, one has to make a compilation on the GPU partition by requesting an interactive session
+The following instructions were tested on LAMMPS 29Sep2021 release available via the [link](https://www.lammps.org/download.html).
+
+### CPU build
+First, an interactive session must be requested on the CPU partition
+
+```bash
+salloc --account=suxxx-somebudget -N 1 -n 1 -c 42 --mem-per-cpu=3850 --time=8:00:00
+```
+
+Next, load the necessary modules sourcing the compiler toolchain, CMake and Python
+
+```bash
+module load foss/2021b CMake/3.21.1 Python/3.9.6
+```
+According to the [documentation](https://docs.lammps.org/Build.html) of LAMMPS, the recommended build option is with CMake. Inside the source directory,
+
+```bash
+mkdir build
+cd build
+cmake -C ../cmake/presets/most.cmake  -DBUILD_SHARED_LIBS=on ../cmake
+```
+The `most.cmake` selects many packages for installation. However, only packages with resolved dependencies will be configured. The CMake output normally informs which libraries are required to compile a package if it is not configured, and Sulis is likely to have those available via the module system. If a required package is not configured, loading missing modules and re-running the `cmake` command above would normally lead to successful configuration. The compilation itself is invoked via
+
+```bash
+cmake --build . -j 42
+```
+
+where the `-j` flag defines the parallelisation level of the build process and is taken as equal to the number of available cores requested in the interactive session.
+
+To run the compiled code, modify the CPU submission script from e.g., `Bare LAMMPS` section in its "module load" and "srun" parts
+
+<p class="codeblock-label">lammps.slurm</p>
+```bash
+...
+module load foss/2021b Python/3.9.6
+...
+srun /path/to/lammps/source/build/lmp -in in.lammps
+```
+
+### GPU build
+The next example illustrates the compilation of LAMMPS with the `GPU` package. Since the setup involves the GPU hardware detection, one has to make a compilation on the GPU partition by requesting an interactive session
 
 ```bash
 salloc --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 42 --mem-per-cpu=3850 --gres=gpu:ampere_a100:1 --time=8:00:00
 ```
 
-Next, one should load the compiler toolchain which LAMMPS is intended to build with and the CUDA library
+Next, a compiler toolchain which LAMMPS is intended to build with must be loaded together with the CUDA library
 
 ```bash
-module load foss/2021b UCX-CUDA/1.11.2-CUDA-11.4.1 CMake/3.18.4
+module load foss/2021b UCX-CUDA/1.11.2-CUDA-11.4.1 CMake/3.21.1
 ```
 
-The `UCX-CUDA` loads the `CUDA/11.4.1` module and extends the OpenMPI to cuda-aware OpenMPI version allowing for a faster communication between MPI processes and GPUs. Such implementation is realised in `foss-2021a`, `foss-2021b` and will continue in the future. A separate toolchain was used in the past requiring a recompiled version of the OpenMPI library (e.g., fosscuda-2020b). For checking that `CUDA/11.4.1` module is loaded, enter `module list` command.
-
-According to the [documentation](https://docs.lammps.org/Build.html) of LAMMPS, the recommended build option is with CMake. Inside the source directory
+The `UCX-CUDA` loads the `CUDA/11.4.1` module and extends the OpenMPI to cuda-aware OpenMPI version allowing for a faster communication between MPI processes and GPUs. Such implementation is realised in `foss-2021a`, `foss-2021b` and will continue in the future. A separate toolchain was used in the past requiring a recompiled version of the OpenMPI library (e.g., fosscuda-2020b). For checking that `CUDA/11.4.1` module is loaded, enter `module list` command. The configuration can be done with a basic LAMMPS preset, and GPU-related configuration flags.
 
 ```bash
 mkdir build
 cd build
-cmake -C ../cmake/presets/basic.cmake -D PKG_GPU=on -D GPU_API=cuda ../cmake
-
-# to add another package, say BODY to the previous configuration you can run:
-cmake -D PKG_BODY=on .
+cmake -C ../cmake/presets/basic.cmake -D PKG_GPU=on -D GPU_API=cuda -DGPU_ARCH=sm_80 -DBUILD_SHARED_LIBS=ON ../cmake
 ```
 
-the build itself is done via
+As with CPU build, the following compiles the code
 
 ```bash
-cmake --build .
+cmake --build . -j 42
 ```
 
-And finally, modify the submission script for the `GPU` package calculations in its "module load" and "srun" parts
+And finally, modify the submission script for the `GPU` package calculations above in its "module load" and "srun" parts
 
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
