@@ -150,7 +150,7 @@ srun lmp -k on g 1 -sf kk -in in.lammps
 It is important to note that `g 1` in the srun command line requests a single GPU, which should be equal to the number of GPUs requested via `--gres` string (the number after last `:`).  The `--cpus-per-task=42` is used here dominantly for adjusting the memory request, since the `OMP_NUM_THREADS` is set to one. Note also that here the number of requested GPUs must be equal to the number of MPI tasks. Last two conditions (`OMP_NUM_THREADS=1` and `SLURM_NTASKS_PER_NODE` equal to the number of GPU's per node) is chosen for the best performance, although users are encouraged to make their own tests in application to a particular situation.
 
 ### GPU package
-The same conditions, `OMP_NUM_THREADS=1` and `SLURM_NTASKS_PER_NODE` equal to the number of GPU's per node, show the best performance. The corresponding submission script
+The corresponding submission script for the GPU package is below.
 
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
@@ -178,8 +178,13 @@ export OMP_NUM_THREADS=1
 srun lmp -sf gpu -pk gpu 2 -in in.lammps
 ```
 
+The same conditions as for Kokkos, `OMP_NUM_THREADS=1` and `SLURM_NTASKS_PER_NODE` equal to the number of GPU's per node, showed the best performance in our tests, however users may wish to experiment with multiple MPI tasks per GPU depending on their simulation details.
+
 ## Performance
-We have tested foss-2020b, foss-2021b, iomkl-2019b and foss-2020a (for LAMMPS-3Mar2020 version) toolchains for CPU tasks, and derivatives (i.e., augmented with the cuda libraries) of foss-2020b (which is fosscuda-2020b) and foss-2021b for GPU runs. The tested system is an array of 55296 particles in the fcc geometry interacting via Lennard-Jones (LJ) fields. All calculations are done on a single node, check [this page](https://github.com/arkdavy/LAMMPS) for more details. The tables below show time in seconds.
+
+Recommendations above are based on limited testing of a single system.
+
+We have tested foss-2020b, foss-2021b, iomkl-2019b and foss-2020a (for LAMMPS-3Mar2020 version) toolchains for CPU tasks, and derivatives (i.e., augmented with the CUDA libraries) of foss-2020b (which is fosscuda-2020b) and foss-2021b for GPU runs. The tested system is an array of 55296 particles in the fcc geometry interacting via Lennard-Jones (LJ) fields. All calculations are done on a single node, check [this page](https://github.com/arkdavy/LAMMPS) for more details. The tables below show time in seconds.
 
 The timings are obtained using all 128 CPUs of Sulis nodes, giving minimal interference between various calculations running on the cluster at the same time and making the tests results less biased. One should note, however, that the parallel efficiency (`T(1)/[N T(N)]` with `T(N)` being calculation time when using `N` processors) in this configuration is around ~50% for the chosen test case, which is quite low (see the plots [here](https://github.com/arkdavy/LAMMPS)). This may change when considering a different system, running other types of calculations or using more complicated forces. Our advise, however, is to use less cores in this situation (64 or less), targeting to the parallel efficiency of 75% or higher. We also encourage to estimate the parallel efficiency prior to full-scale runs and to find an optimal configuration in particular situation.
 
