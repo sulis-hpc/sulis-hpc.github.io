@@ -11,7 +11,12 @@ nav_order: 3
 1. TOC
 {:toc}
 
-LAMMPS contains a number of packages for tuning the performance and allowing for a different functionality. We have compiled the LAMMPS with the most important ones and performed some tests, which showed that `foss-2021b` toolchain gives the best performance in many cases, especially when running a CUDA-augmented build on a single GPU. Therefore, this one was used to build the LAMMPS on Sulis. Whether additional packages required, users are welcome to compile LAMMPS at the home directory using an example below.
+LAMMPS contains a number of packages for tuning performance and for enabling additional functionality. We have compiled LAMMPS with the most commonly used packages and performed some basic tests for which the `foss-2021b` toolchain gave the best performance in many cases. This is especially true when running a CUDA-augmented build on a single GPU. The centrally provided LAMMPS module on Sulis uses this toolchain.
+
+If additional packages are required then users are welcome to compile LAMMPS within their home directory following the [example below](http://localhost:4000/appnotes/lammps.html#building-lammps)
+
+
+Therefore, this one was used to build the LAMMPS on Sulis. Whether additional packages required, users are welcome to compile LAMMPS at the home directory using an example below.
 
 ## Accessing LAMMPS
 
