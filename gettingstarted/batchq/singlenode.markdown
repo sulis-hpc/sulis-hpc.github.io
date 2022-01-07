@@ -375,7 +375,7 @@ Use of threads for parallelism in Python has a number of pitfalls due to the glo
 A particular advantage of using [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html) is that the resulting code requires only minimal modification to take advantage of a worker pool distributed over many nodes via [mpi4py.futures](https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html). See the [MPI section](mpi) section of this documentation for more information.
 
 <details markdown="block" class="detail">
-  <summary>An example Python code using concurrant.futures<code>example_mp.py</code>.</summary>
+  <summary>An example Python code using concurrent.futures<code>example_futures.py</code>.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_futures.py</p>
