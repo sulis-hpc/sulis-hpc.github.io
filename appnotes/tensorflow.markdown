@@ -173,7 +173,6 @@ For example, in a ResNet50 classification benchmark:
 | Build                               | fp 32 (images/second) | fp 16 (images/second) |
 |-------------------------------------|-----------------------|-----------------------|
 | PyPi build                (cuDNN 7) |        625            |         N/A           |
-| nvidia-tensorflow/nv21.10 (cuDNN 8) |        1027           |        2486           |
 | nvidia-tensorflow/nv22.01 (cuDNN 8) |        1172           |        2399           |
 
 As with TensorFlow 2, we recommend containerised workflows involving TensorFlow 1 use cuDNN 8 or later.
