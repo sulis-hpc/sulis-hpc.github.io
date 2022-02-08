@@ -11,7 +11,7 @@ nav_order: 2
 1. TOC
 {:toc}
 
-These notes constitute a brief guide to using TensorFlow on Sulis, with emphasis on using the GPU hardware. They may update occasionally as newer software is deployed. 
+These notes constitute a brief guide to using TensorFlow on Sulis, with emphasis on using the GPU hardware. They may update occasionally as newer software is deployed.
 
 
 ## Accessing TensorFlow
@@ -47,7 +47,7 @@ In this case there are two sets of possible prerequisite modules. The first incl
 be used for running TensorFlow on the Sulis GPU nodes. The second is for use on the standard
 compute nodes.
 
-TensorFlow can hence be added to your environment for GPU computation by loading the following modules 
+TensorFlow can hence be added to your environment for GPU computation by loading the following modules
 
 ```bash
 {{site.data.terminal.prompt}} module purge
@@ -60,7 +60,7 @@ and Python environment. For example in this case the Python 3.8.6 module is load
 to install these via pip. All dependencies of TensorFlow itself are provided.
 
 NOTE : Attempting to use TensorFlow loaded in this way will fail unless running on an GPU-enabled
-node in an interactive session or SLURM job script. 
+node in an interactive session or SLURM job script.
 
 ## Compatibility
 
@@ -104,15 +104,15 @@ module load TensorFlow/2.5.0
 srun python tf2-benchmarks.py --model resnet50 --enable_xla --batch_size 256 --num_gpus 1
 ```
 
-Performance with this benchmark should be close to 980 images per second. 
+Performance with this benchmark should be close to 980 images per second.
 
 ## Performance and containerisation
 
 TensorFlow performance critically depends on the underlying CUDA Deep Neural Network library [(cuDNN)](https://developer.nvidia.com/cudnn). Full support for the Nvidia A100 GPUs in Sulis is only present in cuDNN version 8 and later. Versions of TensorFlow provisioned via the module system
 have been built to take advantage of this.
 
-Users running containerised workflows via [Singularity](../advanced/containers.markdown) should ensure that 
-container images use cuDNN 8 or later where possible. 
+Users running containerised workflows via [Singularity](../advanced/containers.markdown) should ensure that
+container images use cuDNN 8 or later where possible.
 
 
 ## TensorFlow 1.15
@@ -120,20 +120,38 @@ container images use cuDNN 8 or later where possible.
 For workloads that have not yet migrated to TensorFlow 2 we provide a module for TensorFlow 1.15. This is based on builds from the [NVIDIA/tensorflow](https://github.com/NVIDIA/tensorflow) project
 which supports newer hardware and improved libraries for NVIDIA GPU users using TensorFlow 1.x.  In particular they use cuDNN 8 for optimal performance on A100 GPUs.
 
+The list of the corresponding `nvidia-tensorflow` modules will be extended time to time. Use the `module spider` command for listing the available ones
+
 ```bash
 {{site.data.terminal.prompt}} module spider nvidia-tensorflow
 
------------------------------------------------------------------------------
-  nvidia-tensorflow: nvidia-tensorflow/1.15.5+nv21.10-Python-3.8.2
------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------
+  nvidia-tensorflow:
+----------------------------------------------------------------------------------------------------------------------------------------------------
     Description:
-      An open-source software library for Machine Intelligence. This version 
-      of Tensorflow has been developed by NVidia to support newer versions of
-      CUDA (11.x onwards) than was support by the original 1.x release in order to
-      benefit from performance improvements. 
+      An open-source software library for Machine Intelligence. This version of Tensorflow has been developed by NVidia to support newer versions
+      of CUDA (11.x onwards) than was support by the original 1.x release in order to benefit from performance improvements.
 
-    You will need to load all module(s) on any one of the lines below before the
-     "nvidia-tensorflow/1.15.5+nv21.10-Python-3.8.2" module is available to load.
+     Versions:
+        nvidia-tensorflow/1.15.5+nv21.10-Python-3.8.2
+        nvidia-tensorflow/1.15.5+nv22.01-Python-3.8.2
+```
+
+Each of these depends on `GCC` and `OpenMPI` modules of particular versions deduced from another `module spider` command
+
+```bash
+{{site.data.terminal.prompt}} module spider nvidia-tensorflow/1.15.5+nv22.01-Python-3.8.2
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+  nvidia-tensorflow: nvidia-tensorflow/1.15.5+nv22.01-Python-3.8.2
+----------------------------------------------------------------------------------------------------------------------------------------------------
+    Description:
+      An open-source software library for Machine Intelligence. This version of Tensorflow has been developed by NVidia to support newer versions
+      of CUDA (11.x onwards) than was support by the original 1.x release in order to benefit from performance improvements.
+
+
+    You will need to load all module(s) on any one of the lines below before the "nvidia-tensorflow/1.15.5+nv22.01-Python-3.8.2" module is available to
+load.
 
       GCC/9.3.0  OpenMPI/4.0.3
 
@@ -143,25 +161,19 @@ The module can hence be loaded with:
 ```bash
 {{site.data.terminal.prompt}} module purge
 {{site.data.terminal.prompt}} module load GCC/9.3.0  OpenMPI/4.0.3
-{{site.data.terminal.prompt}} module load nvidia-tensorflow/1.15.5+nv21.10-Python-3.8.2
+{{site.data.terminal.prompt}} module load nvidia-tensorflow/1.15.5+nv22.01-Python-3.8.2
 ```
 
-Note that this also imports CUDA into your environment automatically. 
+Note that this also imports CUDA into your environment automatically.
 
-Installing TensorFlow 1.15 from PyPi using pip is not advisable. The PyPi builds are based on cuDNN 7 and give significantly worse performance. 
+Installing TensorFlow 1.15 from PyPi using pip is not advisable. The PyPi builds are based on cuDNN 7 and give significantly worse performance.
 
 For example, in a ResNet50 classification benchmark:
 
-| Build                       | fp 32 (images/second) | fp 16 (images/second) |
-|-----------------------------|-----------------------|-----------------------|
-| PyPi build        (cuDNN 7) |        625            |         N/A           |
-| nvidia-tensorflow (cuDNN 8) |        1027           |        2486           |
+| Build                               | fp 32 (images/second) | fp 16 (images/second) |
+|-------------------------------------|-----------------------|-----------------------|
+| PyPi build                (cuDNN 7) |        625            |         N/A           |
+| nvidia-tensorflow/nv21.10 (cuDNN 8) |        1027           |        2486           |
+| nvidia-tensorflow/nv22.01 (cuDNN 8) |        1172           |        2399           |
 
 As with TensorFlow 2, we recommend containerised workflows involving TensorFlow 1 use cuDNN 8 or later.
-
-
-
-
-
-
-
