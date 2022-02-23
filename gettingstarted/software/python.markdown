@@ -110,4 +110,4 @@ Python is an evolving ecosystem with many options for parallel computation. The 
 - [mpi4py](../batchq/mpi.markdown#mpi4py)
 - [mpi4py.futures](../batchq/mpi.markdown/#mpi4pyfutures)
 
-Of these only the mpi4py and mpi4py.futures can be used for parallel processing across multiple nodes.However joblib can use used in combination with [Dask](../../advanced/ensemble/dask) to create a worker pool across many nodes in the cluster.
+Of these only the mpi4py and mpi4py.futures can be used for parallel processing across multiple nodes. However joblib can use used in combination with [Dask](../../advanced/ensemble/dask) to create a worker pool across many nodes in the cluster.
