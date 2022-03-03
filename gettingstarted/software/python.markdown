@@ -98,7 +98,7 @@ Help converting interactive Python workflows into scripts suitable for batch com
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLHRVUtPOez8xPRtcxXlP3msx7Eo2WZ-Pc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-In some cases though it can be invaluable to interact directly with the Python interpreter as a debugging aid, or to test algorithms within Jupyter notebooks directly on the Sulis hardware. For such situations see the section on [interactive jobs](../batchq/interactive) and the [application notes on Jupyter](../appnotes/jupyter).
+In some cases though it can be invaluable to interact directly with the Python interpreter as a debugging aid, or to test algorithms within Jupyter notebooks directly on the Sulis hardware. For such situations see the section on [interactive jobs](../batchq/interactive) and the [application notes on Jupyter](../../appnotes/jupyter).
 
 ## Parallelism in Python
 
@@ -110,4 +110,4 @@ Python is an evolving ecosystem with many options for parallel computation. The 
 - [mpi4py](../batchq/mpi.markdown#mpi4py)
 - [mpi4py.futures](../batchq/mpi.markdown/#mpi4pyfutures)
 
-Of these only the mpi4py and mpi4py.futures can be used for parallel processing across multiple nodes.However joblib can use used in combination with [Dask](../../advanced/ensemble/dask) to create a worker pool across many nodes in the cluster.
+Of these only the mpi4py and mpi4py.futures can be used for parallel processing across multiple nodes. However joblib can use used in combination with [Dask](../../advanced/ensemble/dask) to create a worker pool across many nodes in the cluster.
