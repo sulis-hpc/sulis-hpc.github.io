@@ -166,6 +166,95 @@ In the above example each worker uses a single CPU, but it may be appropriate to
 
 The number of inputs to evaluate needn't match the number of workers, but should be close to an integer multiple of the number of workers if the expected computation time for each evaluation of the function is similar.
 
+## Parallel cluster in R
+
+A convenient way to exploit multinode parallelism in R is to create a "cluster" within an R script which can then be exploited by functions such as `parLapply`. Within a SLURM environment this is most easily accomplished using the MPI cluster type and launching the calculation using the RMPISNOW wrapper. 
+
+An example R script which illustrates this is below. 
+
+<details markdown="block" class="detail">
+  <summary>R script using an MPI "cluster"<code>example_mpi.R</code>.</summary>
+This generates N samples from the standard normal distribution, and then performs a bootstrap analsys of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
+
+Note that only one of the tasks will execute the master script below. The remaining tasks will act as slaves to execute instances of the function `resample`. Any data needed by the workers must be exported to the workers or it will not be available.
+
+Note also that in this example we read N and k from environment variables set the SLURM job script. This is because command line arguments cannot be accessed portably when creating and MPI "cluster" in this way.
+
+<p class="codeblock-label">example_mpi.R</p>
+```R
+#!/usr/bin/env Rscript
+
+# Create a cluster 
+library(Rmpi)
+library(snow)
+cl <- makeCluster()
+
+# Get N and k from environment variables specified in slurm job script
+N <- strtoi(Sys.getenv("N"))
+k <- strtoi(Sys.getenv("k"))
+
+# Export to all workers
+clusterExport(cl, c("N", "k"))
+
+# Generate N samples from the normal distribution, then do a 
+# bootstrap error analysis on the mean with K trials
+samples <- rnorm(N)
+
+# Export this data to all workers
+clusterExport(cl, "samples")
+
+resample <- function(trial) {
+  new_samples <- sample(samples, N, replace=TRUE)
+  return(mean(new_samples))
+}
+
+# Conduct trials in parallel using parLapply over the cluster cl
+timing =system.time({
+  resampled_means <- unlist(parLapply(cl,1:k, resample))
+})
+
+# Print timing
+print(timing)
+
+av <- mean(samples)        # mean
+se <- sd(samples)/sqrt(N)  # standard error
+
+# Histogram of the K resampled means and expected distribution
+hist(resampled_means, prob = TRUE)
+curve(dnorm(x, av, se), col = "red", add = TRUE)
+
+# Release the workers
+stopCluster(cl)
+``` 
+</details>
+
+A suitable job submission script which launches the master and slave processes is given below. We set the input variables N and k as environment variable which will be read by the R script.
+
+<p class="codeblock-label">Rmpi.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=00:01:00
+#SBATCH --account=su950
+
+module purge
+module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+
+# Add tools for MPI cluster to path
+export PATH=${EBROOTR}/lib/R/library/snow/:$PATH
+
+# Set shell variables read by example_mpi.R as input
+export N=10000
+export k=50000
+
+# Launch via RMPISNOW script
+srun RMPISNOW CMD BATCH example_mpi.R 
+```
+This will create 1 master and 15 slace processes accross 2 nodes. This is for illustrative puposes only. Normally it would not be necessary to split a 16 processor job accross two nodes in this way. In principle one can use this method to use all processors accross multiple nodes in the Sulis system for worloads that benefit from very large amounts of parallelism. 
+
 ## Under-populating nodes
 
 Some codes can have very intensive memory requirements and require more than {{site.data.slurm.cnode_ram_per_core}} MB of ram per task. It may therefore be desirable to under-populate nodes with fewer tasks than the available cores. This can be accomplished in two ways. For example to launch 64 tasks per node with access to 2x{{site.data.slurm.cnode_ram_per_core}} MB per task either;
