@@ -13,7 +13,7 @@ nav_order: 1
 
 ## Eligibility
 
-Sulis is available to users within the HPC Midlands+ consortium and to users who have been granted allocations of time by the EPSRC. 
+Sulis is available to users within the HPC Midlands+ consortium and to users who have been granted allocations of time by the EPSRC. It is also available to users attending training courses that use Sulis for exercises. 
 
 Users needing exploratory access to Sulis in advance of an application via EPSRC mechanisms should contact [sulis@warwick.ac.uk](mailto:sulis@warwick.ac.uk). 
 
