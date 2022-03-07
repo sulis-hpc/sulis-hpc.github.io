@@ -20,7 +20,7 @@ Use `module spider R` to query the available R builds, and then load using (for 
 {{site.data.terminal.prompt}} module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
 ```
 
-The example above will import version 4.2.1 of R into your environment. This can be verified with:
+The example above will import version 4.1.2 of R into your environment. This can be verified with:
 
 ```shell
 {{site.data.terminal.prompt}} R --version
@@ -34,7 +34,7 @@ GNU General Public License versions 2 or 3.
 For more information about these matters see
 https://www.gnu.org/licenses/.
 ```
-The R environment modules are preconfigured with a large number of installed packages (MCMC, Ggplot2, Tidyverse etc). To query the full list of installed packages:
+The R environment modules are preconfigured with a large number of installed packages (MCMC, ggplot2, Tidyverse etc). To query the full list of installed packages:
 
 ```shell
 {{site.data.terminal.prompt}} R -e 'installed.packages()'
@@ -54,21 +54,6 @@ Python 3.9.6
 ## Installing additional R packages from CRAN
 
 Before installing additional R packages first check if your requirements are met by the packages already provided by the R environment module you are using as per above.
-
-If needing to install additional packages then first create a directory within your user home directory.
-
-```shell
-{{site.data.terminal.prompt}} mkdir ~/Rpackages
-```
-Note use of `~` to refer to the home directory space of the current user. You will then need to set an environment variable which instructs R to use this location for installation of new packages. Otherwise R will attempt to install R in system-wide locations for which individual users do not have write permission.
-
-<!--- Comment: Some sources refer to R_LIBS_USER instead. It seems in some contexts this is set by the R installer as the 
-default user space location for R packages. For the purposes of using packages.install() it seems equivalent to R_LIBS -->
-
-```shell
-{{site.data.terminal.prompt}} export R_LIBS=${HOME}/Rpackages/
-```
-To ensure this is set for all future terminal sessions, users may wish to add the above command to their `.bashrc` file so that it is executed at login.
 
 Installing some R packages can involve long compilations and so should be done within interactive sessions on compute nodes rather than the login node. First request an interactive session on a compute node, e.g. 16 cores for 2 hours.
 
@@ -110,21 +95,32 @@ For example to install the [RSpectra](https://cran.r-project.org/web/packages/RS
 ```R
 > install.packages("RSpectra")
 ```
+Users do not have the necessary file system permissions to install or update R packages system-wide, and so will be prompted to accept a default user library location in their home directory. This is recommended for most users. 
 
-Select an appropriate UK CRAN mirror. Following the lengthy compilation of all dependencies we can import this newly installed library and run one of the example scripts installed along with it.
+When prompted to select a CRAN mirror from which to download the package, select option 0 to choose a local mirror automatically.
+
+Following the lengthy compilation of all dependencies we can import this newly installed library and run one of the example scripts installed along with it.
 
 ```R
 > library("RSpectra")
-> source("~/Rpackages/RSpectra/examples/eigs.R")
+> source(system.file("examples/eigs.R", package="RSpectra"))
 ```
 
-Note that we give the path to the newly created `~/Rpackages` directory which R has used to install the package and associated examples.
+## Bioconductor packages
 
-## Installing Bioconductor packages
+The [Bioconductor project](http://www.bioconductor.org/) provides a curated set of R packages for bioinformatics which are often closer to the bleeding-edge version number than those included in the latest R release. 
 
-The [Bioconductor project](http://www.bioconductor.org/) provides a curated set of R packages for bioinformatics which are often closer to the bleeding-edge verion number than those included in the latest R release. 
+The installation of R can be extended to include the Bioconductor core package by loading an appropriate environment module. Searching via
+```bash
+{{site.data.terminal.prompt}} module spider R-bundle-Bioconductor
+```
+will provide a list of environment modules for the installed versions which can be queried for loading instructions. For example:
 
-Users wishing to manage their own set of Bioconductor packages can do so by following the instructions above to install the `BiocManager` R package. For example, inside an interactive R session running on a compute node and making sure that `R_LIBS` has been set appropriately:
+```bash
+{{site.data.terminal.prompt}} module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+```
+
+Users who instead wish to manage their own set of Bioconductor packages from scratch can do so by following the instructions above to install the `BiocManager` R package. For example, inside an interactive R session running on a compute node:
 
 ```R
 > install.packages("BiocManager")
@@ -133,10 +129,10 @@ Users wishing to manage their own set of Bioconductor packages can do so by foll
 Bioconductor packages can then be installed with only minimal modification to the installation instructions on the Bioconductor website. For example to install the `GenomicFeatures` package:
 
 ```R
-> BiocManager::install("GenomicFeatures",lib.loc=Sys.getenv("R_LIBS"))
+> BiocManager::install("GenomicFeatures", lib.loc = Sys.getenv("R_LIBS"))
 ```
 
-The additional argument `lib.loc` ensures that Bioconductor does not try to overwite packages installed system-wide with newer versions, instead installing these into the directory specified by `R_LIBS`. 
+The additional argument `lib.loc` ensures that Bioconductor does not try to overwrite packages installed system-wide with newer versions, instead installing these into the directory specified by `R_LIBS`. It can be omitted and the resulting informational message ignored.
 
 Use the `packageVersion()` function to check which version of a particular package is in use. For example, if using the same `R/4.1.2` module as above we can update the `broom` package to the version currently used by Bioconductor.
 
@@ -170,9 +166,9 @@ module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
 srun R CMD BATCH "--args <my_args>" my_script.R
 ```
 
-Where `<my_args>` should be replace with any command line arguments read by the script `my_script.R` via use of the R function `commandArgs(trailingOnly=TRUE)`. On execution, output normally printed to the console will be written to the file `my_script.Rout` and any plots generated by the script will be combined into `Rplots.pdf`. 
+Where `<my_args>` should be replace with any command line arguments read by the script `my_script.R` via use of the R function `commandArgs(trailingOnly = TRUE)`. On execution, output normally printed to the console will be written to the file `my_script.Rout` and any plots generated by the script will be combined into `Rplots.pdf`. 
 
-Using command line arguments to pass input into R scripts can be useful wheh constructing large parallel jobs which consist of a single R script run for many different inputs, for example using [job arrays](../../advanced/ensemble/jobarrays) or creating bash functions which launch R scripts for use with [GNU Parallel](../../advanced/ensemble/gnuparallel).
+Using command line arguments to pass input into R scripts can be useful when constructing large parallel jobs which consist of a single R script run for many different inputs, for example using [job arrays](../../advanced/ensemble/jobarrays) or creating bash functions which launch R scripts for use with [GNU Parallel](../../advanced/ensemble/gnuparallel).
 
 ## Parallelism in R
 

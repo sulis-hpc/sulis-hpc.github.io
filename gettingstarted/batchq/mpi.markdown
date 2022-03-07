@@ -168,17 +168,17 @@ The number of inputs to evaluate needn't match the number of workers, but should
 
 ## Parallel cluster in R
 
-A convenient way to exploit multinode parallelism in R is to create a "cluster" within an R script which can then be exploited by functions such as `parLapply`. Within a SLURM environment this is most easily accomplished using the MPI cluster type and launching the calculation using the RMPISNOW wrapper. 
+A convenient way to exploit multinode parallelism in R is to create a "cluster" within an R script which can then be exploited by functions such as `parLapply`. Within a SLURM environment, one way this can be accomplished us via the MPI cluster type and launching the calculation using the RMPISNOW wrapper. 
 
 An example R script which illustrates this is below. 
 
 <details markdown="block" class="detail">
   <summary>R script using an MPI "cluster"<code>example_mpi.R</code>.</summary>
-This generates N samples from the standard normal distribution, and then performs a bootstrap analsys of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
+This generates N samples from the standard normal distribution, and then performs a bootstrap analysis of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
 
-Note that only one of the tasks will execute the master script below. The remaining tasks will act as slaves to execute instances of the function `resample`. Any data needed by the workers must be exported to the workers or it will not be available.
+Note that only one of the tasks will execute the master script below. The remaining tasks will act as workers to execute instances of the function `resample`. Any data needed by the workers must be exported to the workers or it will not be available.
 
-Note also that in this example we read N and k from environment variables set the SLURM job script. This is because command line arguments cannot be accessed portably when creating and MPI "cluster" in this way.
+Note also that in this example we read N and k from environment variables set the SLURM job script. This is because command line arguments cannot be accessed portably when creating an MPI "cluster" in this way.
 
 <p class="codeblock-label">example_mpi.R</p>
 ```R
@@ -190,8 +190,8 @@ library(snow)
 cl <- makeCluster()
 
 # Get N and k from environment variables specified in slurm job script
-N <- strtoi(Sys.getenv("N"))
-k <- strtoi(Sys.getenv("k"))
+N <- as.integer(Sys.getenv("N"))
+k <- as.integer(Sys.getenv("k"))
 
 # Export to all workers
 clusterExport(cl, c("N", "k"))
@@ -205,11 +205,10 @@ clusterExport(cl, "samples")
 
 resample <- function(trial) {
   new_samples <- sample(samples, N, replace=TRUE)
-  return(mean(new_samples))
 }
 
 # Conduct trials in parallel using parLapply over the cluster cl
-timing =system.time({
+timing <- system.time({
   resampled_means <- unlist(parLapply(cl,1:k, resample))
 })
 
@@ -228,7 +227,7 @@ stopCluster(cl)
 ``` 
 </details>
 
-A suitable job submission script which launches the master and slave processes is given below. We set the input variables N and k as environment variable which will be read by the R script.
+A suitable job submission script which launches the master and worker processes is given below. We set the input variables N and k as environment variable which will be read by the R script.
 
 <p class="codeblock-label">Rmpi.slurm</p>
 ```bash
@@ -253,11 +252,11 @@ export k=50000
 # Launch via RMPISNOW script
 srun RMPISNOW CMD BATCH example_mpi.R 
 ```
-This will create 1 master and 15 slace processes accross 2 nodes. This is for illustrative puposes only. Normally it would not be necessary to split a 16 processor job accross two nodes in this way. In principle one can use this method to use all processors accross multiple nodes in the Sulis system for worloads that benefit from very large amounts of parallelism. 
+This will create 1 master and 15 worker processes across 2 nodes. This is for illustrative purposes only. Normally it would not be necessary to split a 16 processor job across two nodes in this way. In principle one can use this method to use all processors across multiple nodes in the Sulis system for workloads that benefit from very large amounts of parallelism. 
 
 ## Under-populating nodes
 
-Some codes can have very intensive memory requirements and require more than {{site.data.slurm.cnode_ram_per_core}} MB of ram per task. It may therefore be desirable to under-populate nodes with fewer tasks than the available cores. This can be accomplished in two ways. For example to launch 64 tasks per node with access to 2x{{site.data.slurm.cnode_ram_per_core}} MB per task either;
+Some codes can have very intensive memory requirements and require more than {{site.data.slurm.cnode_ram_per_core}} MB of RAM per task. It may therefore be desirable to under-populate nodes with fewer tasks than the available cores. This can be accomplished in two ways. For example to launch 64 tasks per node with access to 2x{{site.data.slurm.cnode_ram_per_core}} MB per task either;
 
 1. change the resource request portion of the script to;
 ```bash

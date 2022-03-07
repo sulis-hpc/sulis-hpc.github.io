@@ -515,11 +515,11 @@ Note that the list of outputs is ordered as per the list of inputs.
 
 ## Parallel package in R
 
-R scripts may use the `parallel` package to implement calcualtions that use multiple cores within a node, either explicitly or as part of functions within other packages. An example R script which uses `mcapply` to parallelise a calculation is below.
+R scripts may use the `parallel` package to implement calculations that use multiple cores within a node, either explicitly or as part of functions within other packages. An example R script which uses `mclapply` to parallelise a calculation is below.
 
 <details markdown="block" class="detail">
   <summary>An example R code using the `parallel` package <code>example.R</code>.</summary>
-This generates N samples from the standard normal distribution, and then performs a bootstrap analsys of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
+This generates N samples from the standard normal distribution, and then performs a bootstrap analysis of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
 
 The input parameters N and k are read as command line arguments.
 
@@ -529,8 +529,8 @@ The input parameters N and k are read as command line arguments.
 
 # Get command line arguments N and k
 args <- commandArgs(trailingOnly=TRUE)
-N <- strtoi(args[1])
-k <- strtoi(args[2])
+N <- as.integer(args[1])
+k <- as.integer(args[2])
 
 # Generate N samples from the normal distribution, then do a 
 # bootstrap error analysis on the mean with k trials
@@ -538,14 +538,13 @@ samples <- rnorm(N)
 
 resample <- function(trial) {
   new_samples <- sample(samples, N, replace=TRUE)
-  return(mean(new_samples))
 }
 
 # Load the parallel library
 library(parallel)
 
 # Conduct k trials in parallel
-timing =system.time({
+timing <- system.time({
   resampled_means <- unlist(mclapply(1:k, resample))
 })
 
@@ -556,7 +555,7 @@ av <- mean(samples)        # mean
 se <- sd(samples)/sqrt(N)  # standard error
 
 # Histogram of the k resampled means and expected distribution
-hist(resampled_means, prob = TRUE)
+hist(resampled_means, probability = TRUE)
 curve(dnorm(x, av, se), col = "red", add = TRUE)
 ```
 </details>
