@@ -117,7 +117,7 @@ The installation of R can be extended to include the Bioconductor core package b
 will provide a list of environment modules for the installed versions which can be queried for loading instructions. For example:
 
 ```bash
-{{site.data.terminal.prompt}} module load GCC/11.2.0  OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
+{{site.data.terminal.prompt}} module load GCC/11.2.0 OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
 ```
 
 Users who instead wish to manage their own set of Bioconductor packages from scratch can do so by following the instructions above to install the `BiocManager` R package. For example, inside an interactive R session running on a compute node:
@@ -129,17 +129,17 @@ Users who instead wish to manage their own set of Bioconductor packages from scr
 Bioconductor packages can then be installed with only minimal modification to the installation instructions on the Bioconductor website. For example to install the `GenomicFeatures` package:
 
 ```R
-> BiocManager::install("GenomicFeatures", lib.loc = Sys.getenv("R_LIBS"))
+> BiocManager::install("GenomicFeatures")
 ```
 
-The additional argument `lib.loc` ensures that Bioconductor does not try to overwrite packages installed system-wide with newer versions, instead installing these into the directory specified by `R_LIBS`. It can be omitted and the resulting informational message ignored.
+This will install the requested package. An informational message will be displayed stating that packages installed in the system-wide package library could not be upgraded. This can be ignored. The latest versions will be installed into the default location in your home directory instead.
 
 Use the `packageVersion()` function to check which version of a particular package is in use. For example, if using the same `R/4.1.2` module as above we can update the `broom` package to the version currently used by Bioconductor.
 
 ```R
 > packageVersion("broom")
 [1] '0.7.10'
-> BiocManager::install("broom",lib.loc=Sys.getenv("R_LIBS"))
+> BiocManager::install("broom")
 packageVersion("broom")
 [1] '0.7.12'
 ```
