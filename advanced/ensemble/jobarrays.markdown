@@ -282,6 +282,8 @@ Job arrays have some disadvantages over other methods of orchestrating ensembles
 
 2. Although SLURM attempts to pack the elements of the array onto as few nodes as possible, job arrays can still fragment the resource available to workloads which require whole nodes, reducing overall utilisation of the cluster.
 
-3. Having many thousands of jobs in the queue can potentially overload the queuing system.
+3. Running many thousands of array job elements per day can (and does) overload the SAFE accounting system.
+                                      
+4. In some cases is it desirable for all members of the ensemble to be executing at the same time, which is not guaranteed by job arrays.
 
-Job arrays should ideally only be used in scenarios where a few dozen long-running elements are required. For other workloads which process many hundreds or thousands of inputs that run for a few minutes/hours, [GNU parallel](gnuparallel) should be used as an alternative.
+Job arrays should ideally only be used in scenarios where a few dozen (up to 256) long-running elements are required. For other workloads which process many hundreds or thousands of inputs that run for a few minutes/hours, [GNU parallel](gnuparallel) should be used as an alternative.
