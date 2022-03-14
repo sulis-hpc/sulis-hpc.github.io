@@ -205,6 +205,7 @@ clusterExport(cl, "samples")
 
 resample <- function(trial) {
   new_samples <- sample(samples, N, replace=TRUE)
+  new_mean <- mean(new_samples)
 }
 
 # Conduct trials in parallel using parLapply over the cluster cl
