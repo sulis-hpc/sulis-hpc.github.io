@@ -538,6 +538,7 @@ samples <- rnorm(N)
 
 resample <- function(trial) {
   new_samples <- sample(samples, N, replace=TRUE)
+  new_mean <- mean(new_samples)
 }
 
 # Load the parallel library
