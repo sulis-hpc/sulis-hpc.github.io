@@ -12,7 +12,7 @@ nav_order: 4
 
 ## Sanity check
 
-Sulis is a service primarily focussed on high throughput batch computing workloads. We not recommend using Sulis for interactive workloads such as those commonly implemented within Jupyter notebooks. This is for the following reasons.
+Sulis is a service primarily focussed on high throughput batch computing workloads. We do not recommend using Sulis for interactive workloads such as those commonly implemented within Jupyter notebooks. This is for the following reasons.
 
 - Resources are allocated via SLURM to maximise utilisation of the hardware. Jobs may not start at a convenient time (e.g. in the the middle of night) to be used interactively. 
 
