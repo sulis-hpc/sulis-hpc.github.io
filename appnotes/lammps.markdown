@@ -97,7 +97,7 @@ The [OMP package](https://docs.lammps.org/Speed_omp.html) using multiple threads
 srun lmp --sf omp -in in.lammps
 ```
 
-We have noticed that some jobs with 8 per MPI task were unreasonably when using less than a full node. TheThis was caused, most likely, by multiple OpenMP threads running on the same core. The issue was solved by using CPU binding:
+We have noticed that some jobs with 8 per MPI task were unreasonably when using less than a full node. This was caused, most likely, by multiple OpenMP threads running on the same core. The issue was solved by using CPU binding:
 <p class="codeblock-label">lammps.slurm</p>
 ```bash
 ...
