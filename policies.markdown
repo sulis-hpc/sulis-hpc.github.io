@@ -21,6 +21,11 @@ Users shall:
 1. take all reasonable measures to ensure the security of Sulis, as directed from time to time by Sulis support staff;
 1. keep abreast of information provided the SAFE-Sulis mailing list and these pages about maintenance, downtime and changes to Sulis;
 1. absolve the Sulis support staff from any liability arising from loss or inaccessibility of data held on our systems.
+1. acknowledge use of Sulis in all publications and other scientific outputs resulting wholly or in part from use of the platform.
+
+Suggested acknowledgement text follows.
+
+> Calculations were performed using the Sulis Tier 2 HPC platform hosted by the Scientific Computing Research Technology Platform at the University of Warwick. Sulis is funded by EPSRC Grant EP/T022108/1 and the HPC Midlands+ consortium.
 
 ## Acceptable Use Policy
 

@@ -332,7 +332,6 @@ Note that the number of function inputs (specified by the second argument) does 
 <p class="codeblock-label">multiprocessing.slurm</p>
 ```bash
 #!/bin/bash
-#SBATCH --account=suxxx-somebudget
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task={{site.data.slurm.cnode_cores_per_node}}
@@ -376,7 +375,7 @@ Use of threads for parallelism in Python has a number of pitfalls due to the glo
 A particular advantage of using [concurrent.futures](https://docs.python.org/3/library/concurrent.futures.html) is that the resulting code requires only minimal modification to take advantage of a worker pool distributed over many nodes via [mpi4py.futures](https://mpi4py.readthedocs.io/en/stable/mpi4py.futures.html). See the [MPI section](mpi) section of this documentation for more information.
 
 <details markdown="block" class="detail">
-  <summary>An example Python code using concurrant.futures<code>example_mp.py</code>.</summary>
+  <summary>An example Python code using concurrent.futures<code>example_futures.py</code>.</summary>
 This squares the first `N` integers, distributing the work over a pool of `p` processes. 
 
 <p class="codeblock-label">example_futures.py</p>
@@ -514,3 +513,76 @@ Submitted batch job 212680
 Note that the list of outputs is ordered as per the list of inputs.
 </details>
 
+## Parallel package in R
+
+R scripts may use the `parallel` package to implement calculations that use multiple cores within a node, either explicitly or as part of functions within other packages. An example R script which uses `mclapply` to parallelise a calculation is below.
+
+<details markdown="block" class="detail">
+  <summary>An example R code using the `parallel` package <code>example.R</code>.</summary>
+This generates N samples from the standard normal distribution, and then performs a bootstrap analysis of the mean by resampling (with replacement) k times from these N samples. The distribution of means is compared to the standard error of the original sample set and the distribution of means is compared to the expected form.
+
+The input parameters N and k are read as command line arguments.
+
+<p class="codeblock-label">example.R</p>
+```R
+#!/usr/bin/env Rscript
+
+# Get command line arguments N and k
+args <- commandArgs(trailingOnly=TRUE)
+N <- as.integer(args[1])
+k <- as.integer(args[2])
+
+# Generate N samples from the normal distribution, then do a 
+# bootstrap error analysis on the mean with k trials
+samples <- rnorm(N)
+
+resample <- function(trial) {
+  new_samples <- sample(samples, N, replace=TRUE)
+  new_mean <- mean(new_samples)
+}
+
+# Load the parallel library
+library(parallel)
+
+# Conduct k trials in parallel
+timing <- system.time({
+  resampled_means <- unlist(mclapply(1:k, resample))
+})
+
+# Print timing
+print(timing)
+
+av <- mean(samples)        # mean
+se <- sd(samples)/sqrt(N)  # standard error
+
+# Histogram of the k resampled means and expected distribution
+hist(resampled_means, probability = TRUE)
+curve(dnorm(x, av, se), col = "red", add = TRUE)
+```
+</details>
+
+A SLURM job script suitable for running this example on 4 cores is given below. Note that we set the environment variable `MC_CORES` to match the number of CPUs allocated to our (single) task. This controls the number of cores used by the `parallel` package in our call to `mclapply`. We set N and k as shell variables and then pass these into our R script as command line arguments.
+
+<p class="codeblock-label">Rparallel.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=3850
+#SBATCH --time=00:01:00
+#SBATCH --account=suxxx-somebudget
+
+module purge
+module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+
+# Set number of cores used by parallel package
+export MC_CORES=$SLURM_CPUS_PER_TASK
+
+# Run script. N and k are arguments
+N=10000
+k=50000
+srun R CMD BATCH "--args $N $k" example.R
+```
+
+This trival example runs approximately 4 faster using 4 cores (7.6s) than using 1 (28.7s). Distributing more computationally intensive function calls with `mclapply` should scale to larger core counts than this trivial example.

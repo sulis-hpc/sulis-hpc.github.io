@@ -2,7 +2,7 @@
 layout: page
 title: CASTEP
 parent: Application Notes
-nav_order: 3
+nav_order: 1
 ---
 
 # CASTEP on Sulis
