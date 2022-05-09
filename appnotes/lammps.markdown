@@ -26,23 +26,24 @@ First, check the list of existing LAMMPS modules
 Choosing a specific alias from the list e.g.,
 
 ```bash
-{{site.data.terminal.prompt}} module spider LAMMPS/29Sep2021-kokkos-omp
+{{site.data.terminal.prompt}} module spider LAMMPS/29Sep2021-kokkos
 ```
 
 will print out the required modules to be loaded before LAMMPS', which are `GCC/11.2.0`, `OpenMPI/4.1.1` for the `foss-2021b` toolchain. More options are available if the code is built with multiple compiler toolchains. See the correspondence between compiler toolchain names and versions of included libraries at [this page](https://docs.easybuild.io/en/latest/Common-toolchains.html).
 
-Finally, loading the `LAMMPS/29Sep2021-kokkos-omp` into the command line environment is invoked by
+Finally, loading the `LAMMPS/29Sep2021-kokkos` into the command line environment is invoked by
 
 ```bash
- module load GCC/11.2.0  OpenMPI/4.1.1 LAMMPS/29Sep2021-kokkos-omp
+ module load GCC/11.2.0  OpenMPI/4.1.1 LAMMPS/29Sep2021-kokkos
  ```
 
-LAMMPS modules available so far (Dec 2021):
+LAMMPS modules available so far (May 2022):
 
 | module | description |
 |-----------------------------------|----------------------------------|
-| `LAMMPS/29Sep2021-kokkos-omp`			| built with OpenMP backend of `Kokkos` package |
-| `LAMMPS/29Sep2021-CUDA-11.4.1-kokkos-omp`	| GPU-accelerated (via `Kokkos` package) build 	|
+| `LAMMPS/29Sep2021-kokkos`			| built with OpenMP backend of `Kokkos` package |
+| `LAMMPS/29Sep2021-CUDA-11.4.1-kokkos`	| GPU-accelerated (via `Kokkos` package) build 	|
+| `LAMMPS/29Sep2021-CUDA-11.4.1-gpu`	| GPU-accelerated (via `GPU` package) build 	|
 
 ## Running on CPUs
 There are many ways of running LAMMPS for which one may refer to the corresponding [documentation section](https://docs.lammps.org/Run_head.html) and which are not covered here. The next sections demonstrate the usage of available acceleration packages in LAMMPS.
@@ -65,7 +66,7 @@ The header of the submission script is similar for all CPU jobs.
 module purge
 
 # load ones required for the LAMMPS execuation
-module load GCC/11.2.0 OpenMPI/4.1.1 LAMMPS/29Sep2021-kokkos-omp
+module load GCC/11.2.0 OpenMPI/4.1.1 LAMMPS/29Sep2021-kokkos
 
 # adjust the number of OpenMP threads automatically
 export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
