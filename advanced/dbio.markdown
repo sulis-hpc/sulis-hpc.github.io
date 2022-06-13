@@ -54,7 +54,7 @@ file.close()
 
 The aim of databases is to structure data so that it can be stored and retrieved easily and quickly. Many database systems work by having a central program that runs continually and is connected to by clients that read and write data. This maps quite well to the idea of writing data from scientific codes and avoids a lot of the problems with IO load on clusters. While not universally true, think of a database as a set of *tables* of data. When you create a database table you specify what types of data it contains by specifying *columns* and then you add *records* that actually contain the data specified by the columns. Generally if you visualise a simple database table it looks like a page in a spreadsheet with column headers at the top and one or more rows of data below them (although databases can get much more complicated than spreadsheets)
 
-The major problem with using databases for storing your data is that most (but not all) databases expect commands to be given to them in a specific language called "Structured Query Language" or SQL (pronounced either as separate letters or as the word sequel)
+The major problem with using databases for storing your data is that most (but not all) databases expect commands to be given to them in a specific language called Structured Query Language or SQL (pronounced either as separate letters or as the word sequel)
 
 SQL is a very simple language and can be learned fairly easily. For example creating a table and adding two records to it looks like
 
@@ -68,7 +68,7 @@ but you have to convert the data that you want to store in the database into SQL
 
 Here we're going to introduce one database for Python called SQLAlchemy which includes the ORM functionality. SQLAlchemy also works with multiple database systems so you can easily switch between database systems and keep the core of your code the same. SQLAlchemy is very powerful and this is going to be a very brief overview.
 
-In order to use SQLAlchemy we have to choose which database engine we're going to use. The simplest one is SQLite database engine. This uses a simple file on disk (or you can create a temporary database in memory) to hold a database and there is no central server. First you have to install the SQLAlchemy package for Python so once you have loaded your preferred Python module, install it with pip3 install --user sqlalchemy. The next thing to do with an ORM system is define a class that you are going to map to your data. As a simple example consider a problem that takes two floating point value inputs and returns a single floating point output
+In order to use SQLAlchemy we have to choose which database engine we're going to use. The simplest one is SQLite database engine. This uses a simple file on disk (or you can create a temporary database in memory) to hold a database and there is no central server. First you have to install the SQLAlchemy package for Python so once you have loaded your preferred Python module, install it with `pip3 install --user sqlalchemy`. The next thing to do with an ORM system is define a class that you are going to map to your data. As a simple example consider a problem that takes two floating point value inputs and returns a single floating point output
 
 ```Python
 from sqlalchemy import create_engine
