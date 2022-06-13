@@ -83,16 +83,16 @@ parallel --link ./test.py 1 {1} {2} ::: {1..5} ::: {10..14}
 ```
 This isn't a trivial GNU parallel script but it does show the power of the approach. The command (from left to right reads)
 
-#) parallel - The GNU parallel program
-#) --link - Take inputs pairwise rather than take the Cartesian product
-#) ./test.py - My script to run in parallel
-#) 1 - Parameter to my script, I want to run the addition code
-#) {1} - Replace this parameter to my script by the first GNU parallel parameter
-#) {2} - Replace this parameter to my script by the second GNU parallel parameter
-#) ::: - This separates GNU parallel parameters from parameters to my script
-#) {1..5} - The numbers from 1 to 5 inclusive
-#) ::: - Separate the second GNU parallel parameter from the first
-#) {10..14} - The numbers from 10 to 15 inclusive
+* parallel - The GNU parallel program
+* --link - Take inputs pairwise rather than take the Cartesian product
+* ./test.py - My script to run in parallel
+* 1 - Parameter to my script, I want to run the addition code
+* {1} - Replace this parameter to my script by the first GNU parallel parameter
+* {2} - Replace this parameter to my script by the second GNU parallel parameter
+* ::: - This separates GNU parallel parameters from parameters to my script
+* {1..5} - The numbers from 1 to 5 inclusive
+* ::: - Separate the second GNU parallel parameter from the first
+* {10..14} - The numbers from 10 to 15 inclusive
 
 The output of this code is
 
@@ -108,7 +108,7 @@ and in this case the outputs are in the order of the inputs, but this will not i
 
 ### Dask
 
-Dask is a large library that covers a wide variety of parallel tasks in scientific programming from distributed data analytics to distributed machine learning, but here we are interested in Dask's implementation of *futures*. Futures are a generic concept in computer programming (in fact Python has futures built in which work in the same way but only work on a single node, not across multiple nodes) which is a function that is started now and runs in the background but is going to give it's answer in the future (hence the name). These are basically the same idea as Celery's tasks and are used in much the same way.
+Dask is a large library that covers a wide variety of parallel tasks in scientific programming from distributed data analytics to distributed machine learning, but here we are interested in Dask's implementation of *futures*. Futures are a generic concept in computer programming (in fact Python has futures built in which work in the same way but only work on a single node, not across multiple nodes) which is a function that is started now and runs in the background but is going to give its answer in the future (hence the name). These are basically the same idea as Celery's tasks and are used in much the same way.
 
 ## Using Celery
 
