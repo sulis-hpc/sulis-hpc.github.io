@@ -18,7 +18,29 @@ This topic explains how to restart interrupted calculations using the checkpoint
 
 ### Basic Usage
 
-The next batch submission script creates and runs a simple Python program checkpointed every 60 seconds using the `dmtcp_launch` command and which is also openMP-parallel within the `numpy` Linear Algebra calls. When interrupted by SLURM after maximal execution time (`--time`), it can be restarted from the most recent checkpoint written into the `ckpt_*.dmtcp` file. Restarting the calculation from this checkpoint is triggered by submitting the same script again.
+<details markdown="block" class="detail">
+  <summary>Python code example.</summary>
+<p class="codeblock-label">run.py</p>
+```python
+import time
+import numpy as np
+start = time.time()
+matrix_size=8000
+print('Code started')
+for i in range(1000):
+   start_loop = time.time()
+   a = np.random.rand(matrix_size, matrix_size)
+   b = np.random.rand(matrix_size, matrix_size)
+   c = np.matmul(a,b).sum()
+   t_op = time.time()
+   template = 'iter, result, time, time per loop: {:4d} {} {:6.2f} {:6.2f}'
+   print(template.format(i, c, t_op-start, t_op-start_loop))
+```
+</details>
+
+The next batch submission script runs the Python program above checkpointed every 60 seconds using the `dmtcp_launch` command and which is also openMP-parallel within the `numpy` Linear Algebra calls. When interrupted by SLURM after maximal execution time (`--time`), it can be restarted from the most recent checkpoint written into the `ckpt_*.dmtcp` file. Restarting the calculation from this checkpoint is triggered by submitting the same script again.
+
+A trivial serial job can be illustrated with the famous "Hello world" example in C.
 
 <p class="codeblock-label">dmtcp.slurm</p>
 ```bash
@@ -40,29 +62,10 @@ module load SciPy-bundle/2020.03-Python-3.8.2
 # time interval (in seconds) between checkpoint writes
 checkpoint_write_interval=60
 
+# check whether a checkpoint file exist
 if [ ! -e ckpt*dmtcp ]
 then
-   # write Python code sample into a file
-
-   code="
-import time
-import numpy as np
-start = time.time()
-matrix_size=8000
-print('Code started')
-for i in range(1000):
-   start_loop = time.time()
-   a = np.random.rand(matrix_size, matrix_size)
-   b = np.random.rand(matrix_size, matrix_size)
-   c = np.matmul(a,b).sum()
-   t_op = time.time()
-   template = 'iter, result, time, time per loop: {:4d} {} {:6.2f} {:6.2f}'
-   print(template.format(i, c, t_op-start, t_op-start_loop))
-"
-   echo "$code" > run.py
-
-   echo "starting the app .."
-
+   echo "checkpoint file not found, starting the app .."
    # launch the app and write a checkpoint each time after $checkpoint_write_interval is over
    # By default, print in Python is buffered, meaning that it does not write to
    # files or stdout immediately, and -u flag changes this behaviour
