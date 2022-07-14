@@ -38,9 +38,7 @@ for i in range(1000):
 ```
 </details>
 
-The next batch submission script runs the Python program above checkpointed every 60 seconds using the `dmtcp_launch` command and which is also openMP-parallel within the `numpy` Linear Algebra calls. When interrupted by SLURM after maximal execution time (`--time`), it can be restarted from the most recent checkpoint written into the `ckpt_*.dmtcp` file. Restarting the calculation from this checkpoint is triggered by submitting the same script again.
-
-A trivial serial job can be illustrated with the famous "Hello world" example in C.
+The batch submission script below runs the Python program above checkpointed every 60 seconds using the `dmtcp_launch` command and which is also openMP-parallel within the `numpy` linear algebra calls. When interrupted by SLURM after maximal execution time (`--time`), it can be restarted from the most recent checkpoint written into the `ckpt_*.dmtcp` file. Restarting the calculation from this checkpoint is triggered by submitting the same script again.
 
 <p class="codeblock-label">dmtcp.slurm</p>
 ```bash
