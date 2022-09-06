@@ -29,7 +29,7 @@ To build CASTEP from source:
 {{site.data.terminal.prompt}} export FFTLIBDIR=$EBROOTFFTW
 {{site.data.terminal.prompt}} export MATHLIBS=openblas
 {{site.data.terminal.prompt}} export MATHLIBDIR=$EBROOTOPENBLAS
-{{site.data.terminal.prompt}} make
+{{site.data.terminal.prompt}} make -e
 ```
 
 Job scripts which use CASTEP built in this way should load the foss/2020b module before invoking the `castep.mpi` executable.
