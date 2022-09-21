@@ -68,7 +68,7 @@ This returns output similar to
     Description:
       OpenMM is a toolkit for molecular simulation.
 
-    You will need to load all module(s) on any one of the lines below before the "OpenMM/7.5.0"
+    You will need to load all module(s) on any one of the lines below before the "OpenMM/7.5.1"
     module is available to load.
 
       {{site.data.software.defaultfosscuda}}
