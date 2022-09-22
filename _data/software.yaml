@@ -13,7 +13,7 @@ defaultscipy: "SciPy-bundle/2020.11"
 
 defaultdask: "dask/2021.2.0"
 
-ommver: "7.5.0"
+ommver: "7.5.1"
 
 parallel: "parallel/20210322"
 
