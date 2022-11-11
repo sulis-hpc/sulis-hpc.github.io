@@ -2,7 +2,7 @@
 layout: page
 title: LAMMPS
 parent: Application Notes
-nav_order: 3
+nav_order: 4
 ---
 
 # LAMMPS on Sulis

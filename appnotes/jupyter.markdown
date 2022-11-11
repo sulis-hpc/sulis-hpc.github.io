@@ -2,7 +2,7 @@
 layout: page
 title: Jupyter
 parent: Application Notes
-nav_order: 2
+nav_order: 3
 ---
 # Jupyter
 {: .no_toc }

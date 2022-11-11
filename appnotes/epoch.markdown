@@ -2,7 +2,7 @@
 layout: page
 title: EPOCH
 parent: Application Notes
-nav_order: 4
+nav_order: 2
 ---
 
 # EPOCH on Sulis

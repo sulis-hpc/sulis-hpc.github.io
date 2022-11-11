@@ -2,7 +2,7 @@
 layout: page
 title: TensorFlow
 parent: Application Notes
-nav_order: 6
+nav_order: 8
 ---
 
 # TensorFlow on Sulis
