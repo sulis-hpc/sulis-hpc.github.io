@@ -27,3 +27,15 @@ If they are unable to answer or resolve your query, your local support team will
 ## Other users
 
 Other users with allocations of time on Sulis will be provided with a means to request support when their allocation becomes active.
+
+# Research Software Engineering support
+
+Users within the HPC Midlands+ consortium are able to request support from a Research Software Engineer (RSE) within their Call for Applications submission. Research Software Engineers are skilled individuals with experience to help with the following non-exhaustive list:
+
+* Profiling of code to understand performance and recommend areas of improvement
+* Developing code to add new functionality, improve scaling, add parallelism, or improve software maintainability
+* Optimise code for performance on Sulis
+* Wring the best performance out of code with complier flag choices
+* Advise on matters of best practise regarding development workflows and version control.
+
+Please request RSE support at the time of your application, or afterwards via your Support Contact.
