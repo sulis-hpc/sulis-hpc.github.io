@@ -2,7 +2,7 @@
 layout: page
 title: PyTorch
 parent: Application Notes
-nav_order: 6
+nav_order: 7
 ---
 
 # PyTorch on Sulis
