@@ -2,7 +2,7 @@
 layout: page
 title: QuantumESPRESSO
 parent: Application Notes
-nav_order: 7
+nav_order: 8
 ---
 
 # QuantumESPRESSO on Sulis
