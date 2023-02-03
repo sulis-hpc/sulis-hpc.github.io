@@ -76,7 +76,7 @@ The following submission script uses GNU parallel to launch 128 concurrent insta
 
 <details markdown="block" class="detail">
   <summary>C program which prints its command line arguments <code>c_arg.c</code>.</summary>
-Trivial C program to demonstrate use of job arrays in SLURM.
+Trivial C program to demonstrate use of GNU parallel in SLURM.
 
 <p class="codeblock-label">c_arg.c</p>
 ```c
