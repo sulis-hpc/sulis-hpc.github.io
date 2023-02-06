@@ -28,7 +28,7 @@ The following
 {{site.data.terminal.prompt}} module spider Tinker-HP/1.2
 ```
 
-Will printout its dependencies to be loaded prior the chosen `Tinker-HP` module. Currently (Jan 2022) there is no GPU version installed on Sulis, but it can be requested.  
+Will printout its dependencies to be loaded prior the chosen `Tinker-HP` module. Currently (Jan 2022) there is no GPU version installed on Sulis. Do please request a GPU build via the appropriate support mechanism should one be required.
 
 
 # Running Tinker-HP
