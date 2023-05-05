@@ -13,4 +13,7 @@ Sulis entered service in November 2021.
 
 There is a standing maintenance window for Sulis every Tuesday afternoon between 1pm and 5pm. Sulis should be considered at risk during this time. Minor outages and login node restarts can be expected without additional notice.
 
+# Unscheduled Events
 
+05/05/2023 - We are currently experiencing problems with our cooling systems in the datacenter.
+The partitions have been disabled. You can still queue jobs but nothing will start running currently
