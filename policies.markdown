@@ -42,7 +42,7 @@ The Sulis acceptable use policies exist to safeguard the performance, reliabilit
 1. Software
   - It is not permitted for the users to install third-party, unapproved remote access tools on their accounts. Any and all remote access tools need to be installed and maintaned centrally and their installation requested via their relevant [support contacts]({% link support.markdown %}). Examples of such third party remote access software include, but aren't limited to, TeamViewer.
 1. Storage
-  - Users should utilise Sulis storage in accordance with the guidance provided on the [storage page](({% link gettingstarted/storage.markdown %})). Specifically Sulis storage should not be used for long term data retention since it is not backed up and to do so exposes those data to risk of being lost.
+  - Users should utilise Sulis storage in accordance with the guidance provided on the [storage page]({% link gettingstarted/storage.markdown %}). Specifically Sulis storage should not be used for long term data retention since it is not backed up and to do so exposes those data to risk of being lost.
   - Users should not utilise /tmp for long term data storage; /tmp directories are subject to periodic clean-up and cannot be relied upon for anything other than temporary scratch storage.
   - All pseudo-filesystems (sshfs, encfs and other fuse-based, user-controllable filesystems) must be mounted inside /var/tmp/$USER/ where $USER is the shell variable containing the username for the current login session.
 1. Login node
