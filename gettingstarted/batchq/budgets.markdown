@@ -26,7 +26,7 @@ Jobs can only start if there is a positive budget in the account specified by th
 
 Projects are allocated a quanity of CPU and GPU hours to be used within a particular time interval. These intervals are known as *allocation periods* in SAFE. 
 
-Sulis allocation periods will normally start just after midnight on the first day of a month, and finish at midnight on the final day of a month. Any budget remaining at the end of an allocation period will be lost. Jobs that have started running will be allowed to complete if they run past the end of an allocation period. Queued jobs that have not started due to lack of postive budget will run at the start of the next period if there is positive budget for the account in the the new period. 
+Sulis allocation periods will normally start just after midnight on the first day of a month, and finish at midnight on the final day of a month. Any budget remaining at the end of an allocation period will be lost. Jobs that have started running will be allowed to complete if they run past the end of an allocation period. Queued jobs that have not started due to lack of postive budget will run at the start of the next period if there is positive budget for the account in the new period. 
 
 Allocation periods and the overall budget for a project within each allocation period can only be set by the Sulis administration team at Warwick. These periods are set in advance, starting and ending automatically.
 
