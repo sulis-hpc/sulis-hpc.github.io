@@ -26,13 +26,13 @@ any MATLAB module can be loaded directly
 ```
 
 ## Running MATLAB
-Please do NOT run MATLAB on the login nodes under any circumstances! MATLAB is a very resource intensive application so it's important that you always follow the [Sulis Acceptable User Policy](../polices) and run MATLAB via the job scheduler. As discussed in [Job submission](../gettingstarted/batchq) section, one option is to launch an interactive session 
+Please do NOT run MATLAB on the login nodes under any circumstances! MATLAB is a very resource-intensive application so it's important that you always follow the [Sulis Acceptable User Policy](../polices) and run MATLAB via the job scheduler. As discussed in [Job submission](../gettingstarted/batchq) section, one option is to launch an interactive session 
 
 ```bash
 {{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -N 1 -n 1 --cpus-per-task=4 --mem-per-cpu=3850 --time=8:00:00
 ```
 
-after a successful resource allocation, the interactive session will bring to a computational node other from the login one. MATLAB itself can be run interactively  
+after a successful resource allocation, the interactive session will bring to a computational node other than the login one. MATLAB itself can be run interactively  
 
 ```bash
 [user@node042(sulis) ~]$ module purge && module load MATLAB/2022a
@@ -40,13 +40,13 @@ after a successful resource allocation, the interactive session will bring to a 
 ```
 
 with the result of launching the command-line interface. 
-MATLAB can be used as script processing tool as well. For example running a matlab script `example.m` can be done via
+MATLAB can be used as script processing tool as well. For example, running a matlab script `example.m` can be done via
 
 ```bash
 [user@node042(sulis) ~]$ matlab -batch "example"
 ```
 
-Other then allocating an interactive session on Sulis nodes, it is also possible to launch a batch job asking the MATLAB to evaluate a matlab script, e.g.
+Other than allocating an interactive session on Sulis nodes, it is also possible to launch a batch job asking MATLAB to evaluate a matlab script, e.g.
  
 <p class="codeblock-label">submit.sbatch</p>
 ```bash
@@ -99,7 +99,7 @@ delete(gcp);
 command just before `exit;`.
 
 ## Parallel Computing Toolbox on Multiple Nodes
-Using a low-latency network (Infiniband) is essential when distributing communicating MATLAB workers across multiple nodes. At the present moment (Q2 2023), MATLAB does not yet support Infiniband and a third-party library for Message-Passing-Interface (MPI) communications has to be invoked. This is achieved on Sulis by loading additional modules pointing to the MVAPICH2 (MPI) library and setting the required environment. The corresponding submission script then would transform to the following
+Using a low-latency network (Infiniband) is essential when distributing communicating MATLAB workers across multiple nodes. At the present moment (Q2 2023), MATLAB does not yet support Infiniband and a third-party library for Message-Passing-Interface (MPI) communications has to be invoked. This is achieved on Sulis by loading additional modules pointing to the MVAPICH2 (MPI) library and setting the required environment. The corresponding submission script then would transform into the following
 
 <p class="codeblock-label">submit.sbatch</p>
 ```bash
@@ -129,7 +129,7 @@ export SLURM_ACCOUNT=suXXX-somebudget
 matlab -batch "multinode_matlabscript"
 ```
 
-Note, that we set --cpus-per-task to 1 here (increase its value when more memory is required), but introduced the `MATLAB_*` variables which would further initiate the parallel environment from the file below
+Note, that we set `--cpus-per-task` to 1 here (increase its value when more memory is required), but introduced the `MATLAB_*` variables which would further initiate the parallel environment from the file below
 
 <p class="codeblock-label">multinode_matlabscript.m</p>
 ```matlab
@@ -137,7 +137,7 @@ Note, that we set --cpus-per-task to 1 here (increase its value when more memory
 parenv_root = getenv('EBROOTMATLABMINPARENV');
 addpath(strcat(parenv_root, '/scripts'));
 
-% caputure the parallelisation parameters from ones set in the batch submission script
+% capture the parallelisation parameters from ones set in the batch submission script
 thds = str2num(getenv('MATLAB_CPUS_PER_TASK'));
 tsks = str2num(getenv('MATLAB_NTASKS_PER_NODE'));
 nods = str2num(getenv('MATLAB_NNODES'));
@@ -171,5 +171,5 @@ parpool(c, c.NumWorkers);
 and place the parallel code (e.g., from the body of `myFunc.m` of the previous example) below this call.
 
 ## Limitations
-We currently have noticed dificulties in launching on large number of CPUs per node for parralel MATLAB programming (e.g., parallel pools). We advise setting this number below 32. If more workers needed, one can run the calculation on multiple nodes as per examles above requesting the number of per-node workers `MATLAB_NTASKS_PER_NODE` less or equal to 32. 
+We currently have noticed difficulties in launching on a large number of CPUs per node for parallel MATLAB programming (e.g., parallel pools). We advise setting this number below 32. If more workers are needed, one can run the calculation on multiple nodes as per examples above requesting the number of per-node workers `MATLAB_NTASKS_PER_NODE` less or equal to 32. 
 
