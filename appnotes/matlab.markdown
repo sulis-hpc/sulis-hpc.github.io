@@ -171,5 +171,5 @@ parpool(c, c.NumWorkers);
 and place the parallel code (e.g., from the body of `myFunc.m` of the previous example) below this call.
 
 ## Limitations
-We currently have noticed difficulties in launching on a large number of CPUs per node for parallel MATLAB programming (e.g., parallel pools). We advise setting this number below 32. If more workers are needed, one can run the calculation on multiple nodes as per examples above requesting the number of per-node workers `MATLAB_NTASKS_PER_NODE` less or equal to 32. 
+We currently have noticed difficulties in launching on a large number of CPUs per node for parallel MATLAB programming (e.g., parallel pools). We advise setting this number below 32. If more workers are needed, one can run the calculation on multiple nodes as per examples above requesting the number of per-node workers `MATLAB_NTASKS_PER_NODE` less or equal to 32. We are in touch with MathWorks on this, who have indicated it is a known issue and they are working on a fix. 
 
