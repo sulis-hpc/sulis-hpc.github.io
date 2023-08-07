@@ -22,7 +22,7 @@ It is always advisable to build any code on a machine most similar to the one wh
 ```bash
 {{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -N 1 -n 1 -c 4 --mem-per-cpu=3850 --time=8:00:00
 ```
-After a limited benchmarking ([see below](#performance-data)), we have concluded that the optimal performance can be achived by compiling VASP with intel-2019b compiler toolchain and enabling the open OpenMP support. The corresponding compilers and libraries can be added to the environment via
+After a limited benchmarking ([see below](#performance-data)), we have concluded that the optimal performance can be achieved by compiling VASP with intel-2019b compiler toolchain and enabling the open OpenMP support. The corresponding compilers and libraries can be added to the environment via
 
 ```bash
 [user@node042(sulis) ~]$ module load intel/2019b HDF5/1.10.5
@@ -108,7 +108,7 @@ Finally, working executables can be produced by the next build command
 ```
 
 ### Running VASP
-Using parallel OpenMP threads improves the VASP performance. In particular, two threads per MPI task appears to be optimal (subject to testing for particular system). It can be acheived by the following submission script
+Using parallel OpenMP threads improves the VASP performance. In particular, two threads per MPI task appears to be optimal (subject to testing for a particular system). It can be achieved by the following submission script
 
 ```bash
 #!/bin/bash
@@ -133,19 +133,19 @@ srun $vasproot/bin/vasp_std
 ## VASP for GPU
 
 ### Building VASP
-An interactive session has to be allocated as for CPU build, but this time it must be on the GPU partition
+An interactive session has to be allocated for CPU build, but this time it must be on the GPU partition
 ```bash
 {{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -N 1 -n 1 -c 4 --mem-per-cpu=3850 --time=8:00:00 --partition=gpu --gres=gpu:ampere_a100:1
 ```
 
-Then load the neccessary modules
+Then load the necessary modules
 ```bash
 [user@gpu042(sulis) ~]$ module purge
 [user@gpu042(sulis) ~]$ module load GCC/11.2.0 FFTW/3.3.10
 [user@gpu042(sulis) ~]$ module load NVHPC/21.11 OpenMPI/4.1.1-CUDAcore-11.5.1 ScaLAPACK/2.1.0
 ```
 
-We have not yet produced a GPU build with recommended OpenMP support, therefore, the following makfile.include can be used for non-(CPU)threaded GPU build. Note that `FC` and `FCL` fortran compiler flags below contain site-specific (cc80) and environment-specific (cuda11.5) options. The first one corresponds to compute capability of Sulis' GPUs, while the second one corresponds to the CUDA library version loaded to the envirnment in the previos step
+We have not yet produced a GPU build with recommended OpenMP support, therefore, the following makfile.include can be used for non-(CPU)threaded GPU build. Note that `FC` and `FCL` Fortran compiler flags below contain site-specific (cc80) and environment-specific (cuda11.5) options. The first one corresponds to compute capability of Sulis' GPUs, while the second one corresponds to the CUDA library version loaded to the environment in the previous step
 
 <details markdown="block" class="detail">
 <summary>makefile.include</summary>
@@ -200,7 +200,7 @@ OBJECTS_LIB = linpack_double.o
 # For the parser library
 CXX_PARS    = nvc++ --no_warnings
 
-# When compiling on the target machine itself , change this to the
+# When compiling on the target machine itself, change this to the
 # relevant target when cross-compiling for another architecture
 VASP_TARGET_CPU ?= -tp host
 FFLAGS     += $(VASP_TARGET_CPU)
@@ -257,7 +257,7 @@ module load GCC/11.2.0 FFTW/3.3.10
 module load NVHPC/21.11 OpenMPI/4.1.1-CUDAcore-11.5.1 ScaLAPACK/2.1.0
 
 # Sometimes, 42 threads can be too many. Check if that many threads 
-# indeed improve the perfomance over the number below
+# Indeed improve the performance over the number below
 # Also, check other OpenMP parameters here: https://www.vasp.at/wiki/index.php/Combining_MPI_and_OpenMP#For_the_OpenMP_runtime
 export OMP_NUM_THREADS=24
 unset I_MPI_PMI_LIBRARY
@@ -268,7 +268,7 @@ srun $vasproot/bin/vasp_std
 ```
 
 ## Performance data
-Our choice for compiling and running instructions above is based on the one-node performance analys of different builds below. The tests we done for conjugate gradient relaxation on a system with 128 Lithium atoms per unit cell. We have only one data point for GPU perfromace at the time of writing (Q3 2023). We do not expect a significant effect of another GPU build on single-GPU calculations when using NVIDIA software, but improvement of multiple-GPU preformance due to different data transfer protocols is possible.
+Our choice for compiling and running the instructions above is based on the one-node performance analysis of different builds below. The tests are done for conjugate gradient relaxation on a system with 128 Lithium atoms per unit cell. We have only one data point for GPU performance at the time of writing (Q3 2023). We do not expect a significant effect of another GPU build on single-GPU calculations when using NVIDIA software, but improvement of multiple-GPU performance due to different data transfer protocols is possible.
 
 
 |toolchain|compiler|MPI implementation|MATHLIBS|time (s)| 
