@@ -137,7 +137,7 @@ This is expected. Only the GPU nodes have access to the CUDA runtime library.
 
 ## Linking libraries
 
-Many software build systems will correctly detect and link against libraries which have been loaded via [modules](environment modules). If linking against libraries manually, the `pkg-config` tool may be useful.
+Many software build systems will correctly detect and link against libraries which have been loaded via [environment modules](modules). If linking against libraries manually, the `pkg-config` tool may be useful.
 
 As an example, to compile code which uses the [FFTW3](http://fftw.org/) library we would first load an appropriate module.
 ```shell
