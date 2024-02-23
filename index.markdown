@@ -23,6 +23,7 @@ Searching above or using the links below will redirect to that site.
 </ul>
 </li>
 <li><a href="https://sulis-hpc.github.io/advanced/">Advanced Topics</a></li>
+<li><a href="https://sulis-hpc.github.io/software/">Software Catalogue</a></li>
 <li><a href="https://sulis-hpc.github.io/appnotes/">Application Notes</a></li>
 <li><a href="https://sulis-hpc.github.io/techspecs/">Technical Specifications</a></li>
 <li><a href="https://sulis-hpc.github.io/status/">Status</a></li>
