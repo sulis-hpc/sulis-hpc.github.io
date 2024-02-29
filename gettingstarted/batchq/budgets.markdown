@@ -24,9 +24,9 @@ Jobs can only start if there is a positive budget in the account specified by th
 
 ## SAFE Allocation periods
 
-Projects are allocated a quanity of CPU and GPU hours to be used within a particular time interval. These intervals are known as *allocation periods* in SAFE. 
+Projects are allocated a quantity of CPU and GPU hours to be used within a particular time interval. These intervals are known as *allocation periods* in SAFE. 
 
-Sulis allocation periods will normally start just after midnight on the first day of a month, and finish at midnight on the final day of a month. Any budget remaining at the end of an allocation period will be lost. Jobs that have started running will be allowed to complete if they run past the end of an allocation period. Queued jobs that have not started due to lack of postive budget will run at the start of the next period if there is positive budget for the account in the new period. 
+Sulis allocation periods will normally start just after midnight on the first day of a month, and finish at midnight on the final day of a month. Any budget remaining at the end of an allocation period will be lost. Jobs that have started running will be allowed to complete if they run past the end of an allocation period. Queued jobs that have not started due to lack of positive budget will run at the start of the next period if there is positive budget for the account in the new period. 
 
 Allocation periods and the overall budget for a project within each allocation period can only be set by the Sulis administration team at Warwick. These periods are set in advance, starting and ending automatically.
 
@@ -36,9 +36,9 @@ Projects allocated via the EPSRC Access to HPC mechanism will receive their budg
 
 ### HPC Midlands+ projects
 
-Allocation periods are usually six months in duration. These periods are desynchronised accross the consortium to minimise contention during any end of period rush. 
+Allocation periods are usually six months in duration. These periods are desynchronised across the consortium to minimise contention during any end of period rush. 
 
-Some HPC Midlands+ sites allocate budget to project groups for shorter (e.g. three month) intervals rather than the entire SAFE allocation period. If the start or end of these shorter periods does not coincide with that of the overall SAFE allocation period then any changes to project group budgets will not be scheduled in advance by SAFE. The changes will instead take effect immediately at the time the budget reallocations are made manually by the local reseach computing team. Practically, this means that project group budgets are likely to change on a working day close to the start/end of a quarterly period and not exactly at midnight on the last day of a month unless the change corresponds to a new SAFE allocation period for the overall institutional project.
+Some HPC Midlands+ sites allocate budget to project groups for shorter (e.g. three month) intervals rather than the entire SAFE allocation period. If the start or end of these shorter periods does not coincide with that of the overall SAFE allocation period then any changes to project group budgets will not be scheduled in advance by SAFE. The changes will instead take effect immediately at the time the budget reallocations are made manually by the local research computing team. Practically, this means that project group budgets are likely to change on a working day close to the start/end of a quarterly period and not exactly at midnight on the last day of a month unless the change corresponds to a new SAFE allocation period for the overall institutional project.
 
 ## Querying available budget
 
