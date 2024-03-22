@@ -276,7 +276,6 @@ matplotlib | matplotlib is a python 2D plotting library which produces publicati
 Mesa | Mesa is an open-source implementation of the OpenGL specification - a system for rendering interactive 3D graphics. | [Mesa/19.1.7](#mesa1917) <BR>[Mesa/19.2.1](#mesa1921) <BR>[Mesa/20.0.2](#mesa2002) <BR>[Mesa/20.2.1](#mesa2021) <BR>[Mesa/21.1.1](#mesa2111) <BR>[Mesa/21.1.7](#mesa2117) <BR>[Mesa/22.0.3](#mesa2203) <BR>
 Meson | Meson is a cross-platform build system designed to be both as fast and as user friendly as possible. | [Meson/0.51.2-Python-3.7.4](#meson0512-python-374) <BR>[Meson/0.55.1-Python-3.8.2](#meson0551-python-382) <BR>[Meson/0.55.3](#meson0553) <BR>[Meson/0.58.0](#meson0580) <BR>[Meson/0.58.2](#meson0582) <BR>[Meson/0.59.1-Python-3.7.4](#meson0591-python-374) <BR>[Meson/0.62.1](#meson0621) <BR>
 METIS | METIS is a set of serial programs for partitioning graphs, partitioning finite element meshes, and producing fill reducing orderings for sparse matrices. The algorithms implemented in METIS are based on the multilevel recursive-bisection, multilevel k-way, and multi-constraint partitioning schemes. | [METIS/5.1.0](#metis510) <BR>
-Miniconda3 | Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages. | [Miniconda3/4.12.0](#miniconda34120) <BR>[Miniconda3/4.9.2](#miniconda3492) <BR>
 MotionCor2 | MotionCor2 correct anisotropic image motion at thesingle pixel level across the whole frame, suitable for both singleparticle and tomographic images. Iterative, patch-based motion detectionis combined with spatial and temporal constraints and dose weighting.Cite publication: Shawn Q. Zheng, Eugene Palovcak, Jean-Paul Armache,Yifan Cheng and David A. Agard (2016) Anisotropic Correction ofBeam-induced Motion for Improved Single-particle ElectronCryo-microscopy, Nature Methods, submitted.BioArxiv: https://biorxiv.org/content/early/2016/07/04/061960 | [MotionCor2/1.4.7](#motioncor2147) <BR>
 MPC | Gnu Mpc is a C library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result. It extends the principles of the IEEE-754 standard for fixed precision real floating point numbers to complex numbers, providing well-defined semantics for every operation. At the same time, speed of operation at high precision is a major design goal. | [MPC/1.1.0](#mpc110) <BR>[MPC/1.2.1](#mpc121) <BR>
 MPFR | The MPFR library is a C library for multiple-precision floating-point computations with correct rounding. | [MPFR/4.0.2](#mpfr402) <BR>[MPFR/4.1.0](#mpfr410) <BR>[MPFR/4.2.0](#mpfr420) <BR>
@@ -358,7 +357,7 @@ PyGObject | PyGObject is a Python package which provides bindings for GObject ba
 PyTables | PyTables is a package for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data. PyTables is built on top of the HDF5 library, using the Python language and the NumPy package. It features an object-oriented interface that, combined with C extensions for the performance-critical parts of the code (generated using Cython), makes it a fast, yet extremely easy to use tool for interactively browsing, processing and searching very large amounts of data. One important feature of PyTables is that it optimizes memory and  disk resources so that data takes much less space (specially if on-flight compression is used) than other solutions  such as relational or object oriented databases. | [PyTables/3.8.0](#pytables380) <BR>
 pytest-xdist | xdist: pytest distributed testing pluginThe pytest-xdist plugin extends pytest with some unique test execution modes:    * test run parallelization: if you have multiple CPUs or hosts you      can use those for a combined test run. This allows to speed up      development or to use special resources of remote machines.    * --looponfail: run your tests repeatedly in a subprocess. After        each run pytest waits until a file in your project changes and        then re-runs the previously failing tests. This is repeated        until all tests pass after which again a full run is        performed.    * Multi-Platform coverage: you can specify different Python      interpreters or different platforms and run tests in parallel on      all of them.Before running tests remotely, pytest efficiently rsyncs yourprogram source code to the remote place. All test results are reportedback and displayed to your local terminal. You may specify differentPython versions and interpreters. | [pytest-xdist/2.3.0](#pytest-xdist230) <BR>
 Python | Python is a programming language that lets you work more quickly and integrate your systems more effectively. | [Python/2.7.16](#python2716) <BR>[Python/2.7.18](#python2718) <BR>[Python/2.7.18-bare](#python2718-bare) <BR>[Python/3.10.4](#python3104) <BR>[Python/3.10.4-bare](#python3104-bare) <BR>[Python/3.10.8](#python3108) <BR>[Python/3.10.8-bare](#python3108-bare) <BR>[Python/3.11.3](#python3113) <BR>[Python/3.11.5](#python3115) <BR>[Python/3.7.4](#python374) <BR>[Python/3.8.2](#python382) <BR>[Python/3.8.6](#python386) <BR>[Python/3.9.5](#python395) <BR>[Python/3.9.5-bare](#python395-bare) <BR>[Python/3.9.6](#python396) <BR>[Python/3.9.6-bare](#python396-bare) <BR>
-PyTorch | Tensors and Dynamic neural networks in Python with strong GPU acceleration.PyTorch is a deep learning framework that puts Python first. | [PyTorch/1.10.0](#pytorch1100) <BR>[PyTorch/1.11.0-CUDA-11.1.1](#pytorch1110-cuda-1111) <BR>[PyTorch/1.12.0](#pytorch1120) <BR>[PyTorch/1.12.1](#pytorch1121) <BR>[PyTorch/1.12.1-CUDA-11.7.0](#pytorch1121-cuda-1170) <BR>[PyTorch/1.7.1](#pytorch171) <BR>[PyTorch/1.9.0](#pytorch190) <BR>[PyTorch/2.0-Miniconda3-4.12.0](#pytorch20-miniconda3-4120) <BR>
+PyTorch | Tensors and Dynamic neural networks in Python with strong GPU acceleration.PyTorch is a deep learning framework that puts Python first. | [PyTorch/1.10.0](#pytorch1100) <BR>[PyTorch/1.11.0-CUDA-11.1.1](#pytorch1110-cuda-1111) <BR>[PyTorch/1.12.0](#pytorch1120) <BR>[PyTorch/1.12.1](#pytorch1121) <BR>[PyTorch/1.12.1-CUDA-11.7.0](#pytorch1121-cuda-1170) <BR>[PyTorch/1.7.1](#pytorch171) <BR>[PyTorch/1.9.0](#pytorch190) <BR>
 PyTorch-Geometric | PyTorch Geometric (PyG) is a geometric deep learning extension library for PyTorch. | [PyTorch-Geometric/2.0.1-PyTorch-1.9.0](#pytorch-geometric201-pytorch-190) <BR>
 PyTorch-Lightning | PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. | [PyTorch-Lightning/1.8.4-CUDA-11.7.0](#pytorch-lightning184-cuda-1170) <BR>[PyTorch-Lightning/1.9.0](#pytorch-lightning190) <BR>
 PyYAML | PyYAML is a YAML parser and emitter for the Python programming language. | [PyYAML/5.3.1](#pyyaml531) <BR>[PyYAML/5.4.1](#pyyaml541) <BR>[PyYAML/6.0](#pyyaml60) <BR>
@@ -6731,24 +6730,6 @@ module load GCCcore/12.2.0 METIS/5.1.0
 
 -------
 
-## Miniconda3/4.12.0
-
-module load  Miniconda3/4.12.0
-
-
-[Return to modules](#module-list)
-
--------
-
-## Miniconda3/4.9.2
-
-module load  Miniconda3/4.9.2
-
-
-[Return to modules](#module-list)
-
--------
-
 ## MotionCor2/1.4.7
 
 module load GCC/10.2.0 CUDA/11.1.1 MotionCor2/1.4.7
@@ -8940,15 +8921,6 @@ module load GCC/10.2.0 OpenMPI/4.0.5 PyTorch/1.7.1
 module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 PyTorch/1.9.0
 
 module load GCC/10.2.0 OpenMPI/4.0.5 PyTorch/1.9.0
-
-
-[Return to modules](#module-list)
-
--------
-
-## PyTorch/2.0-Miniconda3-4.12.0
-
-module load  PyTorch/2.0-Miniconda3-4.12.0
 
 
 [Return to modules](#module-list)
