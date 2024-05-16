@@ -94,7 +94,7 @@ See also the application notes on [Jupyter](../../appnotes/jupyter).
 To request an interactive session on a GPU-equipped node, specify the `gpu` partition and include a resource request for the A100 GPUs in that node.
 
 ```bash
-{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:ampere_a100:3 --time=8:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3 --time=8:00:00
 ```
 
 In this case SLURM will allocate one "slot" for a process launched via `srun`  which will have access to all 128 CPUs and the 3 GPUs in the node. Once the resources are allocated an available then a new command prompt will appear. 
