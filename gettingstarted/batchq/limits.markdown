@@ -3,7 +3,7 @@ layout: page
 title: Resource limits
 parent: Job submission
 grand_parent: Getting Started
-nav_order: 7
+nav_order: 8
 ---
 
 # Resource Limits
@@ -27,13 +27,15 @@ Some of the resource limits we have in place (such as the walltime and job size 
 
 ## Per Partition Limits
 
+Where low priority partitions exist, differences to the standard limits are indicated in parentheses. 
+
 | Limit | compute | devel | gpu | gpu-devel | hmem | vhmem |
 |-------|:-------:|:-----:|:---:|:---------:|:----:|:-----:|
-| max walltime | 48 hours | 1 hour | 48 hours | 1 hour | 48 hours | 48 hours |
+| max walltime | 48 hours | 1 hour | 48(24) hours | 1 hour | 48 hours | 48 hours |
 | max cores per job | 3840 | 256 | 1290 | 128 | 384 | 192 |
 | max cores per user | 7680 | 256 | 1290 | 128 | 384 | 192 |
 | max gpus per job | N/A | N/A | 30 | 3 | N/A | N/A |
 | max gpus per user | N/A | N/A | 30 | 3 | N/A | N/A |
-| max running jobs (per user) | 200 | 2 | 30 | 2 | 100 | 100 |
-| max jobs in queue (per user) | 500 | 4 | 200 | 4 | 200 | 200 |
+| max running jobs (per user) | 200  | 2 | 30 (10) | 2 | 100 | 100 |
+| max jobs in queue (per user) | 500 | 4 | 200 (50) | 4 | 200 | 200 |
 
