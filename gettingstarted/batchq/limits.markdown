@@ -31,7 +31,7 @@ Where low priority partitions exist, differences to the standard limits are indi
 
 | Limit | compute | devel | gpu | gpu-devel | hmem | vhmem |
 |-------|:-------:|:-----:|:---:|:---------:|:----:|:-----:|
-| max walltime | 48 hours | 1 hour | 48(24) hours | 1 hour | 48 hours | 48 hours |
+| max walltime | 48 hours | 1 hour | 48 (24) hours | 1 hour | 48 hours | 48 hours |
 | max cores per job | 3840 | 256 | 1290 | 128 | 384 | 192 |
 | max cores per user | 7680 | 256 | 1290 | 128 | 384 | 192 |
 | max gpus per job | N/A | N/A | 30 | 3 | N/A | N/A |
