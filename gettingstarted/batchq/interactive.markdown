@@ -111,6 +111,24 @@ GPU 1: A100-PCIE-40GB (UUID: GPU-f55b44e4-79e9-0ee0-c1ad-a4dbd693ad71)
 GPU 2: A100-PCIE-40GB (UUID: GPU-23d2b9d2-42d7-3886-a921-5c4869914b0e)
 ```
 
+## Graphical interactive jobs
+
+If the software you wish to run interactively uses a graphical interface then pass the `--x11` argument to `salloc`. In this case
+we request a graphically enabled interaction session to use a single GPU.
+
+```bash
+{{site.data.terminal.prompt}} salloc --x11 --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 42 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1 --time=2:00:00
+```
+
+In order for graphical application to display their windows, you will need to be connected to the Sulis login node
+over an SSH connection configured to forward these to an X server running on your local device. From Mac and Linux
+clients this is usually as simple as using `ssh -X` rather than `ssh` to initialise the connection. From Windows clients
+this can be more complicated. Contact your local [support representative](../../support) for help configuring this. The
+details will be the same as for any other HPC cluster.
+
+Note that using graphical applications remotely in this way may result in poor responsiveness for users geographically
+distant from Sulis due to the latency of the connection. This is little that can be done about this.
+
 ## Development partitions
 
 If the machine is busy you may wish to submit interactive jobs to the `devel` partition (or `gpu-devel` for GPU jobs) which has higher queue priority but a maximum walltime of one hour. 
