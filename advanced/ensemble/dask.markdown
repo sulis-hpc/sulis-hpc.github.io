@@ -72,6 +72,11 @@ if __name__ == '__main__':
 
     # Code which uses Dask features...
 
+    
+    # Shutdown client now we're done
+    client.shutdown()
+
+
 ``` 
 In the above we make use of various environment variables set by SLURM to tell Dask how much 
 RAM is available per worker, and how many CPUs each worker can use. We use the high performance infiniband interconnect `ib0` to communicate between scheduler and workers. Temporary/scratch files will be written
@@ -137,6 +142,10 @@ if __name__ == '__main__':
     print("%d workers available and ready"%num_workers)
 
     # Code which uses Dask features...
+
+    # Shutdown client now we're done
+    client.shutdown()
+
 
 ``` 
 In this case the number of available workers is the number of SLURM tasks.
