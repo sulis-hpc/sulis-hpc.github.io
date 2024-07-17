@@ -19,3 +19,9 @@ parallel: "parallel/20210322"
 
 defaultipython: "IPython/7.18.1"
 
+
+## RELION information
+
+relioncpuver: "4.0.0"
+relioncputoolchain: "GCC/11.3.0 OpenMPI/4.1.4"
+reliongpuver: "4.0.0-CUDA-11.7.0"
