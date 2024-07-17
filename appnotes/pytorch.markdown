@@ -111,3 +111,34 @@ srun python main.py --model resnet50 --batch_size 256 --num_gpus 1
 
 Performance with this benchmark should be close to 790 images per second. 
 
+## PyTorch 2
+
+The recommended method for using PyTorch 2 on Sulis is via the `PIP-PyTorch` module.
+This provides an environment which includes a PyTorch build from the Python package
+index at pypi.org rather than built from source specifically for Sulis. For GPU-based
+PyTorch computations the performance of these builds is as good as can be realistically
+achieved. 
+
+```bash
+{{site.data.terminal.prompt}} module spider PIP-PyTorch
+```
+
+This will provide a list of available versions. Querying one specifically:
+
+```bash
+{{site.data.terminal.prompt}} module spider PIP-PyTorch/2.1.2
+
+-----------------------------------------------------------------------------
+   PIP-PyTorch: PIP-PyTorch/2.1.2
+-----------------------------------------------------------------------------
+    Description:
+      Tensors and Dynamic neural networks in Python with strong GPU 
+      acceleration. PyTorch is a deep learning framework that puts Python first.
+      
+    You will need to load all module(s) on any one of the lines below before
+    the "PyTorch/1.9.0" module is available to load.
+
+      GCC/11.3.0  OpenMPI/4.1.4
+
+```
+                                                                                                                                                                         
