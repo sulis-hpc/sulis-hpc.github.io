@@ -77,6 +77,7 @@ $ bundle install
 The pages can be served locally using:
 
 ```bash
+$ bundle add webrick (if you are using Ruby version 3.0 or above)
 $ bundle exec jekyll serve
 Configuration file: <repopath>/_config.yml
             Source: <repopath>/
