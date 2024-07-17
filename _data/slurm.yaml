@@ -9,11 +9,12 @@ cnode_partition_name: compute
 cnode_partition_maxwalltime: "48:00:00"
 
 # GPU node configuration. RAM is in Megabytes
-gpunode_gpus_per_node: 128
+gpunode_gpus_per_node: 3
 gpunode_cores_per_node: 128
 gpunode_threads_per_core: 1
 gpunode_ram_per_core: 3850
 gpunode_gpu_gres_name: ampere_a100
+gpunode_gpu_gres_name2: lovelace_l40
 gpunode_partition_name: gpu
 gpulowpri_partition_name: gpulowpri
 gpunode_partition_maxwalltime: "48:00:00"

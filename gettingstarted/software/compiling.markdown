@@ -107,7 +107,7 @@ Some codes use both OpenMP and MPI in a hybrid fashion, i.e. with each process u
 
 ## Compiling for GPUs
 
-Code written using CUDA C to take advantage of the Sulis A100 GPUs should be compiled using `nvcc` after loading the appropriate CUDA toolkit module, and should target compute capability 8.0.
+Code written using CUDA C to take advantage of the Sulis A100 GPUs should be compiled using `nvcc` after loading the appropriate CUDA toolkit module, and should target compute capability 8.0. Code written to use the L40 GPUs should target compute capability 8.9. Both can be specified simultaneously as below.
 
 1. Load compiler and CUDA modules from a toolchain. 
    ```shell
@@ -115,8 +115,10 @@ Code written using CUDA C to take advantage of the Sulis A100 GPUs should be com
    ```
 2. Invoke the CUDA C compiler.
    ```shell
-   {{site.data.terminal.prompt}} nvcc --gpu-code=sm_80 mycudacode.cu 
+   {{site.data.terminal.prompt}} nvcc --gpu-code=sm_80 --gpu-code=sm_89 mycudacode.cu 
    ```
+Note that CUDA toolkit version 11.8 or higher is needed to target compute capability 8.9.
+
 
 CUDA-aware MPI modules are also available and can be identified via `module spider`. For example:
 ```shell

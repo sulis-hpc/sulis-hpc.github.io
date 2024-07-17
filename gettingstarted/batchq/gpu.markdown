@@ -12,7 +12,11 @@ nav_order: 5
 1. TOC
 {:toc}
 
-Sulis contains a number of nodes equipped with Nvidia A100 GPUs. These are the 40GB variant of the A100, connected via PCI-express. Three A100s are installed in each node. GPU nodes are accessed via submitting batch scripts to the {{site.data.slurm.gpunode_partition_name}} partition. Such scripts should request one or more GPUs in their SLURM resource request.
+Sulis contains 30 nodes equipped with Nvidia A100 GPUs. These are the 40GB variant of the A100, connected via PCI-express. Three A100s are installed in each node. In addition there are 18 nodes equipped with three Nvidia L40 GPUs (48GB). 
+
+Note that these **are** PCI-e cards and are not connected via Nvidia SXM. They are unlikely to be suitable for training large models that need to span the memory of multiple GPUs simultaneously. 
+
+GPU nodes are accessed via submitting batch scripts to the {{site.data.slurm.gpunode_partition_name}} partition. Such scripts should request one or more GPUs in their SLURM resource request.
 
 Most GPU jobs will require loading of the a CUDA [environment module](../software/modules) to make use of GPU acceleration. 
 
@@ -74,11 +78,13 @@ int main() {
 This might be compiled into the executable `a.out` via:
 ```bash
 {{site.data.terminal.prompt}} module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
-{{site.data.terminal.prompt}} nvcc -arch=sm_80 cuda_hello.cu
+{{site.data.terminal.prompt}} nvcc -arch=sm_80 -arch=sm_89 cuda_hello.cu
 ```
+Note that we've specified the compute capability of both GPU types when compiling. 
+
 </details>
 
-The following example job script requests a single GPU via the {{site.data.slurm.gpunode_partition_name}} partition. Each GPU nodes contains {{site.data.slurm.gpunode_cores_per_node}} which does not divide equally over the {{site.data.slurm.gpunode_gpus_per_node}} A100 GPUs in each node. We therefore recommend that single GPU jobs request 42 CPUs per task. 
+The following example job script requests a single GPU via the {{site.data.slurm.gpunode_partition_name}} partition. Each GPU node contains {{site.data.slurm.gpunode_cores_per_node}} cores which does not divide equally over the {{site.data.slurm.gpunode_gpus_per_node}} A100 GPUs in each node. We therefore recommend that single GPU jobs request 42 CPUs per task. 
 
 <p class="codeblock-label">gpu.slurm</p>
 ```bash
@@ -98,7 +104,9 @@ module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
 srun ./a.out
 ```
 
-The resource request `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1` specifies that we require a single A100 GPU for the job. The request `partition={{site.data.slurm.gpunode_partition_name}}` overrides the default partition and tells SLURM the job should run on the partition consisting of GPU enabled nodes. BOTH are required.
+The resource request `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1` specifies that we require a single A100 GPU for the job. This could be substituted with `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name2}}:1` to request a single L40 GPU instead. Alternative, use `gres=gpu:1` to indicate that a GPU of any type if sufficient.
+
+The request `partition={{site.data.slurm.gpunode_partition_name}}` overrides the default partition and tells SLURM the job should run on the partition consisting of GPU enabled nodes. 
 
 In this example, a more complicated program than our `cuda_hello.cu` might be able to make use of the 42 CPUs/cores by spawning additional threads. Some codes (e.g. LAMMPS) instead benefit from multiple MPI tasks sharing a single CPU, in which case the `ntasks-per-node` part of the resource request should reflect the desired number of tasks and `cpus-per-task` reduced such that the total number of CPUs/cores requested is no more than 42.
 
@@ -287,6 +295,8 @@ module load CuPy/8.5.0
 
 srun -n 1 -G 3 -c 18 --cpus-per-gpu=6 python mp_gpu_pool.py
 ```
+As per earlier examples, one could replace `{{site.data.slurm.gpunode_gpu_gres_name}}` with `{{site.data.slurm.gpunode_gpu_gres_name2}}` to request L40 rather than A100 GPUs, or simply specify `--gres=gpu:3` to request three GPUs of either type.
+
 
 ### MPI application with one GPU per task
 
