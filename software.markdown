@@ -526,7 +526,6 @@ warwick | Enables access to Warwick modules. | [warwick](#warwick) <BR>
 Wayland | Wayland is a project to define a protocol for a compositor to talk to its clients as well as a library implementation of the protocol.  The compositor can be a standalone display server running on Linux kernel modesetting and evdev input devices, an X application, or a wayland client itself.  The clients can be traditional applications, X servers (rootless or fullscreen) or other display servers. | [Wayland/1.20.0](#wayland1200) <BR>[Wayland/1.21.0](#wayland1210) <BR>[Wayland/1.22.0](#wayland1220) <BR>
 Waylandpp | Wayland is an object oriented display protocol, which features request and events. Requests can be seen as method calls on certain objects, whereas events can be seen as signals of an object. This makes the Wayland protocol a perfect candidate for a C++ binding.The goal of this library is to create such a C++ binding for Wayland using the most modern C++ technology currently available, providing an easy to use C++ API to Wayland. | [Waylandpp/1.0.0](#waylandpp100) <BR>
 WebKitGTK+ | WebKitGTK+ is a full-featured port of the WebKitrendering engine, suitable for projects requiring any kind of webintegration, from hybrid HTML/CSS applications to full-fledged webbrowsers. It offers WebKit's full functionality and is useful in a widerange of systems from desktop computers to embedded systems like phones,tablets, and televisions. | [WebKitGTK+/2.37.1](#webkitgtk2371) <BR>
-WIEN2k | The program package WIEN2k allows to perform electronic structure calculations of solidsusing density functional theory (DFT). It is based on the full-potential (linearized) augmented plane-wave((L)APW) + local orbitals (lo) method, one among the most accurate schemes for band structure calculations.WIEN2k is an all-electron scheme including relativistic effects and has many features. | [WIEN2k/23.2](#wien2k232) <BR>
 wpebackend-fdo | WPE WebKit allows embedders to create simple and performant systems based on Web platform technologies. It is a WebKit port designed with flexibility and hardware acceleration in mind, leveraging common 3D graphics APIs for best performance. | [wpebackend-fdo/1.13.1](#wpebackend-fdo1131) <BR>
 wxPython | Wraps the wxWidgets C++ toolkit and provides access to the user interface portions of the wxWidgets API, enabling Python applications to have a native GUI on Windows, Macs or Unix systems, with a native look and feel and requiring very little (if any) platform specific code. | [wxPython/4.2.0](#wxpython420) <BR>
 wxWidgets | wxWidgets is a C++ library that lets developers createapplications for Windows, Mac OS X, Linux and other platforms with asingle code base. It has popular language bindings for Python, Perl,Ruby and many other languages, and unlike other cross-platform toolkits,wxWidgets gives applications a truly native look and feel because ituses the platform's native API rather than emulating the GUI. | [wxWidgets/3.1.4](#wxwidgets314) <BR>[wxWidgets/3.2.0](#wxwidgets320) <BR>[wxWidgets/3.2.1](#wxwidgets321) <BR>[wxWidgets/3.2.5](#wxwidgets325) <BR>
@@ -14576,15 +14575,6 @@ module load GCCcore/11.2.0 Waylandpp/1.0.0
 ## WebKitGTK+/2.37.1
 
 module load GCC/11.2.0 WebKitGTK+/2.37.1
-
-
-[Return to modules](#module-list)
-
--------
-
-## WIEN2k/23.2
-
-module load GCC/11.2.0 OpenMPI/4.1.1 WIEN2k/23.2
 
 
 [Return to modules](#module-list)
