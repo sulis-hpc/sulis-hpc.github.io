@@ -120,7 +120,6 @@ ffnvcodec | FFmpeg nvidia headers. Adds support for nvenc and nvdec. Requires Nv
 fftlib | A library that intercepts FFTW calls and adds features on top of it. In particular, it enables FFT plan reuse when there are multiple calls for the same geometry. | [fftlib/20170628](#fftlib20170628) <BR>
 FFTW | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)in one or more dimensions, of arbitrary input size, and of both real and complex data. | [FFTW/3.3.10](#fftw3310) <BR>[FFTW/3.3.8](#fftw338) <BR>[FFTW/3.3.8-amd](#fftw338-amd) <BR>[FFTW/3.3.9](#fftw339) <BR>
 FFTW.MPI | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)in one or more dimensions, of arbitrary input size, and of both real and complex data. | [FFTW.MPI/3.3.10](#fftwmpi3310) <BR>
-FHI-aims | FHI-aims is an efficient, accurate all-electron,full-potential electronic structure code package for computational molecularand materials science (non-periodic and periodic systems). The code supportsDFT (semilocal and hybrid) and many-body perturbation theory. FHI-aims isparticularly efficient for molecular systems and nanostructures, whilemaintaining high numerical accuracy for all production tasks. Productioncalculations handle up to several thousand atoms and can efficiently use (ten)thousands of cores.  | [FHI-aims/240507](#fhi-aims240507) <BR>
 FHI-vibes | FHI-vibes is a python package for calculating, analyzing, and understanding    the vibrational properties of solids from first principles. | [FHI-vibes/1.0.4](#fhi-vibes104) <BR>
 FIAT | The FInite element Automatic Tabulator (FIAT) supportsgeneration of arbitrary order instances of the Lagrange elements onlines, triangles, and tetrahedra. It is also capable of generatingarbitrary order instances of Jacobi-type quadrature rules on the sameelement shapes. | [FIAT/2019.1.0-Python-3.7.4](#fiat201910-python-374) <BR>
 FLAC | FLAC stands for Free Lossless Audio Codec, an audio format similar to MP3, but lossless, meaningthat audio is compressed in FLAC without any loss in quality. | [FLAC/1.3.3](#flac133) <BR>
@@ -3414,15 +3413,6 @@ module load GCC/12.2.0 OpenMPI/4.1.4 FFTW.MPI/3.3.10
 module load GCC/11.3.0 OpenMPI/4.1.4 FFTW.MPI/3.3.10
 
 module load GCC/12.3.0 OpenMPI/4.1.5 FFTW.MPI/3.3.10
-
-
-[Return to modules](#module-list)
-
--------
-
-## FHI-aims/240507
-
-module load GCC/13.2.0 OpenMPI/4.1.6 FHI-aims/240507
 
 
 [Return to modules](#module-list)
