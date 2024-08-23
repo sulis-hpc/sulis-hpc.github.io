@@ -20,22 +20,23 @@ University of Leicester | [RC Support](mailto:rcs.support@le.ac.uk), [IT Service
 Loughborough University | [Research Computing Support](mailto:research-computing@lboro.ac.uk)
 University of Nottingham | [IT Service Desk](https://www.nottingham.ac.uk/dts/help/self-service-portal/self-service-portal.aspx)
 Queen Mary, University of London | [ITS Research Support](mailto:its-research-support@qmul.ac.uk)
-University of Warwick | [SCRTP Service Desk](https://bugzilla.csc.warwick.ac.uk/bugzilla)
+University of Warwick | [Scientific Computing RTP Support](https://warwick.ac.uk/research/rtp/sc/user_support/)
 
 If they are unable to answer or resolve your query, your local support team will escalate the issue to the team at the University of Warwick who are managing Sulis.
 
-## Other users
+## UKRI Access to HPC users
 
-Other users with allocations of time on Sulis will be provided with a means to request support when their allocation becomes active.
+Support is provided via the [Sulis HPC GitHub organisation](https://github.com/sulis-hpc/support-access). You will be
+invited to join this organisation when your project is allocated resource on Sulis.
 
 # Research Software Engineering support
 
-Users within the HPC Midlands+ consortium are able to request support from a Research Software Engineer (RSE) within their Call for Applications submission. Research Software Engineers are skilled individuals with experience to help with the following non-exhaustive list:
+Users within the HPC Midlands+ consortium are able to request support from a Research Software Engineer (RSE) when applying for access to Sulis through their institution. Research Software Engineers are skilled individuals with experience to help with the following non-exhaustive list:
 
 * Profiling of code to understand performance and recommend areas of improvement
 * Developing code to add new functionality, improve scaling, add parallelism, or improve software maintainability
 * Optimise code for performance on Sulis
 * Wring the best performance out of code with complier flag choices
-* Advise on matters of best practise regarding development workflows and version control.
+* Advise on matters of best practise regarding development of workflows and version control.
 
 Please request RSE support at the time of your application, or afterwards via your Support Contact.

@@ -50,12 +50,12 @@ The batch submission script below runs the Python program above checkpointed eve
 #SBATCH --time=00:04:00
 #SBATCH --account=suXXX-somebudget
 
-# load moules for checkpointing
+# load modules for checkpointing
 module purge
-module load GCC/9.3.0 OpenMPI/4.0.3
-module load DMTCP/2.6.0
-module load Python/3.8.2
-module load SciPy-bundle/2020.03-Python-3.8.2
+module load {{site.data.software.defaultfoss}}
+module load DMTCP/{{site.data.software.DMTCPver}}
+module load {{site.data.software.defaultpython}}
+module load {{site.data.software.defaultscipy}}
 
 # time interval (in seconds) between checkpoint writes
 checkpoint_write_interval=60
@@ -76,20 +76,25 @@ fi
 ```
 Please note, that using the generated restart script `dmtcp_restart_script.sh` does not always work, and it is therefore recommended restarting the calculations with `dmtcp_restart` as above. There is an overhead for writing checkpoints especially in the case of heavier calculations. Outside the checkpoint writing events, the performance is essentially unaffected, and therefore, increasing the checkpoint write interval improves the overall performance.
 
-Applications compiled with use of `MPI` wrappers can be checkpointed in the same way providing that these are launched as single-node and single-task processes. Finally, `DMTCP` is compiled within several toolchains, and the corresponding information is printed out upon running the `module spider DMTCP` command
+Applications compiled with use of `MPI` wrappers can be checkpointed in the same way providing that these are launched as single-node and single-task processes. Finally, `DMTCP` is compiled within several toolchains, and the corresponding information is printed out upon running `module spider DMTCP`.
 
-<p class="codeblock-label">dmtcp.slurm</p>
+<!--
 ```bash
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  DMTCP: DMTCP/2.6.0
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------
+  DMTCP: DMTCP/3.0.0
+------------------------------------------------------------------------
     Description:
-      DMTCP is a tool to transparently checkpoint the state of multiple simultaneous applications, including multi-threaded and distributed applications. It operates directly on the user binary executable, without any Linux kernel modules or other kernel modifications.
+      DMTCP is a tool to transparently checkpoint the state of multiple 
+      simultaneous applications, including multi-threaded and distributed
+      applications. It operates directly on the user binary executable, 
+      without any Linux kernel modules or other kernel modifications.
 
 
-    You will need to load all module(s) on any one of the lines below before the "DMTCP/2.6.0" module is available to load.
+    You will need to load all module(s) on any one of the lines below before
+    the "DMTCP/2.6.0" module is available to load.
 
       GCCcore/10.3.0
       GCCcore/8.3.0
       GCCcore/9.3.0
 ```
+-->

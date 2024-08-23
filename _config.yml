@@ -50,6 +50,25 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
+callouts:
+  warning:
+    title: Warning
+    color: red
+
+  note:
+    title: Note
+    color: purple
+
+  important:
+    title: Important
+    color: blue
+
+  highlight:
+    color: yellow
+
+
+
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

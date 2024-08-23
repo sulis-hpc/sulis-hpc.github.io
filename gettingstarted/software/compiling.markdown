@@ -24,6 +24,12 @@ The environment module system can be used to access compilers and optimised libr
 
 A very common pitfall when working with HPC systems is to mismatch modules used at this stage (i.e. compile time) and modules loaded in batch scripts which use the resulting software (i.e. run time). Do please take notes of your build environment, and be aware that automated build systems such as GNU Make will not automatically rebuild software from scratch if you unload one set of compilers/libraries and load another. Consider starting a new build in a seperate directory or using `make clean` (if the software has a makefile) if switching to a different toolchain.
 
+{: .note }
+A whole generation of HPC users developed their skills when Intel processors dominated the HPC market. They have hence been conditioned to expect that the best performance is gained from compiling
+software using the [Intel compiler suite](https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#gs.dfgmph). This is usually *untrue* on clusters like Sulis which use AMD processors. There are exceptions to this rule (see the [application notes](../../appnotes)) and hence some versions of
+the Intel compiler suite *are* installed but are not recommended as the default choice.
+
+
 ## Serial code
 
 It may be necessary to compile single-threaded/serial applications for subsequent use in an ensemble computing workflow. 
@@ -90,7 +96,7 @@ Software written to use multiple nodes in an HPC cluster often uses MPI to imple
 
     1. For Fortran code:
        ```shell
-       {{site.data.terminal.prompt}} mpif90 mympicode.f90
+       {{site.data.terminal.prompt}} mpifort mympicode.f90
        ```
     2. For C code:
        ```shell
@@ -120,20 +126,21 @@ Code written using CUDA C to take advantage of the Sulis A100 GPUs should be com
 Note that CUDA toolkit version 11.8 or higher is needed to target compute capability 8.9.
 
 
-CUDA-aware MPI modules are also available and can be identified via `module spider`. For example:
+<!-- CUDA-aware MPI modules are also available and can be identified via `module spider`. For example:
 ```shell
 {{site.data.terminal.prompt}} module spider {{site.data.software.defaultmpi}}
 ```
 The prerequisite list which includes a CUDA module should be loaded for access to CUDA-aware MPI compiler wrappers. For example:
 ```shell
 {{site.data.terminal.prompt}} module load {{site.data.software.defaultfosscuda}}
-```
+``` -->
 
-WARNING. Software compiled to use use CUDA will only execute on the GPU nodes accessible via the {{site.data.slurm.gpunode_partition_name}} queue. It will not run on the login node or the standard compute nodes and will likely produce errors of the form:
-```plaintext
-libcuda.so.1: cannot open shared object file: No such file or directory.
-```
-This is expected. Only the GPU nodes have access to the CUDA runtime library.
+{: .note }
+>Software compiled to use use CUDA will only execute on the GPU nodes accessible via the {{site.data.slurm.gpunode_partition_name}} queue. It will not run on the login node or the standard compute nodes and will likely produce errors of the form:
+>
+>`libcuda.so.1: cannot open shared object file: No such file or directory.`
+>
+>This is expected. Only the GPU nodes have access to the CUDA runtime library.
 
 <!--- Support for CUDA Fortran is available via the Nvidia HPC SDK ??? --->
 
@@ -141,9 +148,9 @@ This is expected. Only the GPU nodes have access to the CUDA runtime library.
 
 Many software build systems will correctly detect and link against libraries which have been loaded via [environment modules](modules). If linking against libraries manually, the `pkg-config` tool may be useful.
 
-As an example, to compile code which uses the [FFTW3](http://fftw.org/) library we would first load an appropriate module.
+As an example, to compile code which uses the MPI version of the [FFTW3](http://fftw.org/) library we would first load an appropriate module.
 ```shell
-{{site.data.terminal.prompt}} module load {{site.data.software.defaultfoss}} FFTW/3.3.8
+{{site.data.terminal.prompt}} module load {{site.data.software.defaultfoss}} {{site.data.software.fftwmpimodule}}
 ```
 After which 
 ```shell

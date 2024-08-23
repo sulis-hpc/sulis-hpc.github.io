@@ -53,4 +53,4 @@ Sulis has a limited amount of cluster wide scratch space on SSDs mounted as `/sc
 
 Due to the limited capacity of this scratch area, access is by request only. When applying for access to Sulis via your institution or EPSRC calls, please indicate if you anticipate a need to use this storage. 
 
-Do please note that `/home/` is by no means low-performance, especially when utitising applications with parallel IO, and that individual compute nodes have their own local SSDs for temporary storage in `/tmp/`. The `/scratch/` space is hence most appropriate for IO-intensive workloads which require retention of data between job submissions to the batch queue.
+Do please note that `/home/` is by no means low-performance, especially when utilising applications with parallel IO, and that individual compute nodes have their own local SSDs for temporary storage in `/tmp/`. The `/scratch/` space is hence most appropriate for IO-intensive workloads which require retention of data between job submissions to the batch queue.

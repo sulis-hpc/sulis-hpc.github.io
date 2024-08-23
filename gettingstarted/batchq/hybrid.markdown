@@ -141,7 +141,7 @@ builds of NumPy which use OpenMP for threading. This is true for the version of 
 made available to Python within the example job script below. 
 </details>
 
-The following script would be used to run an MPI4Py python script on a single node, with 32 MPI tasks each using 4 threads. 
+The following script would be used to run an MPI4Py python script on a single node, with 32 MPI tasks each using 4 threads. Note that we load both the `SciPy-bundle` module (for NumPy) and the `mpi4py` module.
 
 <p class="codeblock-label">hybrid_numpy.slurm</p>
 ```bash
@@ -155,8 +155,7 @@ The following script would be used to run an MPI4Py python script on a single no
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
-module load {{site.data.software.defaultscipy}}
-
+module load {{site.data.software.defaultscipy}} {{site.data.software.mpi4pymodule}}
 
 srun python mpi_np_threads.py
 ```

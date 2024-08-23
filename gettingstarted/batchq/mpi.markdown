@@ -90,7 +90,14 @@ MPI.Finalize()
 ``` 
 </details>
 
-The MPI4Py Python package is included in the SciPy-bundle module. A suitable job script would be the following:
+The MPI4Py Python package is available via the `mpi4py` environment module.
+
+{: .note } 
+For older toolchains the MPI4Py Python package was included in the `SciPy-bundle`
+environment module rather than being provisioned separately. 
+
+
+A suitable job script would be the following:
 
 <p class="codeblock-label">mpi4py.slurm</p>
 ```bash
@@ -103,7 +110,7 @@ The MPI4Py Python package is included in the SciPy-bundle module. A suitable job
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
-module load {{site.data.software.defaultscipy}}
+module load {{site.data.software.mpi4pymodule}}
 
 srun python mpi_hello.py
 ```
@@ -157,7 +164,7 @@ The necessary submission script launches multiple tasks on each node. One task i
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
-module load {{site.data.software.defaultscipy}}
+module load {{site.data.software.mpi4pymodule}}
 
 srun python -m mpi4py.futures example_mpifuture.py 255
 ```
@@ -168,7 +175,12 @@ The number of inputs to evaluate needn't match the number of workers, but should
 
 ## Parallel cluster in R
 
-A convenient way to exploit multinode parallelism in R is to create a "cluster" within an R script which can then be exploited by functions such as `parLapply`. Within a SLURM environment, one way this can be accomplished us via the MPI cluster type and launching the calculation using the RMPISNOW wrapper. 
+A convenient way to exploit multinode parallelism in R is to create a "cluster" within an R script which can then be exploited by functions such as `parLapply`. Within a SLURM environment, one way this can be accomplished is via the MPI cluster type and launching the calculation using the RMPISNOW wrapper. 
+
+
+{: .note } 
+Users will need to installed the `Rmpi` and `snow` packages into their R environment. See the [software page on R](../software/R) for information on how to install R packages.
+
 
 An example R script which illustrates this is below. 
 
@@ -236,15 +248,15 @@ A suitable job submission script which launches the master and worker processes 
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=8
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=3850
+#SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=00:01:00
-#SBATCH --account=su950
+#SBATCH --account=suxxx-somebudget
 
 module purge
-module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+module load {{site.data.software.Rtoolchain}} {{site.data.software.Rmodule}}
 
-# Add tools for MPI cluster to path
-export PATH=${EBROOTR}/lib/R/library/snow/:$PATH
+# Add tools for MPI cluster to path (assumes default location for user-installed packages)
+export PATH=${HOME}/R/x86_64-pc-linux-gnu-library/{{site.data.software.Rshortver}}/snow:$PATH
 
 # Set shell variables read by example_mpi.R as input
 export N=10000
@@ -254,6 +266,88 @@ export k=50000
 srun RMPISNOW CMD BATCH example_mpi.R 
 ```
 This will create 1 master and 15 worker processes across 2 nodes. This is for illustrative purposes only. Normally it would not be necessary to split a 16 processor job across two nodes in this way. In principle one can use this method to use all processors across multiple nodes in the Sulis system for workloads that benefit from very large amounts of parallelism. 
+
+## Using `MPI.jl` in Julia
+
+The Julia package [MPI.jl](https://juliaparallel.org/MPI.jl/stable/configuration/) provides an interface between Julia and MPI libraries. This allows code written in Julia to implement message passing parallelism between many running instances of the same Julia program. 
+
+A trivial example using MPI in Julia is below.
+
+<details markdown="block" class="detail">
+  <summary>Example MPI.jl code<code>01-hello.jl</code>.</summary>
+  Simple hello word example adapted from the ``MPI.jl`` [documentation](https://juliaparallel.org/MPI.jl/stable/examples/01-hello/).
+
+
+<p class="codeblock-label">01-hello.jl</p>
+```julia
+using MPI
+MPI.Init()
+
+comm = MPI.COMM_WORLD
+println("Hello world, I am MPI rank $(MPI.Comm_rank(comm)) of $(MPI.Comm_size(comm))")
+MPI.Barrier(comm)
+``` 
+</details>
+
+To use `MPI.jl` on Sulis users must load both a Julia module and an MPI module. For example:
+
+```bash
+{{site.data.terminal.prompt}} module load Julia/{{site.data.software.juliamodver}}
+{{site.data.terminal.prompt}} module load {{site.data.software.defaultfoss}}
+```
+
+Some configuration is required to point `MPI.jl` to the OpenMPI libraries provided by the module. This involves setting the ``JULIA_DEPOT_PATH`` variable as described in the [Julia section of the software pages](../software/julia.markdown#installing-julia-packages).
+
+```bash
+{{site.data.terminal.prompt}} export JULIA_DEPOT_PATH=~/julia
+{{site.data.terminal.prompt}} julia -e 'using Pkg; Pkg.add("MPIPreferences"); Pkg.add("MPI")'
+{{site.data.terminal.prompt}} julia -e 'using MPIPreferences; MPIPreferences.use_system_binary()'
+```
+
+You should see output that identifies the version of MPI provided by the ``OpenMPI`` module loaded above.
+
+```
+    ┌ Info: MPI implementation identified
+    │   libmpi = "libmpi"
+    │   version_string = "Open MPI v{{site.data.software.ompiver}}, package: Open MPI Distribution, ident: {{site.data.software.ompiver}}, repo rev: v{{site.data.software.ompiver}}, May 26, 2022\0"
+    │   impl = "OpenMPI"
+    │   version = v"{{site.data.software.ompiver}}"
+    └   abi = "OpenMPI"
+    ┌ Info: MPIPreferences changed
+    │   binary = "system"
+    │   libmpi = "libmpi"
+    │   abi = "OpenMPI"
+    │   mpiexec = "mpiexec"
+    │   preloads = Any[]
+    └   preloads_env_switch = nothing
+```
+
+With the prerequisites satisfied we can submit a job script which loads the appropriate 
+module and launches programs which use MPI.jl. An example script follows which launches
+the example ``01-hello.jl`` from the [MPI.jl documentation](https://juliaparallel.org/MPI.jl/stable/examples/01-hello/) on 4 processors. 
+
+<p class="codeblock-label">Rmpi.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
+#SBATCH --time=00:01:00
+#SBATCH --account=suxxx-somebudget
+
+module purge
+module load Julia/{{site.data.software.juliamodver}}
+module load {{site.data.software.defaultfoss}}
+    
+# Make sure our extra packages are available
+export JULIA_DEPOT_PATH=~/julia
+
+srun julia 01-hello.jl 
+```
+
+The number of tasks can be increased up to {{site.data.slurm.cnode_cores_per_node}} on a single node on the {{site.data.slurm.cnode_partition_name}} partition, and beyond this by increasing the ``--nodes`` part of the resource request to 2 or more nodes. As with all parallel calculations, users should experiment to find the optimal amount of CPU resource run their calculation efficiently. Throwing as many CPUs at the calculation as possible and hoping for the best is unlikely to be effective. Communication costs between tasks can more than offset any benefit of distributing work over additional tasks. 
+
 
 ## Under-populating nodes
 
@@ -278,4 +372,5 @@ In either case half of the CPU cores in the node will be left idle, but each tas
 
 Jobs which under-populate nodes will be charged against resource budgets as if all cores in the node were fully utilised, so this should only be done if absolutely necessary. 
 
-Note that a small number of Sulis nodes have access to {{site.data.slurm.fatnode_ram_per_core}} MB memory per CPU and are available for large memory jobs on request.
+{: .note } 
+Sulis contains a small number of servers with larger amounts of RAM, accessed via the `{{site.data.slurm.vfatnode_partition_name}}` and `{{site.data.slurm.vfatnode_partition_name}}` partitions. See the [high memory jobs](highmem) page for details.

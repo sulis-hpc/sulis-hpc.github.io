@@ -17,15 +17,15 @@ nav_order: 5
 Use `module spider R` to query the available R builds, and then load using (for example):
 
 ```shell
-{{site.data.terminal.prompt}} module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+{{site.data.terminal.prompt}} module load {{site.data.software.Rtoolchain}} {{site.data.software.Rmodule}}
 ```
 
-The example above will import version 4.1.2 of R into your environment. This can be verified with:
+The example above will import version {{site.data.software.Rversion}} of R into your environment. This can be verified with:
 
 ```shell
 {{site.data.terminal.prompt}} R --version
-R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -46,9 +46,9 @@ Many of these packages involve use of Python libraries, and hence loading an R e
 {{site.data.terminal.prompt}} module purge
 {{site.data.terminal.prompt}} python --version
 -bash: python: command not found
-{{site.data.terminal.prompt}} module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+{{site.data.terminal.prompt}} module {{site.data.software.Rtoolchain}} {{site.data.software.Rmodule}}
 {{site.data.terminal.prompt}} python --version 
-Python 3.9.6
+Python {{site.data.software.defaultpyver}}
 ```
 
 ## Installing additional R packages from CRAN
@@ -72,13 +72,15 @@ One can then start an interactive R session to install packages.
 ```
 [user@node001(sulis) R]$ R
 
-R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-Copyright (C) 2021 The R Foundation for Statistical Computing
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
 Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
 
 R is a collaborative project with many contributors.
 Type 'contributors()' for more information and
@@ -110,7 +112,7 @@ Following the lengthy compilation of all dependencies we can import this newly i
 
 The [Bioconductor project](http://www.bioconductor.org/) provides a curated set of R packages for bioinformatics which are often closer to the bleeding-edge version number than those included in the latest R release. 
 
-The installation of R can be extended to include the Bioconductor core package by loading an appropriate environment module. Searching via
+<!--- The installation of R can be extended to include the Bioconductor core package by loading an appropriate environment module. Searching via
 ```bash
 {{site.data.terminal.prompt}} module spider R-bundle-Bioconductor
 ```
@@ -118,9 +120,9 @@ will provide a list of environment modules for the installed versions which can 
 
 ```bash
 {{site.data.terminal.prompt}} module load GCC/11.2.0 OpenMPI/4.1.1 R-bundle-Bioconductor/3.14-R-4.1.2
-```
+``` -->
 
-Users who instead wish to manage their own set of Bioconductor packages from scratch can do so by following the instructions above to install the `BiocManager` R package. For example, inside an interactive R session running on a compute node:
+Users who wish to manage their own set of Bioconductor packages from scratch can do so by following the instructions above to install the `BiocManager` R package. For example, inside an interactive R session running on a compute node:
 
 ```R
 > install.packages("BiocManager")
@@ -134,7 +136,7 @@ Bioconductor packages can then be installed with only minimal modification to th
 
 This will install the requested package. An informational message will be displayed stating that packages installed in the system-wide package library could not be upgraded. This can be ignored. The latest versions will be installed into the default location in your home directory instead.
 
-Use the `packageVersion()` function to check which version of a particular package is in use. For example, if using the same `R/4.1.2` module as above we can update the `broom` package to the version currently used by Bioconductor.
+Use the `packageVersion()` function to check which version of a particular package is in use. For example, if using the same `{{site.data.software.Rmodule}}` module as above we can update the `broom` package to the version currently used by Bioconductor.
 
 ```R
 > packageVersion("broom")
@@ -161,7 +163,7 @@ R has excellent support for running scripts in batch mode. An example SLURM job 
 #SBATCH --account=suxxx-somebudget
 
 module purge
-module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+module load {{site.data.software.Rtoolchain}} {{site.data.software.Rmodule}}
 
 srun R CMD BATCH "--args <my_args>" my_script.R
 ```

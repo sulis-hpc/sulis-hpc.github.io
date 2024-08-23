@@ -5,6 +5,8 @@
 cnode_cores_per_node: 128
 cnode_threads_per_core: 1
 cnode_ram_per_core: 3850
+cnode_2x_ram_per_core: 7700
+cnode_ram_per_node: "512 GB"
 cnode_partition_name: compute
 cnode_partition_maxwalltime: "48:00:00"
 
@@ -19,13 +21,27 @@ gpunode_partition_name: gpu
 gpulowpri_partition_name: gpulowpri
 gpunode_partition_maxwalltime: "48:00:00"
 
-# Fat node configuration. RAM is in Megabytes
+# hmem node configuration. RAM is in Megabytes
 fatnode_cores_per_node: 128
-fatnode_threads_per_core: 1git
+fatnode_threads_per_core: 1
 fatnode_ram_per_core: 7700
+fatnode_ram_per_node: "1 TB"
 fatnode_partition_name: hmem
 fatnode_partition_maxwalltime: "48:00:00"
 fatnode_partition_size: 4
 
+fatnode_half_cpus: 64
+fatnode_half_ram: "512GB"
 
 
+# vhmem node configuration. RAM is in Megabytes
+vfatnode_cores_per_node: 64
+vfatnode_threads_per_core: 1
+vfatnode_ram_per_core: 64000
+vfatnode_ram_per_node: "4 TB"
+vfatnode_partition_name: vhmem
+vfatnode_partition_maxwalltime: "48:00:00"
+vfatnode_partition_size: 3
+
+vfatnode_half_cpus: 32
+vfatnode_half_ram: "2 TB"

@@ -34,7 +34,7 @@ You will see the message `salloc: job xxxxxx queued and waiting for resources` u
 Once allocated the user will be dropped into an interactive session on that node, in this case node046. 
 
 ```bash
-[user@node046(sulis) ~]$
+[user@node046(sulis) ~]$ 
 ```
 
 The interactive session will end after the 8 hours requested, or if the user ends the session with:

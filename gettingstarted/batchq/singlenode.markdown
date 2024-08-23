@@ -22,11 +22,12 @@ Job scripts are text files typically containing the following:
 - any [environment modules](../../gettingstarted/software/modules) to be loaded
 - a command to launch the program(s) which will run on the requested resource
 
-<!-- DQ we might need a node here on charging model and node exclusivity. Will we always allocate (and charge for) a whole node to jobs which only use a fraction? --->
+<!-- DQ we might need a note here on charging model and node exclusivity. Will we always allocate (and charge for) a whole node to jobs which only use a fraction? --->
 
 ## Serial jobs
 
-**IMPORTANT**: Regular submission of serial jobs is strongly discouraged. We do however welcome (and encourage) workflows which implement task-based parallelism by launching many instances of a serial program as a single job. See the [Ensemble jobs](../../advanced/ensemble/) section of these pages for further information. 
+{: .important }
+Regular submission of serial jobs is strongly discouraged. We do however welcome (and encourage) workflows which implement task-based parallelism by launching many instances of a serial program as a single job. See the [Ensemble jobs](../../advanced/ensemble/) section of these pages for further information. 
 
 <details markdown="block" class="detail">
   <summary>An example serial program in C.</summary>
@@ -86,11 +87,10 @@ Hello World!
 ```
 </details>
 
-### Note on serial jobs with large memory requirements
-
-In some cases it may be necessary to request more RAM for serial jobs,  e.g. for in-memory post processing of data. In such cases scripts should request multiple ``cpus-per-task`` to access more memory, leaving the additional CPUs unused.
-
-Sulis does contain {{site.data.slurm.fatnode_partition_size}} high memory nodes with {{site.data.slurm.fatnode_ram_per_core}} MB of RAM available per CPU. These are available for memory-intensive processing on request.
+{: .note } 
+>In some cases it may be necessary to request more RAM for serial jobs,  e.g. for in-memory post processing of data. In such cases scripts should request multiple ``cpus-per-task`` to access more memory, leaving the additional CPUs unused. 
+>
+>Sulis also contains servers with large amounts of RAM, accessed via the `{{site.data.slurm.vfatnode_partition_name}}` and `{{site.data.slurm.vfatnode_partition_name}}` partitions. See the [high memory jobs](highmem) page for details.
 
 ## OpenMP jobs
 
@@ -569,12 +569,12 @@ A SLURM job script suitable for running this example on 4 cores is given below. 
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem-per-cpu=3850
+#SBATCH --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}}
 #SBATCH --time=00:01:00
 #SBATCH --account=suxxx-somebudget
 
 module purge
-module load GCC/11.2.0 OpenMPI/4.1.1 R/4.1.2
+module load {{site.data.software.Rtoolchain}} {{site.data.software.Rmodule}}
 
 # Set number of cores used by parallel package
 export MC_CORES=$SLURM_CPUS_PER_TASK
@@ -586,3 +586,76 @@ srun R CMD BATCH "--args $N $k" example.R
 ```
 
 This trival example runs approximately 4 faster using 4 cores (7.6s) than using 1 (28.7s). Distributing more computationally intensive function calls with `mclapply` should scale to larger core counts than this trivial example.
+
+## Julia distributed
+
+
+The [Julia language](https://julialang.org) language has some integrated support for parallel computing via the ``distributed`` package.
+
+There are two ways to create a pool of Julia processes. The first is to instantiate a *local cluster* and can be used to implement parallelism over the CPUs in a single node. This is documented below. 
+
+The second involves creating a *machine file* that lists the servers allocated to the current job. Communication between servers is handled over ``ssh``, which requires some special per-user configuration. We believe that most
+multi-node computation in Julia is now done with [MPI.jl](https://juliaparallel.org/MPI.jl/stable/configuration/) instead and so have not documented this. If you think you have a use case for distributed Julia processing that can use more than one node of Sulis then contact [your support contact](../../support.markdown) for advice.
+
+<details markdown="block" class="detail">
+  <summary>An example Julia code using the distributed package <code>par-example.jl</code>.</summary>
+
+Computes ``N`` random matrices, and averages the spectrum. The number of matrices ``N`` and their size ``M`` are taken as arguments. This example needs the ``LinearAlgebra`` package to be installed. See the section on [installing Julia packages](../software/julia.markdown#installing-julia-packages) for how to do this.
+
+The input parameters N and k are read as command line arguments.
+
+<p class="codeblock-label">par-example.jl</p>
+```
+# julia par-example.jl {M} {N}
+# computes N random matrices, averages the spectrum
+
+@everywhere begin
+  using LinearAlgebra
+end
+
+function f(M::Int, N::Int)
+  e = @distributed (+) for n = 1:N
+    A = rand(M, M)
+    A = 0.5 * (A+A')
+    sort(real(eigvals(A)))
+  end
+  return e / N
+end
+
+# call once to force compile
+f(10,10)
+sleep(1.0)
+
+# run with user parameters
+@assert length(ARGS) == 2
+M = parse(Int, ARGS[1])
+N = parse(Int, ARGS[2])
+
+@time out = f(M, N)
+#println(out)
+sleep(1.0)
+```
+</details>
+
+A suitable job script for running the above example would be the following.
+
+<p class="codeblock-label">julia_distributed.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=16
+#SBATCH --mem-per-cpu={{site.data.slurm.cnode_mem_per_cpu}}
+#SBATCH --time=00:01:00
+#SBATCH --account=suxxx-somebudget
+
+# get number of processors to use
+export n=$SLURM_NTASKS_PER_NODE
+
+module purge
+module load Julia/{{site.data.software.juliamodver}}
+
+# par-example.jl takes matrix dimensions as arguments
+julia -p $n par-example.jl 2000 2000
+```
+
+This parallelises the example calculation over 16 CPUs of a single compute node.

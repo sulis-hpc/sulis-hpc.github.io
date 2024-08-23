@@ -14,7 +14,8 @@ nav_order: 5
 
 Sulis contains 30 nodes equipped with Nvidia A100 GPUs. These are the 40GB variant of the A100, connected via PCI-express. Three A100s are installed in each node. In addition there are 18 nodes equipped with three Nvidia L40 GPUs (48GB). 
 
-Note that these **are** PCI-e cards and are not connected via Nvidia SXM. They are unlikely to be suitable for training large models that need to span the memory of multiple GPUs simultaneously. 
+{: .note }
+These are PCI-e GPU cards and are not connected via Nvidia SXM. They are unlikely to be suitable for training large models that need to span the memory of multiple GPUs simultaneously. 
 
 GPU nodes are accessed via submitting batch scripts to the {{site.data.slurm.gpunode_partition_name}} partition. Such scripts should request one or more GPUs in their SLURM resource request.
 
@@ -108,7 +109,7 @@ The resource request `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1` spec
 
 The request `partition={{site.data.slurm.gpunode_partition_name}}` overrides the default partition and tells SLURM the job should run on the partition consisting of GPU enabled nodes. 
 
-In this example, a more complicated program than our `cuda_hello.cu` might be able to make use of the 42 CPUs/cores by spawning additional threads. Some codes (e.g. LAMMPS) instead benefit from multiple MPI tasks sharing a single CPU, in which case the `ntasks-per-node` part of the resource request should reflect the desired number of tasks and `cpus-per-task` reduced such that the total number of CPUs/cores requested is no more than 42.
+In this example, a more complicated program than our `cuda_hello.cu` might be able to make use of the 42 CPUs/cores by spawning additional threads. Some codes (e.g. LAMMPS) instead benefit from multiple MPI tasks sharing a single GPU, in which case the `ntasks-per-node` part of the resource request should reflect the desired number of tasks and `cpus-per-task` reduced such that the total number of CPUs/cores requested is no more than 42.
 
 GPU jobs are submitted to SLURM in the usual way.
 
@@ -127,7 +128,7 @@ Found 1 CUDA device(s) in this system
 Device 0 : A100-PCIE-40GB
 Using device 0
 ```
-Note that our program only identified a single G
+Note that our program only identified a single GPU despite their being 3 in the node. Only the GPU allocated to us by SLURM is visible.
 
 </details>
 
@@ -135,9 +136,50 @@ Note that our program only identified a single G
 
 ### GPU accelerated Python packages
 
-Some Python codes may make use GPU acceleration. Most commonly this will be via use of GPU-accelerated packages such as TensorFlow, PyTorch, Magma and many others. Jobs scripts should ensure that the appropriate version of [environment modules](../software/modules) are loaded, i.e. those which have a CUDA module as a dependency. 
+Some Python codes may make use GPU acceleration. Most commonly this will be via use of GPU-accelerated packages such as TensorFlow, PyTorch, Magma and many others. Jobs scripts should ensure that the appropriate version of [environment modules](../software/modules) are loaded, i.e. those which have a CUDA module as a dependency or have CUDA suffixed to the module name. 
 
-A suitable script is below, using TensorFlow as an example.
+A suitable script is below, using PyTorch as an example.
+
+<details markdown="block" class="detail">
+  <summary>Python script <code>torch_gpu.py</code>  to test for GPU support in PyTorch.</summary>
+This trivial script imports the PyTorch package and checks if the imported build
+of has GPU acceleration available.
+
+<p class="codeblock-label">torch_gpu.py</p>
+```python
+import torch
+
+if torch.torch.cuda.is_available():
+    print("Imported PyTorch package was built with GPU support")
+else:
+    print("Imported PyTorch package was NOT built with GPU support")
+``` 
+</details>
+
+This can be executed on a GPU node with the following SLURM job script.
+
+<p class="codeblock-label">torch_gpu.slurm</p>
+```bash
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=42
+#SBATCH --mem-per-cpu={{site.data.slurm.gpunode_ram_per_core}}
+#SBATCH --gres=gpu:1
+#SBATCH --partition={{site.data.slurm.gpunode_partition_name}}
+#SBATCH --time=08:00:00
+#SBATCH --account=suxxx-somebudget
+
+module purge
+module load {{site.data.software.defaultfoss}}
+module load PIP-PyTorch/{{site.data.software.PyTorchversion}}
+
+srun python torch_gpu.py
+```
+
+This script should report a positive result!
+
+<!-->
 
 <details markdown="block" class="detail">
   <summary>Python script <code>tf_gpu.py</code>  to test for GPU support in TensorFlow.</summary>
@@ -177,7 +219,11 @@ srun python tf_gpu.py
 ```
 Note that omitting {{site.data.software.defaultcuda}} from the first `module load` command would use a toolchain that is not GPU enabled. The second `module load` would then import a build of TensorFlow which is not GPU enabled. 
 
+-->
+
 ### Using GPUs directly in Python code
+
+<!-- TODO CuPy isn't yet available on the foss/2023b toolchain -->
 
 Some workflows may involve GPU-accelerated code written in Python. This may take the form of Python functions executed as kernels on the GPU device using [Numba](https://numba.pydata.org/), or drop-in replacements for compute-intensive NumPy and SciPy operations such as those implemented in [CuPy](https://cupy.dev/). These can be executed in job scripts provided the appropriate packages are loaded as [environment modules](../software/modules). 
 

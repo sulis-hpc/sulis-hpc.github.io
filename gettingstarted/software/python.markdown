@@ -14,7 +14,7 @@ nav_order: 3
 
 ## Python environment modules
 
-Sulis runs the CentOS 8 operating system, which includes Python 3.6. Many users will instead prefer to use newer versions of Python provided via the environment module system. Scientific packages provided via the module system will be built and configured for these newer versions and not the default CentOS Python installation.
+Sulis runs a version of the Linux operating systems that includes Python 3.6. Many users will prefer to use newer versions of Python provided via the environment module system. Scientific packages provided via the module system will be built and configured for these newer versions and not the default OS level Python installation.
 
 Use `module spider Python` to query the available Python builds, and then load using (for example):
 
@@ -55,7 +55,7 @@ will load the {{site.data.software.defaultscipy}} module and its prerequisites (
 
 Many other Python packages are available via the environment module system. Please [search the software already available](modules/#searching-modules) via the module system before attempting to install additional packages. 
 
-If the package you need is likely to be useful for multiple users at your site or elsewhere then consider requesting a centrally installed build via your local [research computing support team](../../support) (HPC Midlands+ consortium members) or by raising an issue in the [sulis-hpc/support](https://github.com/sulis-hpc/support/issues) repository on GitHub (EPSRC national access users).
+If the package you need is likely to be useful for multiple users at your site or elsewhere then consider requesting a centrally installed build via your local [research computing support team](../../support) (HPC Midlands+ consortium members) or by raising an issue in the [sulis-hpc/support](https://github.com/sulis-hpc/support/issues) repository on GitHub (UKRI Access to HPC users).
 
 For other packages, users can invoke `pip` with the `--user` argument to install packages from pypi.org into their home directory. This may be appropriate for packages which do not perform any processor intensive computation and hence optimisation for the Sulis hardware is not a concern. For example, to install the arrow package:
 
@@ -69,7 +69,7 @@ Advanced users may wish to use [Python virtual environments](https://docs.python
 
 ## Anaconda
 
-We do not recommend use of Anaconda for processor intensive scientific applications on Sulis (or on HPC platforms in general). The Anaconda system modifies your default Python environment in ways which may cause problems for optimised builds of packages provided via the module system. Software distributed via Anaconda is also built for compatibility with the largest range of hardware possible, rather than optimised for the latest hardware.
+We do not recommend use of Anaconda for processor intensive scientific applications on Sulis (or on HPC platforms in general). The Anaconda system modifies your default Python environment in ways which may cause problems for optimised builds of packages provided via the module system. Software distributed via Anaconda is also built for compatibility with the largest range of hardware possible, rather than optimised for particular hardware.
 
 If processor intensive software needed for use on Sulis is only distributed via Anaconda then please first check with your [support contact](../../suport/) who may be able to create an optimised build for the Sulis hardware from the software's source. In some cases the performance difference can be substantial.
 

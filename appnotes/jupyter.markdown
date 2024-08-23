@@ -22,10 +22,10 @@ We do however recognise that for some purposes (debugging, post processing etc) 
 
 ## Launching a notebook server within an interactive session
 
-The follow example requests an interactive session on a Sulis GPU node, reserving all three GPUs and all 128 cores within the node for two hours.
+The follow example requests an interactive session on a Sulis GPU node, reserving a single GPUs and 42 cores within the node for two hours.
 
 ```shell
-{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu  -N 1 -n 128  --gres=gpu:ampere_a100:3 --mem-per-cpu=3850 --time=2:00:00
+{{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p {{site.data.slurm.gpunode_partition_name}}  -N 1 -n 1 -c 42 --gres=gpu:1 --mem-per-cpu={{site.data.slurm.gpunode_ram_per_core}} --time=2:00:00
 ```
 
 If a GPU node is available then SLURM should drop you into an interactive session on that node within a few seconds. Otherwise, if the machine is busy you may wish to submit to the `devel` partition (or `gpu-devel` for GPU jobs) which has higher priority but a maximum walltime of one hour. 
@@ -38,14 +38,14 @@ Once the interactive session starts the command prompt will change to indicate w
 
 Make a note of which GPU node you have been allocated.
 
-You can then load appropriate environment modules for your interactive session. Jupyter itself is provisioned via the `IPython` module and you may wish to load additional modules to extend your
- Python environment before launching the notebook server, e.g. Matplotlib, Bokeh etc.
+You can then load appropriate environment modules for your interactive session. Jupyter itself is provisioned via the `JupyterNotebook` module and you may wish to load additional modules to extend your Python environment before launching the notebook server, e.g. Matplotlib, SciPy etc, or activate a Python virtual environment into which you have installed additional Python packages.
 
 ```shell
 [user@gpu016(sulis) ~]$ module purge
 [user@gpu016(sulis) ~]$ module load {{site.data.software.defaultfosscuda}}
 [user@gpu016(sulis) ~]$ module load {{site.data.software.defaultscipy}}
-[user@gpu016(sulis) ~]$ module load {{site.data.software.defaultipython}}
+[user@gpu016(sulis) ~]$ module load {{site.data.software.mplmodule}}
+[user@gpu016(sulis) ~]$ module load {{site.data.software.jupytermodule}}
  ```
 
 A notebook server can then be launched with:
@@ -72,14 +72,13 @@ In our example above, the interactive session was provided by the node `gpu016`.
 to this directly, and so must tunnel our web browser traffic. On your local machine/laptop open a new terminal session and 
 
 ```shell
-[user@mylaptop] ~]$ ssh -J user@login.sulis.ac.uk -N -L 8888:gpu016.sulis.hpc:8888 gpu016.sulis.hpc
+[user@mylaptop] ~]$ ssh -J user@{{site.data.hosts.loginhost}} -N -L 8888:gpu016.sulis.hpc:8888 gpu016.sulis.hpc
 ```
 replacing `gpu016` with the GPU node allocated to your job, and `8888` with the port number reported at the previous step if different from `8888`. Replace `user` with your Sulis username.
 
 This will prompt for the details required to connect to Sulis, and establish an SSH tunnel from port 8888 on your local machine to port 8888 on the specified GPU node. 
 
-You should then be able to paste the URL from the previous step into a web browser and connect to
-the notebook server running on Sulis.
+You should then be able to paste the URL from the previous step into a web browser and connect to the notebook server running on Sulis.
 
 
 ## Ending the session

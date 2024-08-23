@@ -1,27 +1,62 @@
 
 
-defaultfosscuda: "GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5"
-defaultfoss: "GCC/10.2.0 OpenMPI/4.0.5"
-defaultgcc: "GCC/10.2.0"
-defaultgcccore: "GCCcore/10.2.0"
-defaultmpi: "OpenMPI/4.0.5"
-defaultcuda: "CUDA/11.1.1"
+defaultfosscuda: "GCC/13.2.0 OpenMPI/4.1.6 CUDA/12.4.0"
+defaultfoss: "GCC/13.2.0 OpenMPI/4.1.6"
+defaultgcc: "GCC/13.2.0"
+defaultgcccore: "GCCcore/13.2.0"
+defaultmpi: "OpenMPI/4.1.6"
+ompiver: "4.1.6"
 
-defaultpython: "Python/3.8.6"
-defaultpyver: "3.8.6"
-defaultscipy: "SciPy-bundle/2020.11"
+## CUDA
+defaultcuda: "CUDA/12.4.0"
+defaultcudaver: "12.4.0"
 
-defaultdask: "dask/2021.2.0"
+defaultpython: "Python/3.11.5"
+defaultpyver: "3.11.5"
+defaultscipy: "SciPy-bundle/2023.11"
+defaultipython: "IPython/8.17.2"
+mpi4pymodule: "mpi4py/3.1.5"
+mplmodule: "matplotlib/3.8.2"
 
-ommver: "7.5.1"
+## Dask version (assumed same toolchain as above)
+defaultdask: "dask/2024.5.1"
 
-parallel: "parallel/20210322"
+## To update to reflect what's installed on the machine
+ommver: "8.1.2"
 
-defaultipython: "IPython/7.18.1"
+## FFTW.MPI module
+fftwmpimodule: "FFTW.MPI/3.3.10"
+
+## GNU parallel
+parallel: "parallel/20240322"
+
+## R information
+Rtoolchain: "GCC/13.2.0 OpenMPI/4.1.6"
+Rmodule: "R/4.3.3"
+Rversion: "4.3.3"
+Rshortver: "4.3"
 
 
 ## RELION information
-
 relioncpuver: "4.0.0"
 relioncputoolchain: "GCC/11.3.0 OpenMPI/4.1.4"
 reliongpuver: "4.0.0-CUDA-11.7.0"
+
+## DMTCP
+DMTCPver: "3.0.0"
+
+## Julia
+juliamodver: "1.10.4-linux-x86_64"
+
+## Jupyter
+jupytermodule: "JupyterNotebook/7.2.0"
+jupytermodver: "7.2.0"
+
+## PyTorch
+PyTorchtoolchain: "GCC/13.2.0 OpenMPI/4.1.6"
+PyTorchversion: "2.4.0-CUDA-12.4.0"
+
+## CuPy
+CuPytoolchain: "GCC/13.2.0 OpenMPI/4.1.6"
+CuPymodule: "CuPy/8.5.0-CUDA-12.4.0"
+CyPyversion: "8.5.0-CUDA-12.4.0"

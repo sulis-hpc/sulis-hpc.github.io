@@ -13,11 +13,55 @@ nav_order: 7
 
 These notes constitute a brief guide to using [PyTorch](https://pytorch.org/) on Sulis, with emphasis on using the GPU hardware. They may update occasionally as newer software is deployed. 
 
-## Accessing PyTorch
+## PIP-PyTorch module (PyTorch 2.0 and later)
 
-We strongly recommend using the version of PyTorch provided by the module system. This has been compiled specifically for the hardware in Sulis and subsequently subjected to verification tests.
+The `PIP-PyTorch` modules provide an environment which includes a PyTorch build installed using `pip` following the information at [pytorch.org](https://pytorch.org/get-started/locally/). This is the recommended way of using PyTorch 2.0 and later for GPU enabled 
+computation on Sulis. 
 
-To search for an appropriate version of PyTorch
+{: .note}
+We no longer build GPU enabled PyTorch 2 builds from source. For GPU
+computation the versions from pytorch.org are already built to target all relevant GPU hardware
+and so performance should be no worse than a custom build. 
+
+To query the versions available via this mechanism:
+
+```bash
+{{site.data.terminal.prompt}} module spider PIP-PyTorch
+```
+
+This will provide a list of available versions. Those with a `CUDA` version suffix support GPU accelerated computation. Querying one of these specifically:
+
+```bash
+{{site.data.terminal.prompt}} module spider PIP-PyTorch/{{site.data.software.PyTorchversion}}
+
+-----------------------------------------------------------------------------
+   PIP-PyTorch: PIP-PyTorch/{{site.data.software.PyTorchversion}}
+-----------------------------------------------------------------------------
+    Description:
+      Tensors and Dynamic neural networks in Python with strong GPU 
+      acceleration. PyTorch is a deep learning framework that puts Python first.
+      
+    You will need to load all module(s) on any one of the lines below before
+    the "PIP-PyTorch/{{site.data.software.PyTorchversion}}" module is available to load.
+
+      {{site.data.software.PyTorchtoolchain}}
+```
+
+These modules also provide, `torchvision`, `torchaudio` etc. 
+
+{: .important}
+Be aware that attempting to test a GPU enabled PyTorch script on the login node will fail. There are no GPUs in the login nodes. Use an interactive session on a GPU node instead.
+
+<!--
+## PyTorch modules
+
+These **have** been build from source, but in the case of PyTorch 2.0 and later are only
+provided as CPU-only versions. They will not be useful for GPU-accelerated PyTorch computations.
+-->
+
+## Legacy (pre-2.0 PyTorch modules)
+
+To search for an older version of PyTorch
 
 ```bash
 {{site.data.terminal.prompt}} module spider PyTorch
@@ -43,9 +87,7 @@ This will list PyTorch builds that can be added into your environment. For examp
       GCC/10.2.0  OpenMPI/4.0.5
 
 ```
-In this case there are two sets of possible prerequisite modules. The first includes CUDA and should
-be used for running PyTorch on the Sulis GPU nodes. The second is for use on the standard
-compute nodes.
+In this case there are two sets of possible prerequisite modules. The first includes CUDA and should be used for running PyTorch on the Sulis GPU nodes. The second is for use on the standard compute nodes.
 
 PyTorch can hence be added to your environment for GPU computation by loading the following modules 
 
@@ -62,6 +104,7 @@ to install these via pip. All dependencies of PyTorch itself are provided.
 NOTE : Attempting to use PyTorch loaded in this way will fail unless running on an GPU-enabled
 node in an interactive session or SLURM job script. 
 
+<!--
 ## Torchvision, Torchtext etc
 
 Many projects using PyTorch will make use of the associated Torchvision and Torchtext Python 
@@ -81,6 +124,8 @@ torchvision/0.10.0-PyTorch-1.9.0
 ```
 and other possible modules which can loaded into the same environment. If additional components
 of the PyTorch project are needed for your research then please request these via your [research computing](../support) team first.
+
+
 
 ## Job submission
 
@@ -111,34 +156,4 @@ srun python main.py --model resnet50 --batch_size 256 --num_gpus 1
 
 Performance with this benchmark should be close to 790 images per second. 
 
-## PyTorch 2
-
-The recommended method for using PyTorch 2 on Sulis is via the `PIP-PyTorch` module.
-This provides an environment which includes a PyTorch build from the Python package
-index at pypi.org rather than built from source specifically for Sulis. For GPU-based
-PyTorch computations the performance of these builds is as good as can be realistically
-achieved. 
-
-```bash
-{{site.data.terminal.prompt}} module spider PIP-PyTorch
-```
-
-This will provide a list of available versions. Querying one specifically:
-
-```bash
-{{site.data.terminal.prompt}} module spider PIP-PyTorch/2.1.2
-
------------------------------------------------------------------------------
-   PIP-PyTorch: PIP-PyTorch/2.1.2
------------------------------------------------------------------------------
-    Description:
-      Tensors and Dynamic neural networks in Python with strong GPU 
-      acceleration. PyTorch is a deep learning framework that puts Python first.
-      
-    You will need to load all module(s) on any one of the lines below before
-    the "PyTorch/1.9.0" module is available to load.
-
-      GCC/11.3.0  OpenMPI/4.1.4
-
-```
-                                                                                                                                                                         
+-->
