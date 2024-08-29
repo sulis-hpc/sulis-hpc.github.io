@@ -57,6 +57,4 @@ PyTorchtoolchain: "GCC/13.2.0 OpenMPI/4.1.6"
 PyTorchversion: "2.4.0-CUDA-12.4.0"
 
 ## CuPy
-CuPytoolchain: "GCC/13.2.0 OpenMPI/4.1.6"
-CuPymodule: "CuPy/8.5.0-CUDA-12.4.0"
-CyPyversion: "8.5.0-CUDA-12.4.0"
+CyPyversion: "13.3.0-CUDA-12.4.0"

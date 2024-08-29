@@ -223,7 +223,6 @@ Note that omitting {{site.data.software.defaultcuda}} from the first `module loa
 
 ### Using GPUs directly in Python code
 
-<!-- TODO CuPy isn't yet available on the foss/2023b toolchain -->
 
 Some workflows may involve GPU-accelerated code written in Python. This may take the form of Python functions executed as kernels on the GPU device using [Numba](https://numba.pydata.org/), or drop-in replacements for compute-intensive NumPy and SciPy operations such as those implemented in [CuPy](https://cupy.dev/). These can be executed in job scripts provided the appropriate packages are loaded as [environment modules](../software/modules). 
 
@@ -269,8 +268,8 @@ The following SLURM job script is suitable for a Python code written to use a si
 #SBATCH --account=suxxx-somebudget
 
 module purge
-module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
-module load CuPy/8.5.0 
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.CuPy}}
 
 srun python cupy_api.py
 ```
@@ -336,8 +335,8 @@ In SLURM terminology this is a single task, using 18 CPUs and 3 GPUs. Note that 
 #SBATCH --account=suxxx-somebudget
 
 module purge
-module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
-module load CuPy/8.5.0 
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.CuPy}} 
 
 srun -n 1 -G 3 -c 18 --cpus-per-gpu=6 python mp_gpu_pool.py
 ```
@@ -384,8 +383,8 @@ MPI.Finalize()
 #SBATCH --account=suxxx-somebudget
 
 module purge
-module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}} {{site.data.software.defaultmpi}}
-module load CuPy/8.5.0 
+module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.CuPy}}
 
 srun -n 3 -G 3 --gpus-per-task=1 python mpi_gpu.py
 ```
