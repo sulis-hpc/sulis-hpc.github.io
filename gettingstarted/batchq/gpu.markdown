@@ -351,7 +351,7 @@ Alternatively you may have an MPI program in which each of 3 tasks can effective
   <summary>An example MPI GPU program in Python <code>mpi_gpu.py</code>.</summary>
 Here each MPI task uses the GPU with id equal its rank.
 
-<p class="codeblock-label">gpu.py</p>
+<p class="codeblock-label">mpi_gpu.py</p>
 ```python
 from mpi4py import MPI
 import cupy as cp
@@ -384,6 +384,7 @@ MPI.Finalize()
 
 module purge
 module load {{site.data.software.defaultgcc}} {{site.data.software.defaultmpi}}
+module load {{site.data.software.mpi4pymodule}}
 module load {{site.data.software.CuPy}}
 
 srun -n 3 -G 3 --gpus-per-task=1 python mpi_gpu.py
