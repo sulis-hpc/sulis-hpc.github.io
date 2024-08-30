@@ -6,17 +6,6 @@ nav_order: 4
 ---
 The table shows here provides a concise overview of various software modules available within the environment modules system. Each row of the table represents a different software module and includes its name, a brief description, and available versions. This table serves as a convenient reference for users to explore and select the appropriate software modules based on their requirements. For more information on how to utilize these modules within the environment modules system, please refer to the documentation on environment modules provided [here](/gettingstarted/software/modules#Environment modules).
 
-
-# Module list
-
-Module Name | Description | Versions
-------- | ------- | -------
-Abseil | Abseil is an open-source collection of C++ library code designed to augment theC++ standard library. The Abseil library code is collected from Google's ownC++ code base, has been extensively tested and used in production, and is thesame code we depend on in our daily coding lives. | [Abseil/20230125.3](#abseil202301253) <BR>[Abseil/20240116.1](#abseil202401161) <BR>
-ACTC | ACTC converts independent triangles into triangle strips or fans. | [ACTC/1.1](#actc11) <BR>
-Advisor | Vectorization Optimization and Thread Prototyping - Vectorize & thread code or performance dies - Easy workflow + data + tips = faster code faster - Prioritize, Prototype & Predict performance gain  | [Advisor/2021.4.0](#advisor202140) <BR>
-aiohttp | Asynchronous HTTP client/server framework for asyncio and Python. | [aiohttp/3.8.1](#aiohttp381) <BR>[aiohttp/3.8.3](#aiohttp383) <BR>
-Albumentations | Albumentations is a Python library for fast and flexible image augmentations | [Albumentations/1.3.0](#albumentations130) <BR>
-AlphaFold | AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known | [AlphaFold/2.1.1](#alphafold211) <BR>[AlphaFold/2.3.1](#alphafold231) <BR>
 # Module list
 
 Module Name | Description | Versions
