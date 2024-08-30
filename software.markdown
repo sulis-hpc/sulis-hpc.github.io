@@ -17,6 +17,16 @@ Advisor | Vectorization Optimization and Thread Prototyping - Vectorize & thread
 aiohttp | Asynchronous HTTP client/server framework for asyncio and Python. | [aiohttp/3.8.1](#aiohttp381) <BR>[aiohttp/3.8.3](#aiohttp383) <BR>
 Albumentations | Albumentations is a Python library for fast and flexible image augmentations | [Albumentations/1.3.0](#albumentations130) <BR>
 AlphaFold | AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known | [AlphaFold/2.1.1](#alphafold211) <BR>[AlphaFold/2.3.1](#alphafold231) <BR>
+# Module list
+
+Module Name | Description | Versions
+------- | ------- | -------
+Abseil | Abseil is an open-source collection of C++ library code designed to augment theC++ standard library. The Abseil library code is collected from Google's ownC++ code base, has been extensively tested and used in production, and is thesame code we depend on in our daily coding lives. | [Abseil/20230125.3](#abseil202301253) <BR>[Abseil/20240116.1](#abseil202401161) <BR>
+ACTC | ACTC converts independent triangles into triangle strips or fans. | [ACTC/1.1](#actc11) <BR>
+Advisor | Vectorization Optimization and Thread Prototyping - Vectorize & thread code or performance dies - Easy workflow + data + tips = faster code faster - Prioritize, Prototype & Predict performance gain  | [Advisor/2021.4.0](#advisor202140) <BR>
+aiohttp | Asynchronous HTTP client/server framework for asyncio and Python. | [aiohttp/3.8.1](#aiohttp381) <BR>[aiohttp/3.8.3](#aiohttp383) <BR>
+Albumentations | Albumentations is a Python library for fast and flexible image augmentations | [Albumentations/1.3.0](#albumentations130) <BR>
+AlphaFold | AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known | [AlphaFold/2.1.1](#alphafold211) <BR>[AlphaFold/2.3.1](#alphafold231) <BR>
 AMD-uProf | AMD uProf is a performance analysis tool for applications running on Windows, Linux & FreeBSD operating systems. It allows developers to better understand the runtime performance of their application and to identify ways to improve its performance. | [AMD-uProf/4.1.424](#amd-uprof41424) <BR>
 ant | Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications. | [ant/1.10.12-Java-11](#ant11012-java-11) <BR>[ant/1.10.9-Java-11](#ant1109-java-11) <BR>
 AOCC | AMD Optimized C/C++ & Fortran compilers (AOCC) based on LLVM 13.0 | [AOCC/3.2.0](#aocc320) <BR>[AOCC/4.0.0](#aocc400) <BR>
@@ -41,7 +51,7 @@ BamTools | BamTools provides both a programmer's API and an end-user's toolkit f
 Bandicoot | Bandicoot is a high quality GPU linear algebra library (matrix maths) for the C++ language, aiming towards a good balance between speed and ease of use. Provides efficient classes for dense vectors and matrices that hold integer and  floating-point numbers. | [Bandicoot/1.14.0](#bandicoot1140) <BR>
 Bazel | Bazel is a build tool that builds code quickly and reliably.It is used to build the majority of Google's software. | [Bazel/0.26.1](#bazel0261) <BR>[Bazel/3.7.2](#bazel372) <BR>[Bazel/5.1.1](#bazel511) <BR>[Bazel/6.1.0](#bazel610) <BR>[Bazel/6.3.1](#bazel631) <BR>
 BCFtools | Samtools is a suite of programs for interacting with high-throughput sequencing data. BCFtools - Reading/writing BCF2/VCF/gVCF files and calling/filtering/summarising SNP and short indel sequence variants | [BCFtools/1.15.1](#bcftools1151) <BR>[BCFtools/1.19](#bcftools119) <BR>
-BeautifulSoup | Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. | [BeautifulSoup/4.10.0](#beautifulsoup4100) <BR>[BeautifulSoup/4.9.3](#beautifulsoup493) <BR>
+BeautifulSoup | Beautiful Soup is a Python library designed for quick turnaround projects like screen-scraping. | [BeautifulSoup/4.10.0](#beautifulsoup4100) <BR>[BeautifulSoup/4.12.2](#beautifulsoup4122) <BR>[BeautifulSoup/4.9.3](#beautifulsoup493) <BR>
 BerkeleyGW | The BerkeleyGW Package is a set of computer codes that calculates the quasiparticle properties and the optical responses of a large variety of materials from bulk periodic crystals to nanostructures such as slabs, wires and molecules. | [BerkeleyGW/4.0](#berkeleygw40) <BR>
 binutils | binutils: GNU binary utilities | [binutils/2.26](#binutils226) <BR>[binutils/2.32](#binutils232) <BR>[binutils/2.34](#binutils234) <BR>[binutils/2.35](#binutils235) <BR>[binutils/2.36.1](#binutils2361) <BR>[binutils/2.37](#binutils237) <BR>[binutils/2.38](#binutils238) <BR>[binutils/2.39](#binutils239) <BR>[binutils/2.40](#binutils240) <BR>
 BioPerl | Bioperl is the product of a community effort to produce Perl code which is useful in biology. Examples include Sequence objects, Alignment objects and database searching objects. | [BioPerl/1.7.8](#bioperl178) <BR>
@@ -78,15 +88,16 @@ CP2K | CP2K is a freely available (GPL) program, written in Fortran 95, to perfo
 cppy | A small C++ header library which makes it easier to writePython extension modules. The primary feature is a PyObject smart pointerwhich automatically handles reference counting and provides conveniencemethods for performing common object operations. | [cppy/1.2.1](#cppy121) <BR>
 cryptography | cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. | [cryptography/41.0.1](#cryptography4101) <BR>[cryptography/41.0.5](#cryptography4105) <BR>
 ctffind | Program for finding CTFs of electron micrographs. | [ctffind/4.1.14](#ctffind4114) <BR>
-CUDA | CUDA (formerly Compute Unified Device Architecture) is a parallel computing platform and programming model created by NVIDIA and implemented by the graphics processing units (GPUs) that they produce. CUDA gives developers access to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. | [CUDA/10.1.243](#cuda101243) <BR>[CUDA/11.1.1](#cuda1111) <BR>[CUDA/11.3.1](#cuda1131) <BR>[CUDA/11.4.1](#cuda1141) <BR>[CUDA/11.5.0](#cuda1150) <BR>[CUDA/11.6.0](#cuda1160) <BR>[CUDA/11.7.0](#cuda1170) <BR>[CUDA/11.8.0](#cuda1180) <BR>[CUDA/12.0.0](#cuda1200) <BR>[CUDA/12.2.0](#cuda1220) <BR>[CUDA/12.3.0](#cuda1230) <BR>[CUDA/12.4.0](#cuda1240) <BR>[CUDA/12.5.0](#cuda1250) <BR>[CUDA/8.0.61](#cuda8061) <BR>
+CUDA | CUDA (formerly Compute Unified Device Architecture) is a parallel computing platform and programming model created by NVIDIA and implemented by the graphics processing units (GPUs) that they produce. CUDA gives developers access to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. | [CUDA/10.1.243](#cuda101243) <BR>[CUDA/11.1.1](#cuda1111) <BR>[CUDA/11.3.1](#cuda1131) <BR>[CUDA/11.4.1](#cuda1141) <BR>[CUDA/11.5.0](#cuda1150) <BR>[CUDA/11.6.0](#cuda1160) <BR>[CUDA/11.7.0](#cuda1170) <BR>[CUDA/11.8.0](#cuda1180) <BR>[CUDA/12.0.0](#cuda1200) <BR>[CUDA/12.1.1](#cuda1211) <BR>[CUDA/12.2.0](#cuda1220) <BR>[CUDA/12.3.0](#cuda1230) <BR>[CUDA/12.4.0](#cuda1240) <BR>[CUDA/12.5.0](#cuda1250) <BR>[CUDA/12.6.0](#cuda1260) <BR>[CUDA/8.0.61](#cuda8061) <BR>
 CUDAcore | CUDA (formerly Compute Unified Device Architecture) is a parallel computing platform and programming model created by NVIDIA and implemented by the graphics processing units (GPUs) that they produce. CUDA gives developers access to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs. | [CUDAcore/11.1.1](#cudacore1111) <BR>[CUDAcore/11.5.1](#cudacore1151) <BR>
-cuDNN | The NVIDIA CUDA Deep Neural Network library (cuDNN) isa GPU-accelerated library of primitives for deep neural networks. | [cuDNN/7.6.4.38](#cudnn76438) <BR>[cuDNN/8.0.4.30-CUDA-11.1.1](#cudnn80430-cuda-1111) <BR>[cuDNN/8.2.1.32-CUDA-11.3.1](#cudnn82132-cuda-1131) <BR>[cuDNN/8.3.2.44-CUDA-11.5.0](#cudnn83244-cuda-1150) <BR>[cuDNN/8.4.1.50-CUDA-11.7.0](#cudnn84150-cuda-1170) <BR>[cuDNN/8.7.0.84-CUDA-11.8.0](#cudnn87084-cuda-1180) <BR>[cuDNN/8.8.0.121-CUDA-12.0.0](#cudnn880121-cuda-1200) <BR>[cuDNN/9.2.0.82-CUDA-12.4.0](#cudnn92082-cuda-1240) <BR>
+cuDNN | The NVIDIA CUDA Deep Neural Network library (cuDNN) isa GPU-accelerated library of primitives for deep neural networks. | [cuDNN/7.6.4.38](#cudnn76438) <BR>[cuDNN/8.0.4.30-CUDA-11.1.1](#cudnn80430-cuda-1111) <BR>[cuDNN/8.2.1.32-CUDA-11.3.1](#cudnn82132-cuda-1131) <BR>[cuDNN/8.3.2.44-CUDA-11.5.0](#cudnn83244-cuda-1150) <BR>[cuDNN/8.4.1.50-CUDA-11.7.0](#cudnn84150-cuda-1170) <BR>[cuDNN/8.7.0.84-CUDA-11.8.0](#cudnn87084-cuda-1180) <BR>[cuDNN/8.8.0.121-CUDA-12.0.0](#cudnn880121-cuda-1200) <BR>[cuDNN/8.9.2.26-CUDA-12.1.1](#cudnn89226-cuda-1211) <BR>[cuDNN/9.1.1.17-CUDA-12.4.0](#cudnn91117-cuda-1240) <BR>[cuDNN/9.2.0.82-CUDA-12.4.0](#cudnn92082-cuda-1240) <BR>
 CUnit | Automated testing framework for C. | [CUnit/2.1-3](#cunit21-3) <BR>
-CuPy | CuPy is an open-source array library accelerated with NVIDIA CUDA. | [CuPy/8.5.0](#cupy850) <BR>
+CuPy | CuPy is an open-source array library accelerated with NVIDIA CUDA. | [CuPy/13.0.0-CUDA-12.1.1](#cupy1300-cuda-1211) <BR>[CuPy/13.3.0-CUDA-12.4.0](#cupy1330-cuda-1240) <BR>[CuPy/8.5.0](#cupy850) <BR>
 cURL | libcurl is a free and easy-to-use client-side URL transfer library, supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP. libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based upload, proxies, cookies, user+password authentication (Basic, Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling and more. | [cURL/7.66.0](#curl7660) <BR>[cURL/7.69.1](#curl7691) <BR>[cURL/7.72.0](#curl7720) <BR>[cURL/7.76.0](#curl7760) <BR>[cURL/7.78.0](#curl7780) <BR>[cURL/7.83.0](#curl7830) <BR>[cURL/7.86.0](#curl7860) <BR>[cURL/8.0.1](#curl801) <BR>[cURL/8.3.0](#curl830) <BR>
-cuTENSOR | The cuTENSOR Library is a GPU-accelerated tensor linear algebra library providing tensor contraction, reduction and elementwise operations. | [cuTENSOR/1.2.2.5-CUDA-11.1.1](#cutensor1225-cuda-1111) <BR>
-Cython | Cython is an optimising static compiler for both the Python programminglanguage and the extended Cython programming language (based on Pyrex). | [Cython/0.29.22](#cython02922) <BR>[Cython/3.0.8](#cython308) <BR>
-dask | Dask natively scales Python. Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love. | [dask/2021.2.0](#dask202120) <BR>[dask/2022.10.0](#dask2022100) <BR>
+cuSPARSELt | NVIDIA cuSPARSELt is a high-performance CUDA library dedicated to general matrix-matrix operations inwhich at least one operand is a sparse matrix | [cuSPARSELt/0.6.0.6-CUDA-12.1.1](#cusparselt0606-cuda-1211) <BR>[cuSPARSELt/0.6.0.6-CUDA-12.4.0](#cusparselt0606-cuda-1240) <BR>[cuSPARSELt/0.6.2.3-CUDA-12.4.0](#cusparselt0623-cuda-1240) <BR>
+cuTENSOR | The cuTENSOR Library is a GPU-accelerated tensor linear algebra library providing tensor contraction, reduction and elementwise operations. | [cuTENSOR/1.2.2.5-CUDA-11.1.1](#cutensor1225-cuda-1111) <BR>[cuTENSOR/2.0.1.2-CUDA-12.1.1](#cutensor2012-cuda-1211) <BR>[cuTENSOR/2.0.2.5-CUDA-12.4.0](#cutensor2025-cuda-1240) <BR>
+Cython | Cython is an optimising static compiler for both the Python programminglanguage and the extended Cython programming language (based on Pyrex). | [Cython/0.29.22](#cython02922) <BR>[Cython/0.29.37](#cython02937) <BR>[Cython/3.0.10](#cython3010) <BR>[Cython/3.0.8](#cython308) <BR>
+dask | Dask natively scales Python. Dask provides advanced parallelism for analytics,enabling performance at scale for the tools you love. | [dask/2021.2.0](#dask202120) <BR>[dask/2022.10.0](#dask2022100) <BR>[dask/2024.5.1](#dask202451) <BR>
 DB | Berkeley DB enables the development of custom data management solutions, without the overhead traditionally associated with such custom projects. | [DB/18.1.32](#db18132) <BR>[DB/18.1.40](#db18140) <BR>
 DB_File | Perl5 access to Berkeley DB version 1.x. | [DB_File/1.858](#db_file1858) <BR>
 DBus | D-Bus is a message bus system, a simple way for applications to talk to one another.  In addition to interprocess communication, D-Bus helps coordinate process lifecycle; it makes it simple and reliable to code a "single instance" application or daemon, and to launch applications and daemons on demand when their services are needed. | [DBus/1.13.12](#dbus11312) <BR>[DBus/1.13.18](#dbus11318) <BR>[DBus/1.14.0](#dbus1140) <BR>[DBus/1.15.4](#dbus1154) <BR>[DBus/1.15.8](#dbus1158) <BR>
@@ -99,7 +110,7 @@ DGL | DGL is an easy-to-use, high performance and scalable Python package for de
 dijitso | dijitso is a Python module for distributed just-in-time shared library building. | [dijitso/2019.1.0-Python-3.7.4](#dijitso201910-python-374) <BR>
 dill | dill extends python's pickle module for serializing and de-serializing python objects to the majority of the built-in python types. Serialization is the process of converting an object to a byte stream, and the inverse of which is converting a byte stream back to on python object hierarchy. | [dill/0.3.6](#dill036) <BR>[dill/0.3.7](#dill037) <BR>[dill/0.3.8](#dill038) <BR>
 dm-tree | dm-tree provides tree, a library for working with nested data structures. In a way,tree generalizes the builtin map function which only supports flat sequences, andallows to apply a function to each "leaf" preserving the overall structure. | [dm-tree/0.1.8](#dm-tree018) <BR>
-DMTCP | DMTCP is a tool to transparently checkpoint the state of multiplesimultaneous applications, including multi-threaded and distributed applications.It operates directly on the user binary executable, without any Linux kernel modulesor other kernel modifications. | [DMTCP/2.6.0](#dmtcp260) <BR>
+DMTCP | DMTCP is a tool to transparently checkpoint the state of multiplesimultaneous applications, including multi-threaded and distributed applications.It operates directly on the user binary executable, without any Linux kernel modulesor other kernel modifications. | [DMTCP/2.6.0](#dmtcp260) <BR>[DMTCP/3.0.0](#dmtcp300) <BR>
 DOLFIN | DOLFIN is the C++/Python interface of FEniCS, providing a consistent PSE  (Problem Solving Environment) for ordinary and partial differential equations. | [DOLFIN/2019.1.0.post0-Python-3.7.4](#dolfin201910post0-python-374) <BR>
 double-conversion | Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles. | [double-conversion/3.1.4](#double-conversion314) <BR>[double-conversion/3.1.5](#double-conversion315) <BR>[double-conversion/3.2.0](#double-conversion320) <BR>[double-conversion/3.3.0](#double-conversion330) <BR>
 Doxygen | Doxygen is a documentation system for C++, C, Java, Objective-C, Python, IDL (Corba and Microsoft flavors), Fortran, VHDL, PHP, C#, and to some extent D. | [Doxygen/1.8.16](#doxygen1816) <BR>[Doxygen/1.8.17](#doxygen1817) <BR>[Doxygen/1.8.20](#doxygen1820) <BR>[Doxygen/1.9.1](#doxygen191) <BR>[Doxygen/1.9.4](#doxygen194) <BR>[Doxygen/1.9.5](#doxygen195) <BR>[Doxygen/1.9.7](#doxygen197) <BR>[Doxygen/1.9.8](#doxygen198) <BR>
@@ -112,14 +123,15 @@ ELSI | ELSI provides and enhances scalable, open-source software library solutio
 enchant-2 | Enchant aims to provide a simple but comprehensive abstraction for dealingwith different spell checking libraries in a consistent way. A client, suchas a text editor or word processor, need not know anything about a specificspell-checker, and since all back-ends are plugins, new spell-checkers canbe added without needing any change to the program using Enchant. | [enchant-2/2.3.3](#enchant-2233) <BR>
 Exonerate | Exonerate is a generic tool for pairwise sequence comparison. It allows you to align sequences using a many alignment models, using either  exhaustive dynamic programming, or a variety of heuristics.  | [Exonerate/2.4.0](#exonerate240) <BR>
 expat | Expat is an XML parser library written in C. It is a stream-oriented parserin which an application registers handlers for things the parser might findin the XML document (like start tags). | [expat/2.2.7](#expat227) <BR>[expat/2.2.9](#expat229) <BR>[expat/2.4.1](#expat241) <BR>[expat/2.4.8](#expat248) <BR>[expat/2.4.9](#expat249) <BR>[expat/2.5.0](#expat250) <BR>
-expecttest | This library implements expect tests (also known as "golden" tests). Expect tests are a method of writing tests where instead of hard-coding the expected output of a test, you run the test to get the output, and the test framework automatically populates the expected output. If the output of the test changes, you can rerun the test with the environment variable EXPECTTEST_ACCEPT=1 to automatically update the expected output. | [expecttest/0.1.3](#expecttest013) <BR>
+expecttest | This library implements expect tests (also known as "golden" tests). Expect tests are a method of writing tests where instead of hard-coding the expected output of a test, you run the test to get the output, and the test framework automatically populates the expected output. If the output of the test changes, you can rerun the test with the environment variable EXPECTTEST_ACCEPT=1 to automatically update the expected output. | [expecttest/0.1.3](#expecttest013) <BR>[expecttest/0.2.1](#expecttest021) <BR>
 FEniCS | FEniCS is a computing platform for solving partial differential equations (PDEs). | [FEniCS/2019.1.0-Python-3.7.4](#fenics201910-python-374) <BR>
 FFC | The FEniCS Form Compiler (FFC) is a compiler for finite element variational forms. | [FFC/2019.1.0.post0-Python-3.7.4](#ffc201910post0-python-374) <BR>
 FFmpeg | A complete, cross-platform solution to record, convert and stream audio and video. | [FFmpeg/4.2.1](#ffmpeg421) <BR>[FFmpeg/4.2.2](#ffmpeg422) <BR>[FFmpeg/4.3.1](#ffmpeg431) <BR>[FFmpeg/4.3.2](#ffmpeg432) <BR>[FFmpeg/4.4.2](#ffmpeg442) <BR>[FFmpeg/6.0](#ffmpeg60) <BR>
-ffnvcodec | FFmpeg nvidia headers. Adds support for nvenc and nvdec. Requires Nvidia GPU and drivers to be present(picked up dynamically). | [ffnvcodec/12.0.16.0](#ffnvcodec120160) <BR>
+ffnvcodec | FFmpeg nvidia headers. Adds support for nvenc and nvdec. Requires Nvidia GPU and drivers to be present(picked up dynamically). | [ffnvcodec/12.0.16.0](#ffnvcodec120160) <BR>[ffnvcodec/12.1.14.0](#ffnvcodec121140) <BR>
 fftlib | A library that intercepts FFTW calls and adds features on top of it. In particular, it enables FFT plan reuse when there are multiple calls for the same geometry. | [fftlib/20170628](#fftlib20170628) <BR>
 FFTW | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)in one or more dimensions, of arbitrary input size, and of both real and complex data. | [FFTW/3.3.10](#fftw3310) <BR>[FFTW/3.3.8](#fftw338) <BR>[FFTW/3.3.8-amd](#fftw338-amd) <BR>[FFTW/3.3.9](#fftw339) <BR>
 FFTW.MPI | FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)in one or more dimensions, of arbitrary input size, and of both real and complex data. | [FFTW.MPI/3.3.10](#fftwmpi3310) <BR>
+FHI-aims | FHI-aims is an efficient, accurate all-electron,full-potential electronic structure code package for computational molecularand materials science (non-periodic and periodic systems). The code supportsDFT (semilocal and hybrid) and many-body perturbation theory. FHI-aims isparticularly efficient for molecular systems and nanostructures, whilemaintaining high numerical accuracy for all production tasks. Productioncalculations handle up to several thousand atoms and can efficiently use (ten)thousands of cores.  | [FHI-aims/240507](#fhi-aims240507) <BR>
 FHI-vibes | FHI-vibes is a python package for calculating, analyzing, and understanding    the vibrational properties of solids from first principles. | [FHI-vibes/1.0.4](#fhi-vibes104) <BR>
 FIAT | The FInite element Automatic Tabulator (FIAT) supportsgeneration of arbitrary order instances of the Lagrange elements onlines, triangles, and tetrahedra. It is also capable of generatingarbitrary order instances of Jacobi-type quadrature rules on the sameelement shapes. | [FIAT/2019.1.0-Python-3.7.4](#fiat201910-python-374) <BR>
 FLAC | FLAC stands for Free Lossless Audio Codec, an audio format similar to MP3, but lossless, meaningthat audio is compressed in FLAC without any loss in quality. | [FLAC/1.3.3](#flac133) <BR>
@@ -146,7 +158,7 @@ Gctf | Gctf: real-time CTF determination and correction, Kai Zhang, 2016 | [Gctf
 GDAL | GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model to the calling application for all supported formats. It also comes with a variety of useful commandline utilities for data translation and processing. | [GDAL/3.3.2](#gdal332) <BR>[GDAL/3.9.0](#gdal390) <BR>
 Gdk-Pixbuf | The Gdk Pixbuf is a toolkit for image loading and pixel buffer manipulation. It is used by GTK+ 2 and GTK+ 3 to load and manipulate images. In the past it was distributed as part of GTK+ 2 but it was split off into a separate package in preparation for the change to GTK+ 3. | [Gdk-Pixbuf/2.40.0](#gdk-pixbuf2400) <BR>[Gdk-Pixbuf/2.42.10](#gdk-pixbuf24210) <BR>[Gdk-Pixbuf/2.42.6](#gdk-pixbuf2426) <BR>[Gdk-Pixbuf/2.42.8](#gdk-pixbuf2428) <BR>
 GDL | GDL is a free/libre/open source incremental compiler compatible with IDL (Interactive Data Language)and to some extent with PV-WAVE. Together with its library routines it serves as a tool for data analysis and visualization in such disciplines as astronomy, geosciences and medical imaging.  | [GDL/1.0.2](#gdl102) <BR>
-GDRCopy | A low-latency GPU memory copy library based on NVIDIA GPUDirect RDMA technology. | [GDRCopy/2.1-CUDA-11.1.1](#gdrcopy21-cuda-1111) <BR>[GDRCopy/2.2](#gdrcopy22) <BR>[GDRCopy/2.3](#gdrcopy23) <BR>[GDRCopy/2.3-CUDAcore-11.5.1](#gdrcopy23-cudacore-1151) <BR>[GDRCopy/2.4](#gdrcopy24) <BR>
+GDRCopy | A low-latency GPU memory copy library based on NVIDIA GPUDirect RDMA technology. | [GDRCopy/2.1-CUDA-11.1.1](#gdrcopy21-cuda-1111) <BR>[GDRCopy/2.2](#gdrcopy22) <BR>[GDRCopy/2.3](#gdrcopy23) <BR>[GDRCopy/2.3-CUDAcore-11.5.1](#gdrcopy23-cudacore-1151) <BR>[GDRCopy/2.3.1](#gdrcopy231) <BR>[GDRCopy/2.4](#gdrcopy24) <BR>
 GeneMark-ET | Eukaryotic gene prediction suite with automatic training | [GeneMark-ET/4.71](#genemark-et471) <BR>
 GEOS | GEOS (Geometry Engine - Open Source) is a C++ port of the Java Topology Suite (JTS) | [GEOS/3.10.3](#geos3103) <BR>[GEOS/3.11.1](#geos3111) <BR>[GEOS/3.12.0](#geos3120) <BR>[GEOS/3.12.1](#geos3121) <BR>[GEOS/3.9.1](#geos391) <BR>
 gettext | GNU 'gettext' is an important step for the GNU Translation Project, as it is an asset on which we maybuild many other steps. This package offers to programmers, translators, and even users, a well integrated set of toolsand documentation | [gettext/0.19.8.1](#gettext01981) <BR>[gettext/0.20.1](#gettext0201) <BR>[gettext/0.21](#gettext021) <BR>[gettext/0.21.1](#gettext0211) <BR>[gettext/0.22](#gettext022) <BR>[gettext/0.22.5](#gettext0225) <BR>
@@ -162,7 +174,7 @@ GLM | OpenGL Mathematics (GLM) is a header only C++ mathematics library for grap
 GlobalArrays | Global Arrays (GA) is a Partitioned Global Address Space (PGAS) programming model | [GlobalArrays/5.7.2-peigs](#globalarrays572-peigs) <BR>
 GLPK | The GLPK (GNU Linear Programming Kit) package is intended for solving large-scale linear programming (LP), mixed integer programming (MIP), and other related problems. It is a set of routines written in ANSI C  and organized in the form of a callable library. | [GLPK/5.0](#glpk50) <BR>
 GMP | GMP is a free library for arbitrary precision arithmetic, operating on signed integers, rational numbers, and floating point numbers. | [GMP/6.1.2](#gmp612) <BR>[GMP/6.2.0](#gmp620) <BR>[GMP/6.2.1](#gmp621) <BR>[GMP/6.3.0](#gmp630) <BR>
-gmpy2 | GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x | [gmpy2/2.1.0b4](#gmpy2210b4) <BR>[gmpy2/2.1.2](#gmpy2212) <BR>
+gmpy2 | GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x | [gmpy2/2.1.0b4](#gmpy2210b4) <BR>[gmpy2/2.1.2](#gmpy2212) <BR>[gmpy2/2.1.5](#gmpy2215) <BR>
 gnuplot | Portable interactive, function plotting utility | [gnuplot/5.2.8](#gnuplot528) <BR>[gnuplot/5.4.1](#gnuplot541) <BR>[gnuplot/5.4.2](#gnuplot542) <BR>[gnuplot/5.4.4](#gnuplot544) <BR>[gnuplot/5.4.8](#gnuplot548) <BR>
 GnuTLS | GnuTLS is a secure communications library implementing the SSL, TLS and DTLS protocols and technologies around them. It provides a simple C language application programming interface (API) to access the secure communications protocols as well as APIs to parse and write X.509, PKCS #12, OpenPGP and other required structures. It is aimed to be portable and efficient with focus on security and interoperability. | [GnuTLS/3.7.3](#gnutls373) <BR>[GnuTLS/3.8.4](#gnutls384) <BR>[GnuTLS/3.8.6](#gnutls386) <BR>
 GObject-Introspection | GObject introspection is a middleware layer between C libraries (using GObject) and language bindings. The C library can be scanned at compile time and generate a metadata file, in addition to the actual native C library. Then at runtime, language bindings can read this metadata and automatically provide bindings to call into the C library. | [GObject-Introspection/1.63.1-Python-3.7.4](#gobject-introspection1631-python-374) <BR>[GObject-Introspection/1.64.0-Python-3.8.2](#gobject-introspection1640-python-382) <BR>[GObject-Introspection/1.66.1](#gobject-introspection1661) <BR>[GObject-Introspection/1.68.0](#gobject-introspection1680) <BR>[GObject-Introspection/1.72.0](#gobject-introspection1720) <BR>[GObject-Introspection/1.76.1](#gobject-introspection1761) <BR>[GObject-Introspection/1.78.1](#gobject-introspection1781) <BR>
@@ -170,8 +182,8 @@ gomkl | GNU Compiler Collection (GCC) based compiler toolchain with OpenMPI and 
 gompi | GNU Compiler Collection (GCC) based compiler toolchain, including OpenMPI for MPI support. | [gompi/2019b](#gompi2019b) <BR>[gompi/2020a](#gompi2020a) <BR>[gompi/2020b](#gompi2020b) <BR>[gompi/2021a](#gompi2021a) <BR>[gompi/2021b](#gompi2021b) <BR>[gompi/2022a](#gompi2022a) <BR>[gompi/2022b](#gompi2022b) <BR>[gompi/2023a](#gompi2023a) <BR>[gompi/2023b](#gompi2023b) <BR>
 gompic | GNU Compiler Collection (GCC) based compiler toolchain along with CUDA toolkit, including OpenMPI for MPI support with CUDA features enabled. | [gompic/2019b](#gompic2019b) <BR>[gompic/2020b](#gompic2020b) <BR>
 googletest | Google's framework for writing C++ tests on a variety of platforms | [googletest/1.11.0](#googletest1110) <BR>[googletest/1.12.1](#googletest1121) <BR>[googletest/1.13.0](#googletest1130) <BR>[googletest/1.14.0](#googletest1140) <BR>
-GPAW | GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW) method and the atomic simulation environment (ASE). It uses real-space uniform grids and multigrid methods or atom-centered basis-functions. | [GPAW/21.6.0-ASE-3.22.0-ELPA-2020.11.001](#gpaw2160-ase-3220-elpa-202011001) <BR>
-GPAW-setups | PAW setup for the GPAW Density Functional Theory package.  Users can install setups manually using 'gpaw install-data' or use setups from this package.  The versions of GPAW and GPAW-setups can be intermixed. | [GPAW-setups/0.9.20000](#gpaw-setups0920000) <BR>
+GPAW | GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW) method and the atomic simulation environment (ASE). It uses real-space uniform grids and multigrid methods or atom-centered basis-functions. | [GPAW/21.6.0-ASE-3.22.0-ELPA-2020.11.001](#gpaw2160-ase-3220-elpa-202011001) <BR>[GPAW/24.6.0-ASE-3.23.0](#gpaw2460-ase-3230) <BR>
+GPAW-setups | PAW setups for the GPAW Density Functional Theory package.  Users can install setups manually using 'gpaw install-data' or use setups from this package.  The versions of GPAW and GPAW-setups can be intermixed.Compared to version 0.9.20000, version 24.1.0 contains an new improved Cr setup with 14 electrons, which can be manually selected.  Otherwise no changes are made, so no results will change. | [GPAW-setups/0.9.20000](#gpaw-setups0920000) <BR>[GPAW-setups/24.1.0](#gpaw-setups2410) <BR>
 gperf | GNU gperf is a perfect hash function generator. For a given list of strings, it produces a hash function and hash table, in form of C or C++ code, for looking up a value depending on the input string. The hash function is perfect, which means that the hash table has no collisions, and the hash table lookup needs a single string comparison only. | [gperf/3.1](#gperf31) <BR>
 gperftools | gperftools is a collection of a high-performance multi-threaded malloc()implementation, plus some pretty nifty performance analysis tools.Includes TCMalloc, heap-checker, heap-profiler and cpu-profiler. | [gperftools/2.9.1](#gperftools291) <BR>
 GPflow | GPflow is a package for building Gaussian process models in python, using TensorFlow. | [GPflow/1.5.1-TensorFlow-1.15.5-Python-3.7.4](#gpflow151-tensorflow-1155-python-374) <BR>[GPflow/1.5.1-nvidia-tensorflow-1.15.5+nv21.10-Python-3.8.2](#gpflow151-nvidia-tensorflow-1155nv2110-python-382) <BR>
@@ -197,6 +209,7 @@ H5hut | HDF5 Utility Toolkit: High-Performance I/O Library for Particle-based Si
 h5py | HDF5 for Python (h5py) is a general-purpose Python interface to the Hierarchical Data Format library, version 5. HDF5 is a versatile, mature scientific software library designed for the fast, flexible storage of enormous amounts of data. | [h5py/2.10.0-Python-3.7.4](#h5py2100-python-374) <BR>[h5py/2.10.0-Python-3.8.2](#h5py2100-python-382) <BR>[h5py/3.1.0](#h5py310) <BR>[h5py/3.11.0](#h5py3110) <BR>[h5py/3.2.1](#h5py321) <BR>[h5py/3.7.0](#h5py370) <BR>[h5py/3.9.0](#h5py390) <BR>
 H5VFS | A read only FUSE based virtual file system mounting HDF5 files as directories and a utility to create an HDF5 file from a directory structure  | [H5VFS/0.1.0](#h5vfs010) <BR>
 HarfBuzz | HarfBuzz is an OpenType text shaping engine. | [HarfBuzz/2.6.4](#harfbuzz264) <BR>[HarfBuzz/2.6.7](#harfbuzz267) <BR>[HarfBuzz/2.8.1](#harfbuzz281) <BR>[HarfBuzz/2.8.2](#harfbuzz282) <BR>[HarfBuzz/4.2.1](#harfbuzz421) <BR>[HarfBuzz/5.3.1](#harfbuzz531) <BR>[HarfBuzz/8.2.2](#harfbuzz822) <BR>
+hatch-jupyter-builder | Hatch Jupyter Builder is a plugin for the hatchling Python build backend. It isprimarily targeted for package authors who are providing JavaScript as part oftheir Python packages.Typical use cases are Jupyter Lab Extensions and Jupyter Widgets. | [hatch-jupyter-builder/0.9.1](#hatch-jupyter-builder091) <BR>
 hatchling | Extensible, standards compliant build backend used by Hatch,a modern, extensible Python project manager. | [hatchling/1.18.0](#hatchling1180) <BR>
 HDF | HDF (also known as HDF4) is a library and multi-object file format for storing and managing data between machines. | [HDF/4.2.15](#hdf4215) <BR>[HDF/4.2.16-2](#hdf4216-2) <BR>
 HDF5 | HDF5 is a data model, library, and file format for storing and managing data. It supports an unlimited variety of datatypes, and is designed for flexible and efficient I/O and for high volume and complex data. | [HDF5/1.10.5](#hdf51105) <BR>[HDF5/1.10.6](#hdf51106) <BR>[HDF5/1.10.7](#hdf51107) <BR>[HDF5/1.12.1](#hdf51121) <BR>[HDF5/1.12.2](#hdf51122) <BR>[HDF5/1.12.2-serial](#hdf51122-serial) <BR>[HDF5/1.13.1](#hdf51131) <BR>[HDF5/1.14.0](#hdf51140) <BR>[HDF5/1.14.3](#hdf51143) <BR>
@@ -205,7 +218,7 @@ HH-suite | The HH-suite is an open-source software package for sensitive protein
 Highway | Highway is a C++ library for SIMD (Single Instruction, Multiple Data), i.e. applying the sameoperation to 'lanes'. | [Highway/1.0.3](#highway103) <BR>[Highway/1.0.7](#highway107) <BR>
 hiredis | Hiredis is a minimalistic C client library for the Redis database.It is minimalistic because it just adds minimal support for the protocol, but at the same time it uses a high level printf-alike API in order to make it much higher level than otherwise suggested by its minimal code base and the lack of explicit bindings for every Redis command. | [hiredis/1.0.2](#hiredis102) <BR>
 HMMER | HMMER is used for searching sequence databases for homologs of protein sequences, and for making protein sequence alignments. It implements methods using probabilistic models called profile hidden Markov models (profile HMMs).  Compared to BLAST, FASTA, and other sequence alignment and database search tools based on older scoring methodology, HMMER aims to be significantly more accurate and more able to detect remote homologs because of the strength of its underlying mathematical models. In the past, this strength came at significant computational expense, but in the new HMMER3 project, HMMER is now essentially as fast as BLAST. | [HMMER/3.3.2](#hmmer332) <BR>[HMMER/3.4](#hmmer34) <BR>
-HOOMD-blue | HOOMD-blue is a general-purpose particle simulationtoolkit, implementing molecular dynamics and hard particle Monte Carlooptimized for fast execution on both GPUs and CPUs. | [HOOMD-blue/4.4.1](#hoomd-blue441) <BR>
+HOOMD-blue | HOOMD-blue is a general-purpose particle simulationtoolkit, implementing molecular dynamics and hard particle Monte Carlooptimized for fast execution on both GPUs and CPUs. | [HOOMD-blue/4.4.1](#hoomd-blue441) <BR>[HOOMD-blue/4.8.2](#hoomd-blue482) <BR>[HOOMD-blue/4.8.2-CUDA-12.5.0](#hoomd-blue482-cuda-1250) <BR>
 HPL | HPL is a software package that solves a (random) dense linear system in double precision (64 bits) arithmetic on distributed-memory computers. It can thus be regarded as a portable as well as freely available implementation of the High Performance Computing Linpack Benchmark. | [HPL/2.3](#hpl23) <BR>[HPL/2.3-AOCL-4.0-lp64](#hpl23-aocl-40-lp64) <BR>[HPL/2.3-amd](#hpl23-amd) <BR>
 HTSlib | A C library for reading/writing high-throughput sequencing data. This package includes the utilities bgzip and tabix | [HTSlib/1.15.1](#htslib1151) <BR>[HTSlib/1.19.1](#htslib1191) <BR>
 hunspell | Hunspell is a spell checker and morphological analyzer library and program designed for languageswith rich morphology and complex word compounding or character encoding. | [hunspell/1.7.1](#hunspell171) <BR>
@@ -230,7 +243,7 @@ intltool | intltool is a set of tools to centralize translation of many differen
 iomkl | Intel Cluster Toolchain Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MKL & OpenMPI. | [iomkl/2019b](#iomkl2019b) <BR>
 iompi | Intel C/C++ and Fortran compilers, alongside Open MPI. | [iompi/2019b](#iompi2019b) <BR>
 IPython | IPython provides a rich architecture for interactive computing with: Powerful interactive shells (terminal and Qt-based). A browser-based notebook with support for code, text, mathematical expressions, inline plots and other rich media. Support for interactive data visualization and use of GUI toolkits. Flexible, embeddable interpreters to load into your own projects. Easy to use, high performance tools for parallel computing. | [IPython/7.18.1](#ipython7181) <BR>[IPython/8.17.2](#ipython8172) <BR>
-JAGS | JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation   | [JAGS/4.3.0](#jags430) <BR>
+JAGS | JAGS is Just Another Gibbs Sampler.  It is a program for analysis of Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation   | [JAGS/4.3.0](#jags430) <BR>[JAGS/4.3.2](#jags432) <BR>
 Jansson | Jansson is a C library for encoding, decoding and manipulating JSON data. Its main features and design principles are: * Simple and intuitive API and data model * Comprehensive documentation * No dependencies on other libraries * Full Unicode support (UTF-8) * Extensive test suite | [Jansson/2.13.1](#jansson2131) <BR>[Jansson/2.14](#jansson214) <BR>
 JasPer | The JasPer Project is an open-source initiative to provide a free software-based reference implementation of the codec specified in the JPEG-2000 Part-1 standard. | [JasPer/2.0.14](#jasper2014) <BR>[JasPer/2.0.24](#jasper2024) <BR>[JasPer/2.0.28](#jasper2028) <BR>[JasPer/2.0.33](#jasper2033) <BR>[JasPer/4.0.0](#jasper400) <BR>
 Java | Java Platform, Standard Edition (Java SE) lets you develop and deployJava applications on desktops and servers. | [Java/1.8.0_292-OpenJDK](#java180_292-openjdk) <BR>[Java/11.0.2](#java1102) <BR>[Java/17.0.6](#java1706) <BR>[Java/21.0.2](#java2102) <BR>
@@ -241,7 +254,10 @@ jemalloc | jemalloc is a general purpose malloc(3) implementation that emphasize
 json-c | JSON-C implements a reference counting object model that allows you to easily construct JSON objects in C, output them as JSON formatted strings and parse JSON formatted strings back into the C representation of JSONobjects. | [json-c/0.17](#json-c017) <BR>
 JsonCpp | JsonCpp is a C++ library that allows manipulating JSON values, including serialization and deserialization to and from strings. It can also preserve existing comment in unserialization/serialization steps, making it a convenient format to store user input files.  | [JsonCpp/1.9.4](#jsoncpp194) <BR>[JsonCpp/1.9.5](#jsoncpp195) <BR>
 Judy | A C library that implements a dynamic array. | [Judy/1.0.5](#judy105) <BR>
-Julia | Julia is a high-level, high-performance dynamic programming language for numerical computing | [Julia/1.6.2-linux-x86_64](#julia162-linux-x86_64) <BR>
+Julia | Julia is a high-level, high-performance dynamic programming language for numerical computing | [Julia/1.10.4-linux-x86_64](#julia1104-linux-x86_64) <BR>[Julia/1.6.2-linux-x86_64](#julia162-linux-x86_64) <BR>
+jupyter-server | The Jupyter Server provides the backend (i.e. the core services, APIs, and RESTendpoints) for Jupyter web applications like Jupyter notebook, JupyterLab, andVoila. | [jupyter-server/2.14.0](#jupyter-server2140) <BR>
+JupyterLab | JupyterLab is the next-generation user interface for Project Jupyter offering all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user interface. JupyterLab will eventually replace the classic Jupyter Notebook. | [JupyterLab/4.2.0](#jupyterlab420) <BR>
+JupyterNotebook | The Jupyter Notebook is the original web application for creating and sharing computational documents. It offers a simple, streamlined, document-centric experience. | [JupyterNotebook/7.2.0](#jupyternotebook720) <BR>
 jxrlib | Open source implementation of jpegxr | [jxrlib/1.1](#jxrlib11) <BR>
 KaHIP | The graph partitioning framework KaHIP -- Karlsruhe High Quality Partitioning. | [KaHIP/3.16](#kahip316) <BR>
 Kalign | Kalign is a fast multiple sequence alignment program for biological sequences. | [Kalign/3.3.1](#kalign331) <BR>[Kalign/3.3.5](#kalign335) <BR>[Kalign/3.4.0](#kalign340) <BR>
@@ -258,7 +274,7 @@ libde265 | libde265 is an open source implementation of the h.265 video codec | 
 libdeflate | Heavily optimized library for DEFLATE/zlib/gzip compression and decompression. | [libdeflate/1.10](#libdeflate110) <BR>[libdeflate/1.15](#libdeflate115) <BR>[libdeflate/1.18](#libdeflate118) <BR>[libdeflate/1.19](#libdeflate119) <BR>
 libdrm | Direct Rendering Manager runtime library. | [libdrm/2.4.100](#libdrm24100) <BR>[libdrm/2.4.102](#libdrm24102) <BR>[libdrm/2.4.106](#libdrm24106) <BR>[libdrm/2.4.107](#libdrm24107) <BR>[libdrm/2.4.110](#libdrm24110) <BR>[libdrm/2.4.115](#libdrm24115) <BR>[libdrm/2.4.117](#libdrm24117) <BR>[libdrm/2.4.99](#libdrm2499) <BR>
 libepoxy | Epoxy is a library for handling OpenGL function pointer management for you | [libepoxy/1.5.10](#libepoxy1510) <BR>[libepoxy/1.5.4](#libepoxy154) <BR>[libepoxy/1.5.8](#libepoxy158) <BR>
-libev | A full-featured and high-performance (see benchmark)event loop that is loosely modelled after libevent, but without itslimitations and bugs. It is used in GNU Virtual Private Ethernet,rxvt-unicode, auditd, the Deliantra MORPG Server and Client, and manyother programs. | [libev/4.33](#libev433) <BR>
+libev | A full-featured and high-performance (see benchmark) event loop that is loosely modelled after libevent, but without its limitations and bugs. It is used in GNU Virtual Private Ethernet, rxvt-unicode, auditd, the Deliantra MORPG Server and Client, and many other programs. | [libev/4.33](#libev433) <BR>
 libevent | The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached.  Furthermore, libevent also support callbacks due to signals or regular timeouts. | [libevent/2.1.11](#libevent2111) <BR>[libevent/2.1.12](#libevent2112) <BR>
 libexif | A library for parsing, editing, and saving EXIF data. | [libexif/0.6.24](#libexif0624) <BR>
 libfabric | Libfabric is a core component of OFI. It is the library that defines and exportsthe user-space API of OFI, and is typically the only software that applicationsdeal with directly. It works in conjunction with provider libraries, which areoften integrated directly into libfabric. | [libfabric/1.11.0](#libfabric1110) <BR>[libfabric/1.12.1](#libfabric1121) <BR>[libfabric/1.13.2](#libfabric1132) <BR>[libfabric/1.15.1](#libfabric1151) <BR>[libfabric/1.16.1](#libfabric1161) <BR>[libfabric/1.18.0](#libfabric1180) <BR>[libfabric/1.19.0](#libfabric1190) <BR>
@@ -325,22 +341,23 @@ MATIO | matio is an C library for reading and writing Matlab MAT files. | [MATIO
 MATLAB | MATLAB is a high-level language and interactive environment that enables you to perform computationally intensive tasks faster than with traditional programming languages such as C, C++, and Fortran. | [MATLAB/2021a_Update_5](#matlab2021a_update_5) <BR>[MATLAB/2021b_Update_2](#matlab2021b_update_2) <BR>[MATLAB/2022a](#matlab2022a) <BR>[MATLAB/2023a_Update_1](#matlab2023a_update_1) <BR>
 MATLAB-parenv | Matlab supports MVAPICH2 allowng to run parallel calculationsacross several nodes and use the infiniband network. | [MATLAB-parenv/0.0-iccifort-2019.5.281](#matlab-parenv00-iccifort-20195281) <BR>
 matplotlib | matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. matplotlib can be used in python scripts, the python and ipython shell, web application servers, and six graphical user interface toolkits. | [matplotlib/3.1.1-Python-3.7.4](#matplotlib311-python-374) <BR>[matplotlib/3.2.1-Python-3.8.2](#matplotlib321-python-382) <BR>[matplotlib/3.3.3](#matplotlib333) <BR>[matplotlib/3.5.2](#matplotlib352) <BR>[matplotlib/3.7.2](#matplotlib372) <BR>[matplotlib/3.8.2](#matplotlib382) <BR>
+maturin | This project is meant as a zero configurationreplacement for setuptools-rust and milksnake. It supports buildingwheels for python 3.5+ on windows, linux, mac and freebsd, can uploadthem to pypi and has basic pypy and graalpy support. | [maturin/1.3.1](#maturin131) <BR>
 Mesa | Mesa is an open-source implementation of the OpenGL specification - a system for rendering interactive 3D graphics. | [Mesa/19.1.7](#mesa1917) <BR>[Mesa/19.2.1](#mesa1921) <BR>[Mesa/20.0.2](#mesa2002) <BR>[Mesa/20.2.1](#mesa2021) <BR>[Mesa/21.1.1](#mesa2111) <BR>[Mesa/21.1.7](#mesa2117) <BR>[Mesa/22.0.3](#mesa2203) <BR>[Mesa/23.1.4](#mesa2314) <BR>[Mesa/23.1.9](#mesa2319) <BR>
 Meson | Meson is a cross-platform build system designed to be both as fast and as user friendly as possible. | [Meson/0.51.2-Python-3.7.4](#meson0512-python-374) <BR>[Meson/0.55.1-Python-3.8.2](#meson0551-python-382) <BR>[Meson/0.55.3](#meson0553) <BR>[Meson/0.58.0](#meson0580) <BR>[Meson/0.58.2](#meson0582) <BR>[Meson/0.59.1-Python-3.7.4](#meson0591-python-374) <BR>[Meson/0.62.1](#meson0621) <BR>[Meson/0.64.0](#meson0640) <BR>[Meson/1.1.1](#meson111) <BR>[Meson/1.2.3](#meson123) <BR>
 meson-python | Python build backend (PEP 517) for Meson projects | [meson-python/0.13.2](#meson-python0132) <BR>[meson-python/0.15.0](#meson-python0150) <BR>
 METIS | METIS is a set of serial programs for partitioning graphs, partitioning finite element meshes, and producing fill reducing orderings for sparse matrices. The algorithms implemented in METIS are based on the multilevel recursive-bisection, multilevel k-way, and multi-constraint partitioning schemes. | [METIS/5.1.0](#metis510) <BR>
-Miniconda3 | Miniconda is a free minimal installer for conda. It is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on, and a small number of other useful packages. | [Miniconda3/4.12.0](#miniconda34120) <BR>[Miniconda3/4.9.2](#miniconda3492) <BR>
 minizip | Mini zip and unzip based on zlib | [minizip/1.1](#minizip11) <BR>
+ml_dtypes | ml_dtypes is a stand-alone implementation of several NumPy dtype extensions usedin machine learning libraries, including:bfloat16: an alternative to the standard float16 formatfloat8_*: several experimental 8-bit floating point representations including:float8_e4m3b11fnuzfloat8_e4m3fnfloat8_e4m3fnuzfloat8_e5m2float8_e5m2fnuz | [ml_dtypes/0.3.1](#ml_dtypes031) <BR>[ml_dtypes/0.3.2](#ml_dtypes032) <BR>[ml_dtypes/0.4.0](#ml_dtypes040) <BR>
 Mono | An open source, cross-platform, implementation of C# and the CLR that is binary compatible with Microsoft.NET. | [Mono/6.12.0.122](#mono6120122) <BR>
 MotionCor2 | MotionCor2 correct anisotropic image motion at thesingle pixel level across the whole frame, suitable for both singleparticle and tomographic images. Iterative, patch-based motion detectionis combined with spatial and temporal constraints and dose weighting.Cite publication: Shawn Q. Zheng, Eugene Palovcak, Jean-Paul Armache,Yifan Cheng and David A. Agard (2016) Anisotropic Correction ofBeam-induced Motion for Improved Single-particle ElectronCryo-microscopy, Nature Methods, submitted.BioArxiv: https://biorxiv.org/content/early/2016/07/04/061960 | [MotionCor2/1.4.7](#motioncor2147) <BR>
-MPC | Gnu Mpc is a C library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result. It extends the principles of the IEEE-754 standard for fixed precision real floating point numbers to complex numbers, providing well-defined semantics for every operation. At the same time, speed of operation at high precision is a major design goal. | [MPC/1.1.0](#mpc110) <BR>[MPC/1.2.1](#mpc121) <BR>
+MPC | Gnu Mpc is a C library for the arithmetic of complex numbers with arbitrarily high precision and correct rounding of the result. It extends the principles of the IEEE-754 standard for fixed precision real floating point numbers to complex numbers, providing well-defined semantics for every operation. At the same time, speed of operation at high precision is a major design goal. | [MPC/1.1.0](#mpc110) <BR>[MPC/1.2.1](#mpc121) <BR>[MPC/1.3.1](#mpc131) <BR>
 MPFR | The MPFR library is a C library for multiple-precision floating-point computations with correct rounding. | [MPFR/4.0.2](#mpfr402) <BR>[MPFR/4.1.0](#mpfr410) <BR>[MPFR/4.2.0](#mpfr420) <BR>[MPFR/4.2.1](#mpfr421) <BR>
 mpi4py | MPI for Python (mpi4py) provides bindings of the Message Passing Interface (MPI) standard for the Python programming language, allowing any Python program to exploit multiple processors. | [mpi4py/3.1.4](#mpi4py314) <BR>[mpi4py/3.1.5](#mpi4py315) <BR>
 MUMPS | A parallel sparse direct solver | [MUMPS/5.2.1-metis](#mumps521-metis) <BR>[MUMPS/5.4.0-metis](#mumps540-metis) <BR>[MUMPS/5.5.1-metis](#mumps551-metis) <BR>[MUMPS/5.6.1-metis](#mumps561-metis) <BR>
 MVAPICH2 | MVAPICH2 is an open source implementation of Message Passing Interface (MPI)that delivers the best performance, scalability and fault tolerance forhigh-end computing systems and servers using InfiniBand, 10GigE/iWARP and RoCEnetworking technologies. MVAPICH2 simplifies the task of porting MPI applicationsto run on clusters with NVIDIA GPUs by supporting standard MPI calls from GPUdevice memory. It optimizes the data movement between host and GPU, and betweenGPUs in the best way possible while requiring minimal or no effort from the application developer | [MVAPICH2/2.3.6](#mvapich2236) <BR>
-NAMD | NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. | [NAMD/2.14](#namd214) <BR>[NAMD/2.14-mpi](#namd214-mpi) <BR>[NAMD/3.0b6-mpi](#namd30b6-mpi) <BR>
+NAMD | NAMD is a parallel molecular dynamics code designed for high-performance simulation of large biomolecular systems. | [NAMD/2.14](#namd214) <BR>[NAMD/2.14-mpi](#namd214-mpi) <BR>[NAMD/3.0-mpi](#namd30-mpi) <BR>[NAMD/3.0b6-mpi](#namd30b6-mpi) <BR>
 NASM | NASM: General-purpose x86 assembler | [NASM/2.14.02](#nasm21402) <BR>[NASM/2.15.05](#nasm21505) <BR>[NASM/2.16.01](#nasm21601) <BR>
-NCCL | The NVIDIA Collective Communications Library (NCCL) implements multi-GPU and multi-node collectivecommunication primitives that are performance optimized for NVIDIA GPUs. | [NCCL/2.10.3-CUDA-11.3.1](#nccl2103-cuda-1131) <BR>[NCCL/2.10.3-CUDA-11.4.1](#nccl2103-cuda-1141) <BR>[NCCL/2.12.12-CUDA-11.7.0](#nccl21212-cuda-1170) <BR>[NCCL/2.4.8](#nccl248) <BR>[NCCL/2.8.3-CUDA-11.1.1](#nccl283-cuda-1111) <BR>
+NCCL | The NVIDIA Collective Communications Library (NCCL) implements multi-GPU and multi-node collectivecommunication primitives that are performance optimized for NVIDIA GPUs. | [NCCL/2.10.3-CUDA-11.3.1](#nccl2103-cuda-1131) <BR>[NCCL/2.10.3-CUDA-11.4.1](#nccl2103-cuda-1141) <BR>[NCCL/2.12.12-CUDA-11.7.0](#nccl21212-cuda-1170) <BR>[NCCL/2.18.3-CUDA-12.1.1](#nccl2183-cuda-1211) <BR>[NCCL/2.20.5-CUDA-12.4.0](#nccl2205-cuda-1240) <BR>[NCCL/2.4.8](#nccl248) <BR>[NCCL/2.8.3-CUDA-11.1.1](#nccl283-cuda-1111) <BR>
 ncurses | The Ncurses (new curses) library is a free software emulation of curses in System V Release 4.0, and more. It uses Terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SYSV-curses enhancements over BSD Curses. | [ncurses/6.0](#ncurses60) <BR>[ncurses/6.1](#ncurses61) <BR>[ncurses/6.2](#ncurses62) <BR>[ncurses/6.3](#ncurses63) <BR>[ncurses/6.4](#ncurses64) <BR>[ncurses/6.5](#ncurses65) <BR>
 Neovim | PLATform for Assembling NUcleotide Sequences | [Neovim/0.6.1](#neovim061) <BR>
 netCDF | NetCDF (network Common Data Form) is a set of software libraries and machine-independent data formats that support the creation, access, and sharing of array-oriented scientific data. | [netCDF/4.7.1](#netcdf471) <BR>[netCDF/4.7.4](#netcdf474) <BR>[netCDF/4.8.0](#netcdf480) <BR>[netCDF/4.8.1](#netcdf481) <BR>[netCDF/4.9.0](#netcdf490) <BR>[netCDF/4.9.2](#netcdf492) <BR>
@@ -398,7 +415,7 @@ Pillow | Pillow is the 'friendly PIL fork' by Alex Clark and Contributors. PIL i
 Pillow-SIMD | Pillow is the 'friendly PIL fork' by Alex Clark and Contributors. PIL is the Python Imaging Library by Fredrik Lundh and Contributors. | [Pillow-SIMD/7.1.2](#pillow-simd712) <BR>[Pillow-SIMD/8.2.0](#pillow-simd820) <BR>[Pillow-SIMD/9.2.0](#pillow-simd920) <BR>
 Pint | Pint is a Python package to define, operate andmanipulate physical quantities: the product of a numerical value and aunit of measurement. It allows arithmetic operations between them andconversions from and to different units. | [Pint/0.24](#pint024) <BR>
 PIP-GPyTorch | A highly efficient and modular implementation of GPs, with GPU acceleration.Implemented in PyTorch. | [PIP-GPyTorch/1.11.0](#pip-gpytorch1110) <BR>
-PIP-PyTorch | Tensors and Dynamic neural networks in Python with strong GPU acceleration.PyTorch is a deep learning framework that puts Python first. | [PIP-PyTorch/2.1.2](#pip-pytorch212) <BR>
+PIP-PyTorch | Tensors and Dynamic neural networks in Python with strong GPU acceleration.PyTorch is a deep learning framework that puts Python first. | [PIP-PyTorch/2.1.2](#pip-pytorch212) <BR>[PIP-PyTorch/2.4.0](#pip-pytorch240) <BR>[PIP-PyTorch/2.4.0-CUDA-12.4.0](#pip-pytorch240-cuda-1240) <BR>
 pixman | Pixman is a low-level software library for pixel manipulation, providing features such as image compositing and trapezoid rasterization. Important users of pixman are the cairo graphics library and the X server. | [pixman/0.38.4](#pixman0384) <BR>[pixman/0.40.0](#pixman0400) <BR>[pixman/0.42.2](#pixman0422) <BR>
 pkg-config | pkg-config is a helper tool used when compiling applications and libraries. It helps you insert the correct compiler options on the command line so an application can use gcc -o test test.c `pkg-config --libs --cflags glib-2.0` for instance, rather than hard-coding values on where to find glib (or other libraries). | [pkg-config/0.29.2](#pkg-config0292) <BR>
 pkgconf | pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org. | [pkgconf/1.8.0](#pkgconf180) <BR>[pkgconf/1.9.3](#pkgconf193) <BR>[pkgconf/1.9.5](#pkgconf195) <BR>[pkgconf/2.0.3](#pkgconf203) <BR>
@@ -423,13 +440,16 @@ pydicom | Pure python package for DICOM medical file reading and writing. | [pyd
 PyGObject | PyGObject is a Python package which provides bindings for GObject basedlibraries such as GTK, GStreamer, WebKitGTK, GLib, GIO and many more. | [PyGObject/3.42.1](#pygobject3421) <BR>
 PyTables | PyTables is a package for managing hierarchical datasets and designed to efficiently and easily cope with extremely large amounts of data. PyTables is built on top of the HDF5 library, using the Python language and the NumPy package. It features an object-oriented interface that, combined with C extensions for the performance-critical parts of the code (generated using Cython), makes it a fast, yet extremely easy to use tool for interactively browsing, processing and searching very large amounts of data. One important feature of PyTables is that it optimizes memory and  disk resources so that data takes much less space (specially if on-flight compression is used) than other solutions  such as relational or object oriented databases. | [PyTables/3.8.0](#pytables380) <BR>
 pytest | The pytest framework makes it easy to write small,readable tests, and can scale to support complex functional testing forapplications and libraries. | [pytest/7.4.2](#pytest742) <BR>[pytest/8.2.2](#pytest822) <BR>
+pytest-flakefinder | Runs tests multiple times to expose flakiness. | [pytest-flakefinder/1.1.0](#pytest-flakefinder110) <BR>
+pytest-rerunfailures | pytest plugin to re-run tests to eliminate flaky failures. | [pytest-rerunfailures/14.0](#pytest-rerunfailures140) <BR>
+pytest-shard | pytest plugin to support parallelism across multiple machines.Shards tests based on a hash of their test name enabling easy parallelism across machines,suitable for a wide variety of continuous integration services.Tests are split at the finest level of granularity, individual test cases,enabling parallelism even if all of your tests are in a single file(or even single parameterized test method). | [pytest-shard/0.1.2](#pytest-shard012) <BR>
 pytest-xdist | xdist: pytest distributed testing pluginThe pytest-xdist plugin extends pytest with some unique test execution modes:    * test run parallelization: if you have multiple CPUs or hosts you      can use those for a combined test run. This allows to speed up      development or to use special resources of remote machines.    * --looponfail: run your tests repeatedly in a subprocess. After        each run pytest waits until a file in your project changes and        then re-runs the previously failing tests. This is repeated        until all tests pass after which again a full run is        performed.    * Multi-Platform coverage: you can specify different Python      interpreters or different platforms and run tests in parallel on      all of them.Before running tests remotely, pytest efficiently rsyncs yourprogram source code to the remote place. All test results are reportedback and displayed to your local terminal. You may specify differentPython versions and interpreters. | [pytest-xdist/2.3.0](#pytest-xdist230) <BR>[pytest-xdist/2.5.0](#pytest-xdist250) <BR>[pytest-xdist/3.3.1](#pytest-xdist331) <BR>
 Python | Python is a programming language that lets you work more quickly and integrate your systems more effectively. | [Python/2.7.16](#python2716) <BR>[Python/2.7.18](#python2718) <BR>[Python/2.7.18-bare](#python2718-bare) <BR>[Python/3.10.4](#python3104) <BR>[Python/3.10.4-bare](#python3104-bare) <BR>[Python/3.10.8](#python3108) <BR>[Python/3.10.8-bare](#python3108-bare) <BR>[Python/3.11.3](#python3113) <BR>[Python/3.11.5](#python3115) <BR>[Python/3.7.4](#python374) <BR>[Python/3.8.2](#python382) <BR>[Python/3.8.6](#python386) <BR>[Python/3.9.5](#python395) <BR>[Python/3.9.5-bare](#python395-bare) <BR>[Python/3.9.6](#python396) <BR>[Python/3.9.6-bare](#python396-bare) <BR>
 Python-bundle-PyPI | Bundle of Python packages from PyPI | [Python-bundle-PyPI/2023.06](#python-bundle-pypi202306) <BR>[Python-bundle-PyPI/2023.10](#python-bundle-pypi202310) <BR>
-PyTorch | Tensors and Dynamic neural networks in Python with strong GPU acceleration.PyTorch is a deep learning framework that puts Python first. | [PyTorch/1.10.0](#pytorch1100) <BR>[PyTorch/1.11.0-CUDA-11.1.1](#pytorch1110-cuda-1111) <BR>[PyTorch/1.12.0](#pytorch1120) <BR>[PyTorch/1.12.1](#pytorch1121) <BR>[PyTorch/1.12.1-CUDA-11.7.0](#pytorch1121-cuda-1170) <BR>[PyTorch/1.7.1](#pytorch171) <BR>[PyTorch/1.9.0](#pytorch190) <BR>[PyTorch/2.0-Miniconda3-4.12.0](#pytorch20-miniconda3-4120) <BR>
 PyTorch-Geometric | PyTorch Geometric (PyG) is a geometric deep learning extension library for PyTorch. | [PyTorch-Geometric/2.0.1-PyTorch-1.9.0](#pytorch-geometric201-pytorch-190) <BR>
 PyTorch-Lightning | PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. | [PyTorch-Lightning/1.8.4-CUDA-11.7.0](#pytorch-lightning184-cuda-1170) <BR>[PyTorch-Lightning/1.9.0](#pytorch-lightning190) <BR>
 PyYAML | PyYAML is a YAML parser and emitter for the Python programming language. | [PyYAML/5.3.1](#pyyaml531) <BR>[PyYAML/5.4.1](#pyyaml541) <BR>[PyYAML/6.0](#pyyaml60) <BR>[PyYAML/6.0.1](#pyyaml601) <BR>
+PyZMQ | Python bindings for ZeroMQ | [PyZMQ/25.1.2](#pyzmq2512) <BR>
 Qhull | Qhull computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace intersection about a point, furthest-site Delaunay triangulation, and furthest-site Voronoi diagram. The source code runs in 2-d, 3-d, 4-d, and higher dimensions. Qhull implements the Quickhull algorithm for computing the convex hull. | [Qhull/2020.2](#qhull20202) <BR>
 qmul | Enables access to QMUL modules. | [qmul](#qmul) <BR>
 Qt | Qt is a comprehensive cross-platform C++ application framework. | [Qt/4.8.7](#qt487) <BR>
@@ -483,7 +503,7 @@ SUNDIALS | SUNDIALS: SUite of Nonlinear and DIfferential/ALgebraic Equation Solv
 SuperLU | SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations on high performance machines. | [SuperLU/6.0.1](#superlu601) <BR>
 SuperLU_DIST | SuperLU is a general purpose library for the direct solution of large, sparse, nonsymmetric systems of linear equations on high performance machines. | [SuperLU_DIST/8.1.2](#superlu_dist812) <BR>[SuperLU_DIST/8.2.1](#superlu_dist821) <BR>
 SWIG | SWIG is a software development tool that connects programs written in C and C++ with a variety of high-level programming languages. | [SWIG/3.0.12](#swig3012) <BR>[SWIG/4.0.1](#swig401) <BR>[SWIG/4.0.2](#swig402) <BR>[SWIG/4.1.1](#swig411) <BR>
-sympy | SymPy is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS) while keeping the code as simple as possible in order to be comprehensible and easily extensible. SymPy is written entirely in Python and does not require any external libraries. | [sympy/1.11.1](#sympy1111) <BR>[sympy/1.5.1-Python-3.7.4](#sympy151-python-374) <BR>
+sympy | SymPy is a Python library for symbolic mathematics. It aims to become a full-featured computer algebra system (CAS) while keeping the code as simple as possible in order to be comprehensible and easily extensible. SymPy is written entirely in Python and does not require any external libraries. | [sympy/1.11.1](#sympy1111) <BR>[sympy/1.12](#sympy112) <BR>[sympy/1.5.1-Python-3.7.4](#sympy151-python-374) <BR>
 Szip | Szip compression software, providing lossless compression of scientific data | [Szip/2.1.1](#szip211) <BR>
 TACS | The Toolkit for the Analysis of Composite Structures (TACS) is a parallel finite-element code for analysis and gradient-based design of advanced structures. Originally, TACS was primarily designed as a tool for the analysis of shell structures, such as wing-boxes. More recently it has been extended to perform topology optimization of large three-dimensional structures using gradient-based methods. | [TACS/3.7.2](#tacs372) <BR>
 tbb | Intel(R) Threading Building Blocks (Intel(R) TBB) lets you easily write parallel C++ programs that take full advantage of multicore performance, that are portable, composable and have future-proof scalability. | [tbb/2020.3](#tbb20203) <BR>[tbb/2021.13.0](#tbb2021130) <BR>[tbb/2021.5.0](#tbb202150) <BR>
@@ -511,7 +531,7 @@ TRIQS-tprf | TRIQS (Toolbox for Research on Interacting Quantum Systems) is a sc
 typing-extensions | Typing Extensions - Backported and Experimental Type Hints for Python | [typing-extensions/3.10.0.0](#typing-extensions31000) <BR>[typing-extensions/3.7.4.3](#typing-extensions3743) <BR>[typing-extensions/4.5.0](#typing-extensions450) <BR>
 UCC | UCC (Unified Collective Communication) is a collectivecommunication operations API and library that is flexible, complete, and feature-rich for current and emerging programming models and runtimes. | [UCC/1.0.0](#ucc100) <BR>[UCC/1.1.0](#ucc110) <BR>[UCC/1.2.0](#ucc120) <BR>
 UCX | Unified Communication XAn open-source production grade communication framework for data centricand high-performance applications | [UCX/1.10.0](#ucx1100) <BR>[UCX/1.11.2](#ucx1112) <BR>[UCX/1.11.2-CUDAcore-11.5.1](#ucx1112-cudacore-1151) <BR>[UCX/1.12.1](#ucx1121) <BR>[UCX/1.13.1](#ucx1131) <BR>[UCX/1.14.1](#ucx1141) <BR>[UCX/1.15.0](#ucx1150) <BR>[UCX/1.8.0](#ucx180) <BR>[UCX/1.9.0](#ucx190) <BR>[UCX/1.9.0-CUDA-11.1.1](#ucx190-cuda-1111) <BR>
-UCX-CUDA | Unified Communication XAn open-source production grade communication framework for data centricand high-performance applicationsThis module adds the UCX CUDA support. | [UCX-CUDA/1.10.0-CUDA-11.3.1](#ucx-cuda1100-cuda-1131) <BR>[UCX-CUDA/1.11.2-CUDA-11.4.1](#ucx-cuda1112-cuda-1141) <BR>[UCX-CUDA/1.12.1-CUDA-11.7.0](#ucx-cuda1121-cuda-1170) <BR>[UCX-CUDA/1.15.0-CUDA-12.4.0](#ucx-cuda1150-cuda-1240) <BR>
+UCX-CUDA | Unified Communication XAn open-source production grade communication framework for data centricand high-performance applicationsThis module adds the UCX CUDA support. | [UCX-CUDA/1.10.0-CUDA-11.3.1](#ucx-cuda1100-cuda-1131) <BR>[UCX-CUDA/1.11.2-CUDA-11.4.1](#ucx-cuda1112-cuda-1141) <BR>[UCX-CUDA/1.12.1-CUDA-11.7.0](#ucx-cuda1121-cuda-1170) <BR>[UCX-CUDA/1.14.1-CUDA-12.1.1](#ucx-cuda1141-cuda-1211) <BR>[UCX-CUDA/1.15.0-CUDA-12.4.0](#ucx-cuda1150-cuda-1240) <BR>[UCX-CUDA/1.15.0-CUDA-12.5.0](#ucx-cuda1150-cuda-1250) <BR>
 UDUNITS | UDUNITS supports conversion of unit specifications between formatted and binary forms, arithmetic manipulation of units, and conversion of values between compatible scales of measurement. | [UDUNITS/2.2.28](#udunits2228) <BR>
 UFL | The Unified Form Language (UFL) is a domain specific language  for declaration of finite element discretizations of variational forms.  More precisely, it defines a flexible interface for choosing finite element  spaces and defining expressions for weak forms in a notation close to  mathematical notation. | [UFL/2019.1.0-Python-3.7.4](#ufl201910-python-374) <BR>
 umap-learn | Uniform Manifold Approximation and Projection (UMAP) is a dimension reduction technique that can be used for visualisation similarly to t-SNE, but also for general non-linear dimension reduction. | [umap-learn/0.5.3](#umap-learn053) <BR>
@@ -530,7 +550,7 @@ wpebackend-fdo | WPE WebKit allows embedders to create simple and performant sys
 wxPython | Wraps the wxWidgets C++ toolkit and provides access to the user interface portions of the wxWidgets API, enabling Python applications to have a native GUI on Windows, Macs or Unix systems, with a native look and feel and requiring very little (if any) platform specific code. | [wxPython/4.2.0](#wxpython420) <BR>
 wxWidgets | wxWidgets is a C++ library that lets developers createapplications for Windows, Mac OS X, Linux and other platforms with asingle code base. It has popular language bindings for Python, Perl,Ruby and many other languages, and unlike other cross-platform toolkits,wxWidgets gives applications a truly native look and feel because ituses the platform's native API rather than emulating the GUI. | [wxWidgets/3.1.4](#wxwidgets314) <BR>[wxWidgets/3.2.0](#wxwidgets320) <BR>[wxWidgets/3.2.1](#wxwidgets321) <BR>[wxWidgets/3.2.5](#wxwidgets325) <BR>
 X11 | The X Window System (X11) is a windowing system for bitmap displays | [X11/20190717](#x1120190717) <BR>[X11/20200222](#x1120200222) <BR>[X11/20201008](#x1120201008) <BR>[X11/20210518](#x1120210518) <BR>[X11/20210802](#x1120210802) <BR>[X11/20220504](#x1120220504) <BR>[X11/20230603](#x1120230603) <BR>[X11/20231019](#x1120231019) <BR>
-x264 | x264 is a free software library and application for encoding video streams into the H.264/MPEG-4 AVC compression format, and is released under the terms of the GNU GPL. | [x264/20190925](#x26420190925) <BR>[x264/20191217](#x26420191217) <BR>[x264/20201026](#x26420201026) <BR>[x264/20210414](#x26420210414) <BR>[x264/20210613](#x26420210613) <BR>[x264/20220620](#x26420220620) <BR>[x264/20230226](#x26420230226) <BR>
+x264 | x264 is a free software library and application for encoding video streams into the H.264/MPEG-4 AVC compression format, and is released under the terms of the GNU GPL. | [x264/20190925](#x26420190925) <BR>[x264/20191217](#x26420191217) <BR>[x264/20201026](#x26420201026) <BR>[x264/20210414](#x26420210414) <BR>[x264/20210613](#x26420210613) <BR>[x264/20220620](#x26420220620) <BR>[x264/20230226](#x26420230226) <BR>[x264/20231019](#x26420231019) <BR>
 x265 | x265 is a free software library and application for encoding video streams into the H.265 AVC compression format, and is released under the terms of the GNU GPL. | [x265/3.2](#x26532) <BR>[x265/3.3](#x26533) <BR>[x265/3.5](#x26535) <BR>
 xarray | xarray (formerly xray) is an open source project and Python package that aims to bring the labeled data power of pandas to the physical sciences, by providing N-dimensional variants of the core pandas data structures. | [xarray/2022.9.0](#xarray202290) <BR>
 Xerces-C++ | Xerces-C++ is a validating XML parser written in a portablesubset of C++. Xerces-C++ makes it easy to give your application the ability toread and write XML data. A shared library is provided for parsing, generating,manipulating, and validating XML documents using the DOM, SAX, and SAX2APIs. | [Xerces-C++/3.2.5](#xerces-c325) <BR>
@@ -575,11 +595,11 @@ module load GCCcore/13.2.0 Abseil/20240116.1
 
 ## ACTC/1.1
 
-module load GCCcore/12.3.0 ACTC/1.1
-
 module load GCCcore/11.3.0 ACTC/1.1
 
 module load GCCcore/11.2.0 ACTC/1.1
+
+module load GCCcore/12.3.0 ACTC/1.1
 
 
 [Return to modules](#module-list)
@@ -824,15 +844,15 @@ module load  aston
 
 ## at-spi2-atk/2.38.0
 
-module load GCCcore/12.3.0 at-spi2-atk/2.38.0
-
 module load GCCcore/10.2.0 at-spi2-atk/2.38.0
 
 module load GCCcore/11.3.0 at-spi2-atk/2.38.0
 
-module load GCCcore/11.2.0 at-spi2-atk/2.38.0
+module load GCCcore/12.3.0 at-spi2-atk/2.38.0
 
 module load GCCcore/13.2.0 at-spi2-atk/2.38.0
+
+module load GCCcore/11.2.0 at-spi2-atk/2.38.0
 
 
 [Return to modules](#module-list)
@@ -886,9 +906,9 @@ module load GCCcore/13.2.0 at-spi2-core/2.50.0
 
 ## ATK/2.36.0
 
-module load GCCcore/11.2.0 ATK/2.36.0
-
 module load GCCcore/10.2.0 ATK/2.36.0
+
+module load GCCcore/11.2.0 ATK/2.36.0
 
 
 [Return to modules](#module-list)
@@ -897,11 +917,11 @@ module load GCCcore/10.2.0 ATK/2.36.0
 
 ## ATK/2.38.0
 
-module load GCCcore/13.2.0 ATK/2.38.0
+module load GCCcore/12.3.0 ATK/2.38.0
 
 module load GCCcore/11.3.0 ATK/2.38.0
 
-module load GCCcore/12.3.0 ATK/2.38.0
+module load GCCcore/13.2.0 ATK/2.38.0
 
 
 [Return to modules](#module-list)
@@ -930,11 +950,11 @@ module load GCC/11.3.0 OpenMPI/4.1.4 AUGUSTUS/3.5.0
 
 ## Autoconf/2.69
 
-module load GCCcore/8.3.0 Autoconf/2.69
-
 module load GCCcore/10.2.0 Autoconf/2.69
 
 module load GCCcore/9.3.0 Autoconf/2.69
+
+module load GCCcore/8.3.0 Autoconf/2.69
 
 
 [Return to modules](#module-list)
@@ -943,17 +963,17 @@ module load GCCcore/9.3.0 Autoconf/2.69
 
 ## Autoconf/2.71
 
-module load GCCcore/10.3.0 Autoconf/2.71
-
-module load GCCcore/11.3.0 Autoconf/2.71
-
-module load GCCcore/12.2.0 Autoconf/2.71
-
 module load GCCcore/12.3.0 Autoconf/2.71
 
 module load GCCcore/13.2.0 Autoconf/2.71
 
 module load GCCcore/11.2.0 Autoconf/2.71
+
+module load GCCcore/12.2.0 Autoconf/2.71
+
+module load GCCcore/11.3.0 Autoconf/2.71
+
+module load GCCcore/10.3.0 Autoconf/2.71
 
 
 [Return to modules](#module-list)
@@ -962,9 +982,9 @@ module load GCCcore/11.2.0 Autoconf/2.71
 
 ## Automake/1.16.1
 
-module load GCCcore/9.3.0 Automake/1.16.1
-
 module load GCCcore/8.3.0 Automake/1.16.1
+
+module load GCCcore/9.3.0 Automake/1.16.1
 
 
 [Return to modules](#module-list)
@@ -1000,13 +1020,13 @@ module load GCCcore/11.2.0 Automake/1.16.4
 
 ## Automake/1.16.5
 
+module load GCCcore/11.3.0 Automake/1.16.5
+
 module load GCCcore/12.3.0 Automake/1.16.5
 
 module load GCCcore/12.2.0 Automake/1.16.5
 
 module load GCCcore/13.2.0 Automake/1.16.5
-
-module load GCCcore/11.3.0 Automake/1.16.5
 
 
 [Return to modules](#module-list)
@@ -1015,9 +1035,9 @@ module load GCCcore/11.3.0 Automake/1.16.5
 
 ## Autotools/20180311
 
-module load GCCcore/8.3.0 Autotools/20180311
-
 module load GCCcore/9.3.0 Autotools/20180311
+
+module load GCCcore/8.3.0 Autotools/20180311
 
 
 [Return to modules](#module-list)
@@ -1053,13 +1073,13 @@ module load GCCcore/11.2.0 Autotools/20210726
 
 ## Autotools/20220317
 
-module load GCCcore/11.3.0 Autotools/20220317
+module load GCCcore/12.3.0 Autotools/20220317
 
 module load GCCcore/13.2.0 Autotools/20220317
 
 module load GCCcore/12.2.0 Autotools/20220317
 
-module load GCCcore/12.3.0 Autotools/20220317
+module load GCCcore/11.3.0 Autotools/20220317
 
 
 [Return to modules](#module-list)
@@ -1068,9 +1088,9 @@ module load GCCcore/12.3.0 Autotools/20220317
 
 ## BamTools/2.5.2
 
-module load GCC/11.3.0 BamTools/2.5.2
-
 module load GCC/13.2.0 BamTools/2.5.2
+
+module load GCC/11.3.0 BamTools/2.5.2
 
 
 [Return to modules](#module-list)
@@ -1126,9 +1146,9 @@ module load GCCcore/12.3.0 Bazel/6.1.0
 
 ## Bazel/6.3.1
 
-module load GCCcore/13.2.0 Bazel/6.3.1
-
 module load GCCcore/12.3.0 Bazel/6.3.1
+
+module load GCCcore/13.2.0 Bazel/6.3.1
 
 
 [Return to modules](#module-list)
@@ -1156,6 +1176,15 @@ module load GCC/13.2.0 BCFtools/1.19
 ## BeautifulSoup/4.10.0
 
 module load GCCcore/11.3.0 BeautifulSoup/4.10.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## BeautifulSoup/4.12.2
+
+module load GCCcore/13.2.0 BeautifulSoup/4.12.2
 
 
 [Return to modules](#module-list)
@@ -1202,9 +1231,9 @@ module load  binutils/2.32
 
 ## binutils/2.34
 
-module load GCCcore/9.3.0 binutils/2.34
-
 module load  binutils/2.34
+
+module load GCCcore/9.3.0 binutils/2.34
 
 
 [Return to modules](#module-list)
@@ -1246,9 +1275,9 @@ module load GCCcore/11.2.0 binutils/2.37
 
 ## binutils/2.38
 
-module load GCCcore/11.3.0 binutils/2.38
-
 module load  binutils/2.38
+
+module load GCCcore/11.3.0 binutils/2.38
 
 
 [Return to modules](#module-list)
@@ -1268,11 +1297,11 @@ module load GCCcore/12.2.0 binutils/2.39
 
 ## binutils/2.40
 
-module load GCCcore/12.3.0 binutils/2.40
+module load GCCcore/13.2.0 binutils/2.40
 
 module load  binutils/2.40
 
-module load GCCcore/13.2.0 binutils/2.40
+module load GCCcore/12.3.0 binutils/2.40
 
 
 [Return to modules](#module-list)
@@ -1346,11 +1375,11 @@ module load GCCcore/8.3.0 Bison/3.3.2
 
 ## Bison/3.5.3
 
-module load GCCcore/10.2.0 Bison/3.5.3
+module load  Bison/3.5.3
 
 module load GCCcore/9.3.0 Bison/3.5.3
 
-module load  Bison/3.5.3
+module load GCCcore/10.2.0 Bison/3.5.3
 
 
 [Return to modules](#module-list)
@@ -1359,9 +1388,9 @@ module load  Bison/3.5.3
 
 ## Bison/3.7.1
 
-module load  Bison/3.7.1
-
 module load GCCcore/10.2.0 Bison/3.7.1
+
+module load  Bison/3.7.1
 
 
 [Return to modules](#module-list)
@@ -1383,15 +1412,15 @@ module load GCCcore/11.2.0 Bison/3.7.6
 
 ## Bison/3.8.2
 
-module load GCCcore/13.2.0 Bison/3.8.2
-
-module load  Bison/3.8.2
+module load GCCcore/11.3.0 Bison/3.8.2
 
 module load GCCcore/12.3.0 Bison/3.8.2
 
-module load GCCcore/12.2.0 Bison/3.8.2
+module load  Bison/3.8.2
 
-module load GCCcore/11.3.0 Bison/3.8.2
+module load GCCcore/13.2.0 Bison/3.8.2
+
+module load GCCcore/12.2.0 Bison/3.8.2
 
 
 [Return to modules](#module-list)
@@ -1420,9 +1449,9 @@ module load GCC/11.2.0 BLIS/0.8.1
 
 module load GCC/13.2.0 BLIS/0.9.0
 
-module load GCC/11.3.0 BLIS/0.9.0
-
 module load GCC/12.2.0 BLIS/0.9.0
+
+module load GCC/11.3.0 BLIS/0.9.0
 
 module load GCC/12.3.0 BLIS/0.9.0
 
@@ -1509,9 +1538,9 @@ module load GCC/13.2.0 bokeh/3.4.1
 
 ## Boost/1.71.0
 
-module load GCC/8.3.0 OpenMPI/3.1.4 Boost/1.71.0
-
 module load iccifort/2019.5.281 OpenMPI/3.1.4 Boost/1.71.0
+
+module load GCC/8.3.0 OpenMPI/3.1.4 Boost/1.71.0
 
 module load iccifort/2019.5.281 impi/2019.7.217 Boost/1.71.0
 
@@ -1558,9 +1587,9 @@ module load GCC/11.2.0 Boost/1.77.0
 
 ## Boost/1.79.0
 
-module load GCC/11.2.0 Boost/1.79.0
-
 module load GCC/11.3.0 Boost/1.79.0
+
+module load GCC/11.2.0 Boost/1.79.0
 
 
 [Return to modules](#module-list)
@@ -1641,13 +1670,13 @@ module load GCC/12.3.0 Boost.Python/1.82.0
 
 ## Brotli/1.0.9
 
+module load GCCcore/11.2.0 Brotli/1.0.9
+
 module load GCCcore/12.3.0 Brotli/1.0.9
 
 module load GCCcore/11.3.0 Brotli/1.0.9
 
 module load GCCcore/10.2.0 Brotli/1.0.9
-
-module load GCCcore/11.2.0 Brotli/1.0.9
 
 
 [Return to modules](#module-list)
@@ -1676,23 +1705,23 @@ module load GCCcore/13.2.0 Brunsli/0.1
 
 ## bzip2/1.0.8
 
-module load GCCcore/12.3.0 bzip2/1.0.8
-
-module load GCCcore/12.2.0 bzip2/1.0.8
-
-module load GCCcore/11.3.0 bzip2/1.0.8
+module load GCCcore/9.3.0 bzip2/1.0.8
 
 module load GCCcore/13.2.0 bzip2/1.0.8
 
+module load GCCcore/11.3.0 bzip2/1.0.8
+
 module load GCCcore/11.2.0 bzip2/1.0.8
+
+module load GCCcore/12.2.0 bzip2/1.0.8
+
+module load GCCcore/10.2.0 bzip2/1.0.8
 
 module load GCCcore/8.3.0 bzip2/1.0.8
 
 module load GCCcore/10.3.0 bzip2/1.0.8
 
-module load GCCcore/9.3.0 bzip2/1.0.8
-
-module load GCCcore/10.2.0 bzip2/1.0.8
+module load GCCcore/12.3.0 bzip2/1.0.8
 
 
 [Return to modules](#module-list)
@@ -1719,15 +1748,15 @@ module load GCCcore/13.2.0 c-ares/1.27.0
 
 ## cairo/1.16.0
 
-module load GCCcore/10.3.0 cairo/1.16.0
-
 module load GCCcore/8.3.0 cairo/1.16.0
+
+module load GCCcore/9.3.0 cairo/1.16.0
 
 module load GCCcore/10.2.0 cairo/1.16.0
 
-module load GCCcore/11.2.0 cairo/1.16.0
+module load GCCcore/10.3.0 cairo/1.16.0
 
-module load GCCcore/9.3.0 cairo/1.16.0
+module load GCCcore/11.2.0 cairo/1.16.0
 
 
 [Return to modules](#module-list)
@@ -1763,11 +1792,11 @@ module load GCCcore/13.2.0 cairo/1.18.0
 
 ## Catch2/2.13.9
 
+module load GCCcore/12.3.0 Catch2/2.13.9
+
 module load GCCcore/12.2.0 Catch2/2.13.9
 
 module load GCCcore/13.2.0 Catch2/2.13.9
-
-module load GCCcore/12.3.0 Catch2/2.13.9
 
 
 [Return to modules](#module-list)
@@ -1877,11 +1906,11 @@ module load GCCcore/12.3.0 CGAL/5.6
 
 ## CGNS/4.3.0
 
-module load GCC/10.3.0 OpenMPI/4.1.1 CGNS/4.3.0
-
 module load GCC/8.3.0 OpenMPI/3.1.4 CGNS/4.3.0
 
 module load iccifort/2019.5.281 impi/2019.7.217 CGNS/4.3.0
+
+module load GCC/10.3.0 OpenMPI/4.1.1 CGNS/4.3.0
 
 
 [Return to modules](#module-list)
@@ -1944,9 +1973,9 @@ module load GCCcore/11.3.0 Clang/13.0.1-CUDA-11.7.0
 
 ## Clang/16.0.6
 
-module load GCCcore/13.2.0 Clang/16.0.6
-
 module load GCCcore/12.3.0 Clang/16.0.6
+
+module load GCCcore/13.2.0 Clang/16.0.6
 
 
 [Return to modules](#module-list)
@@ -2000,9 +2029,9 @@ module load GCCcore/9.3.0 CMake/3.16.4
 
 ## CMake/3.18.4
 
-module load  CMake/3.18.4
-
 module load GCCcore/10.2.0 CMake/3.18.4
+
+module load  CMake/3.18.4
 
 
 [Return to modules](#module-list)
@@ -2107,9 +2136,9 @@ module load GCC/10.3.0 OpenMPI/4.1.1 CP2K/8.2
 
 module load GCCcore/11.3.0 cppy/1.2.1
 
-module load GCCcore/13.2.0 cppy/1.2.1
-
 module load GCCcore/12.3.0 cppy/1.2.1
+
+module load GCCcore/13.2.0 cppy/1.2.1
 
 
 [Return to modules](#module-list)
@@ -2226,6 +2255,15 @@ module load  CUDA/12.0.0
 
 -------
 
+## CUDA/12.1.1
+
+module load  CUDA/12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## CUDA/12.2.0
 
 module load  CUDA/12.2.0
@@ -2256,6 +2294,15 @@ module load  CUDA/12.4.0
 ## CUDA/12.5.0
 
 module load  CUDA/12.5.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## CUDA/12.6.0
+
+module load  CUDA/12.6.0
 
 
 [Return to modules](#module-list)
@@ -2352,6 +2399,24 @@ module load  cuDNN/8.8.0.121-CUDA-12.0.0
 
 -------
 
+## cuDNN/8.9.2.26-CUDA-12.1.1
+
+module load  cuDNN/8.9.2.26-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## cuDNN/9.1.1.17-CUDA-12.4.0
+
+module load  cuDNN/9.1.1.17-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## cuDNN/9.2.0.82-CUDA-12.4.0
 
 module load  cuDNN/9.2.0.82-CUDA-12.4.0
@@ -2363,9 +2428,27 @@ module load  cuDNN/9.2.0.82-CUDA-12.4.0
 
 ## CUnit/2.1-3
 
+module load GCCcore/11.2.0 CUnit/2.1-3
+
 module load GCCcore/13.2.0 CUnit/2.1-3
 
-module load GCCcore/11.2.0 CUnit/2.1-3
+
+[Return to modules](#module-list)
+
+-------
+
+## CuPy/13.0.0-CUDA-12.1.1
+
+module load GCC/12.3.0 OpenMPI/4.1.5 CuPy/13.0.0-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## CuPy/13.3.0-CUDA-12.4.0
+
+module load GCC/13.2.0 OpenMPI/4.1.6 CuPy/13.3.0-CUDA-12.4.0
 
 
 [Return to modules](#module-list)
@@ -2462,6 +2545,33 @@ module load GCCcore/13.2.0 cURL/8.3.0
 
 -------
 
+## cuSPARSELt/0.6.0.6-CUDA-12.1.1
+
+module load  cuSPARSELt/0.6.0.6-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## cuSPARSELt/0.6.0.6-CUDA-12.4.0
+
+module load  cuSPARSELt/0.6.0.6-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## cuSPARSELt/0.6.2.3-CUDA-12.4.0
+
+module load  cuSPARSELt/0.6.2.3-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## cuTENSOR/1.2.2.5-CUDA-11.1.1
 
 module load  cuTENSOR/1.2.2.5-CUDA-11.1.1
@@ -2471,9 +2581,45 @@ module load  cuTENSOR/1.2.2.5-CUDA-11.1.1
 
 -------
 
+## cuTENSOR/2.0.1.2-CUDA-12.1.1
+
+module load  cuTENSOR/2.0.1.2-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## cuTENSOR/2.0.2.5-CUDA-12.4.0
+
+module load  cuTENSOR/2.0.2.5-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## Cython/0.29.22
 
 module load GCCcore/10.2.0 Cython/0.29.22
+
+
+[Return to modules](#module-list)
+
+-------
+
+## Cython/0.29.37
+
+module load GCCcore/13.2.0 Cython/0.29.37
+
+
+[Return to modules](#module-list)
+
+-------
+
+## Cython/3.0.10
+
+module load GCCcore/13.2.0 Cython/3.0.10
 
 
 [Return to modules](#module-list)
@@ -2509,6 +2655,15 @@ module load GCC/11.3.0 OpenMPI/4.1.4 dask/2022.10.0
 
 -------
 
+## dask/2024.5.1
+
+module load GCC/13.2.0 dask/2024.5.1
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## DB/18.1.32
 
 module load GCCcore/9.3.0 DB/18.1.32
@@ -2522,15 +2677,15 @@ module load GCCcore/8.3.0 DB/18.1.32
 
 ## DB/18.1.40
 
-module load GCCcore/10.2.0 DB/18.1.40
-
 module load GCCcore/10.3.0 DB/18.1.40
+
+module load GCCcore/11.2.0 DB/18.1.40
 
 module load GCCcore/12.2.0 DB/18.1.40
 
 module load GCCcore/11.3.0 DB/18.1.40
 
-module load GCCcore/11.2.0 DB/18.1.40
+module load GCCcore/10.2.0 DB/18.1.40
 
 
 [Return to modules](#module-list)
@@ -2561,9 +2716,9 @@ module load GCCcore/8.3.0 DBus/1.13.12
 
 module load GCCcore/10.2.0 DBus/1.13.18
 
-module load GCCcore/11.2.0 DBus/1.13.18
-
 module load GCCcore/10.3.0 DBus/1.13.18
+
+module load GCCcore/11.2.0 DBus/1.13.18
 
 
 [Return to modules](#module-list)
@@ -2599,9 +2754,9 @@ module load GCCcore/13.2.0 DBus/1.15.8
 
 ## dbus-glib/0.112
 
-module load GCCcore/11.2.0 dbus-glib/0.112
-
 module load GCCcore/13.2.0 dbus-glib/0.112
+
+module load GCCcore/11.2.0 dbus-glib/0.112
 
 
 [Return to modules](#module-list)
@@ -2711,11 +2866,20 @@ module load GCCcore/11.3.0 dm-tree/0.1.8
 
 ## DMTCP/2.6.0
 
-module load GCCcore/8.3.0 DMTCP/2.6.0
-
 module load GCCcore/9.3.0 DMTCP/2.6.0
 
 module load GCCcore/10.3.0 DMTCP/2.6.0
+
+module load GCCcore/8.3.0 DMTCP/2.6.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## DMTCP/3.0.0
+
+module load GCCcore/13.2.0 DMTCP/3.0.0
 
 
 [Return to modules](#module-list)
@@ -2742,11 +2906,11 @@ module load GCCcore/8.3.0 double-conversion/3.1.4
 
 ## double-conversion/3.1.5
 
+module load GCCcore/9.3.0 double-conversion/3.1.5
+
 module load GCCcore/10.3.0 double-conversion/3.1.5
 
 module load GCCcore/10.2.0 double-conversion/3.1.5
-
-module load GCCcore/9.3.0 double-conversion/3.1.5
 
 
 [Return to modules](#module-list)
@@ -2764,9 +2928,9 @@ module load GCCcore/11.3.0 double-conversion/3.2.0
 
 ## double-conversion/3.3.0
 
-module load GCCcore/13.2.0 double-conversion/3.3.0
-
 module load GCCcore/12.3.0 double-conversion/3.3.0
+
+module load GCCcore/13.2.0 double-conversion/3.3.0
 
 
 [Return to modules](#module-list)
@@ -2802,9 +2966,9 @@ module load GCCcore/10.2.0 Doxygen/1.8.20
 
 ## Doxygen/1.9.1
 
-module load GCCcore/10.3.0 Doxygen/1.9.1
-
 module load GCCcore/11.2.0 Doxygen/1.9.1
+
+module load GCCcore/10.3.0 Doxygen/1.9.1
 
 
 [Return to modules](#module-list)
@@ -3031,9 +3195,9 @@ module load GCCcore/10.2.0 Eigen/3.3.8
 
 ## Eigen/3.3.9
 
-module load GCCcore/10.3.0 Eigen/3.3.9
-
 module load GCCcore/11.2.0 Eigen/3.3.9
+
+module load GCCcore/10.3.0 Eigen/3.3.9
 
 
 [Return to modules](#module-list)
@@ -3042,9 +3206,9 @@ module load GCCcore/11.2.0 Eigen/3.3.9
 
 ## Eigen/3.4.0
 
-module load GCCcore/13.2.0 Eigen/3.4.0
-
 module load GCCcore/12.2.0 Eigen/3.4.0
+
+module load GCCcore/13.2.0 Eigen/3.4.0
 
 module load GCCcore/12.3.0 Eigen/3.4.0
 
@@ -3093,11 +3257,11 @@ module load GCC/10.2.0 OpenMPI/4.0.5 ELPA/2020.11.001
 
 ## ELPA/2021.05.001
 
+module load GCC/10.3.0 OpenMPI/4.1.1 ELPA/2021.05.001
+
 module load intel-compilers/2021.4.0 impi/2021.4.0 ELPA/2021.05.001
 
 module load GCC/11.2.0 OpenMPI/4.1.1 ELPA/2021.05.001
-
-module load GCC/10.3.0 OpenMPI/4.1.1 ELPA/2021.05.001
 
 
 [Return to modules](#module-list)
@@ -3189,9 +3353,9 @@ module load GCCcore/8.3.0 expat/2.2.7
 
 ## expat/2.2.9
 
-module load GCCcore/9.3.0 expat/2.2.9
-
 module load GCCcore/10.3.0 expat/2.2.9
+
+module load GCCcore/9.3.0 expat/2.2.9
 
 module load GCCcore/10.2.0 expat/2.2.9
 
@@ -3229,9 +3393,9 @@ module load GCCcore/12.2.0 expat/2.4.9
 
 ## expat/2.5.0
 
-module load GCCcore/13.2.0 expat/2.5.0
-
 module load GCCcore/12.3.0 expat/2.5.0
+
+module load GCCcore/13.2.0 expat/2.5.0
 
 
 [Return to modules](#module-list)
@@ -3242,9 +3406,18 @@ module load GCCcore/12.3.0 expat/2.5.0
 
 module load GCCcore/10.2.0 expecttest/0.1.3
 
+module load GCCcore/11.3.0 expecttest/0.1.3
+
 module load GCCcore/10.3.0 expecttest/0.1.3
 
-module load GCCcore/11.3.0 expecttest/0.1.3
+
+[Return to modules](#module-list)
+
+-------
+
+## expecttest/0.2.1
+
+module load GCCcore/13.2.0 expecttest/0.2.1
 
 
 [Return to modules](#module-list)
@@ -3320,6 +3493,8 @@ module load GCCcore/11.3.0 FFmpeg/4.4.2
 
 module load GCCcore/12.3.0 FFmpeg/6.0
 
+module load GCCcore/13.2.0 FFmpeg/6.0
+
 
 [Return to modules](#module-list)
 
@@ -3328,6 +3503,15 @@ module load GCCcore/12.3.0 FFmpeg/6.0
 ## ffnvcodec/12.0.16.0
 
 module load  ffnvcodec/12.0.16.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## ffnvcodec/12.1.14.0
+
+module load  ffnvcodec/12.1.14.0
 
 
 [Return to modules](#module-list)
@@ -3347,17 +3531,17 @@ module load GCC/11.3.0 OpenMPI/4.1.4 fftlib/20170628
 
 module load intel-compilers/2021.4.0 impi/2021.4.0 FFTW/3.3.10
 
+module load GCC/13.2.0 FFTW/3.3.10
+
 module load GCC/11.2.0 OpenMPI/4.1.1 FFTW/3.3.10
+
+module load GCC/11.2.0 FFTW/3.3.10
+
+module load GCC/12.3.0 FFTW/3.3.10
 
 module load GCC/12.2.0 FFTW/3.3.10
 
 module load GCC/11.3.0 FFTW/3.3.10
-
-module load GCC/11.2.0 FFTW/3.3.10
-
-module load GCC/13.2.0 FFTW/3.3.10
-
-module load GCC/12.3.0 FFTW/3.3.10
 
 
 [Return to modules](#module-list)
@@ -3368,17 +3552,17 @@ module load GCC/12.3.0 FFTW/3.3.10
 
 module load GCC/8.3.0 OpenMPI/3.1.4 FFTW/3.3.8
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 FFTW/3.3.8
-
-module load GCC/10.2.0 OpenMPI/4.0.5 FFTW/3.3.8
+module load iccifort/2019.5.281 OpenMPI/3.1.4 FFTW/3.3.8
 
 module load GCC/9.3.0 OpenMPI/4.0.3 FFTW/3.3.8
 
-module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 FFTW/3.3.8
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 FFTW/3.3.8
 
 module load iccifort/2019.5.281 impi/2019.7.217 FFTW/3.3.8
 
-module load iccifort/2019.5.281 OpenMPI/3.1.4 FFTW/3.3.8
+module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 FFTW/3.3.8
+
+module load GCC/10.2.0 OpenMPI/4.0.5 FFTW/3.3.8
 
 
 [Return to modules](#module-list)
@@ -3405,13 +3589,22 @@ module load GCC/10.3.0 OpenMPI/4.1.1 FFTW/3.3.9
 
 ## FFTW.MPI/3.3.10
 
-module load GCC/13.2.0 OpenMPI/4.1.6 FFTW.MPI/3.3.10
-
 module load GCC/12.2.0 OpenMPI/4.1.4 FFTW.MPI/3.3.10
+
+module load GCC/12.3.0 OpenMPI/4.1.5 FFTW.MPI/3.3.10
 
 module load GCC/11.3.0 OpenMPI/4.1.4 FFTW.MPI/3.3.10
 
-module load GCC/12.3.0 OpenMPI/4.1.5 FFTW.MPI/3.3.10
+module load GCC/13.2.0 OpenMPI/4.1.6 FFTW.MPI/3.3.10
+
+
+[Return to modules](#module-list)
+
+-------
+
+## FHI-aims/240507
+
+module load GCC/13.2.0 OpenMPI/4.1.6 FHI-aims/240507
 
 
 [Return to modules](#module-list)
@@ -3552,25 +3745,25 @@ module load  flex/2.6.0
 
 ## flex/2.6.4
 
-module load  flex/2.6.4
-
-module load GCCcore/10.2.0 flex/2.6.4
-
 module load GCCcore/12.3.0 flex/2.6.4
 
-module load GCCcore/13.2.0 flex/2.6.4
-
-module load GCCcore/8.3.0 flex/2.6.4
-
-module load GCCcore/11.3.0 flex/2.6.4
-
-module load GCCcore/9.3.0 flex/2.6.4
+module load  flex/2.6.4
 
 module load GCCcore/10.3.0 flex/2.6.4
 
-module load GCCcore/12.2.0 flex/2.6.4
+module load GCCcore/10.2.0 flex/2.6.4
+
+module load GCCcore/13.2.0 flex/2.6.4
+
+module load GCCcore/11.3.0 flex/2.6.4
 
 module load GCCcore/11.2.0 flex/2.6.4
+
+module load GCCcore/8.3.0 flex/2.6.4
+
+module load GCCcore/12.2.0 flex/2.6.4
+
+module load GCCcore/9.3.0 flex/2.6.4
 
 
 [Return to modules](#module-list)
@@ -3608,9 +3801,9 @@ module load GCC/12.2.0 FlexiBLAS/3.2.1
 
 ## FlexiBLAS/3.3.1
 
-module load GCC/12.3.0 FlexiBLAS/3.3.1
-
 module load GCC/13.2.0 FlexiBLAS/3.3.1
+
+module load GCC/12.3.0 FlexiBLAS/3.3.1
 
 
 [Return to modules](#module-list)
@@ -3619,9 +3812,9 @@ module load GCC/13.2.0 FlexiBLAS/3.3.1
 
 ## flit/3.9.0
 
-module load GCCcore/12.3.0 flit/3.9.0
-
 module load GCCcore/13.2.0 flit/3.9.0
+
+module load GCCcore/12.3.0 flit/3.9.0
 
 
 [Return to modules](#module-list)
@@ -3903,9 +4096,9 @@ module load GCCcore/11.2.0 FreeXL/1.0.6
 
 module load GCCcore/10.2.0 FriBidi/1.0.10
 
-module load GCCcore/11.2.0 FriBidi/1.0.10
-
 module load GCCcore/10.3.0 FriBidi/1.0.10
+
+module load GCCcore/11.2.0 FriBidi/1.0.10
 
 
 [Return to modules](#module-list)
@@ -4150,9 +4343,9 @@ module load  gcccuda/2020b
 
 ## GConf/3.2.6
 
-module load GCCcore/13.2.0 GConf/3.2.6
-
 module load GCCcore/11.2.0 GConf/3.2.6
+
+module load GCCcore/13.2.0 GConf/3.2.6
 
 
 [Return to modules](#module-list)
@@ -4253,9 +4446,9 @@ module load GCCcore/10.3.0 GDRCopy/2.2
 
 ## GDRCopy/2.3
 
-module load GCCcore/11.2.0 GDRCopy/2.3
-
 module load GCCcore/11.3.0 GDRCopy/2.3
+
+module load GCCcore/11.2.0 GDRCopy/2.3
 
 
 [Return to modules](#module-list)
@@ -4265,6 +4458,15 @@ module load GCCcore/11.3.0 GDRCopy/2.3
 ## GDRCopy/2.3-CUDAcore-11.5.1
 
 module load GCCcore/11.2.0 GDRCopy/2.3-CUDAcore-11.5.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## GDRCopy/2.3.1
+
+module load GCCcore/12.3.0 GDRCopy/2.3.1
 
 
 [Return to modules](#module-list)
@@ -4345,11 +4547,11 @@ module load  gettext/0.19.8.1
 
 ## gettext/0.20.1
 
-module load  gettext/0.20.1
+module load GCCcore/9.3.0 gettext/0.20.1
 
 module load GCCcore/8.3.0 gettext/0.20.1
 
-module load GCCcore/9.3.0 gettext/0.20.1
+module load  gettext/0.20.1
 
 
 [Return to modules](#module-list)
@@ -4358,15 +4560,15 @@ module load GCCcore/9.3.0 gettext/0.20.1
 
 ## gettext/0.21
 
-module load GCCcore/11.3.0 gettext/0.21
+module load GCCcore/11.2.0 gettext/0.21
 
 module load  gettext/0.21
-
-module load GCCcore/11.2.0 gettext/0.21
 
 module load GCCcore/10.2.0 gettext/0.21
 
 module load GCCcore/10.3.0 gettext/0.21
+
+module load GCCcore/11.3.0 gettext/0.21
 
 
 [Return to modules](#module-list)
@@ -4375,11 +4577,11 @@ module load GCCcore/10.3.0 gettext/0.21
 
 ## gettext/0.21.1
 
+module load GCCcore/12.3.0 gettext/0.21.1
+
 module load  gettext/0.21.1
 
 module load GCCcore/12.2.0 gettext/0.21.1
-
-module load GCCcore/12.3.0 gettext/0.21.1
 
 
 [Return to modules](#module-list)
@@ -4388,9 +4590,9 @@ module load GCCcore/12.3.0 gettext/0.21.1
 
 ## gettext/0.22
 
-module load  gettext/0.22
-
 module load GCCcore/13.2.0 gettext/0.22
+
+module load  gettext/0.22
 
 
 [Return to modules](#module-list)
@@ -4453,17 +4655,17 @@ module load GCCcore/11.3.0 Ghostscript/9.56.1
 
 ## giflib/5.2.1
 
-module load GCCcore/12.3.0 giflib/5.2.1
+module load GCCcore/13.2.0 giflib/5.2.1
 
-module load GCCcore/10.2.0 giflib/5.2.1
+module load GCCcore/10.3.0 giflib/5.2.1
+
+module load GCCcore/12.3.0 giflib/5.2.1
 
 module load GCCcore/11.2.0 giflib/5.2.1
 
 module load GCCcore/11.3.0 giflib/5.2.1
 
-module load GCCcore/10.3.0 giflib/5.2.1
-
-module load GCCcore/13.2.0 giflib/5.2.1
+module load GCCcore/10.2.0 giflib/5.2.1
 
 
 [Return to modules](#module-list)
@@ -4634,9 +4836,9 @@ module load GCCcore/13.2.0 GLib/2.80.4
 
 ## glib-networking/2.72.1
 
-module load GCCcore/11.2.0 glib-networking/2.72.1
-
 module load GCCcore/13.2.0 glib-networking/2.72.1
+
+module load GCCcore/11.2.0 glib-networking/2.72.1
 
 
 [Return to modules](#module-list)
@@ -4701,9 +4903,9 @@ module load iccifort/2019.5.281 OpenMPI/3.1.4 GlobalArrays/5.7.2-peigs
 
 ## GLPK/5.0
 
-module load GCCcore/11.3.0 GLPK/5.0
-
 module load GCCcore/11.2.0 GLPK/5.0
+
+module load GCCcore/11.3.0 GLPK/5.0
 
 
 [Return to modules](#module-list)
@@ -4732,13 +4934,13 @@ module load GCCcore/10.2.0 GMP/6.2.0
 
 ## GMP/6.2.1
 
-module load GCCcore/12.3.0 GMP/6.2.1
-
-module load GCCcore/12.2.0 GMP/6.2.1
-
 module load GCCcore/11.2.0 GMP/6.2.1
 
 module load GCCcore/10.3.0 GMP/6.2.1
+
+module load GCCcore/12.2.0 GMP/6.2.1
+
+module load GCCcore/12.3.0 GMP/6.2.1
 
 module load GCCcore/11.3.0 GMP/6.2.1
 
@@ -4774,11 +4976,20 @@ module load GCC/11.3.0 gmpy2/2.1.2
 
 -------
 
+## gmpy2/2.1.5
+
+module load GCC/13.2.0 gmpy2/2.1.5
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## gnuplot/5.2.8
 
-module load GCCcore/8.3.0 gnuplot/5.2.8
-
 module load GCCcore/9.3.0 gnuplot/5.2.8
+
+module load GCCcore/8.3.0 gnuplot/5.2.8
 
 
 [Return to modules](#module-list)
@@ -4877,9 +5088,9 @@ module load GCCcore/10.2.0 GObject-Introspection/1.66.1
 
 ## GObject-Introspection/1.68.0
 
-module load GCCcore/10.3.0 GObject-Introspection/1.68.0
-
 module load GCCcore/11.2.0 GObject-Introspection/1.68.0
+
+module load GCCcore/10.3.0 GObject-Introspection/1.68.0
 
 
 [Return to modules](#module-list)
@@ -5023,9 +5234,9 @@ module load  gompic/2020b
 
 ## googletest/1.11.0
 
-module load GCCcore/11.3.0 googletest/1.11.0
-
 module load GCCcore/11.2.0 googletest/1.11.0
+
+module load GCCcore/11.3.0 googletest/1.11.0
 
 
 [Return to modules](#module-list)
@@ -5068,6 +5279,15 @@ module load GCC/10.2.0 OpenMPI/4.0.5 GPAW/21.6.0-ASE-3.22.0-ELPA-2020.11.001
 
 -------
 
+## GPAW/24.6.0-ASE-3.23.0
+
+module load GCC/13.2.0 OpenMPI/4.1.6 GPAW/24.6.0-ASE-3.23.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## GPAW-setups/0.9.20000
 
 module load  GPAW-setups/0.9.20000
@@ -5077,23 +5297,32 @@ module load  GPAW-setups/0.9.20000
 
 -------
 
+## GPAW-setups/24.1.0
+
+module load  GPAW-setups/24.1.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## gperf/3.1
 
-module load GCCcore/11.3.0 gperf/3.1
-
-module load GCCcore/9.3.0 gperf/3.1
-
 module load GCCcore/8.3.0 gperf/3.1
-
-module load GCCcore/10.2.0 gperf/3.1
-
-module load GCCcore/12.3.0 gperf/3.1
-
-module load GCCcore/10.3.0 gperf/3.1
 
 module load GCCcore/11.2.0 gperf/3.1
 
 module load GCCcore/13.2.0 gperf/3.1
+
+module load GCCcore/12.3.0 gperf/3.1
+
+module load GCCcore/11.3.0 gperf/3.1
+
+module load GCCcore/10.2.0 gperf/3.1
+
+module load GCCcore/9.3.0 gperf/3.1
+
+module load GCCcore/10.3.0 gperf/3.1
 
 
 [Return to modules](#module-list)
@@ -5129,9 +5358,9 @@ module load GCC/9.3.0 OpenMPI/4.0.3 GPflow/1.5.1-nvidia-tensorflow-1.15.5+nv21.1
 
 ## GPyTorch/1.3.0
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 GPyTorch/1.3.0
-
 module load GCC/10.2.0 OpenMPI/4.0.5 GPyTorch/1.3.0
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 GPyTorch/1.3.0
 
 
 [Return to modules](#module-list)
@@ -5140,9 +5369,9 @@ module load GCC/10.2.0 OpenMPI/4.0.5 GPyTorch/1.3.0
 
 ## Graphene/1.10.8
 
-module load GCCcore/13.2.0 Graphene/1.10.8
-
 module load GCCcore/11.3.0 Graphene/1.10.8
+
+module load GCCcore/13.2.0 Graphene/1.10.8
 
 
 [Return to modules](#module-list)
@@ -5189,17 +5418,17 @@ module load GCC/13.2.0 OpenMPI/4.1.6 GRASS/8.4.0
 
 ## groff/1.22.4
 
-module load GCCcore/12.2.0 groff/1.22.4
-
-module load GCCcore/10.3.0 groff/1.22.4
-
-module load GCCcore/9.3.0 groff/1.22.4
-
 module load GCCcore/12.3.0 groff/1.22.4
+
+module load GCCcore/11.2.0 groff/1.22.4
 
 module load GCCcore/10.2.0 groff/1.22.4
 
-module load GCCcore/11.2.0 groff/1.22.4
+module load GCCcore/9.3.0 groff/1.22.4
+
+module load GCCcore/10.3.0 groff/1.22.4
+
+module load GCCcore/12.2.0 groff/1.22.4
 
 module load GCCcore/8.3.0 groff/1.22.4
 
@@ -5311,9 +5540,9 @@ module load GCC/11.2.0 OpenMPI/4.1.1 GROMACS/2023.3-CUDA-11.4.1
 
 ## GROMACS/2024.1
 
-module load GCC/11.3.0 OpenMPI/4.1.4 GROMACS/2024.1
-
 module load GCC/13.2.0 OpenMPI/4.1.6 GROMACS/2024.1
+
+module load GCC/11.3.0 OpenMPI/4.1.4 GROMACS/2024.1
 
 
 [Return to modules](#module-list)
@@ -5351,13 +5580,13 @@ module load GCC/10.2.0 GSL/2.6
 
 ## GSL/2.7
 
-module load GCC/11.2.0 GSL/2.7
+module load GCC/10.3.0 GSL/2.7
 
 module load GCC/13.2.0 GSL/2.7
 
-module load GCC/10.3.0 GSL/2.7
-
 module load GCC/11.3.0 GSL/2.7
+
+module load GCC/11.2.0 GSL/2.7
 
 
 [Return to modules](#module-list)
@@ -5528,13 +5757,13 @@ module load GCCcore/11.2.0 Guile/3.0.7
 
 ## gzip/1.10
 
-module load GCCcore/11.2.0 gzip/1.10
-
-module load GCCcore/8.3.0 gzip/1.10
-
 module load GCCcore/10.3.0 gzip/1.10
 
+module load GCCcore/11.2.0 gzip/1.10
+
 module load GCCcore/10.2.0 gzip/1.10
+
+module load GCCcore/8.3.0 gzip/1.10
 
 module load GCCcore/9.3.0 gzip/1.10
 
@@ -5545,11 +5774,11 @@ module load GCCcore/9.3.0 gzip/1.10
 
 ## gzip/1.12
 
-module load GCCcore/11.3.0 gzip/1.12
-
 module load GCCcore/12.2.0 gzip/1.12
 
 module load GCCcore/12.3.0 gzip/1.12
+
+module load GCCcore/11.3.0 gzip/1.12
 
 
 [Return to modules](#module-list)
@@ -5576,9 +5805,9 @@ module load GCC/10.3.0 OpenMPI/4.1.1 H5hut/2.0.0rc3
 
 ## h5py/2.10.0-Python-3.7.4
 
-module load GCC/8.3.0 OpenMPI/3.1.4 h5py/2.10.0-Python-3.7.4
-
 module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 h5py/2.10.0-Python-3.7.4
+
+module load GCC/8.3.0 OpenMPI/3.1.4 h5py/2.10.0-Python-3.7.4
 
 
 [Return to modules](#module-list)
@@ -5596,9 +5825,9 @@ module load GCC/9.3.0 OpenMPI/4.0.3 h5py/2.10.0-Python-3.8.2
 
 ## h5py/3.1.0
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 h5py/3.1.0
-
 module load GCC/10.2.0 OpenMPI/4.0.5 h5py/3.1.0
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 h5py/3.1.0
 
 
 [Return to modules](#module-list)
@@ -5643,9 +5872,9 @@ module load GCC/12.3.0 OpenMPI/4.1.5 h5py/3.9.0
 
 ## H5VFS/0.1.0
 
-module load GCC/11.3.0 H5VFS/0.1.0
-
 module load GCC/13.2.0 H5VFS/0.1.0
+
+module load GCC/11.3.0 H5VFS/0.1.0
 
 
 [Return to modules](#module-list)
@@ -5717,6 +5946,15 @@ module load GCCcore/13.2.0 HarfBuzz/8.2.2
 
 -------
 
+## hatch-jupyter-builder/0.9.1
+
+module load GCCcore/13.2.0 hatch-jupyter-builder/0.9.1
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## hatchling/1.18.0
 
 module load GCCcore/12.3.0 hatchling/1.18.0
@@ -5752,9 +5990,9 @@ module load iccifort/2019.5.281 impi/2019.7.217 HDF5/1.10.5
 
 module load iccifort/2019.5.281 OpenMPI/3.1.4 HDF5/1.10.5
 
-module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 HDF5/1.10.5
-
 module load GCC/8.3.0 OpenMPI/3.1.4 HDF5/1.10.5
+
+module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 HDF5/1.10.5
 
 
 [Return to modules](#module-list)
@@ -5772,11 +6010,11 @@ module load GCC/9.3.0 OpenMPI/4.0.3 HDF5/1.10.6
 
 ## HDF5/1.10.7
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 HDF5/1.10.7
-
 module load GCC/10.2.0 OpenMPI/4.0.5 HDF5/1.10.7
 
 module load GCC/10.3.0 OpenMPI/4.1.1 HDF5/1.10.7
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 HDF5/1.10.7
 
 
 [Return to modules](#module-list)
@@ -5785,9 +6023,9 @@ module load GCC/10.3.0 OpenMPI/4.1.1 HDF5/1.10.7
 
 ## HDF5/1.12.1
 
-module load GCC/10.3.0 OpenMPI/4.1.1 HDF5/1.12.1
-
 module load GCC/11.2.0 OpenMPI/4.1.1 HDF5/1.12.1
+
+module load GCC/10.3.0 OpenMPI/4.1.1 HDF5/1.12.1
 
 
 [Return to modules](#module-list)
@@ -5825,9 +6063,9 @@ module load GCC/11.3.0 OpenMPI/4.1.4 HDF5/1.13.1
 
 ## HDF5/1.14.0
 
-module load GCC/12.3.0 OpenMPI/4.1.5 HDF5/1.14.0
-
 module load GCC/12.2.0 OpenMPI/4.1.4 HDF5/1.14.0
+
+module load GCC/12.3.0 OpenMPI/4.1.5 HDF5/1.14.0
 
 
 [Return to modules](#module-list)
@@ -5836,9 +6074,9 @@ module load GCC/12.2.0 OpenMPI/4.1.4 HDF5/1.14.0
 
 ## HDF5/1.14.3
 
-module load GCC/13.2.0 OpenMPI/4.1.6 HDF5/1.14.3
-
 module load GCC/13.2.0 HDF5/1.14.3
+
+module load GCC/13.2.0 OpenMPI/4.1.6 HDF5/1.14.3
 
 
 [Return to modules](#module-list)
@@ -5883,9 +6121,9 @@ module load GCCcore/8.3.0 help2man/1.47.8
 
 ## help2man/1.48.3
 
-module load GCCcore/10.3.0 help2man/1.48.3
-
 module load GCCcore/11.2.0 help2man/1.48.3
+
+module load GCCcore/10.3.0 help2man/1.48.3
 
 
 [Return to modules](#module-list)
@@ -5916,13 +6154,13 @@ module load GCCcore/13.2.0 help2man/1.49.3
 
 ## HH-suite/3.3.0
 
-module load GCC/13.2.0 OpenMPI/4.1.6 HH-suite/3.3.0
-
-module load GCC/12.3.0 OpenMPI/4.1.5 HH-suite/3.3.0
-
 module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 HH-suite/3.3.0
 
+module load GCC/13.2.0 OpenMPI/4.1.6 HH-suite/3.3.0
+
 module load GCC/11.3.0 OpenMPI/4.1.4 HH-suite/3.3.0
+
+module load GCC/12.3.0 OpenMPI/4.1.5 HH-suite/3.3.0
 
 
 [Return to modules](#module-list)
@@ -5985,25 +6223,43 @@ module load GCC/11.3.0 OpenMPI/4.1.4 HOOMD-blue/4.4.1
 
 -------
 
+## HOOMD-blue/4.8.2
+
+module load GCC/13.2.0 OpenMPI/4.1.6 HOOMD-blue/4.8.2
+
+
+[Return to modules](#module-list)
+
+-------
+
+## HOOMD-blue/4.8.2-CUDA-12.5.0
+
+module load GCC/13.2.0 OpenMPI/4.1.6 HOOMD-blue/4.8.2-CUDA-12.5.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## HPL/2.3
 
-module load GCC/9.3.0 OpenMPI/4.0.3 HPL/2.3
-
-module load GCC/11.3.0 OpenMPI/4.1.4 HPL/2.3
+module load intel-compilers/2022.1.0 impi/2021.6.0 HPL/2.3
 
 module load GCC/11.2.0 OpenMPI/4.1.1 HPL/2.3
 
-module load intel-compilers/2022.1.0 impi/2021.6.0 HPL/2.3
+module load GCC/9.3.0 OpenMPI/4.0.3 HPL/2.3
+
+module load iccifort/2019.5.281 impi/2019.7.217 HPL/2.3
+
+module load GCC/10.3.0 OpenMPI/4.1.1 HPL/2.3
 
 module load iccifort/2019.5.281 OpenMPI/3.1.4 HPL/2.3
 
 module load GCC/8.3.0 OpenMPI/3.1.4 HPL/2.3
 
-module load GCC/10.3.0 OpenMPI/4.1.1 HPL/2.3
-
 module load GCC/10.2.0 OpenMPI/4.0.5 HPL/2.3
 
-module load iccifort/2019.5.281 impi/2019.7.217 HPL/2.3
+module load GCC/11.3.0 OpenMPI/4.1.4 HPL/2.3
 
 
 [Return to modules](#module-list)
@@ -6212,9 +6468,9 @@ module load GCCcore/13.2.0 hypothesis/6.90.0
 
 ## Hypre/2.18.2
 
-module load GCC/8.3.0 OpenMPI/3.1.4 Hypre/2.18.2
-
 module load iccifort/2019.5.281 impi/2019.7.217 Hypre/2.18.2
+
+module load GCC/8.3.0 OpenMPI/3.1.4 Hypre/2.18.2
 
 
 [Return to modules](#module-list)
@@ -6450,11 +6706,11 @@ module load GCC/11.3.0 OpenMPI/4.1.4 imgaug/0.4.0
 
 ## imkl/2019.5.281
 
+module load GCC/8.3.0 OpenMPI/3.1.4 imkl/2019.5.281
+
 module load iccifort/2019.5.281 impi/2019.7.217 imkl/2019.5.281
 
 module load iccifort/2019.5.281 OpenMPI/3.1.4 imkl/2019.5.281
-
-module load GCC/8.3.0 OpenMPI/3.1.4 imkl/2019.5.281
 
 
 [Return to modules](#module-list)
@@ -6571,21 +6827,21 @@ module load  intel-compilers/2022.1.0
 
 ## intltool/0.51.0
 
-module load GCCcore/10.3.0 intltool/0.51.0
-
-module load GCCcore/10.2.0 intltool/0.51.0
-
-module load GCCcore/11.2.0 intltool/0.51.0
-
-module load GCCcore/8.3.0 intltool/0.51.0
-
 module load GCCcore/11.3.0 intltool/0.51.0
+
+module load GCCcore/10.3.0 intltool/0.51.0
 
 module load GCCcore/13.2.0 intltool/0.51.0
 
 module load GCCcore/12.3.0 intltool/0.51.0
 
+module load GCCcore/10.2.0 intltool/0.51.0
+
+module load GCCcore/11.2.0 intltool/0.51.0
+
 module load GCCcore/9.3.0 intltool/0.51.0
+
+module load GCCcore/8.3.0 intltool/0.51.0
 
 
 [Return to modules](#module-list)
@@ -6631,6 +6887,15 @@ module load GCCcore/13.2.0 IPython/8.17.2
 ## JAGS/4.3.0
 
 module load GCC/11.2.0 OpenMPI/4.1.1 JAGS/4.3.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## JAGS/4.3.2
+
+module load GCC/13.2.0 OpenMPI/4.1.6 JAGS/4.3.2
 
 
 [Return to modules](#module-list)
@@ -6789,19 +7054,19 @@ module load GCC/11.3.0 OpenMPI/4.1.4 jax/0.4.4-CUDA-11.7.0
 
 ## jbigkit/2.1
 
+module load GCCcore/12.2.0 jbigkit/2.1
+
+module load GCCcore/12.3.0 jbigkit/2.1
+
 module load GCCcore/10.3.0 jbigkit/2.1
+
+module load GCCcore/11.2.0 jbigkit/2.1
+
+module load GCCcore/11.3.0 jbigkit/2.1
 
 module load GCCcore/13.2.0 jbigkit/2.1
 
 module load GCCcore/10.2.0 jbigkit/2.1
-
-module load GCCcore/11.3.0 jbigkit/2.1
-
-module load GCCcore/12.3.0 jbigkit/2.1
-
-module load GCCcore/12.2.0 jbigkit/2.1
-
-module load GCCcore/11.2.0 jbigkit/2.1
 
 
 [Return to modules](#module-list)
@@ -6819,9 +7084,9 @@ module load GCCcore/13.2.0 jedi/0.19.1
 
 ## jemalloc/5.2.1
 
-module load GCCcore/11.2.0 jemalloc/5.2.1
-
 module load GCCcore/10.2.0 jemalloc/5.2.1
+
+module load GCCcore/11.2.0 jemalloc/5.2.1
 
 
 [Return to modules](#module-list)
@@ -6848,9 +7113,9 @@ module load GCCcore/13.2.0 json-c/0.17
 
 ## JsonCpp/1.9.4
 
-module load GCCcore/10.2.0 JsonCpp/1.9.4
-
 module load GCCcore/10.3.0 JsonCpp/1.9.4
+
+module load GCCcore/10.2.0 JsonCpp/1.9.4
 
 
 [Return to modules](#module-list)
@@ -6879,9 +7144,45 @@ module load GCCcore/10.2.0 Judy/1.0.5
 
 -------
 
+## Julia/1.10.4-linux-x86_64
+
+module load  Julia/1.10.4-linux-x86_64
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## Julia/1.6.2-linux-x86_64
 
 module load  Julia/1.6.2-linux-x86_64
+
+
+[Return to modules](#module-list)
+
+-------
+
+## jupyter-server/2.14.0
+
+module load GCCcore/13.2.0 jupyter-server/2.14.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## JupyterLab/4.2.0
+
+module load GCCcore/13.2.0 JupyterLab/4.2.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## JupyterNotebook/7.2.0
+
+module load GCCcore/13.2.0 JupyterNotebook/7.2.0
 
 
 [Return to modules](#module-list)
@@ -6944,19 +7245,21 @@ module load GCCcore/11.2.0 kim-api/2.2.1
 
 ## LAME/3.100
 
+module load GCCcore/8.3.0 LAME/3.100
+
 module load GCCcore/10.3.0 LAME/3.100
 
 module load GCCcore/10.2.0 LAME/3.100
 
-module load GCCcore/11.2.0 LAME/3.100
-
-module load GCCcore/8.3.0 LAME/3.100
-
-module load GCCcore/11.3.0 LAME/3.100
-
 module load GCCcore/9.3.0 LAME/3.100
 
 module load GCCcore/12.3.0 LAME/3.100
+
+module load GCCcore/11.3.0 LAME/3.100
+
+module load GCCcore/11.2.0 LAME/3.100
+
+module load GCCcore/13.2.0 LAME/3.100
 
 
 [Return to modules](#module-list)
@@ -7037,9 +7340,9 @@ module load GCCcore/10.2.0 libarchive/3.4.3
 
 ## libarchive/3.5.1
 
-module load GCCcore/11.2.0 libarchive/3.5.1
-
 module load GCCcore/10.3.0 libarchive/3.5.1
+
+module load GCCcore/11.2.0 libarchive/3.5.1
 
 
 [Return to modules](#module-list)
@@ -7281,9 +7584,9 @@ module load GCCcore/11.2.0 libepoxy/1.5.8
 
 ## libev/4.33
 
-module load GCC/13.2.0 libev/4.33
-
 module load GCC/11.2.0 libev/4.33
+
+module load GCC/13.2.0 libev/4.33
 
 
 [Return to modules](#module-list)
@@ -7292,9 +7595,9 @@ module load GCC/11.2.0 libev/4.33
 
 ## libevent/2.1.11
 
-module load GCCcore/9.3.0 libevent/2.1.11
-
 module load GCCcore/8.3.0 libevent/2.1.11
+
+module load GCCcore/9.3.0 libevent/2.1.11
 
 
 [Return to modules](#module-list)
@@ -7303,19 +7606,19 @@ module load GCCcore/8.3.0 libevent/2.1.11
 
 ## libevent/2.1.12
 
-module load GCCcore/11.3.0 libevent/2.1.12
-
-module load GCCcore/10.2.0 libevent/2.1.12
-
 module load GCCcore/11.2.0 libevent/2.1.12
 
 module load GCCcore/12.2.0 libevent/2.1.12
 
+module load GCCcore/11.3.0 libevent/2.1.12
+
 module load GCCcore/12.3.0 libevent/2.1.12
 
-module load GCCcore/10.3.0 libevent/2.1.12
-
 module load GCCcore/13.2.0 libevent/2.1.12
+
+module load GCCcore/10.2.0 libevent/2.1.12
+
+module load GCCcore/10.3.0 libevent/2.1.12
 
 
 [Return to modules](#module-list)
@@ -7333,9 +7636,9 @@ module load GCCcore/11.2.0 libexif/0.6.24
 
 ## libfabric/1.11.0
 
-module load GCCcore/9.3.0 libfabric/1.11.0
-
 module load GCCcore/10.2.0 libfabric/1.11.0
+
+module load GCCcore/9.3.0 libfabric/1.11.0
 
 
 [Return to modules](#module-list)
@@ -7420,9 +7723,9 @@ module load GCCcore/9.3.0 libffi/3.3
 
 ## libffi/3.4.2
 
-module load GCCcore/11.2.0 libffi/3.4.2
-
 module load GCCcore/11.3.0 libffi/3.4.2
+
+module load GCCcore/11.2.0 libffi/3.4.2
 
 
 [Return to modules](#module-list)
@@ -7431,11 +7734,11 @@ module load GCCcore/11.3.0 libffi/3.4.2
 
 ## libffi/3.4.4
 
-module load GCCcore/13.2.0 libffi/3.4.4
-
 module load GCCcore/12.3.0 libffi/3.4.4
 
 module load GCCcore/12.2.0 libffi/3.4.4
+
+module load GCCcore/13.2.0 libffi/3.4.4
 
 
 [Return to modules](#module-list)
@@ -7473,9 +7776,9 @@ module load GCCcore/8.3.0 libgd/2.2.5
 
 ## libgd/2.3.0
 
-module load GCCcore/10.2.0 libgd/2.3.0
-
 module load GCCcore/9.3.0 libgd/2.3.0
+
+module load GCCcore/10.2.0 libgd/2.3.0
 
 
 [Return to modules](#module-list)
@@ -7522,11 +7825,11 @@ module load GCCcore/11.2.0 libgeotiff/1.7.0
 
 ## libgeotiff/1.7.1
 
+module load GCCcore/11.3.0 libgeotiff/1.7.1
+
 module load GCCcore/12.3.0 libgeotiff/1.7.1
 
 module load GCCcore/12.2.0 libgeotiff/1.7.1
-
-module load GCCcore/11.3.0 libgeotiff/1.7.1
 
 
 [Return to modules](#module-list)
@@ -7562,13 +7865,13 @@ module load GCCcore/13.2.0 libgit2/1.7.2
 
 ## libGLU/9.0.1
 
-module load GCCcore/8.3.0 libGLU/9.0.1
+module load GCCcore/10.3.0 libGLU/9.0.1
 
 module load GCCcore/10.2.0 libGLU/9.0.1
 
-module load GCCcore/9.3.0 libGLU/9.0.1
+module load GCCcore/8.3.0 libGLU/9.0.1
 
-module load GCCcore/10.3.0 libGLU/9.0.1
+module load GCCcore/9.3.0 libGLU/9.0.1
 
 
 [Return to modules](#module-list)
@@ -7577,9 +7880,9 @@ module load GCCcore/10.3.0 libGLU/9.0.1
 
 ## libGLU/9.0.2
 
-module load GCCcore/11.3.0 libGLU/9.0.2
-
 module load GCCcore/11.2.0 libGLU/9.0.2
+
+module load GCCcore/11.3.0 libGLU/9.0.2
 
 
 [Return to modules](#module-list)
@@ -7588,9 +7891,9 @@ module load GCCcore/11.2.0 libGLU/9.0.2
 
 ## libGLU/9.0.3
 
-module load GCCcore/12.3.0 libGLU/9.0.3
-
 module load GCCcore/13.2.0 libGLU/9.0.3
+
+module load GCCcore/12.3.0 libGLU/9.0.3
 
 
 [Return to modules](#module-list)
@@ -7599,9 +7902,9 @@ module load GCCcore/13.2.0 libGLU/9.0.3
 
 ## libglvnd/1.2.0
 
-module load GCCcore/9.3.0 libglvnd/1.2.0
-
 module load GCCcore/8.3.0 libglvnd/1.2.0
+
+module load GCCcore/9.3.0 libglvnd/1.2.0
 
 
 [Return to modules](#module-list)
@@ -7619,9 +7922,9 @@ module load GCCcore/10.2.0 libglvnd/1.3.2
 
 ## libglvnd/1.3.3
 
-module load GCCcore/11.2.0 libglvnd/1.3.3
-
 module load GCCcore/10.3.0 libglvnd/1.3.3
+
+module load GCCcore/11.2.0 libglvnd/1.3.3
 
 
 [Return to modules](#module-list)
@@ -7675,15 +7978,15 @@ module load GCC/11.3.0 libheif/1.12.0
 
 ## libiconv/1.16
 
-module load GCCcore/8.3.0 libiconv/1.16
-
-module load GCCcore/10.2.0 libiconv/1.16
-
-module load GCCcore/9.3.0 libiconv/1.16
+module load GCCcore/10.3.0 libiconv/1.16
 
 module load GCCcore/11.2.0 libiconv/1.16
 
-module load GCCcore/10.3.0 libiconv/1.16
+module load GCCcore/10.2.0 libiconv/1.16
+
+module load GCCcore/8.3.0 libiconv/1.16
+
+module load GCCcore/9.3.0 libiconv/1.16
 
 
 [Return to modules](#module-list)
@@ -7694,9 +7997,9 @@ module load GCCcore/10.3.0 libiconv/1.16
 
 module load GCCcore/12.2.0 libiconv/1.17
 
-module load GCCcore/12.3.0 libiconv/1.17
-
 module load GCCcore/13.2.0 libiconv/1.17
+
+module load GCCcore/12.3.0 libiconv/1.17
 
 module load GCCcore/11.3.0 libiconv/1.17
 
@@ -7707,9 +8010,9 @@ module load GCCcore/11.3.0 libiconv/1.17
 
 ## libidn2/2.3.2
 
-module load GCCcore/11.2.0 libidn2/2.3.2
-
 module load GCCcore/13.2.0 libidn2/2.3.2
+
+module load GCCcore/11.2.0 libidn2/2.3.2
 
 
 [Return to modules](#module-list)
@@ -7765,9 +8068,9 @@ module load GCCcore/10.2.0 libjpeg-turbo/2.0.5
 
 ## libjpeg-turbo/2.0.6
 
-module load GCCcore/11.2.0 libjpeg-turbo/2.0.6
-
 module load GCCcore/10.3.0 libjpeg-turbo/2.0.6
+
+module load GCCcore/11.2.0 libjpeg-turbo/2.0.6
 
 
 [Return to modules](#module-list)
@@ -7839,15 +8142,15 @@ module load GCCcore/8.3.0 libpciaccess/0.14
 
 ## libpciaccess/0.16
 
+module load GCCcore/11.3.0 libpciaccess/0.16
+
+module load GCCcore/10.3.0 libpciaccess/0.16
+
 module load GCCcore/11.2.0 libpciaccess/0.16
 
 module load GCCcore/9.3.0 libpciaccess/0.16
 
-module load GCCcore/10.3.0 libpciaccess/0.16
-
 module load GCCcore/10.2.0 libpciaccess/0.16
-
-module load GCCcore/11.3.0 libpciaccess/0.16
 
 
 [Return to modules](#module-list)
@@ -7856,9 +8159,9 @@ module load GCCcore/11.3.0 libpciaccess/0.16
 
 ## libpciaccess/0.17
 
-module load GCCcore/12.3.0 libpciaccess/0.17
-
 module load GCCcore/12.2.0 libpciaccess/0.17
+
+module load GCCcore/12.3.0 libpciaccess/0.17
 
 module load GCCcore/13.2.0 libpciaccess/0.17
 
@@ -7869,17 +8172,17 @@ module load GCCcore/13.2.0 libpciaccess/0.17
 
 ## libpng/1.6.37
 
-module load GCCcore/9.3.0 libpng/1.6.37
-
-module load GCCcore/8.3.0 libpng/1.6.37
-
 module load GCCcore/10.2.0 libpng/1.6.37
 
 module load GCCcore/10.3.0 libpng/1.6.37
 
+module load GCCcore/9.3.0 libpng/1.6.37
+
 module load GCCcore/11.3.0 libpng/1.6.37
 
 module load GCCcore/11.2.0 libpng/1.6.37
+
+module load GCCcore/8.3.0 libpng/1.6.37
 
 
 [Return to modules](#module-list)
@@ -7933,9 +8236,9 @@ module load GCCcore/13.2.0 libpsl/0.21.5
 
 ## libreadline/8.0
 
-module load GCCcore/8.3.0 libreadline/8.0
-
 module load GCCcore/9.3.0 libreadline/8.0
+
+module load GCCcore/8.3.0 libreadline/8.0
 
 module load GCCcore/10.2.0 libreadline/8.0
 
@@ -7946,9 +8249,9 @@ module load GCCcore/10.2.0 libreadline/8.0
 
 ## libreadline/8.1
 
-module load GCCcore/10.3.0 libreadline/8.1
-
 module load GCCcore/11.2.0 libreadline/8.1
+
+module load GCCcore/10.3.0 libreadline/8.1
 
 
 [Return to modules](#module-list)
@@ -7966,11 +8269,11 @@ module load GCCcore/11.3.0 libreadline/8.1.2
 
 ## libreadline/8.2
 
-module load GCCcore/13.2.0 libreadline/8.2
-
 module load GCCcore/12.3.0 libreadline/8.2
 
 module load GCCcore/12.2.0 libreadline/8.2
+
+module load GCCcore/13.2.0 libreadline/8.2
 
 
 [Return to modules](#module-list)
@@ -7979,9 +8282,9 @@ module load GCCcore/12.2.0 libreadline/8.2
 
 ## librttopo/1.1.0
 
-module load GCC/11.2.0 librttopo/1.1.0
-
 module load GCC/13.2.0 librttopo/1.1.0
+
+module load GCC/11.2.0 librttopo/1.1.0
 
 
 [Return to modules](#module-list)
@@ -8093,9 +8396,9 @@ module load GCCcore/10.3.0 LibTIFF/4.2.0
 
 ## LibTIFF/4.3.0
 
-module load GCCcore/11.2.0 LibTIFF/4.3.0
-
 module load GCCcore/11.3.0 LibTIFF/4.3.0
+
+module load GCCcore/11.2.0 LibTIFF/4.3.0
 
 
 [Return to modules](#module-list)
@@ -8131,9 +8434,9 @@ module load GCCcore/13.2.0 LibTIFF/4.6.0
 
 ## libtirpc/1.3.2
 
-module load GCCcore/11.3.0 libtirpc/1.3.2
-
 module load GCCcore/11.2.0 libtirpc/1.3.2
+
+module load GCCcore/11.3.0 libtirpc/1.3.2
 
 
 [Return to modules](#module-list)
@@ -8162,15 +8465,15 @@ module load GCCcore/13.2.0 libtirpc/1.3.4
 
 ## libtool/2.4.6
 
+module load GCCcore/8.3.0 libtool/2.4.6
+
+module load GCCcore/10.3.0 libtool/2.4.6
+
 module load GCCcore/11.2.0 libtool/2.4.6
 
 module load GCCcore/9.3.0 libtool/2.4.6
 
 module load GCCcore/10.2.0 libtool/2.4.6
-
-module load GCCcore/10.3.0 libtool/2.4.6
-
-module load GCCcore/8.3.0 libtool/2.4.6
 
 
 [Return to modules](#module-list)
@@ -8179,13 +8482,13 @@ module load GCCcore/8.3.0 libtool/2.4.6
 
 ## libtool/2.4.7
 
-module load GCCcore/11.3.0 libtool/2.4.7
-
-module load GCCcore/12.2.0 libtool/2.4.7
-
 module load GCCcore/13.2.0 libtool/2.4.7
 
+module load GCCcore/11.3.0 libtool/2.4.7
+
 module load GCCcore/12.3.0 libtool/2.4.7
+
+module load GCCcore/12.2.0 libtool/2.4.7
 
 
 [Return to modules](#module-list)
@@ -8212,9 +8515,9 @@ module load GCCcore/13.2.0 libunistring/1.2
 
 ## libunwind/1.3.1
 
-module load GCCcore/8.3.0 libunwind/1.3.1
-
 module load GCCcore/9.3.0 libunwind/1.3.1
+
+module load GCCcore/8.3.0 libunwind/1.3.1
 
 
 [Return to modules](#module-list)
@@ -8245,9 +8548,9 @@ module load GCCcore/11.2.0 libunwind/1.5.0
 
 module load GCCcore/12.3.0 libunwind/1.6.2
 
-module load GCCcore/13.2.0 libunwind/1.6.2
-
 module load GCCcore/11.3.0 libunwind/1.6.2
+
+module load GCCcore/13.2.0 libunwind/1.6.2
 
 
 [Return to modules](#module-list)
@@ -8377,6 +8680,8 @@ module load GCC/12.2.0 libxc/6.1.0
 
 ## libxc/6.2.2
 
+module load GCC/13.2.0 libxc/6.2.2
+
 module load GCC/10.3.0 libxc/6.2.2
 
 
@@ -8413,13 +8718,13 @@ module load GCCcore/13.2.0 libxml2/2.11.5
 
 ## libxml2/2.9.10
 
-module load GCCcore/10.3.0 libxml2/2.9.10
-
 module load GCCcore/10.2.0 libxml2/2.9.10
+
+module load GCCcore/9.3.0 libxml2/2.9.10
 
 module load GCCcore/11.2.0 libxml2/2.9.10
 
-module load GCCcore/9.3.0 libxml2/2.9.10
+module load GCCcore/10.3.0 libxml2/2.9.10
 
 
 [Return to modules](#module-list)
@@ -8484,13 +8789,13 @@ module load GCC/10.3.0 libxsmm/1.16.2
 
 ## libyaml/0.2.5
 
-module load GCCcore/10.3.0 libyaml/0.2.5
-
-module load GCCcore/10.2.0 libyaml/0.2.5
-
 module load GCCcore/11.3.0 libyaml/0.2.5
 
 module load GCCcore/13.2.0 libyaml/0.2.5
+
+module load GCCcore/10.2.0 libyaml/0.2.5
+
+module load GCCcore/10.3.0 libyaml/0.2.5
 
 
 [Return to modules](#module-list)
@@ -8517,9 +8822,9 @@ module load GCCcore/11.3.0 LittleCMS/2.13.1
 
 ## LittleCMS/2.15
 
-module load GCCcore/12.3.0 LittleCMS/2.15
-
 module load GCCcore/13.2.0 LittleCMS/2.15
+
+module load GCCcore/12.3.0 LittleCMS/2.15
 
 
 [Return to modules](#module-list)
@@ -8564,9 +8869,9 @@ module load GCCcore/11.3.0 LLVM/14.0.3
 
 ## LLVM/16.0.6
 
-module load GCCcore/13.2.0 LLVM/16.0.6
-
 module load GCCcore/12.3.0 LLVM/16.0.6
+
+module load GCCcore/13.2.0 LLVM/16.0.6
 
 
 [Return to modules](#module-list)
@@ -8638,9 +8943,9 @@ module load  loughborough
 
 ## lpsolve/5.5.2.11
 
-module load GCC/11.3.0 lpsolve/5.5.2.11
-
 module load GCC/13.2.0 lpsolve/5.5.2.11
+
+module load GCC/11.3.0 lpsolve/5.5.2.11
 
 
 [Return to modules](#module-list)
@@ -8721,11 +9026,11 @@ module load GCCcore/13.2.0 lxml/4.9.3
 
 ## lz4/1.9.2
 
+module load GCCcore/8.3.0 lz4/1.9.2
+
 module load GCCcore/9.3.0 lz4/1.9.2
 
 module load GCCcore/10.2.0 lz4/1.9.2
-
-module load GCCcore/8.3.0 lz4/1.9.2
 
 
 [Return to modules](#module-list)
@@ -8736,9 +9041,9 @@ module load GCCcore/8.3.0 lz4/1.9.2
 
 module load GCCcore/11.2.0 lz4/1.9.3
 
-module load GCCcore/10.3.0 lz4/1.9.3
-
 module load GCCcore/11.3.0 lz4/1.9.3
+
+module load GCCcore/10.3.0 lz4/1.9.3
 
 
 [Return to modules](#module-list)
@@ -8747,11 +9052,11 @@ module load GCCcore/11.3.0 lz4/1.9.3
 
 ## lz4/1.9.4
 
+module load GCCcore/13.2.0 lz4/1.9.4
+
 module load GCCcore/12.3.0 lz4/1.9.4
 
 module load GCCcore/12.2.0 lz4/1.9.4
-
-module load GCCcore/13.2.0 lz4/1.9.4
 
 
 [Return to modules](#module-list)
@@ -8760,9 +9065,9 @@ module load GCCcore/13.2.0 lz4/1.9.4
 
 ## LZO/2.10
 
-module load GCCcore/10.2.0 LZO/2.10
-
 module load GCCcore/11.3.0 LZO/2.10
+
+module load GCCcore/10.2.0 LZO/2.10
 
 
 [Return to modules](#module-list)
@@ -8782,13 +9087,13 @@ module load  M4/1.4.17
 
 module load GCCcore/9.3.0 M4/1.4.18
 
-module load GCCcore/10.2.0 M4/1.4.18
-
 module load GCCcore/10.3.0 M4/1.4.18
 
-module load GCCcore/8.3.0 M4/1.4.18
+module load GCCcore/10.2.0 M4/1.4.18
 
 module load  M4/1.4.18
+
+module load GCCcore/8.3.0 M4/1.4.18
 
 
 [Return to modules](#module-list)
@@ -8799,15 +9104,15 @@ module load  M4/1.4.18
 
 module load GCCcore/12.2.0 M4/1.4.19
 
-module load GCCcore/11.2.0 M4/1.4.19
-
-module load GCCcore/11.3.0 M4/1.4.19
+module load  M4/1.4.19
 
 module load GCCcore/12.3.0 M4/1.4.19
 
-module load GCCcore/13.2.0 M4/1.4.19
+module load GCCcore/11.3.0 M4/1.4.19
 
-module load  M4/1.4.19
+module load GCCcore/11.2.0 M4/1.4.19
+
+module load GCCcore/13.2.0 M4/1.4.19
 
 
 [Return to modules](#module-list)
@@ -8852,13 +9157,13 @@ module load GCC/11.3.0 OpenMPI/4.1.4 magma/2.6.2-CUDA-11.7.0
 
 ## make/4.3
 
-module load GCCcore/11.2.0 make/4.3
-
-module load GCCcore/9.3.0 make/4.3
+module load GCCcore/12.2.0 make/4.3
 
 module load GCCcore/10.2.0 make/4.3
 
-module load GCCcore/12.2.0 make/4.3
+module load GCCcore/9.3.0 make/4.3
+
+module load GCCcore/11.2.0 make/4.3
 
 
 [Return to modules](#module-list)
@@ -8889,9 +9194,9 @@ module load GCCcore/8.3.0 makeinfo/6.7
 
 module load GCCcore/10.2.0 makeinfo/6.7-minimal
 
-module load GCCcore/10.3.0 makeinfo/6.7-minimal
-
 module load GCCcore/9.3.0 makeinfo/6.7-minimal
+
+module load GCCcore/10.3.0 makeinfo/6.7-minimal
 
 
 [Return to modules](#module-list)
@@ -8936,9 +9241,9 @@ module load GCCcore/10.2.0 Mako/1.1.3
 
 ## Mako/1.1.4
 
-module load GCCcore/10.3.0 Mako/1.1.4
-
 module load GCCcore/11.2.0 Mako/1.1.4
+
+module load GCCcore/10.3.0 Mako/1.1.4
 
 
 [Return to modules](#module-list)
@@ -8956,9 +9261,9 @@ module load GCCcore/11.3.0 Mako/1.2.0
 
 ## Mako/1.2.4
 
-module load GCCcore/13.2.0 Mako/1.2.4
-
 module load GCCcore/12.3.0 Mako/1.2.4
+
+module load GCCcore/13.2.0 Mako/1.2.4
 
 
 [Return to modules](#module-list)
@@ -9030,9 +9335,9 @@ module load iccifort/2019.5.281 MATLAB-parenv/0.0-iccifort-2019.5.281
 
 ## matplotlib/3.1.1-Python-3.7.4
 
-module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 matplotlib/3.1.1-Python-3.7.4
-
 module load GCC/8.3.0 OpenMPI/3.1.4 matplotlib/3.1.1-Python-3.7.4
+
+module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4 matplotlib/3.1.1-Python-3.7.4
 
 
 [Return to modules](#module-list)
@@ -9050,9 +9355,9 @@ module load GCC/9.3.0 OpenMPI/4.0.3 matplotlib/3.2.1-Python-3.8.2
 
 ## matplotlib/3.3.3
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 matplotlib/3.3.3
-
 module load GCC/10.2.0 OpenMPI/4.0.5 matplotlib/3.3.3
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 matplotlib/3.3.3
 
 
 [Return to modules](#module-list)
@@ -9082,6 +9387,15 @@ module load GCC/12.3.0 matplotlib/3.7.2
 ## matplotlib/3.8.2
 
 module load GCC/13.2.0 matplotlib/3.8.2
+
+
+[Return to modules](#module-list)
+
+-------
+
+## maturin/1.3.1
+
+module load GCCcore/13.2.0 maturin/1.3.1
 
 
 [Return to modules](#module-list)
@@ -9281,17 +9595,17 @@ module load GCCcore/13.2.0 meson-python/0.15.0
 
 module load GCCcore/10.3.0 METIS/5.1.0
 
-module load GCCcore/11.3.0 METIS/5.1.0
+module load GCCcore/12.3.0 METIS/5.1.0
 
 module load GCCcore/8.3.0 METIS/5.1.0
 
-module load GCCcore/13.2.0 METIS/5.1.0
-
 module load GCCcore/9.3.0 METIS/5.1.0
+
+module load GCCcore/11.3.0 METIS/5.1.0
 
 module load GCCcore/12.2.0 METIS/5.1.0
 
-module load GCCcore/12.3.0 METIS/5.1.0
+module load GCCcore/13.2.0 METIS/5.1.0
 
 module load GCCcore/10.2.0 METIS/5.1.0
 
@@ -9300,29 +9614,11 @@ module load GCCcore/10.2.0 METIS/5.1.0
 
 -------
 
-## Miniconda3/4.12.0
-
-module load  Miniconda3/4.12.0
-
-
-[Return to modules](#module-list)
-
--------
-
-## Miniconda3/4.9.2
-
-module load  Miniconda3/4.9.2
-
-
-[Return to modules](#module-list)
-
--------
-
 ## minizip/1.1
 
-module load GCCcore/11.2.0 minizip/1.1
-
 module load GCCcore/13.2.0 minizip/1.1
+
+module load GCCcore/11.2.0 minizip/1.1
 
 
 [Return to modules](#module-list)
@@ -9392,6 +9688,15 @@ module load GCCcore/11.3.0 MPC/1.2.1
 
 -------
 
+## MPC/1.3.1
+
+module load GCCcore/13.2.0 MPC/1.3.1
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## MPFR/4.0.2
 
 module load GCCcore/9.3.0 MPFR/4.0.2
@@ -9405,13 +9710,13 @@ module load GCCcore/8.3.0 MPFR/4.0.2
 
 ## MPFR/4.1.0
 
-module load GCCcore/10.2.0 MPFR/4.1.0
-
 module load GCCcore/10.3.0 MPFR/4.1.0
+
+module load GCCcore/11.2.0 MPFR/4.1.0
 
 module load GCCcore/11.3.0 MPFR/4.1.0
 
-module load GCCcore/11.2.0 MPFR/4.1.0
+module load GCCcore/10.2.0 MPFR/4.1.0
 
 
 [Return to modules](#module-list)
@@ -9420,9 +9725,9 @@ module load GCCcore/11.2.0 MPFR/4.1.0
 
 ## MPFR/4.2.0
 
-module load GCCcore/12.2.0 MPFR/4.2.0
-
 module load GCCcore/12.3.0 MPFR/4.2.0
+
+module load GCCcore/12.2.0 MPFR/4.2.0
 
 
 [Return to modules](#module-list)
@@ -9440,9 +9745,9 @@ module load GCCcore/13.2.0 MPFR/4.2.1
 
 ## mpi4py/3.1.4
 
-module load GCC/11.2.0 OpenMPI/4.1.1 mpi4py/3.1.4
-
 module load GCC/12.3.0 mpi4py/3.1.4
+
+module load GCC/11.2.0 OpenMPI/4.1.1 mpi4py/3.1.4
 
 module load GCC/12.3.0 OpenMPI/4.1.5 mpi4py/3.1.4
 
@@ -9527,11 +9832,20 @@ module load GCC/10.2.0 OpenMPI/4.0.5 NAMD/2.14-mpi
 
 -------
 
+## NAMD/3.0-mpi
+
+module load GCC/13.2.0 OpenMPI/4.1.6 NAMD/3.0-mpi
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## NAMD/3.0b6-mpi
 
-module load GCC/12.3.0 OpenMPI/4.1.5 NAMD/3.0b6-mpi
-
 module load GCC/11.2.0 OpenMPI/4.1.1 NAMD/3.0b6-mpi
+
+module load GCC/12.3.0 OpenMPI/4.1.5 NAMD/3.0b6-mpi
 
 
 [Return to modules](#module-list)
@@ -9540,9 +9854,9 @@ module load GCC/11.2.0 OpenMPI/4.1.1 NAMD/3.0b6-mpi
 
 ## NASM/2.14.02
 
-module load GCCcore/8.3.0 NASM/2.14.02
-
 module load GCCcore/9.3.0 NASM/2.14.02
+
+module load GCCcore/8.3.0 NASM/2.14.02
 
 
 [Return to modules](#module-list)
@@ -9551,15 +9865,15 @@ module load GCCcore/9.3.0 NASM/2.14.02
 
 ## NASM/2.15.05
 
-module load GCCcore/11.3.0 NASM/2.15.05
+module load GCCcore/10.3.0 NASM/2.15.05
 
-module load GCCcore/11.2.0 NASM/2.15.05
+module load GCCcore/11.3.0 NASM/2.15.05
 
 module load GCCcore/10.2.0 NASM/2.15.05
 
-module load GCCcore/10.3.0 NASM/2.15.05
-
 module load GCCcore/12.2.0 NASM/2.15.05
+
+module load GCCcore/11.2.0 NASM/2.15.05
 
 
 [Return to modules](#module-list)
@@ -9568,9 +9882,9 @@ module load GCCcore/12.2.0 NASM/2.15.05
 
 ## NASM/2.16.01
 
-module load GCCcore/12.3.0 NASM/2.16.01
-
 module load GCCcore/13.2.0 NASM/2.16.01
+
+module load GCCcore/12.3.0 NASM/2.16.01
 
 
 [Return to modules](#module-list)
@@ -9598,6 +9912,24 @@ module load GCCcore/11.2.0 NCCL/2.10.3-CUDA-11.4.1
 ## NCCL/2.12.12-CUDA-11.7.0
 
 module load GCCcore/11.3.0 NCCL/2.12.12-CUDA-11.7.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## NCCL/2.18.3-CUDA-12.1.1
+
+module load GCCcore/12.3.0 NCCL/2.18.3-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## NCCL/2.20.5-CUDA-12.4.0
+
+module load GCCcore/13.2.0 NCCL/2.20.5-CUDA-12.4.0
 
 
 [Return to modules](#module-list)
@@ -9633,9 +9965,9 @@ module load  ncurses/6.0
 
 ## ncurses/6.1
 
-module load GCCcore/8.3.0 ncurses/6.1
-
 module load  ncurses/6.1
+
+module load GCCcore/8.3.0 ncurses/6.1
 
 
 [Return to modules](#module-list)
@@ -9644,15 +9976,15 @@ module load  ncurses/6.1
 
 ## ncurses/6.2
 
-module load  ncurses/6.2
-
-module load GCCcore/9.3.0 ncurses/6.2
-
-module load GCCcore/11.2.0 ncurses/6.2
-
 module load GCCcore/10.2.0 ncurses/6.2
 
 module load GCCcore/10.3.0 ncurses/6.2
+
+module load GCCcore/11.2.0 ncurses/6.2
+
+module load  ncurses/6.2
+
+module load GCCcore/9.3.0 ncurses/6.2
 
 
 [Return to modules](#module-list)
@@ -9663,9 +9995,9 @@ module load GCCcore/10.3.0 ncurses/6.2
 
 module load GCCcore/11.3.0 ncurses/6.3
 
-module load  ncurses/6.3
-
 module load GCCcore/12.2.0 ncurses/6.3
+
+module load  ncurses/6.3
 
 
 [Return to modules](#module-list)
@@ -9674,11 +10006,11 @@ module load GCCcore/12.2.0 ncurses/6.3
 
 ## ncurses/6.4
 
-module load  ncurses/6.4
+module load GCCcore/13.2.0 ncurses/6.4
 
 module load GCCcore/12.3.0 ncurses/6.4
 
-module load GCCcore/13.2.0 ncurses/6.4
+module load  ncurses/6.4
 
 
 [Return to modules](#module-list)
@@ -9927,11 +10259,11 @@ module load GCCcore/10.2.0 Ninja/1.10.1
 
 ## Ninja/1.10.2
 
+module load GCCcore/11.3.0 Ninja/1.10.2
+
 module load GCCcore/10.3.0 Ninja/1.10.2
 
 module load GCCcore/11.2.0 Ninja/1.10.2
-
-module load GCCcore/11.3.0 Ninja/1.10.2
 
 
 [Return to modules](#module-list)
@@ -9940,9 +10272,9 @@ module load GCCcore/11.3.0 Ninja/1.10.2
 
 ## Ninja/1.11.1
 
-module load GCCcore/12.2.0 Ninja/1.11.1
-
 module load GCCcore/12.3.0 Ninja/1.11.1
+
+module load GCCcore/12.2.0 Ninja/1.11.1
 
 module load GCCcore/13.2.0 Ninja/1.11.1
 
@@ -9971,9 +10303,9 @@ module load GCCcore/11.3.0 nlohmann_json/3.10.5
 
 ## nlohmann_json/3.11.2
 
-module load GCCcore/12.2.0 nlohmann_json/3.11.2
-
 module load GCCcore/12.3.0 nlohmann_json/3.11.2
+
+module load GCCcore/12.2.0 nlohmann_json/3.11.2
 
 
 [Return to modules](#module-list)
@@ -10144,9 +10476,9 @@ module load GCCcore/12.3.0 NSS/3.89.1
 
 ## nsync/1.24.0
 
-module load GCCcore/10.3.0 nsync/1.24.0
-
 module load GCCcore/10.2.0 nsync/1.24.0
+
+module load GCCcore/10.3.0 nsync/1.24.0
 
 
 [Return to modules](#module-list)
@@ -10202,9 +10534,9 @@ module load GCCcore/8.3.0 numactl/2.0.12
 
 ## numactl/2.0.13
 
-module load GCCcore/10.2.0 numactl/2.0.13
-
 module load GCCcore/9.3.0 numactl/2.0.13
+
+module load GCCcore/10.2.0 numactl/2.0.13
 
 module load GCCcore/8.3.0 numactl/2.0.13
 
@@ -10228,11 +10560,11 @@ module load GCCcore/11.3.0 numactl/2.0.14
 
 ## numactl/2.0.16
 
-module load GCCcore/13.2.0 numactl/2.0.16
+module load GCCcore/12.2.0 numactl/2.0.16
 
 module load GCCcore/12.3.0 numactl/2.0.16
 
-module load GCCcore/12.2.0 numactl/2.0.16
+module load GCCcore/13.2.0 numactl/2.0.16
 
 
 [Return to modules](#module-list)
@@ -10241,9 +10573,9 @@ module load GCCcore/12.2.0 numactl/2.0.16
 
 ## numba/0.53.1
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 numba/0.53.1
-
 module load GCC/10.2.0 OpenMPI/4.0.5 numba/0.53.1
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 numba/0.53.1
 
 
 [Return to modules](#module-list)
@@ -10380,9 +10712,9 @@ module load GCC/11.2.0 OpenBLAS/0.3.18
 
 ## OpenBLAS/0.3.20
 
-module load GCC/11.2.0 OpenBLAS/0.3.20
-
 module load GCC/11.3.0 OpenBLAS/0.3.20
+
+module load GCC/11.2.0 OpenBLAS/0.3.20
 
 
 [Return to modules](#module-list)
@@ -10575,11 +10907,11 @@ module load GCCcore/11.2.0 OpenJPEG/2.4.0
 
 ## OpenJPEG/2.5.0
 
+module load GCCcore/12.3.0 OpenJPEG/2.5.0
+
 module load GCCcore/11.3.0 OpenJPEG/2.5.0
 
 module load GCCcore/13.2.0 OpenJPEG/2.5.0
-
-module load GCCcore/12.3.0 OpenJPEG/2.5.0
 
 
 [Return to modules](#module-list)
@@ -10644,11 +10976,11 @@ module load GCC/13.2.0 OpenMPI/4.1.6 OpenMM/8.1.2-CUDA-12.4.0
 
 ## OpenMPI/3.1.4
 
-module load iccifort/2019.5.281 OpenMPI/3.1.4
+module load GCC/8.3.0 OpenMPI/3.1.4
 
 module load GCC/8.3.0 CUDA/10.1.243 OpenMPI/3.1.4
 
-module load GCC/8.3.0 OpenMPI/3.1.4
+module load iccifort/2019.5.281 OpenMPI/3.1.4
 
 
 [Return to modules](#module-list)
@@ -10726,11 +11058,11 @@ module load GCC/13.2.0 OpenMPI/4.1.6
 
 ## OpenPGM/5.2.122
 
-module load GCCcore/10.2.0 OpenPGM/5.2.122
+module load GCCcore/13.2.0 OpenPGM/5.2.122
 
 module load GCCcore/11.2.0 OpenPGM/5.2.122
 
-module load GCCcore/13.2.0 OpenPGM/5.2.122
+module load GCCcore/10.2.0 OpenPGM/5.2.122
 
 
 [Return to modules](#module-list)
@@ -10775,9 +11107,9 @@ module load GCC/10.3.0 OpenMPI/4.1.1 ORCA/5.0.2-static
 
 ## ORCA/5.0.4
 
-module load GCC/12.3.0 OpenMPI/4.1.5 ORCA/5.0.4
-
 module load GCC/11.2.0 OpenMPI/4.1.1 ORCA/5.0.4
+
+module load GCC/12.3.0 OpenMPI/4.1.5 ORCA/5.0.4
 
 
 [Return to modules](#module-list)
@@ -10815,9 +11147,9 @@ module load GCCcore/13.2.0 p11-kit/0.25.5
 
 ## Pango/1.44.7
 
-module load GCCcore/8.3.0 Pango/1.44.7
-
 module load GCCcore/9.3.0 Pango/1.44.7
+
+module load GCCcore/8.3.0 Pango/1.44.7
 
 
 [Return to modules](#module-list)
@@ -11021,9 +11353,9 @@ module load GCCcore/8.3.0 PCRE/8.43
 
 ## PCRE/8.44
 
-module load GCCcore/9.3.0 PCRE/8.44
-
 module load GCCcore/10.2.0 PCRE/8.44
+
+module load GCCcore/9.3.0 PCRE/8.44
 
 
 [Return to modules](#module-list)
@@ -11032,15 +11364,15 @@ module load GCCcore/10.2.0 PCRE/8.44
 
 ## PCRE/8.45
 
-module load GCCcore/12.2.0 PCRE/8.45
+module load GCCcore/12.3.0 PCRE/8.45
+
+module load GCCcore/13.2.0 PCRE/8.45
 
 module load GCCcore/11.3.0 PCRE/8.45
 
 module load GCCcore/11.2.0 PCRE/8.45
 
-module load GCCcore/13.2.0 PCRE/8.45
-
-module load GCCcore/12.3.0 PCRE/8.45
+module load GCCcore/12.2.0 PCRE/8.45
 
 
 [Return to modules](#module-list)
@@ -11258,9 +11590,9 @@ module load GCCcore/13.2.0 Perl-bundle-CPAN/5.38.0
 
 ## PETSc/3.12.4-Python-3.7.4
 
-module load iccifort/2019.5.281 impi/2019.7.217 PETSc/3.12.4-Python-3.7.4
-
 module load GCC/8.3.0 OpenMPI/3.1.4 PETSc/3.12.4-Python-3.7.4
+
+module load iccifort/2019.5.281 impi/2019.7.217 PETSc/3.12.4-Python-3.7.4
 
 
 [Return to modules](#module-list)
@@ -11447,6 +11779,24 @@ module load GCC/11.3.0 OpenMPI/4.1.4 PIP-PyTorch/2.1.2
 
 -------
 
+## PIP-PyTorch/2.4.0
+
+module load GCC/13.2.0 OpenMPI/4.1.6 PIP-PyTorch/2.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## PIP-PyTorch/2.4.0-CUDA-12.4.0
+
+module load GCC/13.2.0 OpenMPI/4.1.6 PIP-PyTorch/2.4.0-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## pixman/0.38.4
 
 module load GCCcore/9.3.0 pixman/0.38.4
@@ -11462,11 +11812,11 @@ module load GCCcore/8.3.0 pixman/0.38.4
 
 module load GCCcore/10.2.0 pixman/0.40.0
 
-module load GCCcore/11.2.0 pixman/0.40.0
-
 module load GCCcore/11.3.0 pixman/0.40.0
 
 module load GCCcore/10.3.0 pixman/0.40.0
+
+module load GCCcore/11.2.0 pixman/0.40.0
 
 
 [Return to modules](#module-list)
@@ -11475,9 +11825,9 @@ module load GCCcore/10.3.0 pixman/0.40.0
 
 ## pixman/0.42.2
 
-module load GCCcore/13.2.0 pixman/0.42.2
-
 module load GCCcore/12.3.0 pixman/0.42.2
+
+module load GCCcore/13.2.0 pixman/0.42.2
 
 
 [Return to modules](#module-list)
@@ -11486,21 +11836,21 @@ module load GCCcore/12.3.0 pixman/0.42.2
 
 ## pkg-config/0.29.2
 
-module load GCCcore/10.3.0 pkg-config/0.29.2
-
-module load GCCcore/11.2.0 pkg-config/0.29.2
-
-module load GCCcore/13.2.0 pkg-config/0.29.2
-
-module load GCCcore/10.2.0 pkg-config/0.29.2
-
 module load GCCcore/11.3.0 pkg-config/0.29.2
 
-module load GCCcore/9.3.0 pkg-config/0.29.2
+module load GCCcore/10.3.0 pkg-config/0.29.2
 
 module load  pkg-config/0.29.2
 
 module load GCCcore/8.3.0 pkg-config/0.29.2
+
+module load GCCcore/13.2.0 pkg-config/0.29.2
+
+module load GCCcore/11.2.0 pkg-config/0.29.2
+
+module load GCCcore/10.2.0 pkg-config/0.29.2
+
+module load GCCcore/9.3.0 pkg-config/0.29.2
 
 
 [Return to modules](#module-list)
@@ -11583,9 +11933,9 @@ module load GCCcore/10.3.0 pkgconfig/1.5.4-python
 
 ## pkgconfig/1.5.5-python
 
-module load GCCcore/11.3.0 pkgconfig/1.5.5-python
-
 module load GCCcore/12.3.0 pkgconfig/1.5.5-python
+
+module load GCCcore/11.3.0 pkgconfig/1.5.5-python
 
 
 [Return to modules](#module-list)
@@ -11666,9 +12016,9 @@ module load  pmi/pmix-x86_64
 
 ## PMIx/3.1.5
 
-module load GCCcore/10.2.0 PMIx/3.1.5
-
 module load GCCcore/9.3.0 PMIx/3.1.5
+
+module load GCCcore/10.2.0 PMIx/3.1.5
 
 
 [Return to modules](#module-list)
@@ -12077,6 +12427,33 @@ module load GCCcore/13.2.0 pytest/8.2.2
 
 -------
 
+## pytest-flakefinder/1.1.0
+
+module load GCCcore/13.2.0 pytest-flakefinder/1.1.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## pytest-rerunfailures/14.0
+
+module load GCCcore/13.2.0 pytest-rerunfailures/14.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## pytest-shard/0.1.2
+
+module load GCCcore/13.2.0 pytest-shard/0.1.2
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## pytest-xdist/2.3.0
 
 module load GCCcore/10.2.0 pytest-xdist/2.3.0
@@ -12097,9 +12474,9 @@ module load GCCcore/11.3.0 pytest-xdist/2.5.0
 
 ## pytest-xdist/3.3.1
 
-module load GCCcore/13.2.0 pytest-xdist/3.3.1
-
 module load GCCcore/12.3.0 pytest-xdist/3.3.1
+
+module load GCCcore/13.2.0 pytest-xdist/3.3.1
 
 
 [Return to modules](#module-list)
@@ -12339,15 +12716,6 @@ module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 PyTorch/1.9.0
 
 -------
 
-## PyTorch/2.0-Miniconda3-4.12.0
-
-module load  PyTorch/2.0-Miniconda3-4.12.0
-
-
-[Return to modules](#module-list)
-
--------
-
 ## PyTorch-Geometric/2.0.1-PyTorch-1.9.0
 
 module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 PyTorch-Geometric/2.0.1-PyTorch-1.9.0
@@ -12386,9 +12754,9 @@ module load GCCcore/10.2.0 PyYAML/5.3.1
 
 ## PyYAML/5.4.1
 
-module load GCCcore/10.2.0 PyYAML/5.4.1
-
 module load GCCcore/10.3.0 PyYAML/5.4.1
+
+module load GCCcore/10.2.0 PyYAML/5.4.1
 
 
 [Return to modules](#module-list)
@@ -12407,6 +12775,15 @@ module load GCCcore/11.3.0 PyYAML/6.0
 ## PyYAML/6.0.1
 
 module load GCCcore/13.2.0 PyYAML/6.0.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## PyZMQ/25.1.2
+
+module load GCCcore/13.2.0 PyZMQ/25.1.2
 
 
 [Return to modules](#module-list)
@@ -12596,9 +12973,9 @@ module load GCCcore/10.2.0 RDFlib/5.0.0
 
 ## RDKit/2020.03.3-Python-3.8.6
 
-module load GCC/10.2.0 OpenMPI/4.0.5 RDKit/2020.03.3-Python-3.8.6
-
 module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 RDKit/2020.03.3-Python-3.8.6
+
+module load GCC/10.2.0 OpenMPI/4.0.5 RDKit/2020.03.3-Python-3.8.6
 
 
 [Return to modules](#module-list)
@@ -12780,9 +13157,9 @@ module load GCCcore/11.3.0 Rust/1.60.0
 
 ## Rust/1.65.0
 
-module load GCCcore/12.2.0 Rust/1.65.0
-
 module load GCCcore/11.3.0 Rust/1.65.0
+
+module load GCCcore/12.2.0 Rust/1.65.0
 
 
 [Return to modules](#module-list)
@@ -12847,13 +13224,13 @@ module load GCC/8.3.0 OpenMPI/3.1.4 ScaLAPACK/2.0.2
 
 ## ScaLAPACK/2.1.0
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 ScaLAPACK/2.1.0
-
 module load GCC/10.2.0 OpenMPI/4.0.5 ScaLAPACK/2.1.0
 
 module load GCC/9.3.0 OpenMPI/4.0.3 ScaLAPACK/2.1.0
 
 module load NVHPC/21.11 ScaLAPACK/2.1.0
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 ScaLAPACK/2.1.0
 
 
 [Return to modules](#module-list)
@@ -12862,9 +13239,9 @@ module load NVHPC/21.11 ScaLAPACK/2.1.0
 
 ## ScaLAPACK/2.1.0-fb
 
-module load GCC/10.3.0 OpenMPI/4.1.1 ScaLAPACK/2.1.0-fb
-
 module load GCC/11.2.0 OpenMPI/4.1.1 ScaLAPACK/2.1.0-fb
+
+module load GCC/10.3.0 OpenMPI/4.1.1 ScaLAPACK/2.1.0-fb
 
 
 [Return to modules](#module-list)
@@ -12873,13 +13250,13 @@ module load GCC/11.2.0 OpenMPI/4.1.1 ScaLAPACK/2.1.0-fb
 
 ## ScaLAPACK/2.2.0-fb
 
-module load GCC/12.3.0 OpenMPI/4.1.5 ScaLAPACK/2.2.0-fb
+module load GCC/11.3.0 OpenMPI/4.1.4 ScaLAPACK/2.2.0-fb
 
 module load GCC/13.2.0 OpenMPI/4.1.6 ScaLAPACK/2.2.0-fb
 
-module load GCC/11.3.0 OpenMPI/4.1.4 ScaLAPACK/2.2.0-fb
-
 module load GCC/12.2.0 OpenMPI/4.1.4 ScaLAPACK/2.2.0-fb
+
+module load GCC/12.3.0 OpenMPI/4.1.5 ScaLAPACK/2.2.0-fb
 
 
 [Return to modules](#module-list)
@@ -12908,9 +13285,9 @@ module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 SchNetPack/2.0.1
 
 ## scikit-build/0.11.1
 
-module load GCCcore/11.2.0 scikit-build/0.11.1
-
 module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 scikit-build/0.11.1
+
+module load GCCcore/11.2.0 scikit-build/0.11.1
 
 
 [Return to modules](#module-list)
@@ -12919,9 +13296,9 @@ module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 scikit-build/0.11.1
 
 ## scikit-build/0.15.0
 
-module load GCCcore/11.3.0 scikit-build/0.15.0
-
 module load GCCcore/11.2.0 scikit-build/0.15.0
+
+module load GCCcore/11.3.0 scikit-build/0.15.0
 
 
 [Return to modules](#module-list)
@@ -12930,9 +13307,9 @@ module load GCCcore/11.2.0 scikit-build/0.15.0
 
 ## scikit-build/0.17.6
 
-module load GCCcore/13.2.0 scikit-build/0.17.6
-
 module load GCCcore/12.3.0 scikit-build/0.17.6
+
+module load GCCcore/13.2.0 scikit-build/0.17.6
 
 
 [Return to modules](#module-list)
@@ -13019,9 +13396,9 @@ module load GCC/9.3.0 OpenMPI/4.0.3 SciPy-bundle/2020.03-Python-3.8.2
 
 ## SciPy-bundle/2020.11
 
-module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 SciPy-bundle/2020.11
-
 module load GCC/10.2.0 OpenMPI/4.0.5 SciPy-bundle/2020.11
+
+module load GCC/10.2.0 CUDA/11.1.1 OpenMPI/4.0.5 SciPy-bundle/2020.11
 
 
 [Return to modules](#module-list)
@@ -13075,13 +13452,13 @@ module load GCC/13.2.0 SciPy-bundle/2023.11
 
 ## SCOTCH/6.0.9
 
-module load iccifort/2019.5.281 impi/2019.7.217 SCOTCH/6.0.9
+module load GCC/9.3.0 OpenMPI/4.0.3 SCOTCH/6.0.9
 
 module load iccifort/2019.5.281 OpenMPI/3.1.4 SCOTCH/6.0.9
 
-module load GCC/9.3.0 OpenMPI/4.0.3 SCOTCH/6.0.9
-
 module load GCC/8.3.0 OpenMPI/3.1.4 SCOTCH/6.0.9
+
+module load iccifort/2019.5.281 impi/2019.7.217 SCOTCH/6.0.9
 
 
 [Return to modules](#module-list)
@@ -13090,9 +13467,9 @@ module load GCC/8.3.0 OpenMPI/3.1.4 SCOTCH/6.0.9
 
 ## SCOTCH/6.1.0
 
-module load GCC/10.2.0 OpenMPI/4.0.5 SCOTCH/6.1.0
-
 module load GCC/10.3.0 OpenMPI/4.1.1 SCOTCH/6.1.0
+
+module load GCC/10.2.0 OpenMPI/4.0.5 SCOTCH/6.1.0
 
 
 [Return to modules](#module-list)
@@ -13281,9 +13658,9 @@ module load GCC/11.3.0 SNAP-HMM/20221022
 
 ## snappy/1.1.10
 
-module load GCCcore/12.3.0 snappy/1.1.10
-
 module load GCCcore/13.2.0 snappy/1.1.10
+
+module load GCCcore/12.3.0 snappy/1.1.10
 
 
 [Return to modules](#module-list)
@@ -13498,9 +13875,9 @@ module load GCC/11.3.0 OpenMPI/4.1.4 SuiteSparse/5.13.0-METIS-5.1.0
 
 ## SuiteSparse/5.6.0-METIS-5.1.0
 
-module load iccifort/2019.5.281 impi/2019.7.217 SuiteSparse/5.6.0-METIS-5.1.0
-
 module load GCC/8.3.0 OpenMPI/3.1.4 SuiteSparse/5.6.0-METIS-5.1.0
+
+module load iccifort/2019.5.281 impi/2019.7.217 SuiteSparse/5.6.0-METIS-5.1.0
 
 
 [Return to modules](#module-list)
@@ -13590,9 +13967,9 @@ module load GCCcore/8.3.0 SWIG/4.0.1
 
 ## SWIG/4.0.2
 
-module load GCCcore/11.3.0 SWIG/4.0.2
-
 module load GCCcore/10.2.0 SWIG/4.0.2
+
+module load GCCcore/11.3.0 SWIG/4.0.2
 
 
 [Return to modules](#module-list)
@@ -13601,9 +13978,9 @@ module load GCCcore/10.2.0 SWIG/4.0.2
 
 ## SWIG/4.1.1
 
-module load GCCcore/13.2.0 SWIG/4.1.1
-
 module load GCCcore/12.3.0 SWIG/4.1.1
+
+module load GCCcore/13.2.0 SWIG/4.1.1
 
 
 [Return to modules](#module-list)
@@ -13613,6 +13990,15 @@ module load GCCcore/12.3.0 SWIG/4.1.1
 ## sympy/1.11.1
 
 module load GCC/11.3.0 OpenMPI/4.1.4 sympy/1.11.1
+
+
+[Return to modules](#module-list)
+
+-------
+
+## sympy/1.12
+
+module load GCC/13.2.0 sympy/1.12
 
 
 [Return to modules](#module-list)
@@ -13630,23 +14016,23 @@ module load GCC/8.3.0 OpenMPI/3.1.4 sympy/1.5.1-Python-3.7.4
 
 ## Szip/2.1.1
 
+module load GCCcore/13.2.0 Szip/2.1.1
+
 module load GCCcore/11.2.0 Szip/2.1.1
+
+module load GCCcore/12.3.0 Szip/2.1.1
+
+module load GCCcore/8.3.0 Szip/2.1.1
+
+module load GCCcore/11.3.0 Szip/2.1.1
+
+module load GCCcore/12.2.0 Szip/2.1.1
+
+module load GCCcore/10.3.0 Szip/2.1.1
 
 module load GCCcore/9.3.0 Szip/2.1.1
 
 module load GCCcore/10.2.0 Szip/2.1.1
-
-module load GCCcore/13.2.0 Szip/2.1.1
-
-module load GCCcore/8.3.0 Szip/2.1.1
-
-module load GCCcore/12.2.0 Szip/2.1.1
-
-module load GCCcore/11.3.0 Szip/2.1.1
-
-module load GCCcore/10.3.0 Szip/2.1.1
-
-module load GCCcore/12.3.0 Szip/2.1.1
 
 
 [Return to modules](#module-list)
@@ -13691,9 +14077,9 @@ module load GCCcore/11.3.0 tbb/2021.5.0
 
 ## Tcl/8.6.10
 
-module load GCCcore/10.2.0 Tcl/8.6.10
-
 module load GCCcore/9.3.0 Tcl/8.6.10
+
+module load GCCcore/10.2.0 Tcl/8.6.10
 
 
 [Return to modules](#module-list)
@@ -13702,9 +14088,9 @@ module load GCCcore/9.3.0 Tcl/8.6.10
 
 ## Tcl/8.6.11
 
-module load GCCcore/11.2.0 Tcl/8.6.11
-
 module load GCCcore/10.3.0 Tcl/8.6.11
+
+module load GCCcore/11.2.0 Tcl/8.6.11
 
 
 [Return to modules](#module-list)
@@ -13713,9 +14099,9 @@ module load GCCcore/10.3.0 Tcl/8.6.11
 
 ## Tcl/8.6.12
 
-module load GCCcore/11.3.0 Tcl/8.6.12
-
 module load GCCcore/12.2.0 Tcl/8.6.12
+
+module load GCCcore/11.3.0 Tcl/8.6.12
 
 
 [Return to modules](#module-list)
@@ -13761,6 +14147,8 @@ module load GCCcore/11.2.0 tcsh/6.24.01
 -------
 
 ## tcsh/6.24.10
+
+module load GCCcore/13.2.0 tcsh/6.24.10
 
 module load GCCcore/12.3.0 tcsh/6.24.10
 
@@ -13834,9 +14222,9 @@ module load GCC/11.3.0 OpenMPI/4.1.4 TensorFlow/2.11.0-CUDA-11.7.0
 
 ## TensorFlow/2.15.1
 
-module load GCC/13.2.0 OpenMPI/4.1.6 TensorFlow/2.15.1
-
 module load GCC/12.3.0 OpenMPI/4.1.5 TensorFlow/2.15.1
+
+module load GCC/13.2.0 OpenMPI/4.1.6 TensorFlow/2.15.1
 
 
 [Return to modules](#module-list)
@@ -14330,9 +14718,27 @@ module load GCCcore/11.3.0 UCX-CUDA/1.12.1-CUDA-11.7.0
 
 -------
 
+## UCX-CUDA/1.14.1-CUDA-12.1.1
+
+module load GCCcore/12.3.0 UCX-CUDA/1.14.1-CUDA-12.1.1
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## UCX-CUDA/1.15.0-CUDA-12.4.0
 
 module load GCCcore/13.2.0 UCX-CUDA/1.15.0-CUDA-12.4.0
+
+
+[Return to modules](#module-list)
+
+-------
+
+## UCX-CUDA/1.15.0-CUDA-12.5.0
+
+module load GCCcore/13.2.0 UCX-CUDA/1.15.0-CUDA-12.5.0
 
 
 [Return to modules](#module-list)
@@ -14370,21 +14776,21 @@ module load GCC/11.3.0 OpenMPI/4.1.4 umap-learn/0.5.3
 
 ## UnZip/6.0
 
-module load GCCcore/10.3.0 UnZip/6.0
+module load GCCcore/12.2.0 UnZip/6.0
 
 module load GCCcore/11.2.0 UnZip/6.0
 
-module load GCCcore/11.3.0 UnZip/6.0
+module load GCCcore/12.3.0 UnZip/6.0
+
+module load GCCcore/10.3.0 UnZip/6.0
+
+module load GCCcore/9.3.0 UnZip/6.0
 
 module load GCCcore/10.2.0 UnZip/6.0
 
 module load GCCcore/13.2.0 UnZip/6.0
 
-module load GCCcore/12.2.0 UnZip/6.0
-
-module load GCCcore/9.3.0 UnZip/6.0
-
-module load GCCcore/12.3.0 UnZip/6.0
+module load GCCcore/11.3.0 UnZip/6.0
 
 
 [Return to modules](#module-list)
@@ -14440,9 +14846,9 @@ module load GCCcore/11.3.0 util-linux/2.38
 
 ## util-linux/2.39
 
-module load GCCcore/12.3.0 util-linux/2.39
-
 module load GCCcore/13.2.0 util-linux/2.39
+
+module load GCCcore/12.3.0 util-linux/2.39
 
 
 [Return to modules](#module-list)
@@ -14469,11 +14875,11 @@ module load GCCcore/13.2.0 virtualenv/20.24.6
 
 ## VMD/1.9.4a57
 
-module load GCC/11.2.0 OpenMPI/4.1.1 VMD/1.9.4a57
-
 module load GCC/11.3.0 OpenMPI/4.1.4 VMD/1.9.4a57
 
 module load GCC/12.3.0 OpenMPI/4.1.5 VMD/1.9.4a57
+
+module load GCC/11.2.0 OpenMPI/4.1.1 VMD/1.9.4a57
 
 
 [Return to modules](#module-list)
@@ -14770,6 +15176,15 @@ module load GCCcore/12.3.0 x264/20230226
 
 -------
 
+## x264/20231019
+
+module load GCCcore/13.2.0 x264/20231019
+
+
+[Return to modules](#module-list)
+
+-------
+
 ## x265/3.2
 
 module load GCCcore/8.3.0 x265/3.2
@@ -14781,9 +15196,9 @@ module load GCCcore/8.3.0 x265/3.2
 
 ## x265/3.3
 
-module load GCCcore/10.2.0 x265/3.3
-
 module load GCCcore/9.3.0 x265/3.3
+
+module load GCCcore/10.2.0 x265/3.3
 
 
 [Return to modules](#module-list)
@@ -14792,13 +15207,15 @@ module load GCCcore/9.3.0 x265/3.3
 
 ## x265/3.5
 
-module load GCCcore/10.3.0 x265/3.5
-
-module load GCCcore/11.2.0 x265/3.5
-
 module load GCCcore/11.3.0 x265/3.5
 
 module load GCCcore/12.3.0 x265/3.5
+
+module load GCCcore/11.2.0 x265/3.5
+
+module load GCCcore/10.3.0 x265/3.5
+
+module load GCCcore/13.2.0 x265/3.5
 
 
 [Return to modules](#module-list)
@@ -14834,9 +15251,9 @@ module load GCCcore/11.3.0 XML-LibXML/2.0207
 
 ## xorg-macros/1.19.2
 
-module load GCCcore/9.3.0 xorg-macros/1.19.2
-
 module load GCCcore/8.3.0 xorg-macros/1.19.2
+
+module load GCCcore/9.3.0 xorg-macros/1.19.2
 
 module load GCCcore/10.2.0 xorg-macros/1.19.2
 
@@ -14847,13 +15264,13 @@ module load GCCcore/10.2.0 xorg-macros/1.19.2
 
 ## xorg-macros/1.19.3
 
-module load GCCcore/12.2.0 xorg-macros/1.19.3
+module load GCCcore/10.3.0 xorg-macros/1.19.3
 
 module load GCCcore/11.3.0 xorg-macros/1.19.3
 
-module load GCCcore/11.2.0 xorg-macros/1.19.3
+module load GCCcore/12.2.0 xorg-macros/1.19.3
 
-module load GCCcore/10.3.0 xorg-macros/1.19.3
+module load GCCcore/11.2.0 xorg-macros/1.19.3
 
 
 [Return to modules](#module-list)
@@ -14873,11 +15290,11 @@ module load GCCcore/13.2.0 xorg-macros/1.20.0
 
 ## xprop/1.2.5
 
-module load GCCcore/11.3.0 xprop/1.2.5
-
 module load GCCcore/10.2.0 xprop/1.2.5
 
 module load GCCcore/11.2.0 xprop/1.2.5
+
+module load GCCcore/11.3.0 xprop/1.2.5
 
 
 [Return to modules](#module-list)
@@ -14935,13 +15352,13 @@ module load GCCcore/8.3.0 XZ/5.2.4
 
 module load GCCcore/11.3.0 XZ/5.2.5
 
-module load GCCcore/11.2.0 XZ/5.2.5
-
 module load GCCcore/10.3.0 XZ/5.2.5
 
-module load GCCcore/10.2.0 XZ/5.2.5
-
 module load GCCcore/9.3.0 XZ/5.2.5
+
+module load GCCcore/11.2.0 XZ/5.2.5
+
+module load GCCcore/10.2.0 XZ/5.2.5
 
 
 [Return to modules](#module-list)
@@ -14995,19 +15412,21 @@ module load GCCcore/8.3.0 yaml-cpp/0.6.3
 
 ## Yasm/1.3.0
 
-module load GCCcore/11.2.0 Yasm/1.3.0
-
-module load GCCcore/8.3.0 Yasm/1.3.0
-
-module load GCCcore/12.3.0 Yasm/1.3.0
-
-module load GCCcore/9.3.0 Yasm/1.3.0
-
-module load GCCcore/10.3.0 Yasm/1.3.0
-
 module load GCCcore/11.3.0 Yasm/1.3.0
 
 module load GCCcore/10.2.0 Yasm/1.3.0
+
+module load GCCcore/13.2.0 Yasm/1.3.0
+
+module load GCCcore/10.3.0 Yasm/1.3.0
+
+module load GCCcore/12.3.0 Yasm/1.3.0
+
+module load GCCcore/8.3.0 Yasm/1.3.0
+
+module load GCCcore/11.2.0 Yasm/1.3.0
+
+module load GCCcore/9.3.0 Yasm/1.3.0
 
 
 [Return to modules](#module-list)
@@ -15097,17 +15516,17 @@ module load GCCcore/11.3.0 zfp/1.0.0
 
 ## Zip/3.0
 
-module load GCCcore/8.3.0 Zip/3.0
-
 module load GCCcore/10.3.0 Zip/3.0
 
 module load GCCcore/11.3.0 Zip/3.0
 
-module load GCCcore/12.3.0 Zip/3.0
+module load GCCcore/13.2.0 Zip/3.0
 
 module load GCCcore/10.2.0 Zip/3.0
 
-module load GCCcore/13.2.0 Zip/3.0
+module load GCCcore/8.3.0 Zip/3.0
+
+module load GCCcore/12.3.0 Zip/3.0
 
 
 [Return to modules](#module-list)
@@ -15116,17 +15535,17 @@ module load GCCcore/13.2.0 Zip/3.0
 
 ## zlib/1.2.11
 
-module load GCCcore/8.3.0 zlib/1.2.11
-
-module load GCCcore/11.2.0 zlib/1.2.11
-
-module load GCCcore/10.3.0 zlib/1.2.11
-
-module load  zlib/1.2.11
+module load GCCcore/9.3.0 zlib/1.2.11
 
 module load GCCcore/10.2.0 zlib/1.2.11
 
-module load GCCcore/9.3.0 zlib/1.2.11
+module load  zlib/1.2.11
+
+module load GCCcore/10.3.0 zlib/1.2.11
+
+module load GCCcore/11.2.0 zlib/1.2.11
+
+module load GCCcore/8.3.0 zlib/1.2.11
 
 
 [Return to modules](#module-list)
@@ -15148,11 +15567,11 @@ module load GCCcore/11.3.0 zlib/1.2.12
 
 ## zlib/1.2.13
 
-module load  zlib/1.2.13
+module load GCCcore/13.2.0 zlib/1.2.13
 
 module load GCCcore/12.3.0 zlib/1.2.13
 
-module load GCCcore/13.2.0 zlib/1.2.13
+module load  zlib/1.2.13
 
 
 [Return to modules](#module-list)
@@ -15246,9 +15665,9 @@ module load GCCcore/11.3.0 zstd/1.5.2
 
 ## zstd/1.5.5
 
-module load GCCcore/13.2.0 zstd/1.5.5
-
 module load GCCcore/12.3.0 zstd/1.5.5
+
+module load GCCcore/13.2.0 zstd/1.5.5
 
 
 [Return to modules](#module-list)
