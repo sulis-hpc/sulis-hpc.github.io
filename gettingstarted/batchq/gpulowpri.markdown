@@ -22,7 +22,7 @@ In order to run low priority GPU jobs you must first have been given permission 
 [support page](../../support) for information on who to contact for this to be enabled on your user account. 
 
 Jobs should be submitted to the `gpulowpri` partition rather than the `gpu` partition. In additional they should specify a special budget code
-ratehr than their own GPU budget code. Each HPC Midlands+ site project and GPU-using EPSRC Access to HPC project should have such a budget code
+rather than their own GPU budget code. Each HPC Midlands+ site project and GPU-using EPSRC Access to HPC project should have such a budget code
 named `suxxx-gpulowpri` where `xxx` is your SAFE project number. An example job submission script is below.
 
 <p class="codeblock-label">gpu.slurm</p>
