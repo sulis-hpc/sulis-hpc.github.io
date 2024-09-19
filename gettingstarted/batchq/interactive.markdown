@@ -91,7 +91,7 @@ See also the application notes on [Jupyter](../../appnotes/jupyter).
 
 ## Interactive sessions on a GPU node
 
-To request an interactive session on a GPU-equipped node, specify the `gpu` partition and include a resource request for the A100 GPUs in that node.
+To request an interactive session on a GPU-equipped node, specify the `gpu` partition and include a resource request for either an A100 or L40 GPU.
 
 ```bash
 {{site.data.terminal.prompt}} salloc --account=suxxx-somebudget -p gpu -N 1 -n 1 -c 128 --mem-per-cpu={{site.data.slurm.cnode_ram_per_core}} --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:3 --time=8:00:00

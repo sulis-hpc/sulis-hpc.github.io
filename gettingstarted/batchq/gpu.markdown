@@ -17,12 +17,37 @@ Sulis contains 30 nodes equipped with Nvidia A100 GPUs. These are the 40GB varia
 {: .note }
 These are PCI-e GPU cards and are not connected via Nvidia SXM. They are unlikely to be suitable for training large models that need to span the memory of multiple GPUs simultaneously. 
 
-{: .info}
+{: .important}
 Not all of the new GPU L40 nodes are available pending delivery of additional power distribution units.
 
 GPU nodes are accessed via submitting batch scripts to the {{site.data.slurm.gpunode_partition_name}} partition. Such scripts should request one or more GPUs in their SLURM resource request.
 
 Most GPU jobs will require loading of the a CUDA [environment module](../software/modules) to make use of GPU acceleration. 
+
+## SLURM syntax for requesting GPU resource
+
+SLURM treats GPUs as a "generic resource" or `gres` which needs to be included in the resource request similar to the number of CPUs and amount of RAM required. Each GPU type
+has a `gres` name which must be specified to when requesting a GPU.
+
+- For the Nvidia A100 GPUs the `gres` name is `ampere_a100`.
+- For the Nvidia L40 GPUs the `gres` name is `lovelace_l40`.
+
+A resource request should also include the number of GPUs required, for example:
+
+```
+#SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1
+```
+to request a single A100 GPU, or 
+
+```
+#SBATCH --gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name2}}:3
+```
+to request all three L40 GPUs on a node.
+
+Both types of GPU are hosted within servers in the `{{site.data.slurm.gpunode_partition_name}}` partition.
+
+{: .important}
+It is not possible to reserve two different types of GPU for a single job.
 
 ## Single GPU CUDA jobs
 
@@ -108,7 +133,7 @@ module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
 srun ./a.out
 ```
 
-The resource request `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1` specifies that we require a single A100 GPU for the job. This could be substituted with `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name2}}:1` to request a single L40 GPU instead. Alternative, use `gres=gpu:1` to indicate that a GPU of any type if sufficient.
+The resource request `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name}}:1` specifies that we require a single A100 GPU for the job. This could be substituted with `gres=gpu:{{site.data.slurm.gpunode_gpu_gres_name2}}:1` to request a single L40 GPU instead.
 
 The request `partition={{site.data.slurm.gpunode_partition_name}}` overrides the default partition and tells SLURM the job should run on the partition consisting of GPU enabled nodes. 
 
