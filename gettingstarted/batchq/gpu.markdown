@@ -18,7 +18,7 @@ Sulis contains 30 nodes equipped with Nvidia A100 GPUs. These are the 40GB varia
 These are PCI-e GPU cards and are not connected via Nvidia SXM. They are unlikely to be suitable for training large models that need to span the memory of multiple GPUs simultaneously. 
 
 {: .info}
-The L40 GPU nodes will be available sometime in September 2024 following configuration and testing.
+Not all of the new GPU L40 nodes are available pending delivery of additional power distribution units.
 
 GPU nodes are accessed via submitting batch scripts to the {{site.data.slurm.gpunode_partition_name}} partition. Such scripts should request one or more GPUs in their SLURM resource request.
 
