@@ -207,7 +207,7 @@ srun python torch_gpu.py
 
 This script should report a positive result!
 
-<!-->
+<!--
 
 <details markdown="block" class="detail">
   <summary>Python script <code>tf_gpu.py</code>  to test for GPU support in TensorFlow.</summary>
