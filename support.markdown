@@ -14,7 +14,7 @@ Users within the HPC Midlands+ consortium (including those who have gained acces
 University | Support Contact / E-mail / Web site
 ---------- | -----------------------------------
 Aston University | [Support Email](mailto:hpc_support@aston.ac.uk)
-University of Birmingham | [IT Service Desk](http://www.itservicedesk.bham.ac.uk/)
+University of Birmingham | [IT Service Desk](https://itservicedesk.bham.ac.uk/itportal)
 Coventry University | [HPC Support](mailto:aa3025@coventry.ac.uk)
 University of Leicester | [RC Support](mailto:rcs.support@le.ac.uk), [IT Service Desk](http://www2.le.ac.uk/offices/itservices)
 Loughborough University | [Research Computing Support](mailto:research-computing@lboro.ac.uk)
