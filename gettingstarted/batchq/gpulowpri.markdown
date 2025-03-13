@@ -43,7 +43,7 @@ module load {{site.data.software.defaultgcc}} {{site.data.software.defaultcuda}}
 srun ./a.out
 ```
 
-Other examples from the [GPU jobs](gpu) page can be modified accordinly to use run low priority GPU jobs.
+Other examples from the [GPU jobs](gpu) page can be modified accordingly to run low priority GPU jobs.
 
 It is also possible to
 submit [interactive jobs](interactive) to the `{{site.data.slurm.gpulowpri_partition_name}}` to work in (for example) [Jupyter notebooks](../../appnotes/jupyter)
