@@ -32,7 +32,7 @@ Suggested acknowledgement text follows.
 The Sulis acceptable use policies exist to safeguard the performance, reliability and integrity of Sulis for all users.
 
 1. University policies and regulations
-  - Sulis is subject to University of Warwick [regulations and policies](http://www2.warwick.ac.uk/services/its/policies/).
+  - Sulis is subject to University of Warwick [regulations and policies](https://warwick.ac.uk/services/secretarytocouncil/info-security/im-policy-framework/policies/).
 1. Support
   - All support requests should be made via the support contacts outlined on the [support page]({% link support.markdown %}). 
 1. Account
